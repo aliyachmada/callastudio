@@ -1,0 +1,220 @@
+:root {
+  --bg-page: #FFFDF8;
+  --bg-surface: #FFFFFF;
+  --text-main: #2A1E1B;
+  --text-muted: #5C4742;
+  --border-ink: #2A1E1B;
+  --accent-pink: #E85D88;
+  --accent-yellow: #FFE066;
+  --accent-blue: #A8D8FF;
+  --accent-green: #B8E8B0;
+  --stripe-opacity: 0.26;
+  --card-shadow: 0 10px 25px -8px rgba(42, 30, 27, 0.08);
+  --card-border-width: 2px;
+  --flower-speed: 6s;
+  --critter-speed: 9s;
+}
+
+body.play-mode {
+  --bg-page: #FFFBF0;
+  --accent-pink: #FF477E;
+  --accent-yellow: #FFD60A;
+  --accent-blue: #7CC6FE;
+  --accent-green: #8CE99A;
+  --stripe-opacity: 0.52;
+  --card-shadow: 6px 7px 0px #2A1E1B;
+  --card-border-width: 2.5px;
+  --flower-speed: 3s;
+  --critter-speed: 5s;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Fraunces', serif;
+  line-height: 1.15;
+}
+
+/* Watercolor Stripes */
+.calla-stripes {
+  background-color: var(--bg-page);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px, transparent 28px,
+    rgba(144, 202, 249, var(--stripe-opacity)) 28px, rgba(144, 202, 249, var(--stripe-opacity)) 56px,
+    transparent 56px, transparent 84px,
+    rgba(244, 143, 177, var(--stripe-opacity)) 84px, rgba(244, 143, 177, var(--stripe-opacity)) 112px,
+    transparent 112px, transparent 140px,
+    rgba(165, 214, 167, var(--stripe-opacity)) 140px, rgba(165, 214, 167, var(--stripe-opacity)) 168px,
+    transparent 168px, transparent 196px,
+    rgba(255, 224, 130, var(--stripe-opacity)) 196px, rgba(255, 224, 130, var(--stripe-opacity)) 224px
+  );
+}
+
+/* Card System ("Wild Outside, Clean Inside") */
+.calla-frame {
+  border: var(--card-border-width) solid var(--border-ink);
+  box-shadow: var(--card-shadow);
+  border-radius: 24px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+/* Spencer Gabor-inspired Curated Scrapbook Collage Tilt on Desktop */
+@media (min-width: 768px) {
+  .gallery-card:nth-child(odd) {
+    transform: rotate(-0.55deg);
+  }
+  .gallery-card:nth-child(even) {
+    transform: rotate(0.55deg);
+  }
+  body.play-mode .gallery-card:nth-child(odd) {
+    transform: rotate(-1.35deg);
+  }
+  body.play-mode .gallery-card:nth-child(even) {
+    transform: rotate(1.35deg);
+  }
+}
+
+.gallery-card:hover, .gallery-card:focus-within {
+  transform: translateY(-5px) rotate(0deg) !important;
+  box-shadow: 8px 10px 0px #2A1E1B;
+}
+
+/* 3-Layer Draggable Crayon Flowers & Critters */
+.crayon-sticker {
+  position: absolute;
+  z-index: 20;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+  filter: url(#crayon-edge) drop-shadow(2px 4px 0px rgba(42, 30, 27, 0.18));
+}
+.crayon-sticker:active, .crayon-sticker.is-dragging {
+  cursor: grabbing;
+  z-index: 30;
+}
+
+.crayon-critter {
+  pointer-events: none;
+  user-select: none;
+  filter: url(#crayon-edge) drop-shadow(1px 3px 0px rgba(42, 30, 27, 0.14));
+}
+
+.sticker-prox {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.18s ease-out;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(4deg); }
+}
+.flower-anim {
+  animation: gentleFloat var(--flower-speed) ease-in-out infinite;
+}
+
+/* Crayon Animals Animations Between Sections */
+@keyframes swimLeftRight {
+  0%, 100% { transform: translateX(0px) translateY(0px) rotate(-2deg); }
+  50% { transform: translateX(52px) translateY(-4px) rotate(3deg); }
+}
+@keyframes swimRightLeft {
+  0%, 100% { transform: translateX(0px) translateY(0px) rotate(2deg); }
+  50% { transform: translateX(-48px) translateY(4px) rotate(-3deg); }
+}
+@keyframes crawlUpDown {
+  0%, 100% { transform: translateY(2px) rotate(-4deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+@keyframes caterpillarInch {
+  0%, 100% { transform: translateX(0px) scaleX(1); }
+  50% { transform: translateX(28px) scaleX(0.95); }
+}
+
+.critter-fish-lr {
+  animation: swimLeftRight var(--critter-speed) ease-in-out infinite;
+}
+.critter-fish-rl {
+  animation: swimRightLeft var(--critter-speed) ease-in-out infinite;
+}
+.critter-ladybug-ud {
+  animation: crawlUpDown 4.5s ease-in-out infinite;
+}
+.critter-caterpillar {
+  animation: caterpillarInch var(--critter-speed) ease-in-out infinite;
+}
+
+/* Reduce Decorative Motion on Mobile Screens */
+@media (max-width: 640px) {
+  .critter-fish-lr,
+  .critter-caterpillar {
+    animation-duration: 14s;
+  }
+}
+
+/* Uncropped Aspect-Ratio Safe Image Containers */
+.artwork-thumb-stage {
+  background-color: #FFFDF8;
+  background-image: radial-gradient(#E5DEC9 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
+.artwork-uncropped {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.2s ease;
+}
+
+.artwork-zoom-trigger:hover .artwork-uncropped {
+  transform: scale(1.03);
+}
+
+/* Full-Size Lightbox Viewer (Strict object-fit: contain) */
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 2px solid #2A1E1B;
+  background-color: #FFFDF8;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* Keyboard Focus Ring */
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #2563EB;
+  outline-offset: 3px;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .flower-anim,
+  .critter-fish-lr,
+  .critter-fish-rl,
+  .critter-ladybug-ud,
+  .critter-caterpillar {
+    animation: none !important;
+  }
+  .gallery-card,
+  body.play-mode .gallery-card {
+    transform: none !important;
+  }
+}

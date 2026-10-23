@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calla Creative Studio — Storybook Branding, Mascot & Packaging</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/calla.css" />
+  <style>
+    @keyframes bobGentle {
+      0%, 100% { transform: translateY(0px) rotate(-3deg); }
+      50% { transform: translateY(-7px) rotate(4deg); }
+    }
+    @keyframes beeBuzz {
+      0%, 100% { transform: translate(0px, 0px) rotate(-4deg); }
+      25% { transform: translate(-18px, -6px) rotate(3deg); }
+      50% { transform: translate(-36px, 2px) rotate(-3deg); }
+      75% { transform: translate(-18px, 6px) rotate(4deg); }
+    }
+    @keyframes bunnyPeek {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      40% { transform: translateY(-8px) rotate(-4deg); }
+      60% { transform: translateY(-8px) rotate(4deg); }
+    }
+    @keyframes snailGlide {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(22px); }
+    }
+    @keyframes critterBoopJump {
+      0% { transform: scale(1) translateY(0) rotate(0deg); }
+      35% { transform: scale(1.25, 0.85) translateY(3px) rotate(-8deg); }
+      65% { transform: scale(0.95, 1.18) translateY(-14px) rotate(10deg); }
+      100% { transform: scale(1) translateY(0) rotate(0deg); }
+    }
+    @keyframes popBubbleUp {
+      0% { opacity: 1; transform: translate(-50%, 0px) scale(0.7); }
+      60% { opacity: 1; transform: translate(-50%, -22px) scale(1.08); }
+      100% { opacity: 0; transform: translate(-50%, -34px) scale(0.9); }
+    }
+    .critter-bob { animation: bobGentle var(--flower-speed, 5s) ease-in-out infinite; }
+    .critter-bee { animation: beeBuzz var(--critter-speed, 7s) ease-in-out infinite; }
+    .critter-bunny { animation: bunnyPeek 4.5s ease-in-out infinite; }
+    .critter-snail { animation: snailGlide 11s ease-in-out infinite; }
+    .is-booped { animation: critterBoopJump 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+    .boop-pop-badge {
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      pointer-events: none;
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: #FFFDF8;
+      color: #2A1E1B;
+      border: 1.5px solid #2A1E1B;
+      box-shadow: 2px 2px 0px #2A1E1B;
+      z-index: 40;
+      animation: popBubbleUp 0.9s ease-out forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .critter-bob, .critter-bee, .critter-bunny, .critter-snail { animation: none !important; }
+    }
+  </style>
+</head>
+<body class="selection:bg-[#E85D88] selection:text-white">
+
+  <!-- SVG FILTER FOR CHILDLIKE CRAYON EDGES -->
+  <svg width="0" height="0" class="absolute pointer-events-none" aria-hidden="true">
+    <defs>
+      <filter id="crayon-edge" x="-15%" y="-15%" width="130%" height="130%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.8" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- TOP ANNOUNCEMENT BAR (MAX 7 BRANDS PER BATCH) -->
+  <div class="bg-[#2A1E1B] text-[#FFFDF8] text-xs sm:text-sm py-2.5 px-4 text-center">
+    <span id="topBarBadge" class="inline-block bg-[#FFE066] text-[#2A1E1B] font-bold px-2.5 py-0.5 rounded-full mr-2 text-[11px]">
+      SISTEM BATCH STUDIO
+    </span>
+    <span id="topBarText">Komitmen kualitas hand-drawn: Kapasitas seasonal dibatasi <strong>Maksimal 7 Brand per Batch</strong>.</span>
+    <a href="#pricing" id="topBarLink" class="underline font-semibold text-[#FFE066] ml-2 hover:text-white">
+      Lihat Paket & Cek Slot →
+    </a>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-[#FFFDF8]/95 backdrop-blur-md border-b-2 border-[#2A1E1B]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="#" class="text-xl sm:text-2xl font-extrabold font-display tracking-tight flex items-center gap-2">
+        <svg class="w-7 h-7" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 12 C65 5, 78 22, 65 38 C85 32, 95 52, 72 60 C88 75, 68 95, 52 74 C38 94, 15 80, 30 60 C8 55, 12 30, 34 36 C25 18, 42 5, 50 12 Z" fill="#FF6B9D" stroke="#2A1E1B" stroke-width="5"/>
+          <circle cx="51" cy="50" r="14" fill="#FFD84D" stroke="#2A1E1B" stroke-width="4"/>
+        </svg>
+        <span>calla creative <span class="italic font-normal text-[#E85D88]">studio</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation" class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-[#5C4742]">
+        <a href="#gallery" id="navGallery" class="hover:text-[#2A1E1B] transition">Portofolio & Galeri</a>
+        <a href="#team" id="navTeam" class="hover:text-[#2A1E1B] transition">Tentang Tim</a>
+        <a href="#workflow" id="navWorkflow" class="hover:text-[#2A1E1B] transition">Alur 4-Fase</a>
+        <a href="#pricing" id="navPricing" class="hover:text-[#2A1E1B] transition">Pricelist</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        <!-- EVERYDAY / PLAY MODE SWITCH -->
+        <button
+          id="moodSwitchBtn"
+          type="button"
+          role="switch"
+          aria-checked="false"
+          onclick="toggleMoodSwitch()"
+          class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B] text-xs font-bold shadow-[2px_2px_0px_#2A1E1B] hover:translate-y-[-1px] transition"
+        >
+          <span id="lampIcon" aria-hidden="true">💡</span>
+          <span id="moodSwitchLabel">Everyday Mode 🌷</span>
+        </button>
+
+        <!-- UNIFIED MARKET & LANGUAGE SELECTOR -->
+        <div class="inline-flex items-center rounded-full border-2 border-[#2A1E1B] bg-white p-0.5 shadow-[2px_2px_0px_#2A1E1B]" role="group" aria-label="Market and Currency Selector">
+          <button
+            id="headerMarketID"
+            type="button"
+            onclick="selectMarket('ID')"
+            class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#2A1E1B] text-white transition"
+            title="Bahasa Indonesia & Rate Card IDR"
+          >
+            🇮🇩 ID · IDR
+          </button>
+          <button
+            id="headerMarketEN"
+            type="button"
+            onclick="selectMarket('EN')"
+            class="px-2.5 py-1 rounded-full text-[11px] font-bold text-[#2A1E1B] hover:bg-[#FFF3BF] transition"
+            title="English & International USD Rate Card"
+          >
+            🌏 EN · USD
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH LARGE INTERACTIVE CRAYON FLOWERS & CRITTERS -->
+  <section
+    id="heroCanvas"
+    aria-label="Hero Calla Creative Studio"
+    class="calla-stripes relative border-b-2 border-[#2A1E1B] pt-12 pb-16 md:py-20 overflow-hidden"
+  >
+    <div id="stickerLayer" class="absolute inset-0 pointer-events-none">
+      <!-- Sticker 1: Top Left Blue-Pink Crayon Flower -->
+      <div class="crayon-sticker pointer-events-auto w-24 h-24 sm:w-32 sm:h-32" data-sticker="true" data-bounds="heroCanvas" data-boop="🌸 Bloom!" style="left: 3%; top: 6%;" title="Drag or click me!">
+        <div class="sticker-prox">
+          <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" aria-hidden="true">
+            <path d="M25 35 Q70 5 118 30 Q138 75 110 118 Q65 135 22 110 Q5 65 25 35 Z" fill="#FFB2C9" opacity="0.85"/>
+            <path d="M68 42 C52 8, 88 6, 75 42 C105 15, 128 45, 86 58 C128 62, 118 98, 82 76 C105 112, 68 128, 66 84 C45 125, 18 102, 52 74 C12 82, 10 45, 50 56 C22 25, 48 10, 68 42 Z" fill="#FFFDF5" stroke="#2845A8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="68" cy="64" r="20" fill="#2845A8"/>
+            <path d="M55 56 Q72 48 60 66 Q78 58 58 74 Q76 70 68 78" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Sticker 2: Top Right Pink-Yellow Flower -->
+      <div class="crayon-sticker pointer-events-auto w-24 h-24 sm:w-32 sm:h-32" data-sticker="true" data-bounds="heroCanvas" data-boop="🌷 Yay!" style="left: 83%; top: 7%;" title="Drag or click me!">
+        <div class="sticker-prox">
+          <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" style="animation-delay: 0.8s;" aria-hidden="true">
+            <path d="M66 15 C78 28, 95 12, 98 32 C112 28, 128 45, 108 62 C128 75, 115 98, 95 92 C98 115, 75 125, 64 102 C48 122, 25 110, 35 88 C12 85, 15 58, 36 55 C18 35, 42 15, 58 32 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="4.5" stroke-linejoin="round"/>
+            <path d="M52 55 C65 42, 88 48, 84 68 C82 85, 55 88, 48 70 Z" fill="#FFEB3B"/>
+            <path d="M60 62 C68 56, 76 66, 65 72" stroke="#D97706" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Sticker 3: Bottom Left Crayon Butterfly -->
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-28 h-28" data-sticker="true" data-bounds="heroCanvas" data-boop="🦋 Flutter~" style="left: 4%; top: 64%;" title="Drag or click me!">
+        <div class="sticker-prox">
+          <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" style="animation-delay: 1.4s;" aria-hidden="true">
+            <path d="M66 55 C35 15, 8 38, 22 68 C10 85, 32 115, 66 85 Z" fill="#90CAF9" stroke="#3949AB" stroke-width="4"/>
+            <path d="M74 55 C105 15, 132 38, 118 68 C130 85, 108 115, 74 85 Z" fill="#90CAF9" stroke="#3949AB" stroke-width="4"/>
+            <path d="M35 48 L52 58 L38 68 L28 56 Z" fill="#F48FB1"/>
+            <path d="M105 48 L88 58 L102 68 L112 56 Z" fill="#F48FB1"/>
+            <rect x="65" y="42" width="10" height="52" rx="5" fill="#F48FB1" stroke="#3949AB" stroke-width="3"/>
+            <path d="M68 42 C60 22, 45 20, 50 30" stroke="#3949AB" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M72 42 C80 22, 95 20, 90 30" stroke="#3949AB" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Sticker 4: Bottom Right Green-Orange Flower -->
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-28 h-28" data-sticker="true" data-bounds="heroCanvas" data-boop="🌼 Sparkle!" style="left: 82%; top: 63%;" title="Drag or click me!">
+        <div class="sticker-prox">
+          <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" style="animation-delay: 0.4s;" aria-hidden="true">
+            <path d="M70 14 C92 5, 102 32, 85 45 C115 40, 122 72, 92 76 C112 102, 78 122, 68 92 C48 122, 18 102, 42 75 C10 70, 18 38, 48 45 C35 20, 55 8, 70 14 Z" fill="#74C69D" stroke="#2A1E1B" stroke-width="4.5"/>
+            <circle cx="68" cy="66" r="19" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="4"/>
+            <path d="M60 64 Q68 56 74 66 Q66 74 62 68" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Sticker 5: Mid-Left Chubby Crayon Bee in Hero -->
+      <div class="crayon-sticker pointer-events-auto hidden lg:block w-16 h-16" data-sticker="true" data-bounds="heroCanvas" data-boop="🐝 Bzzz!" style="left: 9%; top: 38%;" title="Lebah Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-bob">
+          <svg viewBox="0 0 90 75" class="w-full h-full" aria-hidden="true">
+            <ellipse cx="38" cy="22" rx="12" ry="15" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3.5"/>
+            <ellipse cx="50" cy="24" rx="11" ry="14" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3.5"/>
+            <ellipse cx="45" cy="44" rx="22" ry="16" fill="#FFE066" stroke="#2A1E1B" stroke-width="4"/>
+            <path d="M38 29 L38 59 M49 29 L49 59" stroke="#2A1E1B" stroke-width="4.5"/>
+            <circle cx="29" cy="40" r="3" fill="#2A1E1B"/>
+            <path d="M27 46 Q31 50 35 46" stroke="#2A1E1B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Sticker 6: Mid-Right Little Crayon Ladybug in Hero -->
+      <div class="crayon-sticker pointer-events-auto hidden lg:block w-14 h-14" data-sticker="true" data-bounds="heroCanvas" data-boop="🐞 Lucky!" style="left: 86%; top: 39%;" title="Kepik Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-ladybug-ud">
+          <svg viewBox="0 0 80 80" class="w-full h-full" aria-hidden="true">
+            <path d="M32 22 C24 12, 18 14, 20 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M48 22 C56 12, 62 14, 60 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="40" cy="24" r="10" fill="#2A1E1B"/>
+            <ellipse cx="40" cy="46" rx="20" ry="22" fill="#FF5964" stroke="#2A1E1B" stroke-width="3.5"/>
+            <line x1="40" y1="25" x2="40" y2="68" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="31" cy="39" r="3.5" fill="#2A1E1B"/>
+            <circle cx="49" cy="41" r="3.5" fill="#2A1E1B"/>
+            <circle cx="33" cy="53" r="3" fill="#2A1E1B"/>
+            <circle cx="47" cy="54" r="3" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO CENTRAL CONTENT -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="calla-frame bg-[#FFFFFF]/95 backdrop-blur-sm p-6 sm:p-10 text-center">
+        <div id="heroBadge" class="inline-flex items-center gap-2 bg-[#FFE066] text-[#2A1E1B] border border-[#2A1E1B] px-3.5 py-1 rounded-full text-xs font-bold mb-5">
+          🖍️ Handcrafted Brand Identity · Character Mascot · Packaging Design
+        </div>
+
+        <h1 id="heroHeadline" class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#2A1E1B] mb-4">
+          Ide kecil, dunia brand yang penuh cerita. 🌷
+        </h1>
+
+        <p id="heroSubcopy" class="text-base sm:text-lg text-[#4A3833] font-normal max-w-2xl mx-auto mb-6 leading-relaxed">
+          Kami mengubah ide menjadi identitas visual yang berwarna, karakter ilustratif, dan kemasan yang punya cerita—dirancang dengan penuh perhatian untuk brand dan orang-orang yang menyukainya.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+          <a
+            href="#gallery"
+            id="heroCtaPrimary"
+            class="px-6 py-3.5 rounded-full bg-[#E85D88] text-white font-bold text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition"
+          >
+            🌈 Jelajahi Galeri Karya ↓
+          </a>
+          <a
+            href="#pricing"
+            id="heroCtaSecondary"
+            class="px-6 py-3.5 rounded-full bg-white text-[#2A1E1B] font-bold text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:bg-[#FFF9DB] transition"
+          >
+            💌 Lihat Paket & Pricelist
+          </a>
+        </div>
+
+        <div class="pt-4 border-t border-[#E6DEC8] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5C4742]">
+          <p id="heroMicrocopy" class="font-medium">
+            Psst… coba geser atau klik bunga dan hewan krayonnya! Setelah itu, intip dunia brand yang sudah kami buat. ✨
+          </p>
+          <div class="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              id="spawnFlowerBtn"
+              onclick="spawnBoundedFlower()"
+              class="px-3 py-1.5 rounded-full bg-[#FFF3BF] text-[#2A1E1B] font-bold border border-[#2A1E1B] hover:bg-[#FFE066] transition"
+            >
+              <span id="spawnBtnText">🌸 + Tambah Bunga</span> (<span id="flowerCount">0</span>/10)
+            </button>
+            <button
+              type="button"
+              id="resetFlowerBtn"
+              onclick="resetFlowers()"
+              class="px-2.5 py-1.5 rounded-full bg-white text-[#5C4742] font-semibold border border-[#D5CBB8] hover:text-[#2A1E1B] transition"
+            >
+              ↺ Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITTER PLAYGROUND 1: THE POND & LADYBUG GARDEN -->
+  <div id="critterLane1" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-2 relative overflow-hidden select-none">
+    <div class="relative h-16 flex items-center">
+      <svg viewBox="0 0 800 36" class="w-full h-7 opacity-60 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 5 18 Q 45 5, 85 18 T 165 18 T 245 18 T 325 18 T 405 18 T 485 18 T 565 18 T 645 18 T 725 18 T 795 18" stroke="#7CC6FE" stroke-width="3.5" stroke-dasharray="10 8" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="crayon-sticker pointer-events-auto w-14 h-11" data-sticker="true" data-bounds="critterLane1" data-boop="🫧 Blub blub!" style="left: 4%; top: 14%;" title="Ikan Biru — Geser atau klik aku!">
+        <div class="sticker-prox critter-fish-lr">
+          <svg viewBox="0 0 90 60" class="w-full h-full">
+            <path d="M22 30 L5 14 L9 30 L5 46 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
+            <ellipse cx="48" cy="30" rx="28" ry="17" fill="#7CC6FE" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M42 15 Q50 30 42 45" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="63" cy="25" r="3.5" fill="#2A1E1B"/>
+            <circle cx="64" cy="24" r="1.2" fill="#FFFFFF"/>
+            <path d="M60 34 Q65 37 69 33" stroke="#2A1E1B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane1" data-boop="🐤 Kwek kwek!" style="left: 28%; top: 4%;" title="Bebek Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-bob">
+          <svg viewBox="0 0 90 85" class="w-full h-full">
+            <path d="M68 42 L82 37 L78 46 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse cx="42" cy="54" rx="26" ry="16" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="56" cy="34" r="14" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M30 52 Q42 62 52 50" stroke="#F59F00" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="60" cy="31" r="3" fill="#2A1E1B"/>
+            <circle cx="54" cy="37" r="3" fill="#FF85A2" opacity="0.7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto hidden md:block w-14 h-12" data-sticker="true" data-bounds="critterLane1" data-boop="🐡 Puff~!" style="left: 53%; top: 12%;" title="Ikan Buntal — Geser atau klik aku!">
+        <div class="sticker-prox critter-bob" style="animation-delay: 0.6s;">
+          <svg viewBox="0 0 90 75" class="w-full h-full">
+            <path d="M70 38 L84 26 L82 48 Z" fill="#A8D8FF" stroke="#2A1E1B" stroke-width="3.2" stroke-linejoin="round"/>
+            <circle cx="44" cy="38" r="24" fill="#FFD8A8" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M24 50 Q44 62 64 50" fill="#FFFDF8" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="33" cy="32" r="3.2" fill="#2A1E1B"/>
+            <circle cx="28" cy="38" r="3.5" fill="#FF85A2" opacity="0.65"/>
+            <path d="M44 10 L44 15 M28 16 L31 20 M60 16 L57 20" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-10" data-sticker="true" data-bounds="critterLane1" data-boop="🐠 Splash!" style="left: 73%; top: 18%;" title="Ikan Pink — Geser atau klik aku!">
+        <div class="sticker-prox critter-fish-rl">
+          <svg viewBox="0 0 90 60" class="w-full h-full">
+            <path d="M68 30 L85 15 L81 30 L85 45 Z" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
+            <ellipse cx="42" cy="30" rx="26" ry="15" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="27" cy="25" r="3.2" fill="#2A1E1B"/>
+            <path d="M46 22 Q38 30 46 38" stroke="#FFE066" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-12 h-12" data-sticker="true" data-bounds="critterLane1" data-boop="🐞 Halo!" style="left: 91%; top: 8%;" title="Kepik Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-ladybug-ud">
+          <svg viewBox="0 0 80 80" class="w-full h-full">
+            <path d="M32 22 C24 12, 18 14, 20 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M48 22 C56 12, 62 14, 60 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="40" cy="24" r="10" fill="#2A1E1B"/>
+            <ellipse cx="40" cy="46" rx="20" ry="22" fill="#FF5964" stroke="#2A1E1B" stroke-width="3.5"/>
+            <line x1="40" y1="25" x2="40" y2="68" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="31" cy="39" r="3.5" fill="#2A1E1B"/>
+            <circle cx="49" cy="41" r="3.5" fill="#2A1E1B"/>
+            <circle cx="33" cy="53" r="3" fill="#2A1E1B"/>
+            <circle cx="47" cy="54" r="3" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: BROWSABLE PROJECT GALLERY -->
+  <section id="gallery" class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-14">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span id="galBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-3">
+          🎨 CURATED PORTFOLIO SHOWCASE
+        </span>
+        <h2 id="galHeading" class="text-3xl sm:text-5xl font-extrabold text-[#2A1E1B]">
+          Dunia Brand yang Telah Kami Bangun
+        </h2>
+        <p id="galSubheading" class="text-sm sm:text-base text-[#5C4742] mt-2 max-w-2xl">
+          Klik pada gambar karya untuk membuka tampilan ukuran penuh (Full-Size Lightbox) tanpa terpotong, atau buka studi kasus step-by-step untuk melihat proses di balik layar.
+        </p>
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div role="tablist" aria-label="Portfolio Category Filter" class="flex flex-wrap gap-2">
+        <button type="button" onclick="filterGallery('all')" id="filter-all" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition">
+          Karya Unggulan
+        </button>
+        <button type="button" onclick="filterGallery('identity')" id="filter-identity" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
+          Brand Identity
+        </button>
+        <button type="button" onclick="filterGallery('mascot')" id="filter-mascot" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
+          Mascot & Illustration
+        </button>
+        <button type="button" onclick="filterGallery('packaging')" id="filter-packaging" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
+          Packaging & F&B
+        </button>
+      </div>
+    </div>
+
+    <div id="galleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+
+    <div id="galleryShowAllWrap" class="mt-10 text-center">
+      <button
+        type="button"
+        id="toggleShowAllBtn"
+        onclick="toggleShowAllWorks()"
+        class="px-6 py-3 rounded-full bg-[#FFE066] hover:bg-[#FFD43B] text-[#2A1E1B] font-extrabold text-xs sm:text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition"
+      >
+        ✨ Tampilkan Semua Karya
+      </button>
+    </div>
+  </section>
+
+  <!-- CRITTER PLAYGROUND 2: THE STORYBOOK MEADOW -->
+  <div id="critterLane2" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 py-3 relative overflow-hidden select-none">
+    <div class="relative h-16 flex items-center">
+      <svg viewBox="0 0 800 32" class="w-full h-6 opacity-55 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 0 18 Q 70 4, 140 18 T 280 18 T 420 18 T 560 18 T 700 18 T 800 18" stroke="#80ED99" stroke-width="3.5" stroke-dasharray="6 10" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="crayon-sticker pointer-events-auto w-24 h-11" data-sticker="true" data-bounds="critterLane2" data-boop="🐛 Nyam nyam~" style="left: 3%; top: 15%;" title="Ulat Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-caterpillar">
+          <svg viewBox="0 0 150 60" class="w-full h-full">
+            <circle cx="24" cy="36" r="12" fill="#80ED99" stroke="#2A1E1B" stroke-width="3.2"/>
+            <circle cx="45" cy="32" r="13" fill="#B8E8B0" stroke="#2A1E1B" stroke-width="3.2"/>
+            <circle cx="67" cy="35" r="13" fill="#80ED99" stroke="#2A1E1B" stroke-width="3.2"/>
+            <circle cx="90" cy="31" r="13" fill="#B8E8B0" stroke="#2A1E1B" stroke-width="3.2"/>
+            <circle cx="114" cy="28" r="15" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M110 13 C106 4, 98 6, 102 11" stroke="#2A1E1B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M120 13 C125 4, 132 6, 128 11" stroke="#2A1E1B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <circle cx="119" cy="25" r="2.8" fill="#2A1E1B"/>
+            <path d="M114 33 Q119 37 123 32" stroke="#2A1E1B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-16 h-12" data-sticker="true" data-bounds="critterLane2" data-boop="🐌 Pelan tapi pasti~" style="left: 35%; top: 10%;" title="Siput Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-snail">
+          <svg viewBox="0 0 100 75" class="w-full h-full">
+            <path d="M14 56 Q50 58 82 54 C90 52, 92 42, 82 40 Q68 42 64 50 L20 50 Z" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
+            <circle cx="44" cy="34" r="20" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M44 34 m-10 0 a 10 10 0 1 0 20 0 a 7 7 0 1 0 -14 0" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M78 40 L83 25 M84 42 L91 28" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="83" cy="24" r="2.5" fill="#2A1E1B"/>
+            <circle cx="91" cy="27" r="2.5" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-14" data-sticker="true" data-bounds="critterLane2" data-boop="🐰 Hop hop!" style="left: 64%; top: 4%;" title="Kelinci Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-bunny">
+          <svg viewBox="0 0 90 90" class="w-full h-full">
+            <ellipse cx="35" cy="24" rx="7" ry="18" transform="rotate(-10 35 24)" fill="#FFFDF8" stroke="#2A1E1B" stroke-width="3.5"/>
+            <ellipse cx="35" cy="25" rx="3.5" ry="11" transform="rotate(-10 35 25)" fill="#F9C6D3"/>
+            <ellipse cx="55" cy="24" rx="7" ry="18" transform="rotate(10 55 24)" fill="#FFFDF8" stroke="#2A1E1B" stroke-width="3.5"/>
+            <ellipse cx="55" cy="25" rx="3.5" ry="11" transform="rotate(10 55 25)" fill="#F9C6D3"/>
+            <circle cx="45" cy="52" r="20" fill="#FFFDF8" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="38" cy="49" r="3" fill="#2A1E1B"/>
+            <circle cx="52" cy="49" r="3" fill="#2A1E1B"/>
+            <ellipse cx="45" cy="54" rx="3.5" ry="2.5" fill="#FF85A2"/>
+            <circle cx="32" cy="54" r="3.5" fill="#F9C6D3"/>
+            <circle cx="58" cy="54" r="3.5" fill="#F9C6D3"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane2" data-boop="🦋 Cantik!" style="left: 88%; top: 6%;" title="Kupu-Kupu — Geser atau klik aku!">
+        <div class="sticker-prox critter-bob">
+          <svg viewBox="0 0 100 90" class="w-full h-full">
+            <path d="M48 42 C22 10, 6 28, 18 50 C8 65, 26 84, 48 62 Z" fill="#C77DFF" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M52 42 C78 10, 94 28, 82 50 C92 65, 74 84, 52 62 Z" fill="#C77DFF" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="30" cy="38" r="5" fill="#FFE066"/>
+            <circle cx="70" cy="38" r="5" fill="#FFE066"/>
+            <rect x="47" y="28" width="6" height="40" rx="3" fill="#FFE066" stroke="#2A1E1B" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: MEET THE TEAM & INTERACTIVE PROCESS -->
+  <section id="team" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <div class="calla-frame bg-[#FFF9E6] p-6 sm:p-10">
+      <div class="grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-6 space-y-4 bg-white p-6 sm:p-8 rounded-2xl border-2 border-[#2A1E1B]">
+          <span id="teamBadge" class="inline-block bg-[#FFD8A8] border border-[#2A1E1B] text-xs font-bold px-3 py-1 rounded-full">
+            🌷 THE DYNAMIC DUO
+          </span>
+          <h2 id="teamHeading" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B]">
+            Kenalan dengan tim kecil di balik Calla 🌷
+          </h2>
+          <p id="teamP1" class="text-sm sm:text-base text-[#4A3833] leading-relaxed"></p>
+          <p id="teamP2" class="text-sm sm:text-base text-[#4A3833] leading-relaxed"></p>
+          <p id="teamP3" class="text-sm text-[#5C4742] pt-2 border-t border-[#E6DEC8]"></p>
+        </div>
+
+        <div class="md:col-span-6 space-y-4">
+          <div class="bg-white p-6 rounded-2xl border-2 border-[#2A1E1B]">
+            <div class="flex items-center justify-between text-xs font-bold text-[#5C4742] mb-3">
+              <span id="procHeaderLabel">PANDUAN STEP-BY-STEP KLIEN</span>
+              <span id="procStepTag" class="bg-[#FFE066] text-[#2A1E1B] px-2.5 py-0.5 rounded-full border border-[#2A1E1B]"></span>
+            </div>
+
+            <div id="procDisplay" class="rounded-xl border-2 border-dashed border-[#2A1E1B] bg-[#FFFDF8] p-6 min-h-[185px] flex flex-col justify-center">
+              <h3 id="procTitle" class="text-xl sm:text-2xl font-extrabold text-[#2A1E1B] mb-2"></h3>
+              <p id="procDesc" class="text-sm text-[#4A3833] leading-relaxed"></p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2 mt-4">
+              <button type="button" onclick="setProcessView(1)" id="pView1" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B]">
+                1. Gate 1 Sketch
+              </button>
+              <button type="button" onclick="setProcessView(2)" id="pView2" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B]">
+                2. Gate 2 Color
+              </button>
+              <button type="button" onclick="setProcessView(3)" id="pView3" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B]">
+                3. Handover File
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITTER PLAYGROUND 3: THE BAKERY KITTY & BLUEBIRD TRAIL -->
+  <div id="critterLane3" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 py-2 relative overflow-hidden select-none">
+    <div class="relative h-14 flex items-center">
+      <svg viewBox="0 0 800 28" class="w-full h-5 opacity-50 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 10 14 Q 80 4, 150 14 T 290 14 T 430 14 T 570 14 T 710 14 T 790 14" stroke="#FFD8A8" stroke-width="3.5" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane3" data-boop="🐱 Meow~!" style="left: 12%; top: 2%;" title="Kucing Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-bunny">
+          <svg viewBox="0 0 90 85" class="w-full h-full">
+            <polygon points="24,38 20,14 40,28" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
+            <polygon points="66,38 70,14 50,28" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
+            <ellipse cx="45" cy="48" rx="22" ry="18" fill="#FFB703" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="37" cy="45" r="3" fill="#2A1E1B"/>
+            <circle cx="53" cy="45" r="3" fill="#2A1E1B"/>
+            <polygon points="45,51 42,47 48,47" fill="#E85D88"/>
+            <path d="M18 46 L28 48 M18 52 L28 52 M72 46 L62 48 M72 52 L62 52" stroke="#2A1E1B" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-12" data-sticker="true" data-bounds="critterLane3" data-boop="🐦 Tweet tweet!" style="left: 50%; top: 8%;" title="Burung Biru — Geser atau klik aku!">
+        <div class="sticker-prox critter-fish-lr">
+          <svg viewBox="0 0 90 70" class="w-full h-full">
+            <path d="M66 32 L80 28 L70 38 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse cx="45" cy="36" rx="22" ry="15" fill="#7CC6FE" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M35 28 C25 12, 48 12, 48 28" fill="#A8D8FF" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="56" cy="31" r="3" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-12 h-12" data-sticker="true" data-bounds="critterLane3" data-boop="🐞 Semangat!" style="left: 84%; top: 6%;" title="Kepik Oranye — Geser atau klik aku!">
+        <div class="sticker-prox critter-ladybug-ud">
+          <svg viewBox="0 0 80 80" class="w-full h-full">
+            <circle cx="40" cy="24" r="10" fill="#2A1E1B"/>
+            <ellipse cx="40" cy="46" rx="20" ry="22" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5"/>
+            <line x1="40" y1="25" x2="40" y2="68" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="31" cy="39" r="3.5" fill="#2A1E1B"/>
+            <circle cx="49" cy="41" r="3.5" fill="#2A1E1B"/>
+            <circle cx="33" cy="53" r="3" fill="#2A1E1B"/>
+            <circle cx="47" cy="54" r="3" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: THE 4-PHASE WORKFLOW -->
+  <section id="workflow" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span id="wfBadge" class="inline-block bg-[#B8E8B0] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
+        ⏱️ STEP-BY-STEP STUDIO WORKFLOW
+      </span>
+      <h2 id="wfHeading" class="text-3xl sm:text-4xl font-extrabold text-[#2A1E1B]"></h2>
+      <p id="wfSubheading" class="text-sm text-[#5C4742] mt-2"></p>
+    </div>
+
+    <div id="wfGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+  </section>
+
+  <!-- CRITTER PLAYGROUND 4: THE HONEYBEE & BUTTERFLY GARDEN TRAIL -->
+  <div id="critterLane4" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 py-3 relative overflow-hidden select-none">
+    <div class="relative h-16 flex items-center">
+      <svg viewBox="0 0 800 28" class="w-full h-6 opacity-55 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 10 14 Q 90 24, 170 14 T 330 14 T 490 14 T 650 14 T 790 14" stroke="#F48FB1" stroke-width="3.2" stroke-dasharray="9 8" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="crayon-sticker pointer-events-auto w-14 h-13" data-sticker="true" data-bounds="critterLane4" data-boop="🦋 Love!" style="left: 5%; top: 8%;" title="Kupu-Kupu Pink — Geser atau klik aku!">
+        <div class="sticker-prox critter-bob">
+          <svg viewBox="0 0 100 90" class="w-full h-full">
+            <path d="M48 42 C22 10, 6 28, 18 50 C8 65, 26 84, 48 62 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M52 42 C78 10, 94 28, 82 50 C92 65, 74 84, 52 62 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="30" cy="38" r="5" fill="#FFF3BF"/>
+            <circle cx="70" cy="38" r="5" fill="#FFF3BF"/>
+            <rect x="47" y="28" width="6" height="40" rx="3" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-12" data-sticker="true" data-bounds="critterLane4" data-boop="🍯 Honey time!" style="left: 29%; top: 10%;" title="Lebah Madu — Geser atau klik aku!">
+        <div class="sticker-prox critter-bee">
+          <svg viewBox="0 0 80 65" class="w-full h-full">
+            <ellipse cx="36" cy="20" rx="10" ry="13" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
+            <ellipse cx="44" cy="22" rx="9" ry="12" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
+            <ellipse cx="40" cy="38" rx="18" ry="13" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M35 26 L35 50 M45 26 L45 50" stroke="#2A1E1B" stroke-width="4"/>
+            <circle cx="52" cy="35" r="2.5" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-13 h-13" data-sticker="true" data-bounds="critterLane4" data-boop="🌼 Bertumbuh!" style="left: 52%; top: 6%;" title="Bunga Krayon — Geser atau klik aku!">
+        <div class="sticker-prox flower-anim">
+          <svg viewBox="0 0 80 80" class="w-12 h-12">
+            <path d="M40 45 L40 72" stroke="#52B788" stroke-width="5" stroke-linecap="round"/>
+            <path d="M40 58 C26 52, 24 64, 40 64" fill="#74C69D" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="40" cy="24" r="9" fill="#FF85A2" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="52" cy="34" r="9" fill="#FF85A2" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="46" cy="46" r="9" fill="#FF85A2" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="34" cy="46" r="9" fill="#FF85A2" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="28" cy="34" r="9" fill="#FF85A2" stroke="#2A1E1B" stroke-width="2.5"/>
+            <circle cx="40" cy="36" r="10" fill="#FFE066" stroke="#2A1E1B" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto hidden md:block w-14 h-11" data-sticker="true" data-bounds="critterLane4" data-boop="🐚 Halo Aliy!" style="left: 71%; top: 16%;" title="Siput Biru — Geser atau klik aku!">
+        <div class="sticker-prox critter-snail">
+          <svg viewBox="0 0 100 75" class="w-full h-full">
+            <path d="M14 56 Q50 58 82 54 C90 52, 92 42, 82 40 Q68 42 64 50 L20 50 Z" fill="#B8E8B0" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
+            <circle cx="44" cy="34" r="19" fill="#7CC6FE" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M44 34 m-9 0 a 9 9 0 1 0 18 0 a 6 6 0 1 0 -12 0" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="83" cy="36" r="2.5" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="crayon-sticker pointer-events-auto w-14 h-12" data-sticker="true" data-bounds="critterLane4" data-boop="🐝 Bzzz bzzz!" style="left: 88%; top: 10%;" title="Lebah Krayon — Geser atau klik aku!">
+        <div class="sticker-prox critter-bee" style="animation-delay: 1.1s;">
+          <svg viewBox="0 0 80 65" class="w-full h-full">
+            <ellipse cx="40" cy="20" rx="10" ry="13" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
+            <ellipse cx="48" cy="22" rx="9" ry="12" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
+            <ellipse cx="40" cy="38" rx="18" ry="13" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M35 26 L35 50 M45 26 L45 50" stroke="#2A1E1B" stroke-width="4"/>
+            <circle cx="28" cy="35" r="2.5" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: PRICELIST -->
+  <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span id="priceBadge" class="inline-block bg-[#F9C6D3] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
+        💌 OFFICIAL STUDIO PRICELIST
+      </span>
+      <h2 id="priceHeading" class="text-3xl sm:text-5xl font-extrabold text-[#2A1E1B] mb-3"></h2>
+      <p id="priceSubheading" class="text-sm sm:text-base text-[#5C4742] mb-6"></p>
+
+      <!-- UNIFIED MARKET SELECTOR -->
+      <div class="inline-flex p-1.5 rounded-full bg-white border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B]">
+        <button
+          type="button"
+          onclick="selectMarket('ID')"
+          id="priceBtnID"
+          class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition"
+        >
+          🇮🇩 Indonesia (IDR)
+        </button>
+        <button
+          type="button"
+          onclick="selectMarket('EN')"
+          id="priceBtnEN"
+          class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition"
+        >
+          🌏 International & ASEAN (USD)
+        </button>
+      </div>
+
+      <div class="mt-3">
+        <p id="pricingRegionNote" class="text-xs font-bold text-[#2A1E1B] bg-[#FFF9DB] inline-block px-4 py-1.5 rounded-full border border-[#2A1E1B]"></p>
+      </div>
+    </div>
+
+    <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+  </section>
+
+  <!-- ACCESSIBLE CASE STUDY MODAL -->
+  <div
+    id="caseStudyModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    class="fixed inset-0 z-50 hidden bg-black/65 backdrop-blur-sm flex items-center justify-center p-4"
+    onclick="handleBackdropClick(event)"
+  >
+    <div class="calla-frame bg-[#FFFDF8] max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-9 relative" onclick="event.stopPropagation()">
+      <div class="sticky top-0 z-10 flex justify-end pb-2">
+        <button
+          type="button"
+          id="modalCloseBtn"
+          onclick="closeCaseModal()"
+          class="px-4 py-2 rounded-full bg-[#2A1E1B] text-white text-xs font-bold border-2 border-[#2A1E1B] hover:bg-[#E85D88] transition"
+        >
+          ✕ Tutup Studi Kasus (Esc)
+        </button>
+      </div>
+      <div id="modalBodyContent" class="space-y-6"></div>
+    </div>
+  </div>
+
+  <!-- FULL-SIZE UNCROPPED IMAGE LIGHTBOX MODAL -->
+  <div
+    id="imageLightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Full-Size Artwork Viewer"
+    class="fixed inset-0 z-[60] hidden bg-black/85 backdrop-blur-md flex flex-col items-center justify-center p-4"
+    onclick="handleLightboxBackdrop(event)"
+  >
+    <div class="max-w-5xl w-full flex flex-wrap items-center justify-between gap-2 mb-3 px-2" onclick="event.stopPropagation()">
+      <div>
+        <p id="lightboxCaption" class="text-white text-xs sm:text-sm font-bold truncate pr-4"></p>
+        <p id="lightboxCounter" class="text-[#FFE066] text-[11px] font-semibold"></p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          type="button"
+          id="lightboxPrevBtn"
+          onclick="stepLightbox(-1)"
+          class="px-3 py-2 rounded-full bg-white text-[#2A1E1B] text-xs font-extrabold border-2 border-[#2A1E1B] hover:bg-[#FFE066] transition"
+          aria-label="Previous image"
+        >
+          ← Prev
+        </button>
+        <button
+          type="button"
+          id="lightboxNextBtn"
+          onclick="stepLightbox(1)"
+          class="px-3 py-2 rounded-full bg-white text-[#2A1E1B] text-xs font-extrabold border-2 border-[#2A1E1B] hover:bg-[#FFE066] transition"
+          aria-label="Next image"
+        >
+          Next →
+        </button>
+        <button
+          type="button"
+          id="lightboxCloseBtn"
+          onclick="closeImageLightbox()"
+          class="px-4 py-2 rounded-full bg-[#FFE066] text-[#2A1E1B] text-xs font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] hover:bg-[#FF85A2] hover:text-white transition"
+        >
+          ✕ Tutup (Esc)
+        </button>
+      </div>
+    </div>
+    <div id="lightboxStage" class="flex items-center justify-center relative" onclick="event.stopPropagation()">
+      <img
+        id="lightboxImgEl"
+        src=""
+        data-base-src=""
+        data-attempt="0"
+        alt=""
+        class="lightbox-img"
+        onerror="handleSmartImgError(this)"
+      />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="calla-stripes border-t-2 border-[#2A1E1B] py-12 px-4 sm:px-6 mt-12">
+    <div class="max-w-6xl mx-auto calla-frame bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div>
+        <h3 class="text-2xl font-extrabold font-display text-[#2A1E1B]">🌷 calla creative studio</h3>
+        <p id="footerTagline" class="text-sm text-[#5C4742] mt-1">
+          Storybook-Inspired Brand Identity, Character Mascot & Packaging Studio · Malang, Indonesia.
+        </p>
+      </div>
+      <div class="text-sm space-y-1 text-[#2A1E1B]">
+        <p>
+          <strong id="footerWaLabel">Official WhatsApp:</strong>
+          <a href="https://wa.me/6289654637044" target="_blank" rel="noopener" class="underline text-[#E85D88] font-bold">+62 896 5463 7044</a>
+        </p>
+        <p><strong>Email:</strong> callastudio.co@gmail.com · <strong>Instagram:</strong> @callastudio_id</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOAD MAINTAINABLE CONTENT DATA FIRST -->
+  <script src="content/site-content.js"></script>
+
+  <!-- MAIN APPLICATION CONTROLLER -->
+  <script>
+    const SITE = window.CALLA_SITE_CONTENT;
+    let isPlayMode = false;
+    let currentLang = 'ID';
+    let currentMarket = 'ID';
+    let currentFilter = 'all';
+    let showAllWorks = false;
+    let currentProcessStep = 1;
+    let activeModalProjectId = null;
+    let lastFocusedElement = null;
+    let lastLightboxTrigger = null;
+    let lightboxItems = [];
+    let lightboxIndex = 0;
+    let touchStartX = 0;
+    let spawnedCount = 0;
+    const MAX_SPAWNED = 10;
+
+    function isProjectPublished(p) {
+      if (typeof p.publish === 'boolean') return p.publish;
+      if (typeof p.visible === 'boolean') return p.visible;
+      return true;
+    }
+
+    // =========================================================================
+    // SMART IMAGE FALLBACK (Checks both assets/ folder AND root folder!)
+    // =========================================================================
+ function handleSmartImgError(imgEl) {
+      const baseSrc = imgEl.getAttribute('data-base-src') || '';
+      const attempt = parseInt(imgEl.getAttribute('data-attempt') || '0', 10);
+      const stem = baseSrc.replace(/\.(webp|jpg|jpeg|png|gif)$/i, '');
+      const bareStem = stem.replace(/^assets\//i, '');
+      const candidates = [
+        baseSrc,
+        stem + '.jpeg',
+        stem + '.jpg',
+        stem + '.webp',
+        stem + '.png',
+        stem + '.gif',
+        bareStem + '.jpeg',
+        bareStem + '.jpg',
+        bareStem + '.webp',
+        bareStem + '.png'
+      ];
+      if (attempt < candidates.length) {
+        imgEl.setAttribute('data-attempt', String(attempt + 1));
+        imgEl.src = candidates[attempt];
+      } else {
+        imgEl.style.display = 'none';
+        const zoomBtn = imgEl.closest('.artwork-zoom-trigger');
+        if (zoomBtn) zoomBtn.onclick = null;
+        const fallback = imgEl.nextElementSibling;
+        if (fallback) fallback.classList.remove('hidden');
+      }
+    }
+
+    // =========================================================================
+    // FULL-SIZE UNCROPPED LIGHTBOX VIEWER (WITH NEXT/PREV & SWIPE)
+    // =========================================================================
+    function openProjectLightbox(projectId, startIndex, triggerEl) {
+      const p = SITE.portfolioProjects.find(item => item.id === projectId);
+      if (!p) return;
+      const copy = p[currentLang];
+      const rawGallery = Array.isArray(p.galleryImages) && p.galleryImages.length > 0
+        ? p.galleryImages
+        : [
+            { src: p.coverFullImg || p.coverImg, labelID: 'Artwork Utama (Cover)', labelEN: 'Cover Artwork' },
+            { src: p.detailFullImg || p.detailImg, labelID: 'Detail & Aplikasi Brand', labelEN: 'Detail & Brand Application' }
+          ];
+
+      lightboxItems = rawGallery.map((item, idx) => ({
+        src: item.src,
+        caption: `${p.name} — ${currentLang === 'ID' ? (item.labelID || `Karya ${idx + 1}`) : (item.labelEN || `Artwork ${idx + 1}`)} (${copy.categoryLabel})`
+      }));
+      lightboxIndex = Math.max(0, Math.min(startIndex || 0, lightboxItems.length - 1));
+      lastLightboxTrigger = triggerEl || document.activeElement;
+
+      updateLightboxSlide();
+      const lb = document.getElementById('imageLightbox');
+      lb.classList.remove('hidden');
+      document.getElementById('lightboxCloseBtn').focus();
+    }
+
+    function updateLightboxSlide() {
+      if (!lightboxItems.length) return;
+      const item = lightboxItems[lightboxIndex];
+      const lbImg = document.getElementById('lightboxImgEl');
+      const lbCap = document.getElementById('lightboxCaption');
+      const lbCount = document.getElementById('lightboxCounter');
+      const prevBtn = document.getElementById('lightboxPrevBtn');
+      const nextBtn = document.getElementById('lightboxNextBtn');
+
+      lbImg.style.display = '';
+      lbImg.setAttribute('data-base-src', item.src);
+      lbImg.setAttribute('data-attempt', '0');
+      lbImg.src = item.src;
+      lbImg.alt = item.caption;
+      lbCap.textContent = item.caption;
+      lbCount.textContent = lightboxItems.length > 1
+        ? `${lightboxIndex + 1} / ${lightboxItems.length} · ${currentLang === 'ID' ? 'Gunakan tombol panah ← → untuk geser' : 'Use ← → arrow keys to navigate'}`
+        : '';
+
+      const showNav = lightboxItems.length > 1;
+      prevBtn.style.display = showNav ? 'inline-block' : 'none';
+      nextBtn.style.display = showNav ? 'inline-block' : 'none';
+    }
+
+    function stepLightbox(delta) {
+      if (lightboxItems.length <= 1) return;
+      lightboxIndex = (lightboxIndex + delta + lightboxItems.length) % lightboxItems.length;
+      updateLightboxSlide();
+    }
+
+    function closeImageLightbox() {
+      const lb = document.getElementById('imageLightbox');
+      lb.classList.add('hidden');
+      document.getElementById('lightboxImgEl').src = '';
+      if (lastLightboxTrigger && typeof lastLightboxTrigger.focus === 'function') {
+        lastLightboxTrigger.focus();
+      }
+    }
+
+    function handleLightboxBackdrop(e) {
+      if (e.target.id === 'imageLightbox') {
+        closeImageLightbox();
+      }
+    }
+
+    const lbStage = document.getElementById('lightboxStage');
+    lbStage.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+    lbStage.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        const diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) > 45) {
+          stepLightbox(diff < 0 ? 1 : -1);
+        }
+      }
+    }, { passive: true });
+
+    // =========================================================================
+    // EVERYDAY / PLAY MODE SWITCH
+    // =========================================================================
+    function toggleMoodSwitch() {
+      isPlayMode = !isPlayMode;
+      document.body.classList.toggle('play-mode', isPlayMode);
+      updateMoodSwitchUI();
+    }
+
+    function updateMoodSwitchUI() {
+      const btn = document.getElementById('moodSwitchBtn');
+      const label = document.getElementById('moodSwitchLabel');
+      const icon = document.getElementById('lampIcon');
+      const dict = SITE.i18n[currentLang];
+
+      btn.setAttribute('aria-checked', String(isPlayMode));
+      if (isPlayMode) {
+        icon.textContent = '✨';
+        label.textContent = dict.moodPlay;
+        btn.className = 'flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border-2 border-[#2A1E1B] bg-[#FF477E] text-white text-xs font-bold shadow-[3px_3px_0px_#2A1E1B] transition';
+      } else {
+        icon.textContent = '💡';
+        label.textContent = dict.moodEveryday;
+        btn.className = 'flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B] text-xs font-bold shadow-[2px_2px_0px_#2A1E1B] transition';
+      }
+    }
+
+    // =========================================================================
+    // UNIFIED MARKET & LANGUAGE SELECTOR (ID -> ID + IDR | EN -> EN + USD)
+    // =========================================================================
+    function selectMarket(marketCode) {
+      currentMarket = marketCode === 'EN' ? 'EN' : 'ID';
+      currentLang = currentMarket;
+      document.documentElement.lang = currentLang === 'ID' ? 'id' : 'en';
+      syncMarketButtonsUI();
+      applyAllTranslations();
+    }
+
+    function syncMarketButtonsUI() {
+      const isID = currentMarket === 'ID';
+      const hID = document.getElementById('headerMarketID');
+      const hEN = document.getElementById('headerMarketEN');
+      const pID = document.getElementById('priceBtnID');
+      const pEN = document.getElementById('priceBtnEN');
+
+      hID.className = isID
+        ? 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#2A1E1B] text-white transition'
+        : 'px-2.5 py-1 rounded-full text-[11px] font-bold text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
+      hEN.className = !isID
+        ? 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#2A1E1B] text-white transition'
+        : 'px-2.5 py-1 rounded-full text-[11px] font-bold text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
+
+      pID.className = isID
+        ? 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition'
+        : 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition';
+      pEN.className = !isID
+        ? 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition'
+        : 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition';
+    }
+
+    function applyAllTranslations() {
+      const d = SITE.i18n[currentLang];
+
+      document.getElementById('topBarBadge').textContent = d.topBarBadge;
+      document.getElementById('topBarText').innerHTML = d.topBarText;
+      document.getElementById('topBarLink').textContent = d.topBarLink;
+
+      document.getElementById('navGallery').textContent = d.navGallery;
+      document.getElementById('navTeam').textContent = d.navTeam;
+      document.getElementById('navWorkflow').textContent = d.navWorkflow;
+      document.getElementById('navPricing').textContent = d.navPricing;
+
+      updateMoodSwitchUI();
+
+      document.getElementById('heroBadge').textContent = d.heroBadge;
+      document.getElementById('heroHeadline').textContent = d.heroHeadline;
+      document.getElementById('heroSubcopy').textContent = d.heroSubcopy;
+      document.getElementById('heroCtaPrimary').textContent = d.heroCtaPrimary;
+      document.getElementById('heroCtaSecondary').textContent = d.heroCtaSecondary;
+      document.getElementById('heroMicrocopy').textContent = d.heroMicrocopy;
+      document.getElementById('spawnBtnText').textContent = d.spawnBtnText;
+
+      document.getElementById('galBadge').textContent = d.galBadge;
+      document.getElementById('galHeading').textContent = d.galHeading;
+      document.getElementById('galSubheading').textContent = d.galSubheading;
+      document.getElementById('filter-all').textContent = d.filterAll;
+      document.getElementById('filter-identity').textContent = d.filterIdentity;
+      document.getElementById('filter-mascot').textContent = d.filterMascot;
+      document.getElementById('filter-packaging').textContent = d.filterPackaging;
+
+      document.getElementById('teamBadge').textContent = d.teamBadge;
+      document.getElementById('teamHeading').textContent = d.teamHeading;
+      document.getElementById('teamP1').innerHTML = d.teamP1;
+      document.getElementById('teamP2').innerHTML = d.teamP2;
+      document.getElementById('teamP3').textContent = d.teamP3;
+      document.getElementById('procHeaderLabel').textContent = d.procHeaderLabel;
+
+      document.getElementById('wfBadge').textContent = d.wfBadge;
+      document.getElementById('wfHeading').textContent = d.wfHeading;
+      document.getElementById('wfSubheading').textContent = d.wfSubheading;
+
+      document.getElementById('priceBadge').textContent = d.priceBadge;
+      document.getElementById('priceHeading').textContent = d.priceHeading;
+      document.getElementById('priceSubheading').textContent = d.priceSubheading;
+      document.getElementById('priceBtnID').textContent = d.priceBtnID;
+      document.getElementById('priceBtnEN').textContent = d.priceBtnEN;
+
+      document.getElementById('modalCloseBtn').textContent = d.modalClose;
+      document.getElementById('lightboxCloseBtn').textContent = d.lightboxClose;
+      document.getElementById('footerTagline').textContent = d.footerTagline;
+      document.getElementById('footerWaLabel').textContent = d.footerWaLabel;
+
+      renderWorkflowPhases();
+      setProcessView(currentProcessStep);
+      renderGalleryGrid();
+      renderPricingCards();
+
+      if (activeModalProjectId) {
+        renderModalContent(activeModalProjectId);
+      }
+    }
+
+    // =========================================================================
+    // DRAGGABLE + BOOPABLE CRAYON FLOWERS & CRITTERS + GLOBAL PROXIMITY
+    // =========================================================================
+    function triggerCritterBoop(el) {
+      const prox = el.querySelector('.sticker-prox');
+      if (prox) {
+        prox.classList.remove('is-booped');
+        void prox.offsetWidth;
+        prox.classList.add('is-booped');
+        setTimeout(() => prox.classList.remove('is-booped'), 600);
+      }
+      const boopText = el.getAttribute('data-boop') || '✨ Boop!';
+      const badge = document.createElement('span');
+      badge.className = 'boop-pop-badge';
+      badge.textContent = boopText;
+      el.appendChild(badge);
+      setTimeout(() => badge.remove(), 900);
+    }
+
+    function initBoundedSticker(el) {
+      let dragging = false;
+      let moved = false;
+      let startX = 0;
+      let startY = 0;
+      let grabOffsetX = 0;
+      let grabOffsetY = 0;
+
+      function stopDrag(e) {
+        if (!dragging) return;
+        dragging = false;
+        el.classList.remove('is-dragging');
+        if (e && e.pointerId !== undefined) {
+          try { el.releasePointerCapture(e.pointerId); } catch (_) {}
+        }
+        if (!moved) {
+          triggerCritterBoop(el);
+        }
+      }
+
+      el.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        dragging = true;
+        moved = false;
+        startX = e.clientX;
+        startY = e.clientY;
+        el.classList.add('is-dragging');
+        const prox = el.querySelector('.sticker-prox');
+        if (prox) prox.style.transform = 'scale(1.1)';
+        try { el.setPointerCapture(e.pointerId); } catch (_) {}
+        const rect = el.getBoundingClientRect();
+        grabOffsetX = e.clientX - rect.left;
+        grabOffsetY = e.clientY - rect.top;
+      });
+
+      el.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        e.preventDefault();
+        if (Math.hypot(e.clientX - startX, e.clientY - startY) > 5) {
+          moved = true;
+        }
+        const boundsId = el.getAttribute('data-bounds') || 'heroCanvas';
+        const container = document.getElementById(boundsId) || document.getElementById('heroCanvas');
+        const cRect = container.getBoundingClientRect();
+        const elW = el.offsetWidth;
+        const elH = el.offsetHeight;
+
+        let newLeft = e.clientX - cRect.left - grabOffsetX;
+        let newTop = e.clientY - cRect.top - grabOffsetY;
+
+        const pad = 4;
+        newLeft = Math.max(pad, Math.min(cRect.width - elW - pad, newLeft));
+        newTop = Math.max(pad, Math.min(cRect.height - elH - pad, newTop));
+
+        el.style.left = `${(newLeft / cRect.width) * 100}%`;
+        el.style.top = `${(newTop / cRect.height) * 100}%`;
+      });
+
+      el.addEventListener('pointerup', stopDrag);
+      el.addEventListener('pointercancel', stopDrag);
+      el.addEventListener('lostpointercapture', stopDrag);
+    }
+
+    document.querySelectorAll('[data-sticker="true"]').forEach(initBoundedSticker);
+
+    window.addEventListener('pointermove', (e) => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('[data-sticker="true"]').forEach((st) => {
+        if (st.classList.contains('is-dragging')) return;
+        const prox = st.querySelector('.sticker-prox');
+        if (!prox || prox.classList.contains('is-booped')) return;
+        const r = st.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+        const maxDist = isPlayMode ? 150 : 105;
+        if (dist < maxDist && dist > 1) {
+          const angle = Math.atan2(cy - e.clientY, cx - e.clientX);
+          const push = ((maxDist - dist) / maxDist) * (isPlayMode ? 11 : 5);
+          prox.style.transform = `translate(${Math.cos(angle) * push}px, ${Math.sin(angle) * push}px) scale(${isPlayMode ? 1.1 : 1.04})`;
+        } else {
+          prox.style.transform = '';
+        }
+      });
+    }, { passive: true });
+
+    const palettePairs = [
+      ['#FF6B9D', '#FFE066'],
+      ['#4CC9F0', '#FFB5A7'],
+      ['#80ED99', '#FF9F1C'],
+      ['#C77DFF', '#FFF3B0'],
+      ['#FF8FA3', '#A8D8FF']
+    ];
+
+    function spawnBoundedFlower() {
+      if (spawnedCount >= MAX_SPAWNED) return;
+      spawnedCount++;
+      document.getElementById('flowerCount').textContent = String(spawnedCount);
+      const layer = document.getElementById('stickerLayer');
+      const [petal, center] = palettePairs[spawnedCount % palettePairs.length];
+
+      const div = document.createElement('div');
+      div.className = 'crayon-sticker spawned-flower pointer-events-auto w-20 h-20 sm:w-24 sm:h-24';
+      div.setAttribute('data-sticker', 'true');
+      div.setAttribute('data-bounds', 'heroCanvas');
+      div.setAttribute('data-boop', '🌸 Mekar!');
+      const isLeft = spawnedCount % 2 === 0;
+      const leftPct = isLeft ? Math.floor(Math.random() * 12 + 2) : Math.floor(Math.random() * 12 + 80);
+      const topPct = Math.floor(Math.random() * 64 + 12);
+      div.style.left = `${leftPct}%`;
+      div.style.top = `${topPct}%`;
+
+      div.innerHTML = `
+        <div class="sticker-prox">
+          <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" aria-hidden="true">
+            <path d="M68 38 C48 5, 92 4, 76 38 C108 10, 132 45, 88 58 C132 64, 118 104, 82 78 C108 118, 64 132, 65 86 C42 128, 12 104, 50 74 C8 82, 8 42, 48 54 C18 22, 46 8, 68 38 Z" fill="${petal}" stroke="#2A1E1B" stroke-width="4.5" stroke-linejoin="round"/>
+            <circle cx="68" cy="64" r="18" fill="${center}" stroke="#2A1E1B" stroke-width="4"/>
+            <path d="M58 60 Q70 52 62 68 Q75 64 66 74" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      `;
+      initBoundedSticker(div);
+      layer.appendChild(div);
+    }
+
+    function resetFlowers() {
+      document.querySelectorAll('.spawned-flower').forEach(el => el.remove());
+      spawnedCount = 0;
+      document.getElementById('flowerCount').textContent = '0';
+    }
+
+    // =========================================================================
+    // GALLERY FILTERING, FEATURED-FIRST MODE & FULL-SIZE CLICKABLE CARDS
+    // =========================================================================
+    function filterGallery(cat) {
+      currentFilter = cat;
+      ['all', 'identity', 'mascot', 'packaging'].forEach(c => {
+        const btn = document.getElementById('filter-' + c);
+        if (c === cat) {
+          btn.className = 'px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition';
+        } else {
+          btn.className = 'px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
+        }
+      });
+      renderGalleryGrid();
+    }
+
+    function toggleShowAllWorks() {
+      showAllWorks = !showAllWorks;
+      renderGalleryGrid();
+    }
+
+    function renderGalleryGrid() {
+      const grid = document.getElementById('galleryGrid');
+      const showAllWrap = document.getElementById('galleryShowAllWrap');
+      const toggleBtn = document.getElementById('toggleShowAllBtn');
+      const d = SITE.i18n[currentLang];
+
+      const publishedProjects = SITE.portfolioProjects.filter(isProjectPublished);
+      const categoryMatched = currentFilter === 'all'
+        ? publishedProjects
+        : publishedProjects.filter(p => p.category === currentFilter);
+
+      const displayedProjects = (currentFilter === 'all' && !showAllWorks)
+        ? categoryMatched.filter(p => p.featured !== false)
+        : categoryMatched;
+
+      if (currentFilter === 'all' && categoryMatched.length > displayedProjects.length) {
+        showAllWrap.classList.remove('hidden');
+        toggleBtn.textContent = `${d.showAllWorksBtn} (${categoryMatched.length})`;
+      } else if (currentFilter === 'all' && showAllWorks && categoryMatched.length > 4) {
+        showAllWrap.classList.remove('hidden');
+        toggleBtn.textContent = d.showFeaturedOnlyBtn;
+      } else {
+        showAllWrap.classList.add('hidden');
+      }
+
+      grid.innerHTML = displayedProjects.map(p => {
+        const copy = p[currentLang];
+        const cardImgId = `card-img-${p.id}`;
+        const altText = p.altText ? p.altText[currentLang] : `${p.name} — ${copy.categoryLabel}`;
+        const photoCount = Array.isArray(p.galleryImages) ? p.galleryImages.length : 2;
+        return `
+          <article class="calla-frame gallery-card ${p.frameBg} p-6 flex flex-col justify-between relative">
+            <div>
+              <div class="flex items-center justify-between gap-2 text-xs font-bold mb-3">
+                <span class="bg-white border border-[#2A1E1B] px-3 py-1 rounded-full">${p.statusBadge}</span>
+                <span class="text-[#5C4742]">${copy.categoryLabel}</span>
+              </div>
+
+              <!-- Clickable Thumbnail Opening Full-Size Uncropped Lightbox -->
+              <button
+                type="button"
+                onclick="openProjectLightbox('${p.id}', 0, this)"
+                class="artwork-zoom-trigger artwork-thumb-stage relative w-full h-56 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden mb-4 flex items-center justify-center p-2 text-left"
+                title="${d.zoomImageHint}"
+              >
+                <img
+                  id="${cardImgId}"
+                  src="${p.coverImg}"
+                  data-base-src="${p.coverImg}"
+                  data-attempt="0"
+                  alt="${altText}"
+                  class="artwork-uncropped"
+                  onerror="handleSmartImgError(this)"
+                />
+                <div class="hidden absolute inset-0 p-4 bg-gradient-to-br from-white/95 to-[#FFF9DB]/90 flex flex-col items-center justify-center text-center">
+                  <span class="text-2xl mb-1">🖼️</span>
+                  <p class="text-xs font-extrabold text-[#2A1E1B]">${p.name}</p>
+                  <code class="text-[11px] font-bold text-[#E85D88] bg-white px-2.5 py-0.5 rounded border border-[#2A1E1B] mt-1">${p.coverImg}</code>
+                  <p class="text-[10px] text-[#5C4742] mt-1 max-w-xs">${p.pdfExportHint || ''}</p>
+                </div>
+                <span class="absolute bottom-2 right-2 bg-white/95 border border-[#2A1E1B] text-[10px] font-bold px-2.5 py-0.5 rounded-full text-[#2A1E1B] shadow-sm">
+                  🔍 Full-Size (${photoCount} Foto)
+                </span>
+              </button>
+
+              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mb-2">${p.name}</h3>
+              <p class="text-xs sm:text-sm text-[#4A3833] mb-4 leading-relaxed">${copy.summary}</p>
+            </div>
+
+            <div class="pt-3 border-t border-[#2A1E1B]/20">
+              <button
+                type="button"
+                id="open-btn-${p.id}"
+                onclick="openCaseModal('${p.id}', this)"
+                class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-bold text-xs border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition text-center"
+              >
+                ${d.cardOpenBtn}
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // CASE STUDY MODAL WITH MULTI-PHOTO GALLERY & PDF DOCUMENT SUPPORT
+    // =========================================================================
+    function openCaseModal(projectId, triggerEl) {
+      activeModalProjectId = projectId;
+      lastFocusedElement = triggerEl || document.activeElement;
+      renderModalContent(projectId);
+      const modal = document.getElementById('caseStudyModal');
+      modal.classList.remove('hidden');
+      document.getElementById('modalCloseBtn').focus();
+    }
+
+    function renderModalContent(projectId) {
+      const p = SITE.portfolioProjects.find(item => item.id === projectId);
+      if (!p) return;
+      const copy = p[currentLang];
+      const d = SITE.i18n[currentLang];
+      const waMsg = encodeURIComponent(
+        currentLang === 'ID'
+          ? `Halo Calla Studio! Aku baru membaca studi kasus ${p.name} di website dan ingin konsultasi untuk kebutuhan brandku.`
+          : `Hi Calla Studio! I just read the ${p.name} case study on your website and would love to consult for my brand.`
+      );
+
+      const galleryList = Array.isArray(p.galleryImages) && p.galleryImages.length > 0
+        ? p.galleryImages
+        : [
+            { src: p.coverImg, labelID: '01 · Karya Utama (Cover)', labelEN: '01 · Main Cover Artwork' },
+            { src: p.detailImg, labelID: '02 · Detail & Aplikasi Brand', labelEN: '02 · Detail & Brand Application' }
+          ];
+
+      const gridColsClass = galleryList.length >= 3
+        ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+        : 'grid-cols-1 sm:grid-cols-2';
+
+      const pdfList = Array.isArray(p.pdfFiles) ? p.pdfFiles : [];
+      const pdfSectionHtml = pdfList.length > 0 ? `
+        <div class="p-4 rounded-2xl bg-[#FFF9DB] border-2 border-[#2A1E1B] flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="text-xl">📄</span>
+            <div>
+              <p class="text-xs font-extrabold text-[#2A1E1B]">
+                ${currentLang === 'ID' ? 'Full Dokumen PDF' : 'Full Project PDF'}
+              </p>
+              <p class="text-[11px] text-[#5C4742]">
+                ${currentLang === 'ID' ? 'Buka dokumen PDF resolusi penuh di tab baru:' : 'Open full-resolution PDF document in a new tab:'}
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            ${pdfList.map(pdf => `
+              <a
+                href="${pdf.url}"
+                target="_blank"
+                rel="noopener"
+                class="px-3.5 py-2 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] text-xs font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition inline-flex items-center gap-1.5"
+              >
+                <span>📥</span>
+                <span>${currentLang === 'ID' ? pdf.labelID : pdf.labelEN}</span>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      ` : '';
+
+      document.getElementById('modalBodyContent').innerHTML = `
+        <div>
+          <span class="inline-block bg-[#FFE066] border border-[#2A1E1B] text-xs font-bold px-3 py-1 rounded-full">${p.statusBadge} · ${copy.categoryLabel}</span>
+          <h2 id="modalTitle" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B] mt-2">${p.name}</h2>
+          <p class="text-xs sm:text-sm text-[#4A3833] mt-1">${copy.summary}</p>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-[#5C4742]">
+              ${d.modalVisualPreviewTitle} (${galleryList.length} ${currentLang === 'ID' ? 'Visual' : 'Visuals'})
+            </h3>
+          </div>
+          <div class="grid ${gridColsClass} gap-4">
+            ${galleryList.map((imgItem, idx) => {
+              const imgDomId = `modal-gallery-${p.id}-${idx}`;
+              const capLabel = currentLang === 'ID' ? (imgItem.labelID || `Visual ${idx + 1}`) : (imgItem.labelEN || `Visual ${idx + 1}`);
+              return `
+                <button
+                  type="button"
+                  onclick="openProjectLightbox('${p.id}', ${idx}, this)"
+                  class="artwork-zoom-trigger artwork-thumb-stage relative h-60 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden flex flex-col items-center justify-center p-2 text-left group"
+                >
+                  <img
+                    id="${imgDomId}"
+                    src="${imgItem.src}"
+                    data-base-src="${imgItem.src}"
+                    data-attempt="0"
+                    alt="${p.name} — ${capLabel}"
+                    class="artwork-uncropped"
+                    onerror="handleSmartImgError(this)"
+                  />
+                  <div class="hidden absolute inset-0 p-4 bg-[#FFFDF8] flex flex-col items-center justify-center text-center">
+                    <span class="text-xs font-bold text-[#2A1E1B]">${capLabel}</span>
+                    <code class="text-[11px] font-bold text-[#E85D88] bg-white px-2 py-1 rounded border border-[#2A1E1B] mt-1">${imgItem.src}</code>
+                    <p class="text-[10px] text-[#5C4742] mt-1">${p.pdfExportHint || ''}</p>
+                  </div>
+                  <span class="absolute top-2 left-2 bg-white/95 border border-[#2A1E1B] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full text-[#2A1E1B]">
+                    ${capLabel}
+                  </span>
+                  <span class="absolute bottom-2 right-2 bg-[#FFE066] border border-[#2A1E1B] text-[10px] font-bold px-2.5 py-0.5 rounded-full text-[#2A1E1B]">
+                    ${d.zoomImageHint}
+                  </span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        ${pdfSectionHtml}
+
+        <div>
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#2A1E1B] mb-2.5">
+            ${currentLang === 'ID' ? '🧭 Alur Step-by-Step Pengerjaan Proyek Ini:' : '🧭 Step-by-Step Project Creation Journey:'}
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            ${copy.steps.map(([stepTitle, stepText]) => `
+              <div class="p-4 rounded-2xl ${p.frameBg} border-2 border-[#2A1E1B]">
+                <h4 class="text-xs font-extrabold uppercase tracking-wider text-[#2A1E1B] mb-1">${stepTitle}</h4>
+                <p class="text-xs sm:text-sm text-[#2A1E1B] leading-relaxed">${stepText}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border-2 border-[#2A1E1B] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h4 class="text-xs font-extrabold uppercase text-[#5C4742] mb-1">${d.modalDeliverablesTitle}</h4>
+            <ul class="text-xs sm:text-sm font-semibold text-[#2A1E1B] space-y-1">
+              ${copy.deliverables.map(item => `<li>✓ ${item}</li>`).join('')}
+            </ul>
+          </div>
+          <a
+            href="https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${waMsg}"
+            target="_blank"
+            rel="noopener"
+            class="px-5 py-3 rounded-full bg-[#E85D88] text-white text-xs font-bold border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] shrink-0"
+          >
+            ${d.modalInquireBtn}
+          </a>
+        </div>
+      `;
+    }
+
+    function closeCaseModal() {
+      const modal = document.getElementById('caseStudyModal');
+      modal.classList.add('hidden');
+      activeModalProjectId = null;
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'caseStudyModal') {
+        closeCaseModal();
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('imageLightbox');
+      const isLbOpen = !lb.classList.contains('hidden');
+      if (isLbOpen) {
+        if (e.key === 'Escape') {
+          closeImageLightbox();
+          return;
+        }
+        if (e.key === 'ArrowRight') {
+          stepLightbox(1);
+          return;
+        }
+        if (e.key === 'ArrowLeft') {
+          stepLightbox(-1);
+          return;
+        }
+      }
+      if (e.key === 'Escape' && activeModalProjectId !== null) {
+        closeCaseModal();
+      }
+    });
+
+    // =========================================================================
+    // INTERACTIVE PROCESS VIEW & 4-PHASE WORKFLOW
+    // =========================================================================
+    function setProcessView(stepNum) {
+      currentProcessStep = stepNum;
+      const stepData = SITE.i18n[currentLang].processSteps[stepNum];
+      document.getElementById('procStepTag').textContent = stepData.tag;
+      document.getElementById('procTitle').textContent = stepData.title;
+      document.getElementById('procDesc').textContent = stepData.desc;
+
+      [1, 2, 3].forEach(n => {
+        const btn = document.getElementById('pView' + n);
+        btn.className = n === stepNum
+          ? 'py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B]'
+          : 'py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF]';
+      });
+    }
+
+    function renderWorkflowPhases() {
+      const phases = SITE.i18n[currentLang].wfPhases;
+      const borderColors = ['border-t-[#FFE066]', 'border-t-[#A8D8FF]', 'border-t-[#F9C6D3]', 'border-t-[#B8E8B0]'];
+      document.getElementById('wfGrid').innerHTML = phases.map(([code, title, desc], idx) => `
+        <div class="calla-frame bg-white p-6 border-t-8 ${borderColors[idx]}">
+          <span class="text-xs font-bold text-[#5C4742]">${code}</span>
+          <h3 class="text-xl font-extrabold text-[#2A1E1B] mt-1 mb-2">${title}</h3>
+          <p class="text-sm text-[#4A3833]">${desc}</p>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // PRICING CARDS & BILINGUAL MARKET BANNER NOTE
+    // =========================================================================
+    function renderPricingCards() {
+      const cat = SITE.pricingCatalog[currentMarket];
+      const isIDLang = currentLang === 'ID';
+
+      const bannerText = currentMarket === 'ID'
+        ? (isIDLang
+            ? 'Menampilkan Rate Card Lokal Indonesia (IDR) · Pembayaran via Transfer BCA / QRIS'
+            : 'Showing Indonesian Local Rate Card (IDR) · Payment via BCA Bank Transfer / QRIS')
+        : (isIDLang
+            ? 'Menampilkan Rate Card Internasional & ASEAN (USD) · Pembayaran via Wise / DuitNow / PayPal'
+            : 'Showing International & ASEAN Rate Card (USD) · Payment via Wise / DuitNow / PayPal');
+
+      document.getElementById('pricingRegionNote').textContent = bannerText;
+
+      document.getElementById('pricingCardsGrid').innerHTML = cat.packages.map(pkg => {
+        const tag = isIDLang ? pkg.tagID : pkg.tagEN;
+        const desc = isIDLang ? pkg.descID : pkg.descEN;
+        const items = isIDLang ? pkg.itemsID : pkg.itemsEN;
+        const note = isIDLang ? pkg.noteID : pkg.noteEN;
+        const btnLabel = isIDLang ? `Tanyakan ${pkg.name} 💬` : `Inquire ${pkg.name} 💬`;
+        const waText = encodeURIComponent(
+          isIDLang
+            ? `Halo Calla Studio! Aku tertarik dengan paket ${pkg.name} (${pkg.price}). Boleh info jadwal batch terdekat?`
+            : `Hi Calla Studio! I'm interested in the ${pkg.name} (${pkg.price}). Could you share your upcoming batch schedule?`
+        );
+
+        return `
+          <div class="calla-frame ${pkg.bg} p-6 flex flex-col justify-between">
+            <div>
+              <span class="inline-block bg-white border border-[#2A1E1B] text-[11px] font-bold px-3 py-1 rounded-full">${tag}</span>
+              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mt-3">${pkg.name}</h3>
+              <p class="text-xl font-extrabold text-[#D6336C] mt-1 mb-3">${pkg.price}</p>
+              <p class="text-xs sm:text-sm text-[#4A3833] mb-4 leading-relaxed">${desc}</p>
+              <ul class="space-y-2 text-xs font-semibold text-[#2A1E1B] border-t border-[#2A1E1B]/20 pt-4">
+                ${items.map(pt => `<li class="flex items-start gap-2"><span>🌸</span><span>${pt}</span></li>`).join('')}
+              </ul>
+              ${note ? `<p class="text-[11px] text-[#5C4742] mt-3 pt-2 border-t border-dashed border-[#2A1E1B]/20 italic">${note}</p>` : ''}
+            </div>
+            <a
+              href="https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${waText}"
+              target="_blank"
+              rel="noopener"
+              class="mt-6 w-full py-3 px-4 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-bold text-xs border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] transition text-center block"
+            >
+              ${btnLabel}
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // INITIALIZE ON PAGE LOAD
+    syncMarketButtonsUI();
+    applyAllTranslations();
+  </script>
+</body>
+</html>
