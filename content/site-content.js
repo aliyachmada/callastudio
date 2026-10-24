@@ -212,7 +212,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & IKON GIGITAN KUE (GATE 1)', 'Di Gate 1, kami merancang karakter tipografi retro-serif yang tebal (chunky) untuk kata "croomble." dan memodifikasi dua huruf "oo" di tengah menjadi ilustrasi kue choco-chip dengan bekas gigitan sebagai ciri khas utama (visual signature).'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Memadukan tipografi pendamping Poppins dengan 4 warna dikalibrasi khusus: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), dan Oven Mustard (#F3C868) untuk menciptakan suasana hangat sekaligus ceria.'],
           ['05 — THE UNBOXING JOY & APLIKASI KEMASAN', 'Karena gigitan pertama selalu dimulai dari mata, kami menerjemahkan identitas ini ke label toples kaca (cookie jar), kotak hampers, dan pouch dengan pesan microcopy "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", dan "PREMIUM COOKIES INSIDE".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Signature Branding Package (Rp550.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Signature Branding Package (Rp850.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
         ]
       },
       EN: {
@@ -315,7 +315,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA & SILUET KARAKTER (GATE 1)', 'Pada tahap Gate 1, kami mengunci proporsi tubuh yang bulat, garis kontur hitam tegas bergaya spidol/krayon anak, serta tipografi tulisan tangan "DUMDUM FOODIE" yang kasual.'],
           ['04 — VARIASI POSE BERCERITA (GATE 2)', 'Selain pose utama berlari memakai syal pink di latar kuning cerah, kami mengembangkan 4 pose cerita: berteduh di bawah daun hijau, bergaya dengan kacamata pink, memakai topi baret merah menatap kupu-kupu, dan bersantai dengan apel merah di kepala.'],
           ['05 — APLIKASI NYATA PADA BRAND', 'Setiap kotak pose dirancang dengan latar warna pastel berbeda (biru langit, pink permen, kuning mentega, dan ungu lilac) sehingga siap dijadikan seri stiker kemasan, kartu ucapan, maupun konten IG/TikTok.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Mulai Rp550.000 untuk 1 pose utama + variasi ekspresi, atau upgrade pose tambahan sesuai kebutuhan).']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Rp800.000).']
         ]
       },
       EN: {
@@ -375,7 +375,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA SILUET & ANATOMI GEMAS (GATE 1 LOCK)', 'Pada Gate 1, Cindi mengunci siluet badan yang montok dan bagian belakang bulat menggemaskan ala karakter Shinchan. Karakter dilengkapi topi oranye serta celemek barista bertuliskan tipografi orbre.'],
           ['04 — WARNA ORANYE & 4 POSE DINAMIS (GATE 2 LOCK)', 'Di Gate 2, warna oranye hangat diaplikasikan untuk membangkitkan nafsu makan dan energi ceria. Kami melahirkan 4 pose: (1) Berlari sigap mengantar es kopi, (2) Menari menyapa pelanggan, (3) Memeluk cangkir kopi hangat, dan (4) Mengintip jahil dari kardus delivery.'],
           ['05 — AKTIVASI NYATA PADA OUTLET (BRAND IN ACTION)', 'Selain untuk stiker chat dan konten Instagram, maskot divisualisasikan dalam bentuk instalasi standee 3D yang mengelilingi cangkir kopi raksasa di fasad depan gerai mal, menciptakan titik foto yang menarik perhatian pengunjung.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh penerapan paket Storybook Brand Mascot (mulai Rp550.000) atau Cafe & Bakery Branding (Rp800.000). Klien menerima master vektor resolusi tinggi siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh penerapan paket Storybook Brand Mascot (Rp800.000) atau Cafe & Bakery Branding (Rp1.000.000). Klien menerima master vektor resolusi tinggi siap cetak.']
         ]
       },
       EN: {
@@ -393,7 +393,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SILHOUETTE & ANATOMY SKETCH (GATE 1 LOCK)', 'In Gate 1, Cindi locked the plump proportions and a slightly chubby rear profile for extra playfulness, outfitted in an energetic orange barista cap and apron.'],
           ['04 — ORANGE PALETTE & 4 DYNAMIC POSES (GATE 2 LOCK)', 'In Gate 2, we applied an appetite-stimulating orange palette across 4 narrative poses: rushing with an iced latte, dancing to greet guests, embracing a warm coffee cup, and popping out of a takeaway parcel box.'],
           ['05 — BRAND IN ACTION & STORE STAGING', 'Engineered for dual impact: ready as digital social stickers and staged as a life-sized 3D standee activation surrounding an oversized coffee cup at a premier mall outlet storefront.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Showcase of our Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding package, delivered with high-res vector files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Showcase of our Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding package (USD 120), delivered with high-res vector files.']
         ]
       }
     },
@@ -426,7 +426,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA KARAKTER & TATA LETAK MENU (GATE 1)', 'Di Gate 1, kami menyusun pose menyapa ("SAY HI! TO OLEN": duduk di atas bolen raksasa, bertopang dagu manis, dan membawa piring saji bolen) sekaligus membagi struktur grid menu 8 produk agar informasi harga dan isi (topping/filling) langsung jelas.'],
           ['04 — PEWARNAAN CAT AIR & KOMPOSISI MENU (GATE 2)', 'Ilustrasi Olen diwarnai dengan gradasi cat air hangat dan tekstur kertas berpori. Pada lembaran "OUR MENU", karakter Olen ditempatkan di pojok kiri atas untuk menyambut pembeli sebelum mata mereka menjelajahi foto potongan bolen yang lumer.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Katalog menu menampilkan 8 varian secara terstruktur (Bolen Coklat Lumer 43K, Mochi Salted Egg 60K, Keju Lumer 55K, Mix Coklat+Keju 45K, Mix Duo 55K, Smoked Beef 65K, Bolen Lilit 40K, hingga Chicken Salted Egg 80K) lengkap dengan label kapsul harga yang kontras.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Cafe & Bakery Branding (Rp800.000) atau Storybook Brand Mascot (Rp800.000). Klien mendapatkan maskot ikonis sekaligus perangkat menu siap pakai untuk jualan online maupun cetak kasir.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Cafe & Bakery Branding (Rp1.000.000) atau Storybook Brand Mascot (Rp800.000). Klien mendapatkan maskot ikonis sekaligus perangkat menu siap pakai untuk jualan online maupun cetak kasir.']
         ]
       },
       EN: {
@@ -476,7 +476,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & MONOGRAM (GATE 1)', 'Di Gate 1, kami merancang 3 hierarki identitas: Main Logo untuk tajuk utama, Secondary Logo yang lebih ringkas, serta inisial Brandmark "BV" yang dihiasi kelopak bunga kecil untuk stempel atau label sempit.'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Seluruh aturan visual dirangkum dalam 1-Page Brand Identity Board yang rapi, memadukan tipografi Snell Roundhand (script anggun), EB Garamond (serif klasik), dan Cinzel untuk sub-judul.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Identitas diterapkan secara konsisten pada 3 titik sentuh pelanggan: Thank You Card berlatar marun dengan aksen pita, Hang Tag pakaian vertikal, serta kemasan pengiriman Polymailer bertuliskan "Made to Celebrate You".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Signature Branding Package (Rp550.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Signature Branding Package (Rp850.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
         ]
       },
       EN: {
@@ -522,7 +522,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — EKSPLORASI LOGO & IKON (GATE 1)', 'Di Gate 1, kami menguji keterbacaan Primary Logo serta menyiapkan Alternative Logo (dimana huruf "o" digantikan oleh ikon bunga Solène) agar tetap cantik saat dipasang di bidang sempit maupun lebar.'],
           ['04 — SISTEM PALET & TIPOGRAFI (GATE 2)', 'Disusun dalam 1-Page Brand Identity Board yang memadukan karakter font TAN Pearl dan Brown Sugar untuk judul yang anggun dengan font script Handsome untuk aksen kutipan motivasi di dinding studio.'],
           ['05 — APLIKASI NYATA DI STUDIO', 'Desain divisualisasikan langsung pada titik-titik favorit member: stiker kaca & cermin selfie studio, permukaan matras pilates warna sage, serta botol minum (tumbler) merchandise resmi studio.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Signature Branding Package (Rp550.000). Pemilik studio langsung memiliki pedoman visual lengkap yang siap dikirim ke vendor interior, percetakan stiker kaca, dan pembuatan merchandise.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Signature Branding Package (Rp850.000). Pemilik studio langsung memiliki pedoman visual lengkap yang siap dikirim ke vendor interior, percetakan stiker kaca, dan pembuatan merchandise.']
         ]
       },
       EN: {
@@ -569,7 +569,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA & GARIS KONTUR (GATE 1)', 'Di Gate 1, Cindi menggambar pose maskot (menyapa ramah, memeluk donat glaze, dan duduk santai) dengan ketebalan garis yang tetap jelas walau dicetak seukuran koin pada kartu stempel.'],
           ['04 — PEWARNAAN & SISTEM KARTU (GATE 2)', 'Warna krem adonan dan cokelat glaze diaplikasikan pada maskot serta diturunkan ke tata letak kartu loyalitas 2 sisi ("Buy 9 Glazing Donut, The 10th Is On Us!").'],
           ['05 — APLIKASI NYATA PADA TOKO', 'Maskot dipasang pada papan sambutan luar ruang (A-Frame Sidewalk Board "Welcome!"), potongan stiker die-cut, dan kartu stempel 10 lingkaran.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Rp800.000) atau Cafe & Bakery Branding (Rp800.000) lengkap dengan file vektor siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Rp800.000) atau Cafe & Bakery Branding (Rp1.000.000) lengkap dengan file vektor siap cetak.']
         ]
       },
       EN: {
@@ -616,7 +616,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & SUBMARK (GATE 1)', 'Mengunci keluwesan garis kaligrafi Minoe Le Soir serta siluet 3 variasi ikon telinga poodle berpita untuk label kerah dan hangtag.'],
           ['04 — 1-PAGE BRAND BOARD (GATE 2)', 'Menyusun panduan 5 nada warna pastel dan pasangan font serif klasik (Sorts Mill Goudy) dalam satu lembar pedoman visual yang ringkas.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Diterapkan pada label dan hangtag pakaian berbentuk kelopak, kotak kemasan dengan kertas tisu bermotif, serta kartu ucapan.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Signature Branding Package (Rp550.000). Klien menerima file siap cetak untuk produksi label garmen dan kemasan.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Signature Branding Package (Rp850.000). Klien menerima file siap cetak untuk produksi label garmen dan kemasan.']
         ]
       },
       EN: {
@@ -788,7 +788,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & POLA KEMASAN (GATE 1)', 'Merancang logotype SEERI dengan huruf S ikonis yang bisa berdiri sendiri sebagai monogram, ditemani komposisi depan-belakang kantong polymailer.'],
           ['04 — WARNA & ELEMEN PENDUKUNG (GATE 2)', 'Menerapkan pola lingkaran berulang di sisi belakang polymailer dan sapaan tulisan tangan "You’re something special" di sisi depan.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Divisualisasikan pada mockup polymailer bertekstur doff di atas kain satin, lengkap dengan perluasan ke paper bag, hangtag, dan kertas tisu.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 55) atau Signature Branding Package (Rp550.000 / USD 75).']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 55) atau Signature Branding Package (Rp850.000 / USD 75).']
         ]
       },
       EN: {
