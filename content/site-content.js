@@ -212,7 +212,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & IKON GIGITAN KUE (GATE 1)', 'Di Gate 1, kami merancang karakter tipografi retro-serif yang tebal (chunky) untuk kata "croomble." dan memodifikasi dua huruf "oo" di tengah menjadi ilustrasi kue choco-chip dengan bekas gigitan sebagai ciri khas utama (visual signature).'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Memadukan tipografi pendamping Poppins dengan 4 warna dikalibrasi khusus: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), dan Oven Mustard (#F3C868) untuk menciptakan suasana hangat sekaligus ceria.'],
           ['05 — THE UNBOXING JOY & APLIKASI KEMASAN', 'Karena gigitan pertama selalu dimulai dari mata, kami menerjemahkan identitas ini ke label toples kaca (cookie jar), kotak hampers, dan pouch dengan pesan microcopy "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", dan "PREMIUM COOKIES INSIDE".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Signature Branding Package (Rp550.000) / The Unboxing Kit (Rp700.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Signature Branding Package (Rp550.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
         ]
       },
       EN: {
@@ -266,7 +266,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA & KUNCI DIELINE (GATE 1)', 'Cindi menggambar sketsa adegan karakter babi kecil dan rumah bersalju, sementara Aliy memetakan tata letak ke ukuran pisau cetak (dieline) Hardbox, Gable Box, dan Sleeve laci 3 tingkat.'],
           ['04 — WARNA & TEKSTUR CAT AIR (GATE 2)', 'Ilustrasi diwarnai dengan sapuan kuas cat air dan pensil bertekstur lembut khas Calla, dipadukan dengan tipografi klasik "Wish You Holly Jolly Christmas" & "So Very Merry".'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Desain diturunkan secara utuh ke Main Hardbox, Tall Gable Box berpita marun, 3-Tier Drawer Sleeve, kotak suvenir mini, kartu ucapan, dan hangtag bulat "HO HO HO!".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket The Unboxing Kit (Rp700.000). Klien menerima seluruh file master siap cetak (.AI, .PDF 300 DPI, .SVG, .PNG) dan simulasi mockup 3D.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket The Unboxing Kit (Rp950.000). Klien menerima seluruh file master siap cetak (.AI, .PDF 300 DPI, .SVG, .PNG) dan simulasi mockup 3D.']
         ]
       },
       EN: {
@@ -426,7 +426,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA KARAKTER & TATA LETAK MENU (GATE 1)', 'Di Gate 1, kami menyusun pose menyapa ("SAY HI! TO OLEN": duduk di atas bolen raksasa, bertopang dagu manis, dan membawa piring saji bolen) sekaligus membagi struktur grid menu 8 produk agar informasi harga dan isi (topping/filling) langsung jelas.'],
           ['04 — PEWARNAAN CAT AIR & KOMPOSISI MENU (GATE 2)', 'Ilustrasi Olen diwarnai dengan gradasi cat air hangat dan tekstur kertas berpori. Pada lembaran "OUR MENU", karakter Olen ditempatkan di pojok kiri atas untuk menyambut pembeli sebelum mata mereka menjelajahi foto potongan bolen yang lumer.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Katalog menu menampilkan 8 varian secara terstruktur (Bolen Coklat Lumer 43K, Mochi Salted Egg 60K, Keju Lumer 55K, Mix Coklat+Keju 45K, Mix Duo 55K, Smoked Beef 65K, Bolen Lilit 40K, hingga Chicken Salted Egg 80K) lengkap dengan label kapsul harga yang kontras.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Cafe & Bakery Branding (Rp800.000) atau Storybook Brand Mascot (Rp550.000). Klien mendapatkan maskot ikonis sekaligus perangkat menu siap pakai untuk jualan online maupun cetak kasir.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Cafe & Bakery Branding (Rp800.000) atau Storybook Brand Mascot (Rp800.000). Klien mendapatkan maskot ikonis sekaligus perangkat menu siap pakai untuk jualan online maupun cetak kasir.']
         ]
       },
       EN: {
@@ -476,7 +476,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & MONOGRAM (GATE 1)', 'Di Gate 1, kami merancang 3 hierarki identitas: Main Logo untuk tajuk utama, Secondary Logo yang lebih ringkas, serta inisial Brandmark "BV" yang dihiasi kelopak bunga kecil untuk stempel atau label sempit.'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Seluruh aturan visual dirangkum dalam 1-Page Brand Identity Board yang rapi, memadukan tipografi Snell Roundhand (script anggun), EB Garamond (serif klasik), dan Cinzel untuk sub-judul.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Identitas diterapkan secara konsisten pada 3 titik sentuh pelanggan: Thank You Card berlatar marun dengan aksen pita, Hang Tag pakaian vertikal, serta kemasan pengiriman Polymailer bertuliskan "Made to Celebrate You".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Signature Branding Package (Rp550.000) atau The Unboxing Kit (Rp700.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Signature Branding Package (Rp550.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
         ]
       },
       EN: {
@@ -569,7 +569,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA & GARIS KONTUR (GATE 1)', 'Di Gate 1, Cindi menggambar pose maskot (menyapa ramah, memeluk donat glaze, dan duduk santai) dengan ketebalan garis yang tetap jelas walau dicetak seukuran koin pada kartu stempel.'],
           ['04 — PEWARNAAN & SISTEM KARTU (GATE 2)', 'Warna krem adonan dan cokelat glaze diaplikasikan pada maskot serta diturunkan ke tata letak kartu loyalitas 2 sisi ("Buy 9 Glazing Donut, The 10th Is On Us!").'],
           ['05 — APLIKASI NYATA PADA TOKO', 'Maskot dipasang pada papan sambutan luar ruang (A-Frame Sidewalk Board "Welcome!"), potongan stiker die-cut, dan kartu stempel 10 lingkaran.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Rp550.000) atau Cafe & Bakery Branding (Rp800.000) lengkap dengan file vektor siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Rp800.000) atau Cafe & Bakery Branding (Rp800.000) lengkap dengan file vektor siap cetak.']
         ]
       },
       EN: {
@@ -659,7 +659,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA KARAKTER & KOTAK (GATE 1)', 'Mengunci potret karakter kucing dalam bingkai oval, proporsi logotype Kueboon, serta tata letak kartu ucapan dan stiker segel.'],
           ['04 — PEWARNAAN & POLA GARIS (GATE 2)', 'Pewarnaan ilustrasi bertekstur buku cerita klasik dipadukan dengan pola garis vertikal kuning mentega dan pink lembut pada kotak kue.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Diaplikasikan pada kotak kue bergaris, stiker segel bulat, hangtag bentuk khusus, serta kartu pos ucapan berbingkai renda hati.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Kombinasi paket Signature Branding (Rp550.000) / The Unboxing Kit (Rp700.000) dengan seluruh file siap cetak untuk percetakan dus kue.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Kombinasi paket Signature Branding (Rp550.000) / The Unboxing Kit (Rp950.000) dengan seluruh file siap cetak untuk percetakan dus kue.']
         ]
       },
       EN: {
@@ -745,7 +745,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — TATA LETAK SLEEVE & HANGTAG (GATE 1)', 'Menyesuaikan ukuran sabuk kertas (belly band) agar presisi membungkus kotak bertingkat milik klien, ditemani bentuk pisau die-cut hangtag klasik.'],
           ['04 — DETAIL FLORAL & TIPOGRAFI (GATE 2)', 'Memadukan kaligrafi Inggris "Mid Autumn Festival" dan aksara Mandarin di seluruh sabuk kotak, kartu ucapan, amplop merah, dan hangtag.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Divisualisasikan pada kotak hadiah merah dengan pegangan logam emas, siap digunakan untuk foto katalog pre-order klien.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui Single Hero Packaging (Rp550.000 untuk 1 item utama) atau The Unboxing Kit (Rp700.000 untuk rangkaian lengkap).']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui Single Hero Packaging (Rp550.000 untuk 1 item utama) atau The Unboxing Kit (Rp950.000 untuk rangkaian lengkap).']
         ]
       },
       EN: {
@@ -831,7 +831,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO ILUSTRATIF (GATE 1)', 'Mengunci ekspresi kucing dan susunan teks "batter burrow" (tersedia versi bertumpuk/vertikal dan memanjang/horizontal).'],
           ['04 — PEWARNAAN & VARIASI LATAR (GATE 2)', 'Menerapkan warna brand pilihan klien di atas latar krem hangat, merah marun, serta motif garis vertikal biru muda.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Divisualisasikan langsung pada penutup kotak kue stroberi sehingga klien langsung punya gambaran stiker/cetak kemasan.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Essential Logo Kit (Rp350.000)—solusi cepat & hemat untuk mendapatkan 1 logo ilustratif berkarakter!']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Essential Logo Kit (Rp450.000)—solusi cepat & hemat untuk mendapatkan 1 logo ilustratif berkarakter!']
         ]
       },
       EN: {
@@ -850,6 +850,9 @@ window.CALLA_SITE_CONTENT = {
     }
   ],
 
+// ===========================================================================
+  // 3. KATALOG HARGA RESMI STUDIO (TARIF PENUH IDR & INTERNASIONAL USD)
+  // ===========================================================================
   pricingCatalog: {
     ID: {
       marketBannerText: 'Menampilkan Rate Card Lokal Indonesia (IDR) · Pembayaran via Transfer BCA / QRIS',
@@ -859,25 +862,25 @@ window.CALLA_SITE_CONTENT = {
           tagID: 'PAKET LOGO INTI',
           tagEN: 'STARTER LOGO',
           name: 'Essential Logo Kit',
-          price: 'Starting at Rp350.000',
-          descID: 'Cocok untuk bisnis pemula, kreator, dan online shop yang sudah memiliki referensi warna dan membutuhkan 1 logo berkarakter (brandmark/ilustrasi) secara cepat.',
-          descEN: 'Ideal for new businesses and online shops with a ready color preference needing a characterful core logo.',
+          price: 'Starting at Rp450.000',
+          descID: 'Cocok untuk pemilik bisnis pemula, kreator, dan online shop yang membutuhkan logo simpel berkarakter tanpa kebutuhan cetak kemasan yang rumit.',
+          descEN: 'Ideal for new business owners, creators, and online shops needing a characterful core logo without complex print packaging.',
           itemsID: [
-            '1 Konsep Logo Utama (Bisa berupa Brandmark / Logo Ilustratif)',
-            'Aplikasi Palet Warna Pilihan Klien (Tanpa Kurasi Moodboard)',
-            'Rekomendasi Pasangan Tipografi Pendukung',
+            '1 Konsep Logo Utama (Primary Logo Lockup)',
+            '1 Ikon Brand Mark / Submark (Profil medsos, cap kemasan, stiker mini)',
+            'Kurasi Moodboard, Palet Warna Resmi (HEX/RGB) & Rekomendasi Font',
             '1 Pratinjau Mockup Digital + 2 Putaran Revisi Terarah',
-            'File Master Lengkap (PNG, JPG, SVG, PDF) + Akses GDrive 12 Bulan'
+            'File Master Komplit (PNG 300 DPI, JPG, SVG, PDF) + GDrive 12 Bulan'
           ],
           itemsEN: [
-            '1 Primary Logo Concept (Brandmark / Illustrative Logo)',
-            'Client-Provided Color Palette Application (No Moodboard)',
-            'Supporting Typography Recommendations',
-            '1 Digital Mockup + 2 Dedicated Revision Rounds',
-            'Complete Master Files (PNG, JPG, SVG, PDF) + 12M GDrive'
+            '1 Primary Logo Lockup Concept',
+            '1 Brand Mark / Submark Icon (Social avatar, stamp, mini sticker)',
+            'Curated Moodboard, Brand Color Palette (HEX/RGB) & Font Pairing Guide',
+            '1 Digital Presentation Mockup + 2 Dedicated Revision Rounds',
+            'Complete Master Files (300 DPI PNG, JPG, SVG, PDF) + 12M GDrive'
           ],
-          noteID: 'Termasuk Commercial-Use License. Referensi warna disiapkan oleh klien saat pengisian brief (Contoh karya: Batter Burrow).',
-          noteEN: 'Includes Commercial-Use License. Color preferences provided by client in the brief.'
+          noteID: 'Termasuk Konsultasi Konsep & Commercial-Use License.',
+          noteEN: 'Includes Concept Consultation & Commercial-Use License.'
         },
         {
           bg: 'bg-[#E3F2FD]',
@@ -885,124 +888,124 @@ window.CALLA_SITE_CONTENT = {
           tagEN: 'SINGLE PACKAGING TIER',
           name: 'Single Hero Packaging',
           price: 'Starting at Rp550.000',
-          descID: 'Paket fokus untuk 1 kemasan utama pilihan (Box ATAU Sleeve ATAU Polymailer) dalam 1 format dan 1 ukuran.',
+          descID: 'Paket fokus untuk 1 desain kemasan utama pilihan (Box ATAU Sleeve ATAU Polymailer) dalam 1 format dan 1 ukuran.',
           descEN: 'Focused package for 1 primary packaging item (Box OR Sleeve OR Polymailer) in 1 format and 1 size.',
           itemsID: [
             '1 Desain Kemasan Utama: Box ATAU Sleeve ATAU Polymailer (1 ukuran)',
-            '1 Concept Direction & Adaptasi ke Dieline Resmi Vendor',
-            '1 Mockup Presentasi 3D Studio',
-            '2 Putaran Revisi Terarah',
-            'File Final Sesuai Spesifikasi Vendor + Akses GDrive 12 Bulan'
+            '1 Concept Direction & Adaptasi Artwork ke Dieline Resmi Vendor',
+            '1 Mockup Presentasi 3D Studio Fotorealistik',
+            '2 Putaran Revisi Terarah (Mengikuti Sistem 2-Gate)',
+            'File Final Siap Cetak Sesuai Spesifikasi Vendor + GDrive 12 Bulan'
           ],
           itemsEN: [
             '1 Primary Packaging Design: Box OR Sleeve OR Polymailer (1 size)',
             '1 Concept Direction & Adaptation to Confirmed Vendor Dieline',
-            '1 3D Studio Presentation Mockup',
-            '2 Dedicated Revision Rounds',
-            'Final Files per Confirmed Vendor Specs + 12M GDrive'
+            '1 Photorealistic 3D Studio Presentation Mockup',
+            '2 Dedicated Revision Rounds (Following 2-Gate System)',
+            'Print-Ready Master Files per Vendor Specs + 12M GDrive'
           ],
-          noteID: 'Khusus brand yang sudah memiliki logo. Tidak termasuk ukuran/SKU tambahan atau biaya cetak (Contoh karya: Seeri / Happynest).',
-          noteEN: 'For brands with an existing logo. Excludes extra sizes/SKUs or physical print costs.'
+          noteID: 'Tidak termasuk ukuran/SKU tambahan, pattern tisu, kartu/stiker tambahan, pembuatan dieline teknis dari nol, atau biaya cetak.',
+          noteEN: 'Excludes extra sizes/SKUs, tissue pattern, extra cards/stickers, structural dieline engineering from scratch, or print costs.'
         },
         {
           bg: 'bg-[#FFF3BF]',
           tagID: 'KARAKTER ORISINAL',
           tagEN: 'CHARACTER IP',
           name: 'Storybook Brand Mascot',
-          price: 'Starting at Rp550.000',
-          descID: 'Untuk kuliner, bakery, hampers, dan brand yang ingin memiliki karakter maskot orisinal 100% ilustrasi tangan.',
-          descEN: 'Best for culinary, bakeries, hampers, and brands looking for an original hand-drawn character mascot.',
+          price: 'Starting at Rp800.000',
+          descID: 'Cocok untuk bakery, kedai kopi/minuman, bisnis hampers, produk anak, dan brand yang ingin memiliki figur maskot ikonis.',
+          descEN: 'Best for bakeries, beverage bars, hampers, kids products, and brands looking for an iconic hand-drawn mascot.',
           itemsID: [
-            '1 Karakter Maskot Orisinal (1 Pose Utama + 1 Variasi Ekspresi/Avatar)',
-            '1 Lembar Mini Character Sheet (Palet Warna & Aturan Dasar)',
-            '1 Mockup Aplikasi Komersial (Signage / Stiker / Kemasan)',
-            '2 Putaran Revisi Terarah',
-            'Commercial-Use License + File Master (AI, SVG, PDF, PNG) + GDrive 12 Bln'
+            '1 Karakter Maskot Orisinal (100% ilustrasi buatan tangan)',
+            '3 Variasi Pose & Ekspresi + 3–5 Doodles / Spot Icons Pendukung',
+            'Lembar Pedoman Maskot (Proporsi anatomi, aturan warna & cerita karakter)',
+            '1 Mockup Aplikasi Komersial (A-Frame Sidewalk Board / Signage / Merch)',
+            '2 Putaran Revisi + Commercial-Use License + Master AI, SVG, PDF, PNG + GDrive 12 Bln'
           ],
           itemsEN: [
-            '1 Original Mascot Character (1 Main Pose + 1 Expression/Avatar Variation)',
-            '1 Mini Character Sheet (Color Palette & Basic Usage Guide)',
-            '1 Commercial Application Mockup (Signage / Sticker / Packaging)',
-            '2 Dedicated Revision Rounds',
-            'Commercial-Use License + Master Files (AI, SVG, PDF, PNG) + 12M GDrive'
+            '1 Original Hand-Drawn Character Mascot',
+            '3 Pose & Expression Variations + 3–5 Supporting Doodles / Spot Icons',
+            'Mascot Guideline Sheet (Anatomy proportions, color rules & persona story)',
+            '1 Commercial Application Mockup (A-Frame Board / Signage / Merch)',
+            '2 Revision Rounds + Commercial-Use License + Master AI, SVG, PDF, PNG + 12M GDrive'
           ],
-          noteID: 'Tidak termasuk set doodle terpisah atau animasi. Pose tambahan dapat di-upgrade sesuai kebutuhan (Contoh karya: Dumdum Foodie / Maroo).',
-          noteEN: 'Excludes separate doodle sets or animation. Extra poses can be added as needed.'
+          noteID: 'Tidak termasuk karakter/pose tambahan, animasi, atau ilustrasi full-scene kompleks.',
+          noteEN: 'Excludes additional characters/poses, animation, or complex full-scene illustrations.'
         },
         {
           bg: 'bg-[#FCE7F3]',
           tagID: 'PALING POPULER',
           tagEN: 'MOST POPULAR',
           name: 'Signature Branding Package',
-          price: 'Starting at Rp550.000',
-          descID: 'Paket identitas visual ringkas & lengkap untuk butik fashion, studio wellness, F&B, dan brand lifestyle.',
-          descEN: 'Streamlined visual identity system for fashion boutiques, wellness studios, F&B, and lifestyle brands.',
+          price: 'Starting at Rp850.000',
+          descID: 'Identitas visual menyeluruh untuk butik fashion, bisnis kuliner/F&B, skincare organik, dan brand lifestyle.',
+          descEN: 'Comprehensive visual identity system for fashion boutiques, F&B businesses, organic skincare, and lifestyle brands.',
           itemsID: [
-            '1 Primary Logo + 1 Submark / Brand Stamp',
-            '1 Simple Supporting Pattern / Graphic Element',
-            '1-Page Brand Identity Board (Palet Warna & Panduan Tipografi)',
-            'Pilih 1 Desain Materi Cetak (Hangtag / Kartu Ucapan / Stiker / Sleeve)',
-            '2 Mockup Produk + 2 Putaran Revisi + File Master & GDrive 12 Bulan'
+            'Logo Utama, 2 Variasi Alternatif (Horizontal & Stacked) & 1 Submark / Brand Stamp',
+            'Bespoke Seamless Pattern, Elemen Grafis & Palet Warna Komplit (HEX/RGB/CMYK)',
+            'Panduan Tipografi & Buku Panduan Identitas Mini (Mini Brand Guidelines 5–7 Hal)',
+            'Pilih 2 Item Materi Cetak (Kemasan/Label, Kartu 2 Sisi, atau Stiker Segel)',
+            'Maksimal 3 Mockup Produk Fotorealistik + 3 Putaran Revisi + Master Files & GDrive 12 Bln'
           ],
           itemsEN: [
-            '1 Primary Logo + 1 Submark / Brand Stamp',
-            '1 Simple Supporting Pattern / Graphic Element',
-            '1-Page Brand Identity Board (Color Palette & Typography Guide)',
-            'Select 1 Print Collateral (Hangtag / Card / Sticker Seal / Sleeve)',
-            '2 Product Mockups + 2 Revision Rounds + Master Files & 12M GDrive'
+            'Primary Logo, 2 Alternative Variations (Horizontal & Stacked) & 1 Submark / Stamp',
+            'Bespoke Seamless Pattern, Supporting Graphics & Full Color Palette (HEX/RGB/CMYK)',
+            'Typography Hierarchy Guide & Mini Brand Guidelines PDF (5–7 Pages)',
+            'Select 2 Print Collaterals (Packaging/Label, 2-Sided Card, or Seal Sticker)',
+            'Up to 3 Photorealistic Product Mockups + 3 Revision Rounds + Master Files & 12M GDrive'
           ],
-          noteID: 'Termasuk Commercial-Use License & GDrive 12 bulan (Contoh karya: Blossom & Veil / Solène Pilates Studio).',
-          noteEN: 'Includes Commercial-Use License & 12-month Google Drive access.'
+          noteID: 'Termasuk Sesi Diskusi Konsep, Kurasi Moodboard & Commercial-Use License.',
+          noteEN: 'Includes Concept Consultation, Moodboard Curation & Commercial-Use License.'
         },
         {
           bg: 'bg-[#EDE9FE]',
-          tagID: 'RANGKAIAN UNBOXING',
-          tagEN: 'MULTI-PIECE UNBOXING',
+          tagID: 'PAKET KEMASAN LENGKAP',
+          tagEN: 'FULL UNBOXING SUITE',
           name: 'The Unboxing Kit',
-          price: 'Starting at Rp700.000',
-          descID: 'Paket rangkaian kemasan terpadu untuk memberikan pengalaman membuka paket (unboxing) yang berkesan.',
-          descEN: 'Cohesive packaging set crafted for a memorable customer unboxing experience.',
+          price: 'Starting at Rp950.000',
+          descID: 'Untuk brand fashion, hijab, hampers, dan online shop yang ingin memberikan pengalaman membuka paket (unboxing) yang estetik dan mewah.',
+          descEN: 'For fashion, hampers, and online shops wanting a cohesive, memorable 5-piece unboxing experience.',
           itemsID: [
-            '1 Desain Kemasan Utama (Mailer Box / Polymailer / Paper Bag)',
-            'Pilih 1 Komponen Pendukung: Box Sleeve Belt ATAU Seamless Tissue Pattern',
-            '1 Desain Greeting / Care Card + 1 Desain Sticker Seal',
-            '2 Mockup Presentasi 3D + 2 Putaran Revisi Terarah',
-            'File Siap Cetak Sesuai Spesifikasi Vendor + Akses GDrive 12 Bulan'
+            '1 Desain Kemasan Pilihan (Mailer Box, Polymailer, Pouch, atau Paper Bag)',
+            '1 Desain Sabuk Kemasan / Selongsong (Box Sleeve / Belly Band)',
+            '1 Aset Pola Mulus (Seamless Repeat Pattern untuk kertas tisu & lakban)',
+            '1 Desain Kartu Ucapan / Care Card 2 Sisi + 1 Desain Stiker Segel Pengaman',
+            'Mockup 3D Studio + Bantuan Teknis Vendor Cetak + 3 Putaran Revisi + GDrive 12 Bln'
           ],
           itemsEN: [
-            '1 Primary Packaging Design (Mailer Box / Polymailer / Paper Bag)',
-            'Select 1 Supporting Wrap: Box Sleeve Belt OR Seamless Tissue Pattern',
-            '1 Greeting / Care Card Design + 1 Sticker Seal Design',
-            '2 3D Presentation Mockups + 2 Dedicated Revision Rounds',
-            'Print-Ready Files per Vendor Specs + 12M GDrive'
+            '1 Primary Packaging Design (Mailer Box, Polymailer, Pouch, or Paper Bag)',
+            '1 Box Sleeve Belt / Belly Band Design',
+            '1 Seamless Repeat Pattern (For tissue paper & packing tape)',
+            '1 Double-Sided Thank You / Care Card + 1 Security Sticker Seal Design',
+            '3D Studio Mockups + Vendor Print Technical Liaison + 3 Revisions + 12M GDrive'
           ],
-          noteID: 'Scope komponen dikunci jelas sebelum produksi dimulai (Contoh karya: Holly Jolly / Kueboon).',
-          noteEN: 'Structured component scope locked prior to production.'
+          noteID: 'Persiapan file siap cetak (AI, PDF, SVG, PNG) berdasarkan spesifikasi ukuran dieline vendor yang telah dikonfirmasi.',
+          noteEN: 'Print-ready master files prepared per confirmed vendor dieline specifications.'
         },
         {
           bg: 'bg-[#DCFCE7]',
-          tagID: 'PAKET KAFE & BAKERY',
+          tagID: 'PAKET KAFE & F&B KOMPLIT',
           tagEN: 'F&B & BAKERY SUITE',
           name: 'Cafe & Bakery Branding',
-          price: 'Starting at Rp800.000',
-          descID: 'Identitas visual, karakter maskot 1 pose, dan desain menu utama untuk kafe, coffee shop, artisan bakery, dan gerai F&B.',
-          descEN: 'Core visual identity, 1-pose mascot, and main menu layout for cafes, coffee shops, bakeries, and F&B outlets.',
+          price: 'Starting at Rp1.000.000',
+          descID: 'Untuk kafe, kedai kopi, artisan bakery, dan restoran yang mempersiapkan pembukaan outlet fisik atau re-branding komersial.',
+          descEN: 'Core visual identity and essential operational touchpoints for cafes, coffee shops, artisan bakeries, and restaurants.',
           itemsID: [
-            '1 Primary Logo + 1 Brandmark / Karakter Maskot (1 Pose)',
-            '1-Page Brand Cheat Sheet (Palet Warna & Panduan Tipografi)',
-            '1 Desain Menu Utama (1 Halaman Katalog Menu / Papan Kasir)',
-            'Adaptasi Turunan Logo pada Cup / Cup Sleeve + 1 Item Pilihan (Loyalty Card ATAU Stiker Segel)',
-            '2 Mockup Aplikasi F&B + 2 Putaran Revisi + File Master & GDrive 12 Bln'
+            'Core Visual Identity (Logo Utama, Sekunder, Sub-mark, Palet, Tipografi & Pola/Grafis)',
+            'Buku Panduan Identitas Brand (Brand Guidelines 6–8 Halaman)',
+            '1 Desain Papan Menu Utama / Lembaran Menu (Format & kompleksitas disepakati)',
+            '1 Cup ATAU Cup Sleeve + 1 Coaster ATAU Tray Paper + 1 Loyalty Card ATAU Sticker Seal',
+            'Maksimal 3 Mockup Aplikasi/Produk + Kalibrasi Vendor + 3x Revisi + GDrive 12 Bln'
           ],
           itemsEN: [
-            '1 Primary Logo + 1 Brandmark / Character Mascot (1 Pose)',
-            '1-Page Brand Cheat Sheet (Color Palette & Typography Guide)',
-            '1 Main Menu Layout (Single-Page Menu Catalog / Counter Board)',
-            'Logo Derivative Adaptation on Cup / Sleeve + 1 Item (Loyalty Card OR Sticker)',
-            '2 F&B Mockups + 2 Revision Rounds + Master Files & 12M GDrive'
+            'Core Visual Identity (Primary & Secondary Logos, Submark, Palette, Fonts & Graphics)',
+            'Comprehensive Brand Implementation Guidelines (6–8 Pages)',
+            '1 Main Menu Layout (Agreed format & complexity)',
+            '1 Cup OR Cup Sleeve + 1 Coaster OR Tray Paper + 1 Loyalty Card OR Sticker Seal',
+            'Up to 3 Storefront/Product Mockups + Vendor Calibration + 3 Revisions + 12M GDrive'
           ],
-          noteID: 'Cup/Sleeve menggunakan adaptasi turunan logo (bukan ilustrasi baru dari nol). Tanpa elemen grafis tambahan (Contoh karya: Ngebolen / Jo Kremes).',
-          noteEN: 'Cup/Sleeve utilizes logo derivative placement. Excludes extra graphic elements or multipage menus.'
+          noteID: 'Termasuk Commercial-Use License. Tidak termasuk menu multipage kompleks, interior design, atau biaya produksi fisik.',
+          noteEN: 'Includes Commercial-Use License. Excludes complex multipage menus, interior design, or physical print costs.'
         }
       ]
     },
@@ -1157,7 +1160,7 @@ window.CALLA_SITE_CONTENT = {
             '3 Revision Rounds + Commercial-Use License + 12M GDrive'
           ],
           noteID: 'Tidak termasuk menu multipage kompleks, interior design, atau biaya cetak.',
-          noteEN: 'Excludes complex multipage menus, interior design, or physical print production costs.'
+          noteEN: 'Excludes complex multipage menus, interior design, or physical print costs.'
         }
       ]
     }
