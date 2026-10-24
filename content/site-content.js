@@ -212,7 +212,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & IKON GIGITAN KUE (GATE 1)', 'Di Gate 1, kami merancang karakter tipografi retro-serif yang tebal (chunky) untuk kata "croomble." dan memodifikasi dua huruf "oo" di tengah menjadi ilustrasi kue choco-chip dengan bekas gigitan sebagai ciri khas utama (visual signature).'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Memadukan tipografi pendamping Poppins dengan 4 warna dikalibrasi khusus: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), dan Oven Mustard (#F3C868) untuk menciptakan suasana hangat sekaligus ceria.'],
           ['05 — THE UNBOXING JOY & APLIKASI KEMASAN', 'Karena gigitan pertama selalu dimulai dari mata, kami menerjemahkan identitas ini ke label toples kaca (cookie jar), kotak hampers, dan pouch dengan pesan microcopy "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", dan "PREMIUM COOKIES INSIDE".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Signature Branding Package (Rp850.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Full Branding Package Package (Rp850.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
         ]
       },
       EN: {
@@ -230,7 +230,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — CHUNKY LOGO & BITTEN COOKIE MARK (GATE 1)', 'In Gate 1, we crafted a chunky retro-serif logotype highlighting the modified double "oo" as a bitten chocolate-chip cookie graphic signature.'],
           ['04 — COLOR PALETTE & TYPOGRAPHY (GATE 2)', 'Paired clean Poppins typography with four energetic tones: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), and Oven Mustard (#F3C868).'],
           ['05 — THE UNBOXING JOY IN ACTION', 'Because the first bite happens with the eyes, we rolled the identity out across glass cookie jars, boxes, and pouches featuring joyful microcopy: "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", and "BAKED FRESH DAILY".'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'A flagship example of our Signature Branding Package (USD 75) & The Unboxing Kit (USD 85). Click the PDF button above to view the full brand deck!']
+          ['06 — PACKAGE & MASTER HANDOVER', 'A flagship example of our Full Branding Package Package (USD 75) & The Unboxing Kit (USD 85). Click the PDF button above to view the full brand deck!']
         ]
       }
     },
@@ -393,7 +393,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SILHOUETTE & ANATOMY SKETCH (GATE 1 LOCK)', 'In Gate 1, Cindi locked the plump proportions and a slightly chubby rear profile for extra playfulness, outfitted in an energetic orange barista cap and apron.'],
           ['04 — ORANGE PALETTE & 4 DYNAMIC POSES (GATE 2 LOCK)', 'In Gate 2, we applied an appetite-stimulating orange palette across 4 narrative poses: rushing with an iced latte, dancing to greet guests, embracing a warm coffee cup, and popping out of a takeaway parcel box.'],
           ['05 — BRAND IN ACTION & STORE STAGING', 'Engineered for dual impact: ready as digital social stickers and staged as a life-sized 3D standee activation surrounding an oversized coffee cup at a premier mall outlet storefront.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Showcase of our Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding package (USD 120), delivered with high-res vector files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Showcase of our Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding package (USD 120) , delivered with high-res vector files.']
         ]
       }
     },
@@ -476,7 +476,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & MONOGRAM (GATE 1)', 'Di Gate 1, kami merancang 3 hierarki identitas: Main Logo untuk tajuk utama, Secondary Logo yang lebih ringkas, serta inisial Brandmark "BV" yang dihiasi kelopak bunga kecil untuk stempel atau label sempit.'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Seluruh aturan visual dirangkum dalam 1-Page Brand Identity Board yang rapi, memadukan tipografi Snell Roundhand (script anggun), EB Garamond (serif klasik), dan Cinzel untuk sub-judul.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Identitas diterapkan secara konsisten pada 3 titik sentuh pelanggan: Thank You Card berlatar marun dengan aksen pita, Hang Tag pakaian vertikal, serta kemasan pengiriman Polymailer bertuliskan "Made to Celebrate You".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Signature Branding Package (Rp850.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Full Branding Package Package (Rp850.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
         ]
       },
       EN: {
@@ -489,7 +489,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO SUITE & MONOGRAM SKETCH (GATE 1)', 'In Gate 1, we developed three cohesive marks: the Main Logo lockup, a balanced Secondary Logo, and an intertwined "BV" floral monogram for compact applications.'],
           ['04 — COLOR & TYPOGRAPHY BOARD (GATE 2)', 'Compiled into a clean 1-Page Brand Identity Board pairing Snell Roundhand script with timeless EB Garamond and Cinzel serif typography.'],
           ['05 — BRAND IN ACTION', 'Rolled out across a burgundy Thank You Card, vertical garment Hang Tag, and custom Polymailer packaging featuring "Made to Celebrate You" messaging.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase of our Signature Branding Package (USD 75), delivering a clear 1-page brand sheet and cohesive print touchpoints.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase of our Full Branding Package Package (USD 75), delivering a clear 1-page brand sheet and cohesive print touchpoints.']
         ]
       }
     },
@@ -522,7 +522,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — EKSPLORASI LOGO & IKON (GATE 1)', 'Di Gate 1, kami menguji keterbacaan Primary Logo serta menyiapkan Alternative Logo (dimana huruf "o" digantikan oleh ikon bunga Solène) agar tetap cantik saat dipasang di bidang sempit maupun lebar.'],
           ['04 — SISTEM PALET & TIPOGRAFI (GATE 2)', 'Disusun dalam 1-Page Brand Identity Board yang memadukan karakter font TAN Pearl dan Brown Sugar untuk judul yang anggun dengan font script Handsome untuk aksen kutipan motivasi di dinding studio.'],
           ['05 — APLIKASI NYATA DI STUDIO', 'Desain divisualisasikan langsung pada titik-titik favorit member: stiker kaca & cermin selfie studio, permukaan matras pilates warna sage, serta botol minum (tumbler) merchandise resmi studio.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Signature Branding Package (Rp850.000). Pemilik studio langsung memiliki pedoman visual lengkap yang siap dikirim ke vendor interior, percetakan stiker kaca, dan pembuatan merchandise.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Full Branding Package Package (Rp850.000). Pemilik studio langsung memiliki pedoman visual lengkap yang siap dikirim ke vendor interior, percetakan stiker kaca, dan pembuatan merchandise.']
         ]
       },
       EN: {
@@ -535,7 +535,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & EMBLEM LOCK (GATE 1)', 'In Gate 1, we finalized the Primary Logo alongside versatile Alternative Logos integrating the petal mark directly into the wordmark.'],
           ['04 — TYPOGRAPHY & COLOR BOARD (GATE 2)', 'Organized into a clean 1-Page Brand Board pairing TAN Pearl and Brown Sugar display fonts with Handsome script for studio wall quotes.'],
           ['05 — BRAND IN ACTION', 'Visualized across interior glass and mirror signage, sage-green pilates mats, and branded studio hydration tumblers.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Signature Branding Package (USD 75), equipping the studio founder with vector files ready for interior signage and merch production.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 75), equipping the studio founder with vector files ready for interior signage and merch production.']
         ]
       }
     },
@@ -616,7 +616,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & SUBMARK (GATE 1)', 'Mengunci keluwesan garis kaligrafi Minoe Le Soir serta siluet 3 variasi ikon telinga poodle berpita untuk label kerah dan hangtag.'],
           ['04 — 1-PAGE BRAND BOARD (GATE 2)', 'Menyusun panduan 5 nada warna pastel dan pasangan font serif klasik (Sorts Mill Goudy) dalam satu lembar pedoman visual yang ringkas.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Diterapkan pada label dan hangtag pakaian berbentuk kelopak, kotak kemasan dengan kertas tisu bermotif, serta kartu ucapan.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Signature Branding Package (Rp850.000). Klien menerima file siap cetak untuk produksi label garmen dan kemasan.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Full Branding Package Package (Rp850.000). Klien menerima file siap cetak untuk produksi label garmen dan kemasan.']
         ]
       },
       EN: {
@@ -629,7 +629,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & SUBMARK SKETCH (GATE 1)', 'Locking the script flow and 3 poodle-ear icon variations for woven collar labels and die-cut hangtags.'],
           ['04 — 1-PAGE BRAND BOARD (GATE 2)', 'Compiling the 5-shade muted color palette and classic serif pairing (Sorts Mill Goudy) into an easy-to-use brand sheet.'],
           ['05 — BRAND IN ACTION', 'Applied across garment hangtags, collar labels, unboxing boxes with patterned tissue wrap, and greeting cards.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Signature Branding Package (USD 75), complete with print-ready garment tag and packaging files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 75), complete with print-ready garment tag and packaging files.']
         ]
       }
     },
@@ -659,7 +659,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA KARAKTER & KOTAK (GATE 1)', 'Mengunci potret karakter kucing dalam bingkai oval, proporsi logotype Kueboon, serta tata letak kartu ucapan dan stiker segel.'],
           ['04 — PEWARNAAN & POLA GARIS (GATE 2)', 'Pewarnaan ilustrasi bertekstur buku cerita klasik dipadukan dengan pola garis vertikal kuning mentega dan pink lembut pada kotak kue.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Diaplikasikan pada kotak kue bergaris, stiker segel bulat, hangtag bentuk khusus, serta kartu pos ucapan berbingkai renda hati.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Kombinasi paket Signature Branding (Rp550.000) / The Unboxing Kit (Rp950.000) dengan seluruh file siap cetak untuk percetakan dus kue.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Kombinasi paket Full Branding Package (Rp850.000) / The Unboxing Kit (Rp950.000) dengan seluruh file siap cetak untuk percetakan dus kue.']
         ]
       },
       EN: {
@@ -672,7 +672,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — CHARACTER & BOX SKETCH (GATE 1)', 'Locking the oval-framed cat portraits, custom Kueboon logotype, and die-cut hangtag/card layouts.'],
           ['04 — COLOR & STRIPE SYSTEM (GATE 2)', 'Storybook brush rendering paired with butter-yellow and blush striped box patterns.'],
           ['05 — BRAND IN ACTION', 'Rolled out across striped pastry boxes, circular seal stickers, die-cut hangtags, and heart-lace postcard inserts.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to Signature Branding (USD 75) / The Unboxing Kit (USD 85) with production-ready packaging files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to Full Branding Package (USD 75) / The Unboxing Kit (USD 85) with production-ready packaging files.']
         ]
       }
     },
@@ -702,7 +702,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA POSE BERCERITA (GATE 1)', 'Mengunci proporsi karakter dan pose narasi (Warm Hug, Trendsetter Play, dan Connection).'],
           ['04 — WARNA & LEMBAR PANDUAN (GATE 2)', 'Aplikasi palet warna merah bata (#A62616), kuning mentega (#FCECB2), biru tua (#233368), dan krem (#F0C96B) dalam lembar Mascot Guideline.'],
           ['05 — APLIKASI NYATA PADA BRAND', 'Siap digunakan sebagai ikon kemasan bakery, stiker, kartu cerita produk, dan media sosial.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Mulai Rp550.000) lengkap dengan Mini Character Sheet dan file master.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Mulai Rp850.000) lengkap dengan Mini Character Sheet dan file master.']
         ]
       },
       EN: {
@@ -788,7 +788,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & POLA KEMASAN (GATE 1)', 'Merancang logotype SEERI dengan huruf S ikonis yang bisa berdiri sendiri sebagai monogram, ditemani komposisi depan-belakang kantong polymailer.'],
           ['04 — WARNA & ELEMEN PENDUKUNG (GATE 2)', 'Menerapkan pola lingkaran berulang di sisi belakang polymailer dan sapaan tulisan tangan "You’re something special" di sisi depan.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Divisualisasikan pada mockup polymailer bertekstur doff di atas kain satin, lengkap dengan perluasan ke paper bag, hangtag, dan kertas tisu.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 55) atau Signature Branding Package (Rp850.000 / USD 75).']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 55) atau Full Branding Package Package (Rp850.000 / USD 75).']
         ]
       },
       EN: {
@@ -801,7 +801,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & MAILER LAYOUT (GATE 1)', 'Developing the primary SEERI logotype, flowing S monogram, and front/back polymailer print layout.'],
           ['04 — PATTERN & COLOR APPLICATION (GATE 2)', 'Applying polka-ring repeat patterns on the reverse side and "You’re something special" typography on the front flap.'],
           ['05 — BRAND IN ACTION', 'Presented on matte-satin polymailer bags staged over draped silk fabric, alongside hangtags and tissue wrap.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase for Single Hero Packaging (USD 55) or Signature Branding Package (USD 75).']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase for Single Hero Packaging (USD 55) or Full Branding Package Package (USD 75).']
         ]
       }
     },
@@ -936,7 +936,7 @@ window.CALLA_SITE_CONTENT = {
           bg: 'bg-[#FCE7F3]',
           tagID: 'PALING POPULER',
           tagEN: 'MOST POPULAR',
-          name: 'Signature Branding Package',
+          name: 'Full Branding Package Package',
           price: 'Starting at Rp850.000',
           descID: 'Identitas visual menyeluruh untuk butik fashion, bisnis kuliner/F&B, skincare organik, dan brand lifestyle.',
           descEN: 'Comprehensive visual identity system for fashion boutiques, F&B businesses, organic skincare, and lifestyle brands.',
@@ -1091,7 +1091,7 @@ window.CALLA_SITE_CONTENT = {
           bg: 'bg-[#FCE7F3]',
           tagID: 'PALING POPULER',
           tagEN: 'MOST POPULAR',
-          name: 'Signature Branding Package',
+          name: 'Full Branding Package Package',
           price: 'Starting at USD 75',
           descID: 'Sistem identitas visual lengkap untuk kafe, toko ritel, dan brand fashion/lifestyle.',
           descEN: 'Complete visual identity system for boutiques, retail shops, and fashion/lifestyle labels.',
