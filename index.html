@@ -825,22 +825,34 @@
     // =========================================================================
     // SMART IMAGE FALLBACK (Checks both assets/ folder AND root folder!)
     // =========================================================================
- function handleSmartImgError(imgEl) {
+function handleSmartImgError(imgEl) {
       const baseSrc = imgEl.getAttribute('data-base-src') || '';
       const attempt = parseInt(imgEl.getAttribute('data-attempt') || '0', 10);
       const stem = baseSrc.replace(/\.(webp|jpg|jpeg|png|gif)$/i, '');
       const bareStem = stem.replace(/^assets\//i, '');
+      const capBare = bareStem.charAt(0).toUpperCase() + bareStem.slice(1);
+      const capStem = 'assets/' + capBare;
+
       const candidates = [
         baseSrc,
-        stem + '.jpeg',
         stem + '.jpg',
+        stem + '.jpeg',
         stem + '.webp',
         stem + '.png',
         stem + '.gif',
-        bareStem + '.jpeg',
+        stem + '.JPG',
+        stem + '.PNG',
+        stem + '.JPEG',
+        capStem + '.jpg',
+        capStem + '.jpeg',
+        capStem + '.webp',
+        capStem + '.png',
         bareStem + '.jpg',
+        bareStem + '.jpeg',
         bareStem + '.webp',
-        bareStem + '.png'
+        bareStem + '.png',
+        capBare + '.jpg',
+        capBare + '.png'
       ];
       if (attempt < candidates.length) {
         imgEl.setAttribute('data-attempt', String(attempt + 1));
@@ -853,7 +865,6 @@
         if (fallback) fallback.classList.remove('hidden');
       }
     }
-
     // =========================================================================
     // FULL-SIZE UNCROPPED LIGHTBOX VIEWER (WITH NEXT/PREV & SWIPE)
     // =========================================================================
