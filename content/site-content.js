@@ -814,8 +814,8 @@ window.CALLA_SITE_CONTENT = {
       category: 'identity',
       statusBadge: 'GALLERY · BAKERY LOGO SUITE',
       frameBg: 'bg-[#FFE4E6]',
-      coverImg: 'assets/batter-burrow-cover.webp',
-      detailImg: 'assets/batter-burrow-detail.webp',
+      coverImg: 'assets/batter-cover.webp',
+      detailImg: 'assets/batter-detail.webp',
       altText: {
         ID: 'Logo karakter kucing pembawa kue dan kemasan kotak merah marun Batter Burrow',
         EN: 'Batter Burrow cat waiter logo and burgundy cake box identity'
