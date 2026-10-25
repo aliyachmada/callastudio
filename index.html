@@ -694,6 +694,64 @@
     </div>
 
     <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+
+    <!-- ADDITIONAL SERVICES / CUSTOM REQUEST BANNER (MATCHING PDF PRICELIST) -->
+    <div class="mt-10 calla-frame bg-[#FFF9E6] p-6 sm:p-9 relative overflow-hidden">
+      <div class="grid md:grid-cols-12 gap-6 items-center relative z-10">
+        <!-- Crayon House & Butterfly Illustration (From PDF Additional Services Page) -->
+        <div class="md:col-span-3 flex items-center justify-center gap-3">
+          <svg viewBox="0 0 110 110" class="w-20 h-20 sm:w-24 sm:h-24 flower-anim shrink-0" style="filter: url(#crayon-edge);" aria-hidden="true">
+            <path d="M55 16 L16 50 L94 50 Z" fill="#FFD8A8" stroke="#E85D88" stroke-width="4.5" stroke-linejoin="round"/>
+            <path d="M30 38 L30 22 L42 22 L42 28" fill="none" stroke="#E85D88" stroke-width="4" stroke-linecap="round"/>
+            <rect x="24" y="50" width="62" height="46" rx="3" fill="#FFFDF8" stroke="#E85D88" stroke-width="4.5"/>
+            <rect x="47" y="68" width="16" height="28" rx="8" fill="#FFE066" stroke="#E85D88" stroke-width="3.5"/>
+            <rect x="30" y="57" width="12" height="14" fill="#A8D8FF" stroke="#E85D88" stroke-width="3"/>
+            <rect x="68" y="57" width="12" height="14" fill="#A8D8FF" stroke="#E85D88" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <div class="md:col-span-6 text-center md:text-left">
+          <span id="customSrvBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-[11px] font-extrabold px-3 py-0.5 rounded-full mb-2">
+            🖍️ ADDITIONAL SERVICES & CUSTOM PACKAGE
+          </span>
+          <h3 id="customSrvTitle" class="text-2xl sm:text-3xl font-extrabold text-[#2A1E1B] mb-2">
+            Punya kebutuhan desain lain atau request khusus di luar paket?
+          </h3>
+          <p id="customSrvDesc" class="text-xs sm:text-sm text-[#4A3833] leading-relaxed">
+            Jangan ragu untuk konsultasikan dulu ide kamu bersama kami! Kami bisa menyesuaikan kombinasi item desain (custom scope) maupun anggaran harga (price) agar pas dengan kebutuhan brandmu saat ini.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 flex justify-center md:justify-end">
+          <a
+            id="customSrvBtn"
+            href="https://wa.me/6289654637044"
+            target="_blank"
+            rel="noopener"
+            class="w-full sm:w-auto px-5 py-3.5 rounded-full bg-[#E85D88] hover:bg-[#D6336C] text-white font-extrabold text-xs border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition text-center"
+          >
+            💬 Konsultasi Custom via WA →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE FAQ SECTION -->
+    <div id="faqSection" class="mt-14 max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <span id="faqBadge" class="inline-block bg-[#FFE066] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
+          💡 FREQUENTLY ASKED QUESTIONS
+        </span>
+        <h3 id="faqHeading" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B]">
+          Pertanyaan yang Sering Ditanyakan
+        </h3>
+        <p id="faqSubheading" class="text-xs sm:text-sm text-[#5C4742] mt-1">
+          Klik pertanyaan di bawah ini untuk melihat penjelasan lengkap seputar layanan, harga, dan alur kerja Calla:
+        </p>
+      </div>
+
+      <div id="faqAccordionList" class="space-y-3"></div>
+    </div>
   </section>
 
   <!-- ACCESSIBLE CASE STUDY MODAL -->
@@ -1599,9 +1657,155 @@ function handleSmartImgError(imgEl) {
       }).join('');
     }
 
-    // INITIALIZE ON PAGE LOAD
-    syncMarketButtonsUI();
-    applyAllTranslations();
+    // =========================================================================
+    // ADDITIONAL SERVICES (CUSTOM REQUEST) & INTERACTIVE FAQ RENDERER
+    // =========================================================================
+    const CALLA_EXTRA_CONTENT = {
+      ID: {
+        customBadge: '🖍️ ADDITIONAL SERVICES & CUSTOM PACKAGE',
+        customTitle: 'Punya kebutuhan desain lain atau request khusus di luar paket?',
+        customDesc: 'Jangan ragu untuk konsultasikan dulu ide kamu bersama kami! Kami siap menyesuaikan kombinasi item output (custom scope) maupun anggaran harga (price) agar pas dengan kebutuhan brandmu.',
+        customBtn: '💬 Konsultasi Paket Custom via WA →',
+        customWaText: 'Halo Calla Studio! Aku punya kebutuhan desain khusus (custom) di luar paket yang tertera di website. Boleh bantu sesuaikan scope dan estimasi harganya?',
+        faqBadge: '💡 INFO & PERTANYAAN UMUM (FAQ)',
+        faqHeading: 'Pertanyaan yang Sering Ditanyakan',
+        faqSubheading: 'Klik pada pertanyaan di bawah ini untuk membaca jawaban lengkap dari tim Calla:',
+        faqs: [
+          [
+            'Mengapa harga Lokal Indonesia (IDR) lebih murah dibanding harga Internasional & ASEAN (USD)?',
+            'Rate Card IDR adalah program harga subsidi khusus untuk membantu UMKM domestik di Indonesia (dengan transaksi bank lokal BCA/QRIS dan standar vendor percetakan lokal). Sementara itu, Rate Card Internasional & ASEAN (USD) diperuntukkan bagi brand di luar Indonesia karena sudah mencakup Commercial-Use License lintas negara, kuota item cetak yang lebih banyak (seperti 3 collaterals penuh pada paket Signature), asistensi teknis spesifikasi vendor cetak internasional, serta pemrosesan pembayaran lintas negara (Wise / DuitNow / PayPal).'
+          ],
+          [
+            'Apakah bisa memesan item satuan atau menyesuaikan isi paket (Custom Budget)?',
+            'Bisa banget! Jika kamu hanya membutuhkan item tertentu (misalnya tambah 1 pose maskot, desain menu saja, stiker kemasan, atau ingin menyesuaikan isi paket dengan budget tertentu), klik tombol "Konsultasi Paket Custom" di atas. Aliy akan membantu meracik scope dan harga yang paling pas untukmu.'
+          ],
+          [
+            'Apakah ilustrasi di Calla menggunakan AI atau 100% digambar tangan (Hand-Drawn)?',
+            'Seluruh karya ilustrasi dan maskot di Calla Creative Studio 100% digambar manual dengan tangan (hand-drawn) dari sketsa nol oleh Cindi (Creative Director & Lead Artist) menggunakan tekstur cat air dan krayon khas Calla—bukan hasil generator AI—sehingga brand kamu memiliki keunikan orisinal dan aman secara komersial.'
+          ],
+          [
+            'Bagaimana jika saya belum punya konsep visual atau bayangan sketsa sama sekali?',
+            'Tidak masalah! Kamu cukup menceritakan produk, target pembeli, dan nuansa yang kamu sukai di formulir brief. Kami akan memandu kamu langkah demi langkah lewat Sistem 4-Fase & 2-Gate Lock—dimulai dari penyelarasan arah visual dan draf sketsa kasar (Gate 1) sebelum masuk ke tahap pewarnaan.'
+          ],
+          [
+            'Bagaimana sistem pembayaran, durasi pengerjaan, dan file apa saja yang diterima?',
+            'Jadwal produksi dikunci setelah DP 50% dan brief lengkap diterima. Estimasi pengerjaan rata-rata 7 hari kerja (Senin–Sabtu, Minggu libur). Setelah desain selesai dan pelunasan 50% dilakukan, kamu akan menerima seluruh File Master siap cetak & digital (.AI, .SVG, .PDF 300 DPI, .PNG transparan, & Mockup) beserta Commercial-Use License melalui link Google Drive yang aktif selama 12 bulan.'
+          ]
+        ]
+      },
+      EN: {
+        customBadge: '🖍️ ADDITIONAL SERVICES & CUSTOM PACKAGE',
+        customTitle: 'Have a custom design request outside our packages?',
+        customDesc: 'Let’s talk! Drop us a message to consult your ideas with us today—we can tailor the exact deliverables and adjust the package pricing to match your brand’s current stage and budget.',
+        customBtn: '💬 Consult Custom Scope & Price →',
+        customWaText: 'Hi Calla Studio! I have a custom design request outside the standard packages on your website. Could we discuss a tailored scope and pricing?',
+        faqBadge: '💡 FREQUENTLY ASKED QUESTIONS',
+        faqHeading: 'Got Questions? We’ve Got Answers',
+        faqSubheading: 'Click any question below to learn how our studio pricing, custom requests, and workflow operate:',
+        faqs: [
+          [
+            'Why does the Indonesian Local (IDR) Rate Card differ from the International & ASEAN (USD) Rate Card?',
+            'Our IDR Rate Card is a subsidized domestic program exclusively for local Indonesian micro-businesses utilizing local bank transfers (BCA/QRIS) and domestic print standards. The International & ASEAN (USD) Rate Card applies to all clients outside Indonesia and includes an international Commercial-Use License, expanded deliverable quotas (such as 3 custom collaterals in the Signature tier), international print vendor dieline liaison, and cross-border payment processing via Wise, DuitNow, or PayPal.'
+          ],
+          [
+            'Can I request a custom package or adjust deliverables to fit my budget?',
+            'Yes, absolutely! Whether you need a single a-la-carte item (like a menu sheet, extra mascot poses, or sticker set) or want to tailor an existing package to fit your launch budget, simply click the "Consult Custom Scope & Price" button above and we’ll craft a custom quote for you.'
+          ],
+          [
+            'Are Calla’s illustrations AI-generated or 100% hand-drawn?',
+            'Every illustration and character mascot at Calla Creative Studio is 100% hand-drawn from scratch by Cindi (our Creative Director & Lead Artist) using our signature watercolor and crayon brushes. We never use generative AI, ensuring your brand owns an authentic, soulful, and commercially safe identity.'
+          ],
+          [
+            'What if I don’t have a clear concept or sketch idea yet?',
+            'You’re in safe hands! Simply share your product details and target audience in our brief. We guide you step by step through our 4-Phase & 2-Gate Lock workflow—aligning on visual direction first, then reviewing hand-drawn structural sketches (Gate 1) before any final coloring begins.'
+          ],
+          [
+            'How do payments, turnaround times, and final master files work?',
+            'Your batch slot is secured upon a 50% deposit and completed brief. Standard turnaround is approximately 7 business days (Monday–Saturday, Sundays off). Upon the remaining 50% settlement, all production master files (.AI, .SVG, 300 DPI .PDF, transparent .PNG, & Mockups) and your Commercial-Use License are delivered via a 12-month Google Drive folder.'
+          ]
+        ]
+      }
+    };
+
+    let openFaqIndex = 0; // Buka pertanyaan #1 secara default
+
+    function toggleFaqItem(idx) {
+      openFaqIndex = openFaqIndex === idx ? -1 : idx;
+      renderExtraPricingAndFaq();
+    }
+
+    function renderExtraPricingAndFaq() {
+      const extra = CALLA_EXTRA_CONTENT[currentLang] || CALLA_EXTRA_CONTENT.ID;
+      const badgeEl = document.getElementById('customSrvBadge');
+      if (!badgeEl) return;
+
+      badgeEl.textContent = extra.customBadge;
+      document.getElementById('customSrvTitle').textContent = extra.customTitle;
+      document.getElementById('customSrvDesc').textContent = extra.customDesc;
+      const btnEl = document.getElementById('customSrvBtn');
+      btnEl.textContent = extra.customBtn;
+      btnEl.href = `https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${encodeURIComponent(extra.customWaText)}`;
+
+      document.getElementById('faqBadge').textContent = extra.faqBadge;
+      document.getElementById('faqHeading').textContent = extra.faqHeading;
+      document.getElementById('faqSubheading').textContent = extra.faqSubheading;
+
+      const listEl = document.getElementById('faqAccordionList');
+      listEl.innerHTML = extra.faqs.map(([q, a], idx) => {
+        const isOpen = openFaqIndex === idx;
+        return `
+          <div class="calla-frame bg-white overflow-hidden transition">
+            <button
+              type="button"
+              onclick="toggleFaqItem(${idx})"
+              aria-expanded="${isOpen}"
+              class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-[#FFF9DB] transition"
+            >
+              <span class="text-xs sm:text-sm font-extrabold text-[#2A1E1B]">${idx + 1}. ${q}</span>
+              <span class="w-7 h-7 rounded-full border-2 border-[#2A1E1B] ${isOpen ? 'bg-[#E85D88] text-white' : 'bg-[#FFE066] text-[#2A1E1B]'} flex items-center justify-center font-extrabold text-xs shrink-0">
+                ${isOpen ? '−' : '+'}
+              </span>
+            </button>
+            <div class="${isOpen ? 'block' : 'hidden'} px-5 pb-4 pt-2 border-t border-dashed border-[#2A1E1B]/20 text-xs sm:text-sm text-[#4A3833] leading-relaxed bg-[#FFFDF8]">
+              ${a}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Hubungkan otomatis setiap kali bahasa/market berubah
+    const _origApplyTranslations = applyAllTranslations;
+    applyAllTranslations = function() {
+      _origApplyTranslations();
+      renderExtraPricingAndFaq();
+    };
+
+    // INITIALIZE ON PAGE LOAD (WITH SILENT MARKET LOCK: ?m=id or ?m=en)
+    (function initMarketFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const marketParam = (params.get('m') || params.get('market') || '').toUpperCase();
+
+      if (marketParam === 'EN' || marketParam === 'USD' || marketParam === 'GLOBAL') {
+        currentMarket = 'EN';
+        currentLang = 'EN';
+        document.documentElement.lang = 'en';
+      } else if (marketParam === 'ID' || marketParam === 'IDR') {
+        currentMarket = 'ID';
+        currentLang = 'ID';
+        document.documentElement.lang = 'id';
+      }
+
+      if (['EN', 'USD', 'GLOBAL', 'ID', 'IDR'].includes(marketParam)) {
+        const headerSwitchGroup = document.getElementById('headerMarketID')?.parentElement;
+        const priceSwitchGroup = document.getElementById('priceBtnID')?.parentElement;
+        if (headerSwitchGroup) headerSwitchGroup.style.display = 'none';
+        if (priceSwitchGroup) priceSwitchGroup.style.display = 'none';
+      }
+
+      syncMarketButtonsUI();
+      applyAllTranslations();
+    })();
   </script>
 </body>
 </html>
