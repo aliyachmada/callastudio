@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,64 +10,129 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/calla.css" />
   <style>
+    /* Feature #4: Tactile Watercolor Paper Grain & Editorial Drop-Cap */
+    .paper-grain {
+      background-image: radial-gradient(rgba(42, 30, 27, 0.045) 1px, transparent 0);
+      background-size: 22px 22px;
+    }
+    .storybook-dropcap::first-letter {
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      font-size: 2.25rem;
+      line-height: 1;
+      float: left;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+      color: #E85D88;
+    }
+
+    /* Natural Borderless Critter Lane (No Box, Zero Speech Bubble Clipping!) */
+    .critter-lane-natural {
+      position: relative;
+      height: 64px;
+      overflow: visible;
+    }
+
+    /* Extra Interactive Crayon Critter Animations & Boop Reactions */
     @keyframes bobGentle {
       0%, 100% { transform: translateY(0px) rotate(-3deg); }
-      50% { transform: translateY(-7px) rotate(4deg); }
+      50% { transform: translateY(-6px) rotate(4deg); }
     }
     @keyframes beeBuzz {
       0%, 100% { transform: translate(0px, 0px) rotate(-4deg); }
-      25% { transform: translate(-18px, -6px) rotate(3deg); }
-      50% { transform: translate(-36px, 2px) rotate(-3deg); }
-      75% { transform: translate(-18px, 6px) rotate(4deg); }
+      25% { transform: translate(-14px, -5px) rotate(3deg); }
+      50% { transform: translate(-28px, 2px) rotate(-3deg); }
+      75% { transform: translate(-14px, 5px) rotate(4deg); }
     }
     @keyframes bunnyPeek {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
-      40% { transform: translateY(-8px) rotate(-4deg); }
-      60% { transform: translateY(-8px) rotate(4deg); }
+      40% { transform: translateY(-6px) rotate(-4deg); }
+      60% { transform: translateY(-6px) rotate(4deg); }
     }
     @keyframes snailGlide {
       0%, 100% { transform: translateX(0px); }
-      50% { transform: translateX(22px); }
+      50% { transform: translateX(20px); }
     }
     @keyframes critterBoopJump {
       0% { transform: scale(1) translateY(0) rotate(0deg); }
-      35% { transform: scale(1.25, 0.85) translateY(3px) rotate(-8deg); }
-      65% { transform: scale(0.95, 1.18) translateY(-14px) rotate(10deg); }
+      35% { transform: scale(1.22, 0.86) translateY(2px) rotate(-7deg); }
+      65% { transform: scale(0.95, 1.15) translateY(-10px) rotate(8deg); }
       100% { transform: scale(1) translateY(0) rotate(0deg); }
     }
     @keyframes popBubbleUp {
-      0% { opacity: 1; transform: translate(-50%, 0px) scale(0.7); }
-      60% { opacity: 1; transform: translate(-50%, -22px) scale(1.08); }
-      100% { opacity: 0; transform: translate(-50%, -34px) scale(0.9); }
+      0% { opacity: 0; transform: translate(-50%, 4px) scale(0.75); }
+      25% { opacity: 1; transform: translate(-50%, -16px) scale(1.05); }
+      80% { opacity: 1; transform: translate(-50%, -20px) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -26px) scale(0.92); }
     }
     .critter-bob { animation: bobGentle var(--flower-speed, 5s) ease-in-out infinite; }
     .critter-bee { animation: beeBuzz var(--critter-speed, 7s) ease-in-out infinite; }
     .critter-bunny { animation: bunnyPeek 4.5s ease-in-out infinite; }
     .critter-snail { animation: snailGlide 11s ease-in-out infinite; }
-    .is-booped { animation: critterBoopJump 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+    .is-booped { animation: critterBoopJump 0.52s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+
+    /* Unclipped Speech Bubble Above Critters */
     .boop-pop-badge {
       position: absolute;
       left: 50%;
-      top: -10px;
+      top: -14px;
       pointer-events: none;
       white-space: nowrap;
       font-size: 11px;
       font-weight: 800;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 9999px;
-      background: #FFFDF8;
+      background: #FFE066;
       color: #2A1E1B;
-      border: 1.5px solid #2A1E1B;
+      border: 2px solid #2A1E1B;
       box-shadow: 2px 2px 0px #2A1E1B;
-      z-index: 40;
-      animation: popBubbleUp 0.9s ease-out forwards;
+      z-index: 50;
+      animation: popBubbleUp 1.05s ease-out forwards;
     }
+
+    /* Pencil Sketch Blueprint Filter for Gate 1 Mode */
+    .pencil-sketch-filter {
+      filter: grayscale(100%) contrast(145%) brightness(108%);
+      mix-blend-mode: multiply;
+    }
+
+    /* Custom Range Slider for Gate 1 Sketch vs Gate 2 Color */
+    .gate-slider-input {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: ew-resize;
+    }
+    .gate-slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 34px;
+      width: 34px;
+      border-radius: 9999px;
+      background: #FFE066;
+      border: 2.5px solid #2A1E1B;
+      box-shadow: 2px 2px 0px #2A1E1B;
+      cursor: ew-resize;
+    }
+    .gate-slider-input::-moz-range-thumb {
+      height: 34px;
+      width: 34px;
+      border-radius: 9999px;
+      background: #FFE066;
+      border: 2.5px solid #2A1E1B;
+      box-shadow: 2px 2px 0px #2A1E1B;
+      cursor: ew-resize;
+    }
+
+    /* Hide scrollbar on Horizontal Sliding Workflow Track */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
     @media (prefers-reduced-motion: reduce) {
       .critter-bob, .critter-bee, .critter-bunny, .critter-snail { animation: none !important; }
     }
   </style>
 </head>
-<body class="selection:bg-[#E85D88] selection:text-white">
+<body class="paper-grain selection:bg-[#E85D88] selection:text-white">
 
   <!-- SVG FILTER FOR CHILDLIKE CRAYON EDGES -->
   <svg width="0" height="0" class="absolute pointer-events-none" aria-hidden="true">
@@ -82,11 +147,11 @@
   <!-- TOP ANNOUNCEMENT BAR (MAX 7 BRANDS PER BATCH) -->
   <div class="bg-[#2A1E1B] text-[#FFFDF8] text-xs sm:text-sm py-2.5 px-4 text-center">
     <span id="topBarBadge" class="inline-block bg-[#FFE066] text-[#2A1E1B] font-bold px-2.5 py-0.5 rounded-full mr-2 text-[11px]">
-      SISTEM BATCH STUDIO
+      STUDIO BATCH SYSTEM
     </span>
-    <span id="topBarText">Komitmen kualitas hand-drawn: Kapasitas seasonal dibatasi <strong>Maksimal 7 Brand per Batch</strong>.</span>
+    <span id="topBarText">Hand-drawn quality commitment: Seasonal capacity is capped at a <strong>Maximum of 7 Brands per Batch</strong>.</span>
     <a href="#pricing" id="topBarLink" class="underline font-semibold text-[#FFE066] ml-2 hover:text-white">
-      Lihat Paket & Cek Slot →
+      View Packages & Check Slot Availability →
     </a>
   </div>
 
@@ -102,9 +167,9 @@
       </a>
 
       <nav aria-label="Main Navigation" class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-[#5C4742]">
-        <a href="#gallery" id="navGallery" class="hover:text-[#2A1E1B] transition">Portofolio & Galeri</a>
-        <a href="#team" id="navTeam" class="hover:text-[#2A1E1B] transition">Tentang Tim</a>
-        <a href="#workflow" id="navWorkflow" class="hover:text-[#2A1E1B] transition">Alur 4-Fase</a>
+        <a href="#gallery" id="navGallery" class="hover:text-[#2A1E1B] transition">Portfolio & Gallery</a>
+        <a href="#team" id="navTeam" class="hover:text-[#2A1E1B] transition">Meet the Team</a>
+        <a href="#workflow" id="navWorkflow" class="hover:text-[#2A1E1B] transition">4-Phase Workflow</a>
         <a href="#pricing" id="navPricing" class="hover:text-[#2A1E1B] transition">Pricelist</a>
       </nav>
 
@@ -128,7 +193,7 @@
             id="headerMarketID"
             type="button"
             onclick="selectMarket('ID')"
-            class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#2A1E1B] text-white transition"
+            class="px-2.5 py-1 rounded-full text-[11px] font-bold text-[#2A1E1B] hover:bg-[#FFF3BF] transition"
             title="Bahasa Indonesia & Rate Card IDR"
           >
             🇮🇩 ID · IDR
@@ -137,7 +202,7 @@
             id="headerMarketEN"
             type="button"
             onclick="selectMarket('EN')"
-            class="px-2.5 py-1 rounded-full text-[11px] font-bold text-[#2A1E1B] hover:bg-[#FFF3BF] transition"
+            class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#2A1E1B] text-white transition"
             title="English & International USD Rate Card"
           >
             🌏 EN · USD
@@ -151,11 +216,11 @@
   <section
     id="heroCanvas"
     aria-label="Hero Calla Creative Studio"
-    class="calla-stripes relative border-b-2 border-[#2A1E1B] pt-12 pb-16 md:py-20 overflow-hidden"
+    class="calla-stripes relative border-b-2 border-[#2A1E1B] pt-10 pb-14 md:py-16 overflow-hidden"
   >
     <div id="stickerLayer" class="absolute inset-0 pointer-events-none">
       <!-- Sticker 1: Top Left Blue-Pink Crayon Flower -->
-      <div class="crayon-sticker pointer-events-auto w-24 h-24 sm:w-32 sm:h-32" data-sticker="true" data-bounds="heroCanvas" data-boop="🌸 Bloom!" style="left: 3%; top: 6%;" title="Drag or click me!">
+      <div class="crayon-sticker pointer-events-auto w-20 h-20 sm:w-28 sm:h-28" data-sticker="true" data-bounds="heroCanvas" data-boop="🌸 Bloom!" style="left: 3%; top: 8%;" title="Drag or click me!">
         <div class="sticker-prox">
           <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" aria-hidden="true">
             <path d="M25 35 Q70 5 118 30 Q138 75 110 118 Q65 135 22 110 Q5 65 25 35 Z" fill="#FFB2C9" opacity="0.85"/>
@@ -167,7 +232,7 @@
       </div>
 
       <!-- Sticker 2: Top Right Pink-Yellow Flower -->
-      <div class="crayon-sticker pointer-events-auto w-24 h-24 sm:w-32 sm:h-32" data-sticker="true" data-bounds="heroCanvas" data-boop="🌷 Yay!" style="left: 83%; top: 7%;" title="Drag or click me!">
+      <div class="crayon-sticker pointer-events-auto w-20 h-20 sm:w-28 sm:h-28" data-sticker="true" data-bounds="heroCanvas" data-boop="🌷 Yay!" style="left: 83%; top: 8%;" title="Drag or click me!">
         <div class="sticker-prox">
           <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" style="animation-delay: 0.8s;" aria-hidden="true">
             <path d="M66 15 C78 28, 95 12, 98 32 C112 28, 128 45, 108 62 C128 75, 115 98, 95 92 C98 115, 75 125, 64 102 C48 122, 25 110, 35 88 C12 85, 15 58, 36 55 C18 35, 42 15, 58 32 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="4.5" stroke-linejoin="round"/>
@@ -178,7 +243,7 @@
       </div>
 
       <!-- Sticker 3: Bottom Left Crayon Butterfly -->
-      <div class="crayon-sticker pointer-events-auto hidden sm:block w-28 h-28" data-sticker="true" data-bounds="heroCanvas" data-boop="🦋 Flutter~" style="left: 4%; top: 64%;" title="Drag or click me!">
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-24 h-24" data-sticker="true" data-bounds="heroCanvas" data-boop="🦋 Flutter~" style="left: 4%; top: 62%;" title="Drag or click me!">
         <div class="sticker-prox">
           <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" style="animation-delay: 1.4s;" aria-hidden="true">
             <path d="M66 55 C35 15, 8 38, 22 68 C10 85, 32 115, 66 85 Z" fill="#90CAF9" stroke="#3949AB" stroke-width="4"/>
@@ -193,7 +258,7 @@
       </div>
 
       <!-- Sticker 4: Bottom Right Green-Orange Flower -->
-      <div class="crayon-sticker pointer-events-auto hidden sm:block w-28 h-28" data-sticker="true" data-bounds="heroCanvas" data-boop="🌼 Sparkle!" style="left: 82%; top: 63%;" title="Drag or click me!">
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-24 h-24" data-sticker="true" data-bounds="heroCanvas" data-boop="🌼 Sparkle!" style="left: 82%; top: 62%;" title="Drag or click me!">
         <div class="sticker-prox">
           <svg viewBox="0 0 140 140" class="w-full h-full flower-anim" style="animation-delay: 0.4s;" aria-hidden="true">
             <path d="M70 14 C92 5, 102 32, 85 45 C115 40, 122 72, 92 76 C112 102, 78 122, 68 92 C48 122, 18 102, 42 75 C10 70, 18 38, 48 45 C35 20, 55 8, 70 14 Z" fill="#74C69D" stroke="#2A1E1B" stroke-width="4.5"/>
@@ -203,8 +268,8 @@
         </div>
       </div>
 
-      <!-- Sticker 5: Mid-Left Chubby Crayon Bee in Hero -->
-      <div class="crayon-sticker pointer-events-auto hidden lg:block w-16 h-16" data-sticker="true" data-bounds="heroCanvas" data-boop="🐝 Bzzz!" style="left: 9%; top: 38%;" title="Lebah Krayon — Geser atau klik aku!">
+      <!-- Sticker 5: Mid-Left Chubby Crayon Bee -->
+      <div class="crayon-sticker pointer-events-auto hidden lg:block w-14 h-14" data-sticker="true" data-bounds="heroCanvas" data-boop="🐝 Bzzz!" style="left: 9%; top: 38%;" title="Drag or click me!">
         <div class="sticker-prox critter-bob">
           <svg viewBox="0 0 90 75" class="w-full h-full" aria-hidden="true">
             <ellipse cx="38" cy="22" rx="12" ry="15" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3.5"/>
@@ -217,8 +282,8 @@
         </div>
       </div>
 
-      <!-- Sticker 6: Mid-Right Little Crayon Ladybug in Hero -->
-      <div class="crayon-sticker pointer-events-auto hidden lg:block w-14 h-14" data-sticker="true" data-bounds="heroCanvas" data-boop="🐞 Lucky!" style="left: 86%; top: 39%;" title="Kepik Krayon — Geser atau klik aku!">
+      <!-- Sticker 6: Mid-Right Little Crayon Ladybug -->
+      <div class="crayon-sticker pointer-events-auto hidden lg:block w-14 h-14" data-sticker="true" data-bounds="heroCanvas" data-boop="🐞 Lucky!" style="left: 86%; top: 39%;" title="Drag or click me!">
         <div class="sticker-prox critter-ladybug-ud">
           <svg viewBox="0 0 80 80" class="w-full h-full" aria-hidden="true">
             <path d="M32 22 C24 12, 18 14, 20 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -237,39 +302,39 @@
 
     <!-- HERO CENTRAL CONTENT -->
     <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
-      <div class="calla-frame bg-[#FFFFFF]/95 backdrop-blur-sm p-6 sm:p-10 text-center">
-        <div id="heroBadge" class="inline-flex items-center gap-2 bg-[#FFE066] text-[#2A1E1B] border border-[#2A1E1B] px-3.5 py-1 rounded-full text-xs font-bold mb-5">
+      <div class="calla-frame bg-[#FFFFFF]/95 backdrop-blur-sm p-6 sm:p-9 text-center">
+        <div id="heroBadge" class="inline-flex items-center gap-2 bg-[#FFE066] text-[#2A1E1B] border border-[#2A1E1B] px-3.5 py-1 rounded-full text-xs font-bold mb-4">
           🖍️ Handcrafted Brand Identity · Character Mascot · Packaging Design
         </div>
 
-        <h1 id="heroHeadline" class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#2A1E1B] mb-4">
-          Ide kecil, dunia brand yang penuh cerita. 🌷
+        <h1 id="heroHeadline" class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#2A1E1B] mb-3">
+          Little ideas, lovely brand worlds. 🌷
         </h1>
 
-        <p id="heroSubcopy" class="text-base sm:text-lg text-[#4A3833] font-normal max-w-2xl mx-auto mb-6 leading-relaxed">
-          Kami mengubah ide menjadi identitas visual yang berwarna, karakter ilustratif, dan kemasan yang punya cerita—dirancang dengan penuh perhatian untuk brand dan orang-orang yang menyukainya.
+        <p id="heroSubcopy" class="text-sm sm:text-lg text-[#4A3833] font-normal max-w-2xl mx-auto mb-6 leading-relaxed">
+          We turn ideas into colorful brand identities, hand-drawn characters, and packaging with a story to tell—made thoughtfully for the people who’ll love them.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <div class="flex flex-wrap justify-center gap-3 mb-5">
           <a
             href="#gallery"
             id="heroCtaPrimary"
-            class="px-6 py-3.5 rounded-full bg-[#E85D88] text-white font-bold text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition"
+            class="px-6 py-3 rounded-full bg-[#E85D88] text-white font-bold text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition"
           >
-            🌈 Jelajahi Galeri Karya ↓
+            🌈 Explore Selected Works ↓
           </a>
           <a
             href="#pricing"
             id="heroCtaSecondary"
-            class="px-6 py-3.5 rounded-full bg-white text-[#2A1E1B] font-bold text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:bg-[#FFF9DB] transition"
+            class="px-6 py-3 rounded-full bg-white text-[#2A1E1B] font-bold text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:bg-[#FFF9DB] transition"
           >
-            💌 Lihat Paket & Pricelist
+            💌 View Packages & Pricelist
           </a>
         </div>
 
-        <div class="pt-4 border-t border-[#E6DEC8] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5C4742]">
+        <div class="pt-3.5 border-t border-[#E6DEC8] flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs text-[#5C4742]">
           <p id="heroMicrocopy" class="font-medium">
-            Psst… coba geser atau klik bunga dan hewan krayonnya! Setelah itu, intip dunia brand yang sudah kami buat. ✨
+            Psst… feel free to drag or click the crayon flowers and critters! ✨
           </p>
           <div class="flex items-center gap-2 shrink-0">
             <button
@@ -278,7 +343,7 @@
               onclick="spawnBoundedFlower()"
               class="px-3 py-1.5 rounded-full bg-[#FFF3BF] text-[#2A1E1B] font-bold border border-[#2A1E1B] hover:bg-[#FFE066] transition"
             >
-              <span id="spawnBtnText">🌸 + Tambah Bunga</span> (<span id="flowerCount">0</span>/10)
+              <span id="spawnBtnText">🌸 + Add Flower</span> (<span id="flowerCount">0</span>/10)
             </button>
             <button
               type="button"
@@ -294,14 +359,17 @@
     </div>
   </section>
 
-  <!-- CRITTER PLAYGROUND 1: THE POND & LADYBUG GARDEN -->
-  <div id="critterLane1" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-2 relative overflow-hidden select-none">
-    <div class="relative h-16 flex items-center">
+  <!-- ======================================================================= -->
+  <!-- CRITTER PLAYGROUND 1: NATURAL POND TRAIL (NO BOX, UNCLIPPED BUBBLES!)   -->
+  <!-- ======================================================================= -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-1 select-none overflow-visible">
+    <div id="critterLane1" class="critter-lane-natural flex items-center">
       <svg viewBox="0 0 800 36" class="w-full h-7 opacity-60 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
         <path d="M 5 18 Q 45 5, 85 18 T 165 18 T 245 18 T 325 18 T 405 18 T 485 18 T 565 18 T 645 18 T 725 18 T 795 18" stroke="#7CC6FE" stroke-width="3.5" stroke-dasharray="10 8" fill="none" stroke-linecap="round"/>
       </svg>
 
-      <div class="crayon-sticker pointer-events-auto w-14 h-11" data-sticker="true" data-bounds="critterLane1" data-boop="🫧 Blub blub!" style="left: 4%; top: 14%;" title="Ikan Biru — Geser atau klik aku!">
+      <!-- 1. Blue Crayon Fish -->
+      <div class="crayon-sticker pointer-events-auto w-14 h-11" data-sticker="true" data-bounds="critterLane1" data-boop="🫧 Blub blub!" style="left: 4%; top: 18%;" title="Blue Fish — Drag or click me!">
         <div class="sticker-prox critter-fish-lr">
           <svg viewBox="0 0 90 60" class="w-full h-full">
             <path d="M22 30 L5 14 L9 30 L5 46 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
@@ -314,7 +382,8 @@
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane1" data-boop="🐤 Kwek kwek!" style="left: 28%; top: 4%;" title="Bebek Krayon — Geser atau klik aku!">
+      <!-- 2. Yellow Duckling -->
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane1" data-boop="🐤 Kwek kwek!" style="left: 26%; top: 8%;" title="Duckling — Drag or click me!">
         <div class="sticker-prox critter-bob">
           <svg viewBox="0 0 90 85" class="w-full h-full">
             <path d="M68 42 L82 37 L78 46 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3" stroke-linejoin="round"/>
@@ -322,25 +391,27 @@
             <circle cx="56" cy="34" r="14" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
             <path d="M30 52 Q42 62 52 50" stroke="#F59F00" stroke-width="3" fill="none" stroke-linecap="round"/>
             <circle cx="60" cy="31" r="3" fill="#2A1E1B"/>
-            <circle cx="54" cy="37" r="3" fill="#FF85A2" opacity="0.7"/>
+            <circle cx="54" cy="37" r="3.2" fill="#FF85A2" opacity="0.75"/>
           </svg>
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto hidden md:block w-14 h-12" data-sticker="true" data-bounds="critterLane1" data-boop="🐡 Puff~!" style="left: 53%; top: 12%;" title="Ikan Buntal — Geser atau klik aku!">
+      <!-- 3. Chubby Pufferfish -->
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-12" data-sticker="true" data-bounds="critterLane1" data-boop="🐡 Puff~!" style="left: 50%; top: 14%;" title="Pufferfish — Drag or click me!">
         <div class="sticker-prox critter-bob" style="animation-delay: 0.6s;">
           <svg viewBox="0 0 90 75" class="w-full h-full">
             <path d="M70 38 L84 26 L82 48 Z" fill="#A8D8FF" stroke="#2A1E1B" stroke-width="3.2" stroke-linejoin="round"/>
             <circle cx="44" cy="38" r="24" fill="#FFD8A8" stroke="#2A1E1B" stroke-width="3.5"/>
             <path d="M24 50 Q44 62 64 50" fill="#FFFDF8" stroke="#2A1E1B" stroke-width="2.5"/>
             <circle cx="33" cy="32" r="3.2" fill="#2A1E1B"/>
-            <circle cx="28" cy="38" r="3.5" fill="#FF85A2" opacity="0.65"/>
+            <circle cx="28" cy="38" r="3.5" fill="#FF85A2" opacity="0.7"/>
             <path d="M44 10 L44 15 M28 16 L31 20 M60 16 L57 20" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-10" data-sticker="true" data-bounds="critterLane1" data-boop="🐠 Splash!" style="left: 73%; top: 18%;" title="Ikan Pink — Geser atau klik aku!">
+      <!-- 4. Pink-Gold Fish -->
+      <div class="crayon-sticker pointer-events-auto hidden md:block w-14 h-11" data-sticker="true" data-bounds="critterLane1" data-boop="🐠 Splash!" style="left: 72%; top: 18%;" title="Pink Fish — Drag or click me!">
         <div class="sticker-prox critter-fish-rl">
           <svg viewBox="0 0 90 60" class="w-full h-full">
             <path d="M68 30 L85 15 L81 30 L85 45 Z" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
@@ -351,9 +422,10 @@
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto w-12 h-12" data-sticker="true" data-bounds="critterLane1" data-boop="🐞 Halo!" style="left: 91%; top: 8%;" title="Kepik Krayon — Geser atau klik aku!">
+      <!-- 5. Crawling Red Ladybug -->
+      <div class="crayon-sticker pointer-events-auto w-13 h-13" data-sticker="true" data-bounds="critterLane1" data-boop="🐞 Lucky!" style="left: 89%; top: 10%;" title="Ladybug — Drag or click me!">
         <div class="sticker-prox critter-ladybug-ud">
-          <svg viewBox="0 0 80 80" class="w-full h-full">
+          <svg viewBox="0 0 80 80" class="w-12 h-12">
             <path d="M32 22 C24 12, 18 14, 20 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
             <path d="M48 22 C56 12, 62 14, 60 20" stroke="#2A1E1B" stroke-width="3" fill="none" stroke-linecap="round"/>
             <circle cx="40" cy="24" r="10" fill="#2A1E1B"/>
@@ -370,59 +442,62 @@
   </div>
 
   <!-- SECTION 2: BROWSABLE PROJECT GALLERY -->
-  <section id="gallery" class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-14">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+  <section id="gallery" class="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
       <div>
-        <span id="galBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-3">
+        <span id="galBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
           🎨 CURATED PORTFOLIO SHOWCASE
         </span>
         <h2 id="galHeading" class="text-3xl sm:text-5xl font-extrabold text-[#2A1E1B]">
-          Dunia Brand yang Telah Kami Bangun
+          Brand Worlds We Have Built
         </h2>
-        <p id="galSubheading" class="text-sm sm:text-base text-[#5C4742] mt-2 max-w-2xl">
-          Klik pada gambar karya untuk membuka tampilan ukuran penuh (Full-Size Lightbox) tanpa terpotong, atau buka studi kasus step-by-step untuk melihat proses di balik layar.
+        <p id="galSubheading" class="text-xs sm:text-base text-[#5C4742] mt-1.5 max-w-2xl">
+          Click any artwork for full-size view, or open the Step-by-Step Case Study & Interactive Color Palette.
         </p>
       </div>
 
       <!-- Category Filter Buttons -->
-      <div role="tablist" aria-label="Portfolio Category Filter" class="flex flex-wrap gap-2">
-        <button type="button" onclick="filterGallery('all')" id="filter-all" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition">
-          Karya Unggulan
+      <div role="tablist" aria-label="Portfolio Category Filter" class="flex flex-wrap gap-1.5 sm:gap-2">
+        <button type="button" onclick="filterGallery('all')" id="filter-all" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition">
+          Featured Works
         </button>
-        <button type="button" onclick="filterGallery('identity')" id="filter-identity" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
+        <button type="button" onclick="filterGallery('identity')" id="filter-identity" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
           Brand Identity
         </button>
-        <button type="button" onclick="filterGallery('mascot')" id="filter-mascot" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
+        <button type="button" onclick="filterGallery('mascot')" id="filter-mascot" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
           Mascot & Illustration
         </button>
-        <button type="button" onclick="filterGallery('packaging')" id="filter-packaging" class="px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
+        <button type="button" onclick="filterGallery('packaging')" id="filter-packaging" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
           Packaging & F&B
         </button>
       </div>
     </div>
 
-    <div id="galleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    <div id="galleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-    <div id="galleryShowAllWrap" class="mt-10 text-center">
+    <div id="galleryShowAllWrap" class="mt-8 text-center">
       <button
         type="button"
         id="toggleShowAllBtn"
         onclick="toggleShowAllWorks()"
         class="px-6 py-3 rounded-full bg-[#FFE066] hover:bg-[#FFD43B] text-[#2A1E1B] font-extrabold text-xs sm:text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition"
       >
-        ✨ Tampilkan Semua Karya
+        ✨ Show All Works
       </button>
     </div>
   </section>
 
-  <!-- CRITTER PLAYGROUND 2: THE STORYBOOK MEADOW -->
-  <div id="critterLane2" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 py-3 relative overflow-hidden select-none">
-    <div class="relative h-16 flex items-center">
+  <!-- ======================================================================= -->
+  <!-- CRITTER PLAYGROUND 2: NATURAL MEADOW TRAIL (NO BOX, UNCLIPPED BUBBLES!) -->
+  <!-- ======================================================================= -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-1 select-none overflow-visible">
+    <div id="critterLane2" class="critter-lane-natural flex items-center">
       <svg viewBox="0 0 800 32" class="w-full h-6 opacity-55 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
         <path d="M 0 18 Q 70 4, 140 18 T 280 18 T 420 18 T 560 18 T 700 18 T 800 18" stroke="#80ED99" stroke-width="3.5" stroke-dasharray="6 10" fill="none" stroke-linecap="round"/>
       </svg>
 
-      <div class="crayon-sticker pointer-events-auto w-24 h-11" data-sticker="true" data-bounds="critterLane2" data-boop="🐛 Nyam nyam~" style="left: 3%; top: 15%;" title="Ulat Krayon — Geser atau klik aku!">
+      <!-- 1. Wiggling Caterpillar -->
+      <div class="crayon-sticker pointer-events-auto w-24 h-12" data-sticker="true" data-bounds="critterLane2" data-boop="🐛 Nyam nyam~" style="left: 3%; top: 14%;" title="Caterpillar — Drag or click me!">
         <div class="sticker-prox critter-caterpillar">
           <svg viewBox="0 0 150 60" class="w-full h-full">
             <circle cx="24" cy="36" r="12" fill="#80ED99" stroke="#2A1E1B" stroke-width="3.2"/>
@@ -438,20 +513,22 @@
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto w-16 h-12" data-sticker="true" data-bounds="critterLane2" data-boop="🐌 Pelan tapi pasti~" style="left: 35%; top: 10%;" title="Siput Krayon — Geser atau klik aku!">
+      <!-- 2. Pastel Spiral Snail -->
+      <div class="crayon-sticker pointer-events-auto w-16 h-12" data-sticker="true" data-bounds="critterLane2" data-boop="🐌 Cozy pace~" style="left: 34%; top: 12%;" title="Snail — Drag or click me!">
         <div class="sticker-prox critter-snail">
           <svg viewBox="0 0 100 75" class="w-full h-full">
             <path d="M14 56 Q50 58 82 54 C90 52, 92 42, 82 40 Q68 42 64 50 L20 50 Z" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
             <circle cx="44" cy="34" r="20" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
             <path d="M44 34 m-10 0 a 10 10 0 1 0 20 0 a 7 7 0 1 0 -14 0" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
             <path d="M78 40 L83 25 M84 42 L91 28" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="83" cy="24" r="2.5" fill="#2A1E1B"/>
-            <circle cx="91" cy="27" r="2.5" fill="#2A1E1B"/>
+            <circle cx="83" cy="24" r="2.8" fill="#2A1E1B"/>
+            <circle cx="91" cy="27" r="2.8" fill="#2A1E1B"/>
           </svg>
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-14" data-sticker="true" data-bounds="critterLane2" data-boop="🐰 Hop hop!" style="left: 64%; top: 4%;" title="Kelinci Krayon — Geser atau klik aku!">
+      <!-- 3. Peeking Storybook Bunny -->
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-14" data-sticker="true" data-bounds="critterLane2" data-boop="🐰 Hop hop!" style="left: 62%; top: 6%;" title="Bunny — Drag or click me!">
         <div class="sticker-prox critter-bunny">
           <svg viewBox="0 0 90 90" class="w-full h-full">
             <ellipse cx="35" cy="24" rx="7" ry="18" transform="rotate(-10 35 24)" fill="#FFFDF8" stroke="#2A1E1B" stroke-width="3.5"/>
@@ -468,73 +545,212 @@
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane2" data-boop="🦋 Cantik!" style="left: 88%; top: 6%;" title="Kupu-Kupu — Geser atau klik aku!">
+      <!-- 4. Lilac-Pink Butterfly -->
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane2" data-boop="🦋 Flutter!" style="left: 87%; top: 8%;" title="Butterfly — Drag or click me!">
         <div class="sticker-prox critter-bob">
-          <svg viewBox="0 0 100 90" class="w-full h-full">
-            <path d="M48 42 C22 10, 6 28, 18 50 C8 65, 26 84, 48 62 Z" fill="#C77DFF" stroke="#2A1E1B" stroke-width="3.5"/>
-            <path d="M52 42 C78 10, 94 28, 82 50 C92 65, 74 84, 52 62 Z" fill="#C77DFF" stroke="#2A1E1B" stroke-width="3.5"/>
-            <circle cx="30" cy="38" r="5" fill="#FFE066"/>
-            <circle cx="70" cy="38" r="5" fill="#FFE066"/>
-            <rect x="47" y="28" width="6" height="40" rx="3" fill="#FFE066" stroke="#2A1E1B" stroke-width="3"/>
+          <svg viewBox="0 0 100 95" class="w-full h-full">
+            <path d="M48 28 C42 12, 30 12, 35 20" stroke="#2A1E1B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M52 28 C58 12, 70 12, 65 20" stroke="#2A1E1B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M48 44 C22 12, 6 30, 18 52 C8 67, 26 86, 48 64 Z" fill="#C77DFF" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M52 44 C78 12, 94 30, 82 52 C92 67, 74 86, 52 64 Z" fill="#C77DFF" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="30" cy="40" r="5" fill="#FFE066"/>
+            <circle cx="70" cy="40" r="5" fill="#FFE066"/>
+            <rect x="47" y="28" width="6" height="42" rx="3" fill="#FFE066" stroke="#2A1E1B" stroke-width="3"/>
           </svg>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 3: MEET THE TEAM & INTERACTIVE PROCESS -->
-  <section id="team" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-    <div class="calla-frame bg-[#FFF9E6] p-6 sm:p-10">
-      <div class="grid md:grid-cols-12 gap-8 items-center">
-        <div class="md:col-span-6 space-y-4 bg-white p-6 sm:p-8 rounded-2xl border-2 border-[#2A1E1B]">
-          <span id="teamBadge" class="inline-block bg-[#FFD8A8] border border-[#2A1E1B] text-xs font-bold px-3 py-1 rounded-full">
-            🌷 THE DYNAMIC DUO
-          </span>
-          <h2 id="teamHeading" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B]">
-            Kenalan dengan tim kecil di balik Calla 🌷
-          </h2>
-          <p id="teamP1" class="text-sm sm:text-base text-[#4A3833] leading-relaxed"></p>
-          <p id="teamP2" class="text-sm sm:text-base text-[#4A3833] leading-relaxed"></p>
-          <p id="teamP3" class="text-sm text-[#5C4742] pt-2 border-t border-[#E6DEC8]"></p>
-        </div>
+  <!-- ======================================================================= -->
+  <!-- SECTION 3: COMPACT TEAM CARD + ORIGINAL CALLA ARTWORK SLIDER (DUMDUM)   -->
+  <!-- ======================================================================= -->
+  <section id="team" class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+    <div class="calla-frame bg-[#FFF9E6] p-5 sm:p-7">
+      <div class="grid lg:grid-cols-12 gap-6 items-center">
 
-        <div class="md:col-span-6 space-y-4">
-          <div class="bg-white p-6 rounded-2xl border-2 border-[#2A1E1B]">
-            <div class="flex items-center justify-between text-xs font-bold text-[#5C4742] mb-3">
-              <span id="procHeaderLabel">PANDUAN STEP-BY-STEP KLIEN</span>
-              <span id="procStepTag" class="bg-[#FFE066] text-[#2A1E1B] px-2.5 py-0.5 rounded-full border border-[#2A1E1B]"></span>
+        <!-- Left (5 cols): Ultra-Compact Team Card with Pop-Up Story Trigger -->
+        <div class="lg:col-span-5 bg-white p-5 rounded-2xl border-2 border-[#2A1E1B] flex flex-col justify-between gap-4 h-full">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span id="teamBadge" class="inline-block bg-[#FFD8A8] border border-[#2A1E1B] text-[11px] font-extrabold px-3 py-0.5 rounded-full">
+                🌷 THE DYNAMIC DUO
+              </span>
+              <span class="text-[11px] font-bold text-[#5C4742]">Malang, ID</span>
             </div>
+            <h2 id="teamHeading" class="text-xl sm:text-2xl font-extrabold text-[#2A1E1B] mb-1.5">
+              Meet the little team behind Calla 🌷
+            </h2>
+            <p id="teamCompactSummary" class="text-xs sm:text-sm text-[#4A3833] leading-relaxed">
+              <strong>Cindi</strong> (Creative Director) illustrates every piece by hand, while <strong>Aliy</strong> (Studio Manager) handles briefs, 3D mockups & print files.
+            </p>
+          </div>
 
-            <div id="procDisplay" class="rounded-xl border-2 border-dashed border-[#2A1E1B] bg-[#FFFDF8] p-6 min-h-[185px] flex flex-col justify-center">
-              <h3 id="procTitle" class="text-xl sm:text-2xl font-extrabold text-[#2A1E1B] mb-2"></h3>
-              <p id="procDesc" class="text-sm text-[#4A3833] leading-relaxed"></p>
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-dashed border-[#2A1E1B]/20">
+            <div class="flex items-center -space-x-2">
+              <span class="w-9 h-9 rounded-full bg-[#FCE7F3] border-2 border-[#2A1E1B] flex items-center justify-center text-sm font-extrabold" title="Cindi — Lead Artist">🎨</span>
+              <span class="w-9 h-9 rounded-full bg-[#A8D8FF] border-2 border-[#2A1E1B] flex items-center justify-center text-sm font-extrabold" title="Aliy — Studio Manager">📐</span>
             </div>
-
-            <div class="grid grid-cols-3 gap-2 mt-4">
-              <button type="button" onclick="setProcessView(1)" id="pView1" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B]">
-                1. Gate 1 Sketch
-              </button>
-              <button type="button" onclick="setProcessView(2)" id="pView2" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B]">
-                2. Gate 2 Color
-              </button>
-              <button type="button" onclick="setProcessView(3)" id="pView3" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B]">
-                3. Handover File
-              </button>
-            </div>
+            <button
+              type="button"
+              id="openTeamModalBtn"
+              onclick="openTeamModal(this)"
+              class="px-4 py-2 rounded-full bg-[#FFE066] hover:bg-[#FF85A2] hover:text-white text-[#2A1E1B] text-xs font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition"
+            >
+              📖 Read Full Team Story & Process →
+            </button>
           </div>
         </div>
+
+        <!-- Right (7 cols): 100% ORIGINAL CALLA ARTWORK SLIDER (Dynamic Buttons!) -->
+        <div class="lg:col-span-7 bg-white p-5 rounded-2xl border-2 border-[#2A1E1B]">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div>
+              <span id="sliderBadgeLabel" class="text-xs font-extrabold uppercase tracking-wider text-[#2A1E1B] block">
+                ✨ 100% HAND-DRAWN BY CINDI & ALIY
+              </span>
+              <span id="sliderHintLabel" class="text-[11px] font-semibold text-[#5C4742]">
+                ↔ Drag slider to compare Stage 1 vs Stage 2:
+              </span>
+            </div>
+
+            <!-- Auto-Generated Buttons Container (Safe for 1, 2, or 5+ items!) -->
+            <div id="proofPairBtnGroup" class="flex flex-wrap gap-1.5" role="group" aria-label="Select Original Calla Artwork Comparison"></div>
+          </div>
+
+          <!-- Interactive Before/After Stage Using Real Portfolio Images in assets/ -->
+          <div class="relative w-full h-52 sm:h-60 rounded-xl border-2 border-[#2A1E1B] overflow-hidden select-none bg-[#FFFDF8]">
+            <!-- AFTER LAYER (Gate 2: Final Color) -->
+            <div class="absolute inset-0 bg-[#FFFDF8] flex items-center justify-center p-2">
+              <img
+                id="proofAfterImg"
+                src="assets/13.jpg"
+                data-base-src="assets/13.jpg"
+                data-attempt="0"
+                alt="Calla Studio Gate 2 Final Artwork"
+                class="w-full h-full object-contain"
+                onerror="handleSmartImgError(this)"
+              />
+              <span id="proofAfterBadge" class="absolute bottom-2 right-2.5 bg-[#2A1E1B] text-[#FFE066] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow">
+                Gate 2: Full Color Final ✨
+              </span>
+            </div>
+
+            <!-- BEFORE LAYER (Gate 1: Sketch — Clipped by Slider!) -->
+            <div
+              id="gateSketchClipLayer"
+              class="absolute inset-0 bg-[#FFFDF8] flex items-center justify-center p-2"
+              style="clip-path: inset(0 50% 0 0); background-image: linear-gradient(to right, #EFECE6 1px, transparent 1px), linear-gradient(to bottom, #EFECE6 1px, transparent 1px); background-size: 16px 16px;"
+            >
+              <img
+                id="proofBeforeImg"
+                src="assets/13.jpg"
+                data-base-src="assets/13.jpg"
+                data-attempt="0"
+                alt="Calla Studio Gate 1 Original Sketch"
+                class="w-full h-full object-contain pencil-sketch-filter"
+                onerror="handleSmartImgError(this)"
+              />
+              <span id="proofBeforeBadge" class="absolute bottom-2 left-2.5 bg-white text-[#2A1E1B] border border-[#2A1E1B] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow">
+                ✏️ Gate 1: Pencil Sketch Draft
+              </span>
+            </div>
+
+            <!-- Vertical Divider Line -->
+            <div id="gateSliderDivider" class="absolute top-0 bottom-0 w-0.5 bg-[#2A1E1B] pointer-events-none z-10" style="left: 50%;"></div>
+
+            <!-- Interactive Range Input Overlay -->
+            <input
+              type="range"
+              id="gateCompareRange"
+              min="8"
+              max="92"
+              value="50"
+              aria-label="Compare Gate 1 and Gate 2 Original Calla Artwork"
+              oninput="updateGateSlider(this.value)"
+              class="gate-slider-input absolute inset-0 w-full h-full z-20 m-0"
+            />
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- CRITTER PLAYGROUND 3: THE BAKERY KITTY & BLUEBIRD TRAIL -->
-  <div id="critterLane3" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 py-2 relative overflow-hidden select-none">
-    <div class="relative h-14 flex items-center">
-      <svg viewBox="0 0 800 28" class="w-full h-5 opacity-50 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M 10 14 Q 80 4, 150 14 T 290 14 T 430 14 T 570 14 T 710 14 T 790 14" stroke="#FFD8A8" stroke-width="3.5" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
+  <!-- ======================================================================= -->
+  <!-- SECTION 4: INTERACTIVE SLIDING WORKFLOW CARDS (COMPACT HORIZONTAL SWIPE)-->
+  <!-- ======================================================================= -->
+  <section id="workflow" class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-5">
+      <div>
+        <span id="wfBadge" class="inline-block bg-[#B8E8B0] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-1.5">
+          ⏱️ STEP-BY-STEP STUDIO WORKFLOW
+        </span>
+        <h2 id="wfHeading" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B]"></h2>
+        <p id="wfSubheading" class="text-xs sm:text-sm text-[#5C4742] mt-1 max-w-2xl"></p>
+      </div>
+
+      <!-- Interactive Slide Controls (Prev / Phase Dots / Next) -->
+      <div class="flex items-center gap-2 self-start sm:self-auto shrink-0">
+        <button
+          type="button"
+          onclick="slideWorkflowBy(-1)"
+          class="w-9 h-9 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-extrabold text-sm border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition flex items-center justify-center"
+          aria-label="Previous workflow phase"
+        >
+          ←
+        </button>
+        <div class="flex items-center gap-1" role="tablist" aria-label="Workflow Phase Quick Jump">
+          <button type="button" onclick="scrollToWfCard(0)" id="wfDot0" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B] transition">01</button>
+          <button type="button" onclick="scrollToWfCard(1)" id="wfDot1" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] transition">02</button>
+          <button type="button" onclick="scrollToWfCard(2)" id="wfDot2" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] transition">03</button>
+          <button type="button" onclick="scrollToWfCard(3)" id="wfDot3" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] transition">04</button>
+        </div>
+        <button
+          type="button"
+          onclick="slideWorkflowBy(1)"
+          class="w-9 h-9 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-extrabold text-sm border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition flex items-center justify-center"
+          aria-label="Next workflow phase"
+        >
+          →
+        </button>
+      </div>
+    </div>
+
+    <!-- Horizontal Sliding Card Track -->
+    <div
+      id="wfGrid"
+      onscroll="handleWfTrackScroll()"
+      class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-3 no-scrollbar scroll-smooth"
+    ></div>
+  </section>
+
+  <!-- ======================================================================= -->
+  <!-- CRITTER PLAYGROUND 3: NATURAL GARDEN TRAIL (NO BOX, UNCLIPPED BUBBLES!) -->
+  <!-- ======================================================================= -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-1 select-none overflow-visible">
+    <div id="critterLane4" class="critter-lane-natural flex items-center">
+      <svg viewBox="0 0 800 28" class="w-full h-6 opacity-55 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 10 14 Q 90 24, 170 14 T 330 14 T 490 14 T 650 14 T 790 14" stroke="#F48FB1" stroke-width="3.2" stroke-dasharray="9 8" fill="none" stroke-linecap="round"/>
       </svg>
 
-      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane3" data-boop="🐱 Meow~!" style="left: 12%; top: 2%;" title="Kucing Krayon — Geser atau klik aku!">
+      <!-- 1. Strawberry Pink Butterfly -->
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane4" data-boop="🦋 Love!" style="left: 4%; top: 10%;" title="Pink Butterfly — Drag or click me!">
+        <div class="sticker-prox critter-bob">
+          <svg viewBox="0 0 100 95" class="w-full h-full">
+            <path d="M48 28 C42 12, 30 12, 35 20" stroke="#2A1E1B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M52 28 C58 12, 70 12, 65 20" stroke="#2A1E1B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M48 44 C22 12, 6 30, 18 52 C8 67, 26 86, 48 64 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M52 44 C78 12, 94 30, 82 52 C92 67, 74 86, 52 64 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
+            <circle cx="30" cy="40" r="5" fill="#FFF3BF"/>
+            <circle cx="70" cy="40" r="5" fill="#FFF3BF"/>
+            <rect x="47" y="28" width="6" height="42" rx="3" fill="#2A1E1B"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 2. Cute Orange Bakery Kitty -->
+      <div class="crayon-sticker pointer-events-auto w-14 h-14" data-sticker="true" data-bounds="critterLane4" data-boop="🐱 Meow~!" style="left: 27%; top: 8%;" title="Bakery Kitty — Drag or click me!">
         <div class="sticker-prox critter-bunny">
           <svg viewBox="0 0 90 85" class="w-full h-full">
             <polygon points="24,38 20,14 40,28" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
@@ -548,78 +764,8 @@
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-12" data-sticker="true" data-bounds="critterLane3" data-boop="🐦 Tweet tweet!" style="left: 50%; top: 8%;" title="Burung Biru — Geser atau klik aku!">
-        <div class="sticker-prox critter-fish-lr">
-          <svg viewBox="0 0 90 70" class="w-full h-full">
-            <path d="M66 32 L80 28 L70 38 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3" stroke-linejoin="round"/>
-            <ellipse cx="45" cy="36" rx="22" ry="15" fill="#7CC6FE" stroke="#2A1E1B" stroke-width="3.5"/>
-            <path d="M35 28 C25 12, 48 12, 48 28" fill="#A8D8FF" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="56" cy="31" r="3" fill="#2A1E1B"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="crayon-sticker pointer-events-auto w-12 h-12" data-sticker="true" data-bounds="critterLane3" data-boop="🐞 Semangat!" style="left: 84%; top: 6%;" title="Kepik Oranye — Geser atau klik aku!">
-        <div class="sticker-prox critter-ladybug-ud">
-          <svg viewBox="0 0 80 80" class="w-full h-full">
-            <circle cx="40" cy="24" r="10" fill="#2A1E1B"/>
-            <ellipse cx="40" cy="46" rx="20" ry="22" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3.5"/>
-            <line x1="40" y1="25" x2="40" y2="68" stroke="#2A1E1B" stroke-width="3.5"/>
-            <circle cx="31" cy="39" r="3.5" fill="#2A1E1B"/>
-            <circle cx="49" cy="41" r="3.5" fill="#2A1E1B"/>
-            <circle cx="33" cy="53" r="3" fill="#2A1E1B"/>
-            <circle cx="47" cy="54" r="3" fill="#2A1E1B"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 4: THE 4-PHASE WORKFLOW -->
-  <section id="workflow" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <span id="wfBadge" class="inline-block bg-[#B8E8B0] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
-        ⏱️ STEP-BY-STEP STUDIO WORKFLOW
-      </span>
-      <h2 id="wfHeading" class="text-3xl sm:text-4xl font-extrabold text-[#2A1E1B]"></h2>
-      <p id="wfSubheading" class="text-sm text-[#5C4742] mt-2"></p>
-    </div>
-
-    <div id="wfGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
-  </section>
-
-  <!-- CRITTER PLAYGROUND 4: THE HONEYBEE & BUTTERFLY GARDEN TRAIL -->
-  <div id="critterLane4" class="critter-divider max-w-6xl mx-auto px-4 sm:px-6 py-3 relative overflow-hidden select-none">
-    <div class="relative h-16 flex items-center">
-      <svg viewBox="0 0 800 28" class="w-full h-6 opacity-55 pointer-events-none" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M 10 14 Q 90 24, 170 14 T 330 14 T 490 14 T 650 14 T 790 14" stroke="#F48FB1" stroke-width="3.2" stroke-dasharray="9 8" fill="none" stroke-linecap="round"/>
-      </svg>
-
-      <div class="crayon-sticker pointer-events-auto w-14 h-13" data-sticker="true" data-bounds="critterLane4" data-boop="🦋 Love!" style="left: 5%; top: 8%;" title="Kupu-Kupu Pink — Geser atau klik aku!">
-        <div class="sticker-prox critter-bob">
-          <svg viewBox="0 0 100 90" class="w-full h-full">
-            <path d="M48 42 C22 10, 6 28, 18 50 C8 65, 26 84, 48 62 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
-            <path d="M52 42 C78 10, 94 28, 82 50 C92 65, 74 84, 52 62 Z" fill="#FF85A2" stroke="#2A1E1B" stroke-width="3.5"/>
-            <circle cx="30" cy="38" r="5" fill="#FFF3BF"/>
-            <circle cx="70" cy="38" r="5" fill="#FFF3BF"/>
-            <rect x="47" y="28" width="6" height="40" rx="3" fill="#2A1E1B"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="crayon-sticker pointer-events-auto hidden sm:block w-14 h-12" data-sticker="true" data-bounds="critterLane4" data-boop="🍯 Honey time!" style="left: 29%; top: 10%;" title="Lebah Madu — Geser atau klik aku!">
-        <div class="sticker-prox critter-bee">
-          <svg viewBox="0 0 80 65" class="w-full h-full">
-            <ellipse cx="36" cy="20" rx="10" ry="13" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
-            <ellipse cx="44" cy="22" rx="9" ry="12" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
-            <ellipse cx="40" cy="38" rx="18" ry="13" fill="#FFE066" stroke="#2A1E1B" stroke-width="3.5"/>
-            <path d="M35 26 L35 50 M45 26 L45 50" stroke="#2A1E1B" stroke-width="4"/>
-            <circle cx="52" cy="35" r="2.5" fill="#2A1E1B"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="crayon-sticker pointer-events-auto w-13 h-13" data-sticker="true" data-bounds="critterLane4" data-boop="🌼 Bertumbuh!" style="left: 52%; top: 6%;" title="Bunga Krayon — Geser atau klik aku!">
+      <!-- 3. Smiling Crayon Flower Sprout -->
+      <div class="crayon-sticker pointer-events-auto hidden sm:block w-13 h-13" data-sticker="true" data-bounds="critterLane4" data-boop="🌼 Blooming!" style="left: 50%; top: 8%;" title="Flower Sprout — Drag or click me!">
         <div class="sticker-prox flower-anim">
           <svg viewBox="0 0 80 80" class="w-12 h-12">
             <path d="M40 45 L40 72" stroke="#52B788" stroke-width="5" stroke-linecap="round"/>
@@ -634,19 +780,21 @@
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto hidden md:block w-14 h-11" data-sticker="true" data-bounds="critterLane4" data-boop="🐚 Halo Aliy!" style="left: 71%; top: 16%;" title="Siput Biru — Geser atau klik aku!">
-        <div class="sticker-prox critter-snail">
-          <svg viewBox="0 0 100 75" class="w-full h-full">
-            <path d="M14 56 Q50 58 82 54 C90 52, 92 42, 82 40 Q68 42 64 50 L20 50 Z" fill="#B8E8B0" stroke="#2A1E1B" stroke-width="3.5" stroke-linejoin="round"/>
-            <circle cx="44" cy="34" r="19" fill="#7CC6FE" stroke="#2A1E1B" stroke-width="3.5"/>
-            <path d="M44 34 m-9 0 a 9 9 0 1 0 18 0 a 6 6 0 1 0 -12 0" stroke="#FFFDF5" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <circle cx="83" cy="36" r="2.5" fill="#2A1E1B"/>
+      <!-- 4. Flying Crayon Bluebird -->
+      <div class="crayon-sticker pointer-events-auto hidden md:block w-14 h-12" data-sticker="true" data-bounds="critterLane4" data-boop="🐦 Tweet tweet!" style="left: 70%; top: 12%;" title="Bluebird — Drag or click me!">
+        <div class="sticker-prox critter-fish-lr">
+          <svg viewBox="0 0 90 70" class="w-full h-full">
+            <path d="M66 32 L80 28 L70 38 Z" fill="#FF9F1C" stroke="#2A1E1B" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse cx="45" cy="36" rx="22" ry="15" fill="#7CC6FE" stroke="#2A1E1B" stroke-width="3.5"/>
+            <path d="M35 28 C25 12, 48 12, 48 28" fill="#A8D8FF" stroke="#2A1E1B" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="56" cy="31" r="3" fill="#2A1E1B"/>
           </svg>
         </div>
       </div>
 
-      <div class="crayon-sticker pointer-events-auto w-14 h-12" data-sticker="true" data-bounds="critterLane4" data-boop="🐝 Bzzz bzzz!" style="left: 88%; top: 10%;" title="Lebah Krayon — Geser atau klik aku!">
-        <div class="sticker-prox critter-bee" style="animation-delay: 1.1s;">
+      <!-- 5. Buzzing Honeybee -->
+      <div class="crayon-sticker pointer-events-auto w-14 h-12" data-sticker="true" data-bounds="critterLane4" data-boop="🐝 Bzzz bzzz!" style="left: 88%; top: 12%;" title="Honeybee — Drag or click me!">
+        <div class="sticker-prox critter-bee">
           <svg viewBox="0 0 80 65" class="w-full h-full">
             <ellipse cx="40" cy="20" rx="10" ry="13" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
             <ellipse cx="48" cy="22" rx="9" ry="12" fill="#E3F2FD" stroke="#2A1E1B" stroke-width="3"/>
@@ -659,14 +807,14 @@
     </div>
   </div>
 
-  <!-- SECTION 5: PRICELIST -->
-  <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <div class="text-center max-w-2xl mx-auto mb-10">
+  <!-- SECTION 5: PRICELIST + CLEAN ADDITIONAL SERVICES + COLLAPSIBLE FAQ -->
+  <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <div class="text-center max-w-2xl mx-auto mb-8">
       <span id="priceBadge" class="inline-block bg-[#F9C6D3] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
         💌 OFFICIAL STUDIO PRICELIST
       </span>
-      <h2 id="priceHeading" class="text-3xl sm:text-5xl font-extrabold text-[#2A1E1B] mb-3"></h2>
-      <p id="priceSubheading" class="text-sm sm:text-base text-[#5C4742] mb-6"></p>
+      <h2 id="priceHeading" class="text-3xl sm:text-5xl font-extrabold text-[#2A1E1B] mb-2"></h2>
+      <p id="priceSubheading" class="text-xs sm:text-base text-[#5C4742] mb-5"></p>
 
       <!-- UNIFIED MARKET SELECTOR -->
       <div class="inline-flex p-1.5 rounded-full bg-white border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B]">
@@ -674,7 +822,7 @@
           type="button"
           onclick="selectMarket('ID')"
           id="priceBtnID"
-          class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition"
+          class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition"
         >
           🇮🇩 Indonesia (IDR)
         </button>
@@ -682,7 +830,7 @@
           type="button"
           onclick="selectMarket('EN')"
           id="priceBtnEN"
-          class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition"
+          class="px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition"
         >
           🌏 International & ASEAN (USD)
         </button>
@@ -693,33 +841,74 @@
       </div>
     </div>
 
-    <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-    <!-- ADDITIONAL SERVICES / CUSTOM REQUEST BANNER (MATCHING PDF PRICELIST) -->
-    <div class="mt-10 calla-frame bg-[#FFF9E6] p-6 sm:p-9 relative overflow-hidden">
-      <div class="grid md:grid-cols-12 gap-6 items-center relative z-10">
-        <!-- Crayon House & Butterfly Illustration (From PDF Additional Services Page) -->
-        <div class="md:col-span-3 flex items-center justify-center gap-3">
-          <svg viewBox="0 0 110 110" class="w-20 h-20 sm:w-24 sm:h-24 flower-anim shrink-0" style="filter: url(#crayon-edge);" aria-hidden="true">
-            <path d="M55 16 L16 50 L94 50 Z" fill="#FFD8A8" stroke="#E85D88" stroke-width="4.5" stroke-linejoin="round"/>
-            <path d="M30 38 L30 22 L42 22 L42 28" fill="none" stroke="#E85D88" stroke-width="4" stroke-linecap="round"/>
-            <rect x="24" y="50" width="62" height="46" rx="3" fill="#FFFDF8" stroke="#E85D88" stroke-width="4.5"/>
-            <rect x="47" y="68" width="16" height="28" rx="8" fill="#FFE066" stroke="#E85D88" stroke-width="3.5"/>
-            <rect x="30" y="57" width="12" height="14" fill="#A8D8FF" stroke="#E85D88" stroke-width="3"/>
-            <rect x="68" y="57" width="12" height="14" fill="#A8D8FF" stroke="#E85D88" stroke-width="3"/>
-          </svg>
+    <!-- CLEAN & COMPACT ADDITIONAL SERVICES CARD -->
+    <div class="mt-10 calla-frame bg-gradient-to-br from-[#FFF9DB] via-[#FFFDF8] to-[#FCE7F3] p-5 sm:p-8 relative">
+      <!-- Secret Explorer Appreciation Ribbon -->
+      <div class="flex flex-wrap items-center justify-between gap-2 pb-3.5 mb-5 border-b-2 border-dashed border-[#2A1E1B]/20">
+        <div class="inline-flex items-center gap-2 bg-[#2A1E1B] text-[#FFE066] text-[11px] font-extrabold px-3 py-1 rounded-full">
+          <span>🏆</span>
+          <span id="explorerRewardBadge">CURIOUS EXPLORER PERK: You scrolled to the bottom of our storybook!</span>
+        </div>
+        <button
+          type="button"
+          id="claimStampBtn"
+          onclick="claimExplorerStamp(this)"
+          class="px-3.5 py-1 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] text-[11px] font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] active:translate-y-[1px] transition"
+        >
+          💮 Claim VIP Explorer Stamp!
+        </button>
+      </div>
+
+      <!-- Hidden VIP Reward Toast -->
+      <div id="vipRewardBox" class="hidden mb-5 p-3.5 rounded-2xl bg-[#DCFCE7] border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="text-xl">🎁</span>
+          <div>
+            <p id="vipRewardTitle" class="text-xs sm:text-sm font-extrabold text-[#2A1E1B]"></p>
+            <p id="vipRewardDesc" class="text-[11px] text-[#4A3833]"></p>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded-xl bg-white border-2 border-[#2A1E1B] font-mono text-xs font-extrabold text-[#D6336C] shrink-0">
+          CODE: CALLAVIP🌷
+        </span>
+      </div>
+
+      <!-- Clean 3-Column Layout Matching Original PDF Pricelist -->
+      <div class="grid md:grid-cols-12 gap-5 items-center relative z-10 pt-2">
+        <div class="md:col-span-2 flex flex-col items-center justify-center">
+          <div
+            class="crayon-sticker relative pointer-events-auto w-20 h-20"
+            style="position: relative; left: 0; top: 0;"
+            onclick="triggerCritterBoop(this)"
+            data-boop="🏡 Let's build!"
+          >
+            <div class="sticker-prox flower-anim">
+              <svg viewBox="0 0 120 120" class="w-full h-full" aria-hidden="true">
+                <path d="M85 22 C74 8, 64 16, 72 26 C66 32, 76 40, 85 30 Z" fill="#A8D8FF" stroke="#2845A8" stroke-width="2.8"/>
+                <path d="M89 22 C100 8, 110 16, 102 26 C108 32, 98 40, 89 30 Z" fill="#A8D8FF" stroke="#2845A8" stroke-width="2.8"/>
+                <rect x="85" y="18" width="4" height="16" rx="2" fill="#F48FB1" stroke="#2845A8" stroke-width="2"/>
+                <path d="M58 20 L16 54 L100 54 Z" fill="#FFD8A8" stroke="#E85D88" stroke-width="4.5" stroke-linejoin="round"/>
+                <path d="M30 42 L30 24 L42 24 L42 32" fill="none" stroke="#E85D88" stroke-width="4" stroke-linecap="round"/>
+                <rect x="24" y="54" width="68" height="48" rx="4" fill="#FFFDF8" stroke="#E85D88" stroke-width="4.5"/>
+                <rect x="49" y="72" width="18" height="30" rx="9" fill="#FFE066" stroke="#E85D88" stroke-width="3.5"/>
+                <rect x="31" y="61" width="13" height="14" rx="2" fill="#A8D8FF" stroke="#E85D88" stroke-width="3"/>
+                <rect x="72" y="61" width="13" height="14" rx="2" fill="#A8D8FF" stroke="#E85D88" stroke-width="3"/>
+              </svg>
+            </div>
+          </div>
+          <span id="crayonHouseHint" class="text-[10px] font-bold text-[#5C4742] mt-1">
+            👆 Tap the crayon house!
+          </span>
         </div>
 
-        <div class="md:col-span-6 text-center md:text-left">
-          <span id="customSrvBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-[11px] font-extrabold px-3 py-0.5 rounded-full mb-2">
-            🖍️ ADDITIONAL SERVICES & CUSTOM PACKAGE
+        <div class="md:col-span-7 text-center md:text-left">
+          <span id="customSrvBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-[11px] font-extrabold px-3 py-0.5 rounded-full mb-1.5">
+            🖍️ ADDITIONAL SERVICES & CUSTOM REQUEST
           </span>
-          <h3 id="customSrvTitle" class="text-2xl sm:text-3xl font-extrabold text-[#2A1E1B] mb-2">
-            Punya kebutuhan desain lain atau request khusus di luar paket?
-          </h3>
-          <p id="customSrvDesc" class="text-xs sm:text-sm text-[#4A3833] leading-relaxed">
-            Jangan ragu untuk konsultasikan dulu ide kamu bersama kami! Kami bisa menyesuaikan kombinasi item desain (custom scope) maupun anggaran harga (price) agar pas dengan kebutuhan brandmu saat ini.
-          </p>
+          <h3 id="customSrvTitle" class="text-xl sm:text-3xl font-extrabold text-[#2A1E1B] mb-1.5"></h3>
+          <p id="customSrvDesc" class="text-xs sm:text-sm text-[#4A3833] leading-relaxed"></p>
         </div>
 
         <div class="md:col-span-3 flex justify-center md:justify-end">
@@ -728,31 +917,139 @@
             href="https://wa.me/6289654637044"
             target="_blank"
             rel="noopener"
-            class="w-full sm:w-auto px-5 py-3.5 rounded-full bg-[#E85D88] hover:bg-[#D6336C] text-white font-extrabold text-xs border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition text-center"
+            class="w-full sm:w-auto px-5 py-3.5 rounded-full bg-[#E85D88] hover:bg-[#D6336C] text-white font-extrabold text-xs border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition text-center block"
           >
-            💬 Konsultasi Custom via WA →
+            💬 Consult Custom Scope →
           </a>
         </div>
       </div>
     </div>
 
-    <!-- INTERACTIVE FAQ SECTION -->
-    <div id="faqSection" class="mt-14 max-w-4xl mx-auto">
-      <div class="text-center mb-8">
-        <span id="faqBadge" class="inline-block bg-[#FFE066] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
-          💡 FREQUENTLY ASKED QUESTIONS
-        </span>
-        <h3 id="faqHeading" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B]">
-          Pertanyaan yang Sering Ditanyakan
-        </h3>
-        <p id="faqSubheading" class="text-xs sm:text-sm text-[#5C4742] mt-1">
-          Klik pertanyaan di bawah ini untuk melihat penjelasan lengkap seputar layanan, harga, dan alur kerja Calla:
-        </p>
+    <!-- COMPACT COLLAPSIBLE STORYBOOK FAQ SECTION -->
+    <div id="faqSection" class="mt-8 max-w-4xl mx-auto">
+      <div class="text-center">
+        <button
+          type="button"
+          id="toggleFaqSectionBtn"
+          onclick="toggleFaqDrawer()"
+          aria-expanded="false"
+          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white hover:bg-[#FFF9DB] text-[#2A1E1B] font-extrabold text-xs sm:text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] transition"
+        >
+          <span>💡</span>
+          <span id="faqDrawerBtnLabel">Have Questions? Open Studio FAQ (5 Answers) ↓</span>
+        </button>
       </div>
 
-      <div id="faqAccordionList" class="space-y-3"></div>
+      <div id="faqDrawerBody" class="hidden mt-6 space-y-3">
+        <div id="faqAccordionList" class="space-y-3"></div>
+      </div>
     </div>
   </section>
+
+  <!-- COMPACT TEAM & STUDIO PROCESS POP-UP MODAL -->
+  <div
+    id="teamStoryModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="teamModalTitle"
+    class="fixed inset-0 z-50 hidden bg-black/65 backdrop-blur-sm flex items-center justify-center p-4"
+    onclick="if(event.target.id==='teamStoryModal') closeTeamModal()"
+  >
+    <div class="calla-frame bg-[#FFF9E6] max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-8 relative" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between gap-3 pb-3 mb-4 border-b-2 border-[#2A1E1B]/15">
+        <span class="inline-block bg-[#FFD8A8] border border-[#2A1E1B] text-xs font-extrabold px-3 py-1 rounded-full">
+          🌷 THE DYNAMIC DUO · MALANG, INDONESIA
+        </span>
+        <button
+          type="button"
+          onclick="closeTeamModal()"
+          class="px-3.5 py-1.5 rounded-full bg-[#2A1E1B] text-white text-xs font-bold hover:bg-[#E85D88] transition"
+        >
+          ✕ Close (Esc)
+        </button>
+      </div>
+
+      <h3 id="teamModalTitle" class="text-2xl sm:text-3xl font-extrabold text-[#2A1E1B] mb-3"></h3>
+      <div class="space-y-3 bg-white p-5 rounded-2xl border-2 border-[#2A1E1B] text-xs sm:text-sm text-[#4A3833] leading-relaxed mb-5">
+        <p id="teamP1"></p>
+        <p id="teamP2"></p>
+        <p id="teamP3" class="pt-2 border-t border-[#E6DEC8] text-[#5C4742] font-semibold"></p>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border-2 border-[#2A1E1B]">
+        <div class="flex items-center justify-between text-xs font-bold text-[#5C4742] mb-2.5">
+          <span id="procHeaderLabel">CLIENT STEP-BY-STEP GUIDE</span>
+          <span id="procStepTag" class="bg-[#FFE066] text-[#2A1E1B] px-2.5 py-0.5 rounded-full border border-[#2A1E1B]"></span>
+        </div>
+        <div class="rounded-xl border-2 border-dashed border-[#2A1E1B] bg-[#FFFDF8] p-4 mb-3">
+          <h4 id="procTitle" class="text-base sm:text-lg font-extrabold text-[#2A1E1B] mb-1"></h4>
+          <p id="procDesc" class="text-xs sm:text-sm text-[#4A3833] leading-relaxed"></p>
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" onclick="setProcessView(1)" id="pView1" class="py-2 px-2.5 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B]">
+            1. Gate 1 Sketch
+          </button>
+          <button type="button" onclick="setProcessView(2)" id="pView2" class="py-2 px-2.5 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B]">
+            2. Gate 2 Color
+          </button>
+          <button type="button" onclick="setProcessView(3)" id="pView3" class="py-2 px-2.5 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B]">
+            3. Handover File
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING "STUDIO CONCIERGE" PILL WITH 2 POP-UP CHOICES -->
+  <div class="fixed bottom-4 right-4 z-40 flex flex-col items-end select-none">
+    <div
+      id="conciergeMenu"
+      class="hidden mb-2.5 w-64 sm:w-72 calla-frame bg-[#FFFDF8] p-4 border-2 border-[#2A1E1B] shadow-[4px_4px_0px_#2A1E1B] space-y-2.5"
+    >
+      <div class="flex items-center justify-between pb-1.5 border-b border-dashed border-[#2A1E1B]/20">
+        <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#5C4742]">
+          🌷 CALLA STUDIO CONCIERGE
+        </span>
+        <button type="button" onclick="toggleConciergeMenu(false)" class="text-xs font-extrabold text-[#5C4742] hover:text-[#2A1E1B]">✕</button>
+      </div>
+
+      <button
+        type="button"
+        onclick="openFaqFromConcierge()"
+        class="w-full p-3 rounded-xl bg-[#FFF9DB] hover:bg-[#FFE066] border-2 border-[#2A1E1B] text-left flex items-center gap-3 transition shadow-[2px_2px_0px_#2A1E1B]"
+      >
+        <span class="text-lg">💡</span>
+        <div>
+          <p id="conciergeOpt1Title" class="text-xs font-extrabold text-[#2A1E1B]">Read Studio FAQ</p>
+          <p id="conciergeOpt1Sub" class="text-[10px] font-semibold text-[#5C4742]">Pricing, timeline & custom scope</p>
+        </div>
+      </button>
+
+      <a
+        id="conciergeOpt2Link"
+        href="https://wa.me/6289654637044"
+        target="_blank"
+        rel="noopener"
+        class="w-full p-3 rounded-xl bg-[#FCE7F3] hover:bg-[#FF85A2] hover:text-white border-2 border-[#2A1E1B] text-left flex items-center gap-3 transition shadow-[2px_2px_0px_#2A1E1B] block"
+      >
+        <span class="text-lg">💬</span>
+        <div>
+          <p id="conciergeOpt2Title" class="text-xs font-extrabold">Check Batch Slot First</p>
+          <p id="conciergeOpt2Sub" class="text-[10px] font-semibold opacity-85">Chat directly on Official WhatsApp</p>
+        </div>
+      </a>
+    </div>
+
+    <button
+      type="button"
+      id="conciergeTriggerBtn"
+      onclick="toggleConciergeMenu()"
+      class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#2A1E1B] hover:bg-[#E85D88] text-white text-xs font-extrabold border-2 border-[#FFFDF8] shadow-[0_8px_20px_rgba(42,30,27,0.3)] transition"
+    >
+      <span class="w-2 h-2 rounded-full bg-[#80ED99] animate-ping"></span>
+      <span id="conciergeBtnLabel">🌷 Ask Calla</span>
+    </button>
+  </div>
 
   <!-- ACCESSIBLE CASE STUDY MODAL -->
   <div
@@ -771,7 +1068,7 @@
           onclick="closeCaseModal()"
           class="px-4 py-2 rounded-full bg-[#2A1E1B] text-white text-xs font-bold border-2 border-[#2A1E1B] hover:bg-[#E85D88] transition"
         >
-          ✕ Tutup Studi Kasus (Esc)
+          ✕ Close Case Study (Esc)
         </button>
       </div>
       <div id="modalBodyContent" class="space-y-6"></div>
@@ -817,7 +1114,7 @@
           onclick="closeImageLightbox()"
           class="px-4 py-2 rounded-full bg-[#FFE066] text-[#2A1E1B] text-xs font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] hover:bg-[#FF85A2] hover:text-white transition"
         >
-          ✕ Tutup (Esc)
+          ✕ Close (Esc)
         </button>
       </div>
     </div>
@@ -835,7 +1132,7 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="calla-stripes border-t-2 border-[#2A1E1B] py-12 px-4 sm:px-6 mt-12">
+  <footer class="calla-stripes border-t-2 border-[#2A1E1B] py-10 px-4 sm:px-6 mt-10">
     <div class="max-w-6xl mx-auto calla-frame bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
       <div>
         <h3 class="text-2xl font-extrabold font-display text-[#2A1E1B]">🌷 calla creative studio</h3>
@@ -860,8 +1157,8 @@
   <script>
     const SITE = window.CALLA_SITE_CONTENT;
     let isPlayMode = false;
-    let currentLang = 'ID';
-    let currentMarket = 'ID';
+    let currentLang = 'EN';
+    let currentMarket = 'EN';
     let currentFilter = 'all';
     let showAllWorks = false;
     let currentProcessStep = 1;
@@ -874,6 +1171,23 @@
     let spawnedCount = 0;
     const MAX_SPAWNED = 10;
 
+    // =========================================================================
+    // AUTO-FAST LOAD IMAGE PROXY (Cloudflare CDN via wsrv.nl)
+    // =========================================================================
+    function getFastThumb(src, width = 850) {
+      if (!src) return '';
+      if (src.toLowerCase().endsWith('.gif')) return src;
+      const isOnline = window.location.protocol.startsWith('http') &&
+                       !['localhost', '127.0.0.1'].includes(window.location.hostname);
+      if (!isOnline) return src;
+      try {
+        const fullUrl = new URL(src, window.location.href).href;
+        return `https://wsrv.nl/?url=${encodeURIComponent(fullUrl)}&w=${width}&q=85&output=webp`;
+      } catch (_) {
+        return src;
+      }
+    }
+
     function isProjectPublished(p) {
       if (typeof p.publish === 'boolean') return p.publish;
       if (typeof p.visible === 'boolean') return p.visible;
@@ -881,37 +1195,43 @@
     }
 
     // =========================================================================
-    // SMART IMAGE FALLBACK (Checks both assets/ folder AND root folder!)
+    // SMART IMAGE FALLBACK
     // =========================================================================
-function handleSmartImgError(imgEl) {
+    function handleSmartImgError(imgEl) {
       const baseSrc = imgEl.getAttribute('data-base-src') || '';
       const attempt = parseInt(imgEl.getAttribute('data-attempt') || '0', 10);
-      const stem = baseSrc.replace(/\.(webp|jpg|jpeg|png|gif)$/i, '');
-      const bareStem = stem.replace(/^assets\//i, '');
-      const capBare = bareStem.charAt(0).toUpperCase() + bareStem.slice(1);
-      const capStem = 'assets/' + capBare;
 
-      const candidates = [
-        baseSrc,
-        stem + '.jpg',
-        stem + '.jpeg',
-        stem + '.webp',
-        stem + '.png',
-        stem + '.gif',
-        stem + '.JPG',
-        stem + '.PNG',
-        stem + '.JPEG',
-        capStem + '.jpg',
-        capStem + '.jpeg',
-        capStem + '.webp',
-        capStem + '.png',
-        bareStem + '.jpg',
-        bareStem + '.jpeg',
-        bareStem + '.webp',
-        bareStem + '.png',
-        capBare + '.jpg',
-        capBare + '.png'
+      const stem = baseSrc.replace(/\.(webp|jpg|jpeg|png|gif)$/i, '');
+      const bare = stem.replace(/^assets\//i, '');
+
+      const fixedBare = bare
+        .replace(/^butter-burrow/i, 'batter-burrow')
+        .replace(/^Croomble brand identity \(7\)$/i, 'Croomble');
+
+      const spaceBare = fixedBare.replace(/-/g, ' ');
+      const capFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+      const capSpaceBare = capFirst(spaceBare);
+      const capHyphenBare = capFirst(fixedBare);
+
+      const nameVariants = [
+        'assets/' + fixedBare,
+        'assets/' + spaceBare,
+        'assets/' + capSpaceBare,
+        'assets/' + capHyphenBare,
+        fixedBare,
+        spaceBare,
+        capSpaceBare
       ];
+
+      const exts = ['.jpg', '.jpeg', '.webp', '.png', '.gif', '.JPG', '.PNG', '.JPEG'];
+      const candidates = [baseSrc];
+
+      nameVariants.forEach((variant) => {
+        exts.forEach((ext) => {
+          candidates.push(variant + ext);
+        });
+      });
+
       if (attempt < candidates.length) {
         imgEl.setAttribute('data-attempt', String(attempt + 1));
         imgEl.src = candidates[attempt];
@@ -923,8 +1243,204 @@ function handleSmartImgError(imgEl) {
         if (fallback) fallback.classList.remove('hidden');
       }
     }
+
     // =========================================================================
-    // FULL-SIZE UNCROPPED LIGHTBOX VIEWER (WITH NEXT/PREV & SWIPE)
+    // FEATURE #1: DAFTAR SLIDER HAND-DRAWN PROOF (SEKARANG HANYA DUMDUM!)
+    // Kalau mau tambah proyek baru nanti, tinggal tambah blok { ... } di bawah!
+    // =========================================================================
+    const HANDDRAWN_PROOF_PAIRS = [
+      {
+        btnID: '🐶 Dumdum Foodie',
+        btnEN: '🐶 Dumdum Foodie',
+        gate1Img: 'assets/13.jpg',
+        gate2Img: 'assets/13.jpg',
+        useSketchFilterOnGate1: true,
+        badge1ID: '✏️ Gate 1: Sketsa Draf',
+        badge1EN: '✏️ Gate 1: Pencil Sketch Draft',
+        badge2ID: 'Gate 2: Final Warna Penuh ✨',
+        badge2EN: 'Gate 2: Full Color Final ✨'
+      }
+    ];
+    let currentProofIndex = 0;
+
+    function selectProofPair(idx) {
+      if (!HANDDRAWN_PROOF_PAIRS.length) return;
+      currentProofIndex = Math.max(0, Math.min(idx, HANDDRAWN_PROOF_PAIRS.length - 1));
+      const item = HANDDRAWN_PROOF_PAIRS[currentProofIndex];
+      const beforeImg = document.getElementById('proofBeforeImg');
+      const afterImg = document.getElementById('proofAfterImg');
+      const beforeBadge = document.getElementById('proofBeforeBadge');
+      const afterBadge = document.getElementById('proofAfterBadge');
+      const btnGroup = document.getElementById('proofPairBtnGroup');
+
+      if (beforeImg && afterImg) {
+        beforeImg.style.display = '';
+        afterImg.style.display = '';
+        beforeImg.setAttribute('data-base-src', item.gate1Img);
+        beforeImg.setAttribute('data-attempt', '0');
+        beforeImg.src = getFastThumb(item.gate1Img, 700);
+        beforeImg.classList.toggle('pencil-sketch-filter', !!item.useSketchFilterOnGate1);
+
+        afterImg.setAttribute('data-base-src', item.gate2Img);
+        afterImg.setAttribute('data-attempt', '0');
+        afterImg.src = getFastThumb(item.gate2Img, 700);
+      }
+
+      if (beforeBadge && afterBadge) {
+        beforeBadge.textContent = currentLang === 'ID' ? item.badge1ID : item.badge1EN;
+        afterBadge.textContent = currentLang === 'ID' ? item.badge2ID : item.badge2EN;
+      }
+
+      // Render tombol otomatis sesuai jumlah item di HANDDRAWN_PROOF_PAIRS
+      if (btnGroup) {
+        btnGroup.innerHTML = HANDDRAWN_PROOF_PAIRS.map((pair, n) => {
+          const isActive = n === currentProofIndex;
+          const label = currentLang === 'ID' ? pair.btnID : pair.btnEN;
+          return `
+            <button
+              type="button"
+              onclick="selectProofPair(${n})"
+              class="px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] ${
+                isActive ? 'bg-[#FFE066] text-[#2A1E1B]' : 'bg-white text-[#2A1E1B] hover:bg-[#FFF9DB]'
+              } transition"
+            >
+              ${label}
+            </button>
+          `;
+        }).join('');
+      }
+    }
+
+    function updateGateSlider(val) {
+      const pct = Math.max(5, Math.min(95, Number(val) || 50));
+      const clipLayer = document.getElementById('gateSketchClipLayer');
+      const divLine = document.getElementById('gateSliderDivider');
+      if (clipLayer) clipLayer.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      if (divLine) divLine.style.left = `${pct}%`;
+    }
+
+    // =========================================================================
+    // COMPACT TEAM POP-UP MODAL
+    // =========================================================================
+    function openTeamModal(triggerEl) {
+      lastFocusedElement = triggerEl || document.activeElement;
+      document.getElementById('teamStoryModal').classList.remove('hidden');
+    }
+
+    function closeTeamModal() {
+      document.getElementById('teamStoryModal').classList.add('hidden');
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+
+    // =========================================================================
+    // FEATURE #2: CURATED COLOR PALETTES FOR CASE STUDY MODALS
+    // =========================================================================
+    const PROJECT_COLOR_PALETTES = {
+      croomble: [
+        ['Vanilla White', '#FFFFFF'],
+        ['Berry Dough Pink', '#F2B7D4'],
+        ['Morning Sky Blue', '#B6D2F9'],
+        ['Oven Mustard', '#F3C868']
+      ],
+      orbre: [
+        ['Pesut Sunset Orange', '#FF6B2B'],
+        ['Espresso Roast', '#4A2C2A'],
+        ['Warm Oat Milk', '#FFF5E4'],
+        ['Berry Cup Red', '#C92A2A']
+      ],
+      holly: [
+        ['Winter Sky Blue', '#7CC6FE'],
+        ['Festive Berry Red', '#9E2A2B'],
+        ['Pine Tree Green', '#2D6A4F'],
+        ['Snowy Cream', '#FFFDF8']
+      ],
+      dumdum: [
+        ['Sunshine Yellow', '#FFD60A'],
+        ['Scarf Berry Pink', '#FF477E'],
+        ['Pastel Sky', '#90E0EF'],
+        ['Lilac Cloud', '#E0AAFF']
+      ],
+      ngebolen: [
+        ['Moss Apron Green', '#4F6F52'],
+        ['Baked Bolen Gold', '#E09F3E'],
+        ['Butter Scarf Yellow', '#FFE066'],
+        ['Warm Pastry Cream', '#FDF8EE']
+      ],
+      blossom: [
+        ['Deep Burgundy', '#5E1924'],
+        ['Olive Garden', '#78866B'],
+        ['Warm Ivory', '#F7F2EB'],
+        ['Muted Cocoa', '#A98467']
+      ],
+      solene: [
+        ['Dark Espresso', '#36261E'],
+        ['Bone White', '#EFECE6'],
+        ['Porcelain White', '#FAF9F6'],
+        ['Sage Mat Green', '#A3B19B']
+      ],
+      maroo: [
+        ['Glaze Maroon', '#8C2F39'],
+        ['Dough Cream', '#FFE5B4'],
+        ['Sidewalk Pine', '#2D4739'],
+        ['Butter Sugar', '#FFFDF5']
+      ],
+      minoe: [
+        ['Warm Cocoa', '#6D5449'],
+        ['Coquette Blush', '#F4C2C2'],
+        ['Soft Ribbon Cream', '#FAF3DD'],
+        ['Dusty Rose', '#D8A7B1']
+      ],
+      kueboon: [
+        ['Vintage Burgundy', '#6B1D2F'],
+        ['Butter Stripe', '#FFE066'],
+        ['Garden Blue', '#B8E0F6'],
+        ['Blush Lace', '#FCE7F3']
+      ],
+      babytara: [
+        ['Crimson Hood', '#A62616'],
+        ['Butter Croissant', '#FCECB2'],
+        ['Storybook Navy', '#233368'],
+        ['Warm Honey', '#F0C96B']
+      ],
+      happynest: [
+        ['Imperial Crimson', '#8B1E24'],
+        ['Botanical Gold', '#D4AF37'],
+        ['Lotus Ivory', '#F5E6D3'],
+        ['Warm Terracotta', '#C85A32']
+      ],
+      seeri: [
+        ['Vibrant Lilac', '#DFB2F4'],
+        ['Magenta Berry', '#D90368'],
+        ['Lemon Stripe', '#FFEA00'],
+        ['Soft Pearl', '#FFFDF9']
+      ],
+      butterburrow: [
+        ['Cake Box Maroon', '#6E1423'],
+        ['Sky Stripe Blue', '#B6D2F9'],
+        ['Vanilla Frosting', '#FFFDF7'],
+        ['Strawberry Red', '#E63946']
+      ]
+    };
+
+    function handleSwatchClick(colorName, hexCode, btnEl) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(hexCode).catch(() => {});
+      }
+      const readout = document.getElementById('paletteReadoutText');
+      if (readout) {
+        readout.textContent = currentLang === 'ID'
+          ? `✨ Warna terpilih: ${colorName} (${hexCode}) — Disalin!`
+          : `✨ Selected swatch: ${colorName} (${hexCode}) — Copied!`;
+      }
+      btnEl.classList.remove('is-booped');
+      void btnEl.offsetWidth;
+      btnEl.classList.add('is-booped');
+    }
+
+    // =========================================================================
+    // FULL-SIZE UNCROPPED LIGHTBOX VIEWER
     // =========================================================================
     function openProjectLightbox(projectId, startIndex, triggerEl) {
       const p = SITE.portfolioProjects.find(item => item.id === projectId);
@@ -1038,10 +1554,10 @@ function handleSmartImgError(imgEl) {
     }
 
     // =========================================================================
-    // UNIFIED MARKET & LANGUAGE SELECTOR (ID -> ID + IDR | EN -> EN + USD)
+    // UNIFIED MARKET & LANGUAGE SELECTOR
     // =========================================================================
     function selectMarket(marketCode) {
-      currentMarket = marketCode === 'EN' ? 'EN' : 'ID';
+      currentMarket = marketCode === 'ID' ? 'ID' : 'EN';
       currentLang = currentMarket;
       document.documentElement.lang = currentLang === 'ID' ? 'id' : 'en';
       syncMarketButtonsUI();
@@ -1063,11 +1579,11 @@ function handleSmartImgError(imgEl) {
         : 'px-2.5 py-1 rounded-full text-[11px] font-bold text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
 
       pID.className = isID
-        ? 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition'
-        : 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition';
+        ? 'px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition'
+        : 'px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition';
       pEN.className = !isID
-        ? 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition'
-        : 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition';
+        ? 'px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#2A1E1B] text-white transition'
+        : 'px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-[#2A1E1B] hover:bg-[#F3EFE6] transition';
     }
 
     function applyAllTranslations() {
@@ -1102,6 +1618,7 @@ function handleSmartImgError(imgEl) {
 
       document.getElementById('teamBadge').textContent = d.teamBadge;
       document.getElementById('teamHeading').textContent = d.teamHeading;
+      document.getElementById('teamModalTitle').textContent = d.teamHeading;
       document.getElementById('teamP1').innerHTML = d.teamP1;
       document.getElementById('teamP2').innerHTML = d.teamP2;
       document.getElementById('teamP3').textContent = d.teamP3;
@@ -1122,10 +1639,12 @@ function handleSmartImgError(imgEl) {
       document.getElementById('footerTagline').textContent = d.footerTagline;
       document.getElementById('footerWaLabel').textContent = d.footerWaLabel;
 
+      selectProofPair(currentProofIndex);
       renderWorkflowPhases();
       setProcessView(currentProcessStep);
       renderGalleryGrid();
       renderPricingCards();
+      renderExtraPricingAndFaq();
 
       if (activeModalProjectId) {
         renderModalContent(activeModalProjectId);
@@ -1133,7 +1652,7 @@ function handleSmartImgError(imgEl) {
     }
 
     // =========================================================================
-    // DRAGGABLE + BOOPABLE CRAYON FLOWERS & CRITTERS + GLOBAL PROXIMITY
+    // DRAGGABLE + BOOPABLE CRAYON FLOWERS & CRITTERS
     // =========================================================================
     function triggerCritterBoop(el) {
       const prox = el.querySelector('.sticker-prox');
@@ -1141,14 +1660,14 @@ function handleSmartImgError(imgEl) {
         prox.classList.remove('is-booped');
         void prox.offsetWidth;
         prox.classList.add('is-booped');
-        setTimeout(() => prox.classList.remove('is-booped'), 600);
+        setTimeout(() => prox.classList.remove('is-booped'), 550);
       }
       const boopText = el.getAttribute('data-boop') || '✨ Boop!';
       const badge = document.createElement('span');
       badge.className = 'boop-pop-badge';
       badge.textContent = boopText;
       el.appendChild(badge);
-      setTimeout(() => badge.remove(), 900);
+      setTimeout(() => badge.remove(), 1050);
     }
 
     function initBoundedSticker(el) {
@@ -1216,25 +1735,33 @@ function handleSmartImgError(imgEl) {
 
     document.querySelectorAll('[data-sticker="true"]').forEach(initBoundedSticker);
 
+    // Lightweight 60fps Throttled Proximity Effect
+    let rafPending = false;
     window.addEventListener('pointermove', (e) => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      document.querySelectorAll('[data-sticker="true"]').forEach((st) => {
-        if (st.classList.contains('is-dragging')) return;
-        const prox = st.querySelector('.sticker-prox');
-        if (!prox || prox.classList.contains('is-booped')) return;
-        const r = st.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > window.innerHeight) return;
-        const cx = r.left + r.width / 2;
-        const cy = r.top + r.height / 2;
-        const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
-        const maxDist = isPlayMode ? 150 : 105;
-        if (dist < maxDist && dist > 1) {
-          const angle = Math.atan2(cy - e.clientY, cx - e.clientX);
-          const push = ((maxDist - dist) / maxDist) * (isPlayMode ? 11 : 5);
-          prox.style.transform = `translate(${Math.cos(angle) * push}px, ${Math.sin(angle) * push}px) scale(${isPlayMode ? 1.1 : 1.04})`;
-        } else {
-          prox.style.transform = '';
-        }
+      if (rafPending || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      rafPending = true;
+      const clientX = e.clientX;
+      const clientY = e.clientY;
+      requestAnimationFrame(() => {
+        rafPending = false;
+        document.querySelectorAll('[data-sticker="true"]').forEach((st) => {
+          if (st.classList.contains('is-dragging')) return;
+          const prox = st.querySelector('.sticker-prox');
+          if (!prox || prox.classList.contains('is-booped')) return;
+          const r = st.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > window.innerHeight) return;
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const dist = Math.hypot(clientX - cx, clientY - cy);
+          const maxDist = isPlayMode ? 140 : 95;
+          if (dist < maxDist && dist > 1) {
+            const angle = Math.atan2(cy - clientY, cx - clientX);
+            const push = ((maxDist - dist) / maxDist) * (isPlayMode ? 10 : 4);
+            prox.style.transform = `translate(${Math.cos(angle) * push}px, ${Math.sin(angle) * push}px) scale(${isPlayMode ? 1.08 : 1.03})`;
+          } else if (prox.style.transform) {
+            prox.style.transform = '';
+          }
+        });
       });
     }, { passive: true });
 
@@ -1257,7 +1784,7 @@ function handleSmartImgError(imgEl) {
       div.className = 'crayon-sticker spawned-flower pointer-events-auto w-20 h-20 sm:w-24 sm:h-24';
       div.setAttribute('data-sticker', 'true');
       div.setAttribute('data-bounds', 'heroCanvas');
-      div.setAttribute('data-boop', '🌸 Mekar!');
+      div.setAttribute('data-boop', '🌸 Bloom!');
       const isLeft = spawnedCount % 2 === 0;
       const leftPct = isLeft ? Math.floor(Math.random() * 12 + 2) : Math.floor(Math.random() * 12 + 80);
       const topPct = Math.floor(Math.random() * 64 + 12);
@@ -1284,16 +1811,16 @@ function handleSmartImgError(imgEl) {
     }
 
     // =========================================================================
-    // GALLERY FILTERING, FEATURED-FIRST MODE & FULL-SIZE CLICKABLE CARDS
+    // GALLERY FILTERING & CARDS
     // =========================================================================
     function filterGallery(cat) {
       currentFilter = cat;
       ['all', 'identity', 'mascot', 'packaging'].forEach(c => {
         const btn = document.getElementById('filter-' + c);
         if (c === cat) {
-          btn.className = 'px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition';
+          btn.className = 'px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition';
         } else {
-          btn.className = 'px-4 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
+          btn.className = 'px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
         }
       });
       renderGalleryGrid();
@@ -1334,27 +1861,33 @@ function handleSmartImgError(imgEl) {
         const cardImgId = `card-img-${p.id}`;
         const altText = p.altText ? p.altText[currentLang] : `${p.name} — ${copy.categoryLabel}`;
         const photoCount = Array.isArray(p.galleryImages) ? p.galleryImages.length : 2;
+        const swatches = PROJECT_COLOR_PALETTES[p.id] || [];
         return `
-          <article class="calla-frame gallery-card ${p.frameBg} p-6 flex flex-col justify-between relative">
+          <article class="calla-frame gallery-card ${p.frameBg} p-5 sm:p-6 flex flex-col justify-between relative">
             <div>
-              <div class="flex items-center justify-between gap-2 text-xs font-bold mb-3">
-                <span class="bg-white border border-[#2A1E1B] px-3 py-1 rounded-full">${p.statusBadge}</span>
-                <span class="text-[#5C4742]">${copy.categoryLabel}</span>
+              <div class="flex items-center justify-between gap-2 text-xs font-bold mb-2.5">
+                <span class="bg-white border border-[#2A1E1B] px-2.5 py-0.5 rounded-full text-[11px]">${p.statusBadge}</span>
+                <div class="flex items-center -space-x-1">
+                  ${swatches.map(([cName, hex]) => `
+                    <span class="w-3.5 h-3.5 rounded-full border border-[#2A1E1B]" style="background:${hex};" title="${cName}"></span>
+                  `).join('')}
+                </div>
               </div>
 
-              <!-- Clickable Thumbnail Opening Full-Size Uncropped Lightbox -->
               <button
                 type="button"
                 onclick="openProjectLightbox('${p.id}', 0, this)"
-                class="artwork-zoom-trigger artwork-thumb-stage relative w-full h-56 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden mb-4 flex items-center justify-center p-2 text-left"
+                class="artwork-zoom-trigger artwork-thumb-stage relative w-full h-52 sm:h-56 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden mb-3.5 flex items-center justify-center p-2 text-left"
                 title="${d.zoomImageHint}"
               >
                 <img
                   id="${cardImgId}"
-                  src="${p.coverImg}"
+                  src="${getFastThumb(p.coverImg, 800)}"
                   data-base-src="${p.coverImg}"
                   data-attempt="0"
                   alt="${altText}"
+                  loading="lazy"
+                  decoding="async"
                   class="artwork-uncropped"
                   onerror="handleSmartImgError(this)"
                 />
@@ -1362,15 +1895,15 @@ function handleSmartImgError(imgEl) {
                   <span class="text-2xl mb-1">🖼️</span>
                   <p class="text-xs font-extrabold text-[#2A1E1B]">${p.name}</p>
                   <code class="text-[11px] font-bold text-[#E85D88] bg-white px-2.5 py-0.5 rounded border border-[#2A1E1B] mt-1">${p.coverImg}</code>
-                  <p class="text-[10px] text-[#5C4742] mt-1 max-w-xs">${p.pdfExportHint || ''}</p>
                 </div>
                 <span class="absolute bottom-2 right-2 bg-white/95 border border-[#2A1E1B] text-[10px] font-bold px-2.5 py-0.5 rounded-full text-[#2A1E1B] shadow-sm">
-                  🔍 Full-Size (${photoCount} Foto)
+                  🔍 Full-Size (${photoCount})
                 </span>
               </button>
 
-              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mb-2">${p.name}</h3>
-              <p class="text-xs sm:text-sm text-[#4A3833] mb-4 leading-relaxed">${copy.summary}</p>
+              <p class="text-[11px] font-bold text-[#5C4742] uppercase tracking-wider mb-0.5">${copy.categoryLabel}</p>
+              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mb-1.5">${p.name}</h3>
+              <p class="text-xs sm:text-sm text-[#4A3833] mb-4 leading-relaxed line-clamp-3">${copy.summary}</p>
             </div>
 
             <div class="pt-3 border-t border-[#2A1E1B]/20">
@@ -1389,7 +1922,7 @@ function handleSmartImgError(imgEl) {
     }
 
     // =========================================================================
-    // CASE STUDY MODAL WITH MULTI-PHOTO GALLERY & PDF DOCUMENT SUPPORT
+    // CASE STUDY MODAL
     // =========================================================================
     function openCaseModal(projectId, triggerEl) {
       activeModalProjectId = projectId;
@@ -1422,6 +1955,36 @@ function handleSmartImgError(imgEl) {
         ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
         : 'grid-cols-1 sm:grid-cols-2';
 
+      const swatches = PROJECT_COLOR_PALETTES[p.id] || [
+        ['Calla Rose', '#E85D88'],
+        ['Butter Yellow', '#FFE066'],
+        ['Sky Pastel', '#A8D8FF'],
+        ['Storybook Cream', '#FFFDF8']
+      ];
+      const paletteHtml = `
+        <div class="p-4 rounded-2xl bg-white border-2 border-[#2A1E1B] flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p class="text-[11px] font-extrabold uppercase tracking-wider text-[#5C4742]">
+              ${currentLang === 'ID' ? '🎨 Palet Warna Brand Interaktif (Klik bulatan warna!):' : '🎨 Interactive Brand Color Palette (Click any swatch!):'}
+            </p>
+            <p id="paletteReadoutText" class="text-xs font-bold text-[#2A1E1B] mt-0.5">
+              ${swatches.map(([n, h]) => `${n} (${h})`).join(' · ')}
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            ${swatches.map(([cName, hex]) => `
+              <button
+                type="button"
+                onclick="handleSwatchClick('${cName}', '${hex}', this)"
+                class="w-9 h-9 rounded-full border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] hover:scale-110 transition relative"
+                style="background-color: ${hex};"
+                title="${cName} (${hex})"
+              ></button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
       const pdfList = Array.isArray(p.pdfFiles) ? p.pdfFiles : [];
       const pdfSectionHtml = pdfList.length > 0 ? `
         <div class="p-4 rounded-2xl bg-[#FFF9DB] border-2 border-[#2A1E1B] flex flex-wrap items-center justify-between gap-3">
@@ -1429,10 +1992,10 @@ function handleSmartImgError(imgEl) {
             <span class="text-xl">📄</span>
             <div>
               <p class="text-xs font-extrabold text-[#2A1E1B]">
-                ${currentLang === 'ID' ? 'Full Dokumen PDF' : 'Full Project PDF'}
+                ${currentLang === 'ID' ? 'Dokumen PDF Proyek Tersedia' : 'Project Presentation PDF Available'}
               </p>
               <p class="text-[11px] text-[#5C4742]">
-                ${currentLang === 'ID' ? 'Buka dokumen PDF resolusi penuh di tab baru:' : 'Open full-resolution PDF document in a new tab:'}
+                ${currentLang === 'ID' ? 'Buka dokumen PDF resolusi penuh di tab baru:' : 'Open full-resolution PDF deck in a new tab:'}
               </p>
             </div>
           </div>
@@ -1456,13 +2019,15 @@ function handleSmartImgError(imgEl) {
         <div>
           <span class="inline-block bg-[#FFE066] border border-[#2A1E1B] text-xs font-bold px-3 py-1 rounded-full">${p.statusBadge} · ${copy.categoryLabel}</span>
           <h2 id="modalTitle" class="text-2xl sm:text-4xl font-extrabold text-[#2A1E1B] mt-2">${p.name}</h2>
-          <p class="text-xs sm:text-sm text-[#4A3833] mt-1">${copy.summary}</p>
+          <p class="storybook-dropcap text-xs sm:text-sm text-[#4A3833] mt-2 leading-relaxed">${copy.summary}</p>
         </div>
+
+        ${paletteHtml}
 
         <div>
           <div class="flex items-center justify-between gap-2 mb-2">
             <h3 class="text-xs font-bold uppercase tracking-wider text-[#5C4742]">
-              ${d.modalVisualPreviewTitle} (${galleryList.length} ${currentLang === 'ID' ? 'Visual' : 'Visuals'})
+              ${d.modalVisualPreviewTitle} (${galleryList.length})
             </h3>
           </div>
           <div class="grid ${gridColsClass} gap-4">
@@ -1473,21 +2038,22 @@ function handleSmartImgError(imgEl) {
                 <button
                   type="button"
                   onclick="openProjectLightbox('${p.id}', ${idx}, this)"
-                  class="artwork-zoom-trigger artwork-thumb-stage relative h-60 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden flex flex-col items-center justify-center p-2 text-left group"
+                  class="artwork-zoom-trigger artwork-thumb-stage relative h-56 sm:h-60 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden flex flex-col items-center justify-center p-2 text-left group"
                 >
                   <img
                     id="${imgDomId}"
-                    src="${imgItem.src}"
+                    src="${getFastThumb(imgItem.src, 900)}"
                     data-base-src="${imgItem.src}"
                     data-attempt="0"
                     alt="${p.name} — ${capLabel}"
+                    loading="lazy"
+                    decoding="async"
                     class="artwork-uncropped"
                     onerror="handleSmartImgError(this)"
                   />
                   <div class="hidden absolute inset-0 p-4 bg-[#FFFDF8] flex flex-col items-center justify-center text-center">
                     <span class="text-xs font-bold text-[#2A1E1B]">${capLabel}</span>
                     <code class="text-[11px] font-bold text-[#E85D88] bg-white px-2 py-1 rounded border border-[#2A1E1B] mt-1">${imgItem.src}</code>
-                    <p class="text-[10px] text-[#5C4742] mt-1">${p.pdfExportHint || ''}</p>
                   </div>
                   <span class="absolute top-2 left-2 bg-white/95 border border-[#2A1E1B] text-[10px] font-extrabold px-2.5 py-0.5 rounded-full text-[#2A1E1B]">
                     ${capLabel}
@@ -1553,20 +2119,15 @@ function handleSmartImgError(imgEl) {
 
     window.addEventListener('keydown', (e) => {
       const lb = document.getElementById('imageLightbox');
-      const isLbOpen = !lb.classList.contains('hidden');
-      if (isLbOpen) {
-        if (e.key === 'Escape') {
-          closeImageLightbox();
-          return;
-        }
-        if (e.key === 'ArrowRight') {
-          stepLightbox(1);
-          return;
-        }
-        if (e.key === 'ArrowLeft') {
-          stepLightbox(-1);
-          return;
-        }
+      if (!lb.classList.contains('hidden')) {
+        if (e.key === 'Escape') { closeImageLightbox(); return; }
+        if (e.key === 'ArrowRight') { stepLightbox(1); return; }
+        if (e.key === 'ArrowLeft') { stepLightbox(-1); return; }
+      }
+      const tm = document.getElementById('teamStoryModal');
+      if (tm && !tm.classList.contains('hidden') && e.key === 'Escape') {
+        closeTeamModal();
+        return;
       }
       if (e.key === 'Escape' && activeModalProjectId !== null) {
         closeCaseModal();
@@ -1574,7 +2135,7 @@ function handleSmartImgError(imgEl) {
     });
 
     // =========================================================================
-    // INTERACTIVE PROCESS VIEW & 4-PHASE WORKFLOW
+    // INTERACTIVE SLIDING 4-PHASE WORKFLOW TRACK
     // =========================================================================
     function setProcessView(stepNum) {
       currentProcessStep = stepNum;
@@ -1586,25 +2147,77 @@ function handleSmartImgError(imgEl) {
       [1, 2, 3].forEach(n => {
         const btn = document.getElementById('pView' + n);
         btn.className = n === stepNum
-          ? 'py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B]'
-          : 'py-2 px-3 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF]';
+          ? 'py-2 px-2.5 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B]'
+          : 'py-2 px-2.5 rounded-xl text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF]';
       });
     }
+
+    let activeWfIdx = 0;
 
     function renderWorkflowPhases() {
       const phases = SITE.i18n[currentLang].wfPhases;
       const borderColors = ['border-t-[#FFE066]', 'border-t-[#A8D8FF]', 'border-t-[#F9C6D3]', 'border-t-[#B8E8B0]'];
+      const swipeHint = currentLang === 'ID' ? '↔ Geser kartu' : '↔ Swipe cards';
+
       document.getElementById('wfGrid').innerHTML = phases.map(([code, title, desc], idx) => `
-        <div class="calla-frame bg-white p-6 border-t-8 ${borderColors[idx]}">
-          <span class="text-xs font-bold text-[#5C4742]">${code}</span>
-          <h3 class="text-xl font-extrabold text-[#2A1E1B] mt-1 mb-2">${title}</h3>
-          <p class="text-sm text-[#4A3833]">${desc}</p>
+        <div
+          id="wfCard${idx}"
+          class="calla-frame bg-[#FFFDF8] p-5 border-t-8 ${borderColors[idx]} snap-center shrink-0 w-[84%] sm:w-[46%] lg:w-[23.8%] flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <span class="text-[11px] font-extrabold text-[#5C4742]">${code}</span>
+              <span class="text-[10px] font-bold text-[#5C4742] lg:hidden">${swipeHint}</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-extrabold text-[#2A1E1B] mb-2">${title}</h3>
+            <p class="text-xs sm:text-sm text-[#4A3833] leading-relaxed">${desc}</p>
+          </div>
+          <div class="mt-4 pt-2.5 border-t border-dashed border-[#2A1E1B]/15 flex items-center justify-between text-[11px] font-extrabold text-[#2A1E1B]">
+            <span>Step 0${idx + 1} / 04</span>
+            <span>${idx < 3 ? '→' : '✓'}</span>
+          </div>
         </div>
       `).join('');
+      updateWfDotsUI(activeWfIdx);
+    }
+
+    function scrollToWfCard(idx) {
+      activeWfIdx = Math.max(0, Math.min(3, idx));
+      const card = document.getElementById('wfCard' + activeWfIdx);
+      const track = document.getElementById('wfGrid');
+      if (card && track) {
+        track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      }
+      updateWfDotsUI(activeWfIdx);
+    }
+
+    function slideWorkflowBy(delta) {
+      scrollToWfCard((activeWfIdx + delta + 4) % 4);
+    }
+
+    function handleWfTrackScroll() {
+      const track = document.getElementById('wfGrid');
+      if (!track) return;
+      const cardW = track.firstElementChild ? track.firstElementChild.offsetWidth + 16 : 260;
+      const idx = Math.round(track.scrollLeft / cardW);
+      if (idx !== activeWfIdx && idx >= 0 && idx <= 3) {
+        activeWfIdx = idx;
+        updateWfDotsUI(activeWfIdx);
+      }
+    }
+
+    function updateWfDotsUI(activeIndex) {
+      [0, 1, 2, 3].forEach((n) => {
+        const dot = document.getElementById('wfDot' + n);
+        if (!dot) return;
+        dot.className = n === activeIndex
+          ? 'px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B] transition'
+          : 'px-2.5 py-1 rounded-full text-[11px] font-extrabold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF9DB] transition';
+      });
     }
 
     // =========================================================================
-    // PRICING CARDS & BILINGUAL MARKET BANNER NOTE
+    // PRICING CARDS
     // =========================================================================
     function renderPricingCards() {
       const cat = SITE.pricingCatalog[currentMarket];
@@ -1633,13 +2246,13 @@ function handleSmartImgError(imgEl) {
         );
 
         return `
-          <div class="calla-frame ${pkg.bg} p-6 flex flex-col justify-between">
+          <div class="calla-frame ${pkg.bg} p-5 sm:p-6 flex flex-col justify-between">
             <div>
               <span class="inline-block bg-white border border-[#2A1E1B] text-[11px] font-bold px-3 py-1 rounded-full">${tag}</span>
-              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mt-3">${pkg.name}</h3>
-              <p class="text-xl font-extrabold text-[#D6336C] mt-1 mb-3">${pkg.price}</p>
-              <p class="text-xs sm:text-sm text-[#4A3833] mb-4 leading-relaxed">${desc}</p>
-              <ul class="space-y-2 text-xs font-semibold text-[#2A1E1B] border-t border-[#2A1E1B]/20 pt-4">
+              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mt-2.5">${pkg.name}</h3>
+              <p class="text-xl font-extrabold text-[#D6336C] mt-1 mb-2.5">${pkg.price}</p>
+              <p class="text-xs sm:text-sm text-[#4A3833] mb-3.5 leading-relaxed">${desc}</p>
+              <ul class="space-y-1.5 text-xs font-semibold text-[#2A1E1B] border-t border-[#2A1E1B]/20 pt-3.5">
                 ${items.map(pt => `<li class="flex items-start gap-2"><span>🌸</span><span>${pt}</span></li>`).join('')}
               </ul>
               ${note ? `<p class="text-[11px] text-[#5C4742] mt-3 pt-2 border-t border-dashed border-[#2A1E1B]/20 italic">${note}</p>` : ''}
@@ -1648,7 +2261,7 @@ function handleSmartImgError(imgEl) {
               href="https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${waText}"
               target="_blank"
               rel="noopener"
-              class="mt-6 w-full py-3 px-4 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-bold text-xs border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] transition text-center block"
+              class="mt-5 w-full py-3 px-4 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-bold text-xs border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] transition text-center block"
             >
               ${btnLabel}
             </a>
@@ -1658,143 +2271,280 @@ function handleSmartImgError(imgEl) {
     }
 
     // =========================================================================
-    // ADDITIONAL SERVICES (CUSTOM REQUEST) & INTERACTIVE FAQ RENDERER
+    // CLEAN ADDITIONAL SERVICES, COLLAPSIBLE FAQ & FLOATING CONCIERGE
     // =========================================================================
     const CALLA_EXTRA_CONTENT = {
       ID: {
-        customBadge: '🖍️ ADDITIONAL SERVICES & CUSTOM PACKAGE',
+        teamCompactSummary: '<strong>Cindi</strong> (Creative Director) menggambar seluruh ilustrasi dengan tangan, sementara <strong>Aliy</strong> (Studio Manager) menangani brief, 3D mockup & file cetak.',
+        openTeamModalBtn: '📖 Buka Cerita Tim & Proses →',
+        sliderBadgeLabel: '✨ 100% KARYA ASLI CINDI & ALIY (TANPA AI)',
+        sliderHintLabel: '↔ Geser slider untuk membandingkan proses asli Calla:',
+        explorerRewardBadge: '🏆 APRESIASI PENJELAJAH: Wah, kamu sudah scroll sampai ujung cerita Calla!',
+        claimStampLabel: '💮 Klaim Stempel VIP Explorer!',
+        claimedStampLabel: '✨ Stempel VIP Aktif! (Lihat Bonus)',
+        vipRewardTitle: 'Yeay! Kamu membuka Secret Garden Pass dari Aliy & Cindi! 🌷',
+        vipRewardDesc: 'Sebutkan kode CALLAVIP saat chat di WhatsApp untuk klaim Bonus 1 Variasi Stiker/Avatar Mini Gratis pada pesanan paketmu!',
+        crayonHouseHint: '👆 Klik rumah krayon!',
+        customBadge: '🖍️ ADDITIONAL SERVICES & CUSTOM REQUEST',
         customTitle: 'Punya kebutuhan desain lain atau request khusus di luar paket?',
         customDesc: 'Jangan ragu untuk konsultasikan dulu ide kamu bersama kami! Kami siap menyesuaikan kombinasi item output (custom scope) maupun anggaran harga (price) agar pas dengan kebutuhan brandmu.',
-        customBtn: '💬 Konsultasi Paket Custom via WA →',
-        customWaText: 'Halo Calla Studio! Aku punya kebutuhan desain khusus (custom) di luar paket yang tertera di website. Boleh bantu sesuaikan scope dan estimasi harganya?',
-        faqBadge: '💡 INFO & PERTANYAAN UMUM (FAQ)',
-        faqHeading: 'Pertanyaan yang Sering Ditanyakan',
-        faqSubheading: 'Klik pada pertanyaan di bawah ini untuk membaca jawaban lengkap dari tim Calla:',
+        customBtn: '💬 Konsultasi Custom & Budget via WA →',
+        customWaBase: 'Halo Calla Studio! Aku sudah melihat pricelist di web (Kode: CALLAVIP 🌷) dan ingin konsultasi kebutuhan desain custom / penyesuaian budget paket.',
+        faqDrawerClosed: '💡 Punya Pertanyaan? Buka 5 Info Penting (FAQ) ↓',
+        faqDrawerOpen: '✕ Sembunyikan Daftar Pertanyaan (FAQ) ↑',
+        helpfulBtnText: '🌸 Jawaban ini membantu!',
+        helpfulDoneText: '💖 Terima kasih! Yuk ngobrol di WA~',
+        conciergeBtnLabel: '🌷 Tanya Calla',
+        conciergeOpt1Title: 'Baca FAQ Cepat (5 Info)',
+        conciergeOpt1Sub: 'Alasan harga IDR/USD, durasi & custom',
+        conciergeOpt2Title: 'Tanya Slot Batch Dulu Yuk!',
+        conciergeOpt2Sub: 'Chat langsung ke Official WhatsApp',
+        conciergeSlotWa: 'Halo Calla Studio! Boleh info ketersediaan slot untuk batch terdekat? Aku ingin tanya-tanya dulu untuk kebutuhan brandku 🌷',
         faqs: [
           [
+            '🌏',
+            'bg-[#FFF9DB]',
             'Mengapa harga Lokal Indonesia (IDR) lebih murah dibanding harga Internasional & ASEAN (USD)?',
-            'Rate Card IDR adalah program harga subsidi khusus untuk membantu UMKM domestik di Indonesia (dengan transaksi bank lokal BCA/QRIS dan standar vendor percetakan lokal). Sementara itu, Rate Card Internasional & ASEAN (USD) diperuntukkan bagi brand di luar Indonesia karena sudah mencakup Commercial-Use License lintas negara, kuota item cetak yang lebih banyak (seperti 3 collaterals penuh pada paket Signature), asistensi teknis spesifikasi vendor cetak internasional, serta pemrosesan pembayaran lintas negara (Wise / DuitNow / PayPal).'
+            'Rate Card IDR adalah program harga subsidi khusus untuk mendukung pertumbuhan UMKM domestik di Indonesia (menggunakan transfer bank lokal dan standar percetakan domestik). Sementara itu, Rate Card Internasional & ASEAN (USD) berlaku untuk brand di luar Indonesia karena sudah mencakup Commercial-Use License lintas negara, kuota item cetak lebih banyak (seperti 3 collaterals penuh di paket Signature), asistensi spesifikasi dieline vendor internasional, serta transaksi via Wise / DuitNow / PayPal.'
           ],
           [
-            'Apakah bisa memesan item satuan atau menyesuaikan isi paket (Custom Budget)?',
-            'Bisa banget! Jika kamu hanya membutuhkan item tertentu (misalnya tambah 1 pose maskot, desain menu saja, stiker kemasan, atau ingin menyesuaikan isi paket dengan budget tertentu), klik tombol "Konsultasi Paket Custom" di atas. Aliy akan membantu meracik scope dan harga yang paling pas untukmu.'
+            '🧩',
+            'bg-[#E3F2FD]',
+            'Apakah bisa memesan item satuan atau menyesuaikan isi paket dengan budget saya?',
+            'Bisa banget! Kalau kamu cuma butuh item spesifik (misalnya desain menu saja, tambah pose maskot, atau sabuk kemasan/sleeve) atau ingin menyesuaikan isi paket agar masuk ke budget rilis brandmu, cukup klik tombol "Konsultasi Custom & Budget" di atas!'
           ],
           [
-            'Apakah ilustrasi di Calla menggunakan AI atau 100% digambar tangan (Hand-Drawn)?',
-            'Seluruh karya ilustrasi dan maskot di Calla Creative Studio 100% digambar manual dengan tangan (hand-drawn) dari sketsa nol oleh Cindi (Creative Director & Lead Artist) menggunakan tekstur cat air dan krayon khas Calla—bukan hasil generator AI—sehingga brand kamu memiliki keunikan orisinal dan aman secara komersial.'
+            '🖍️',
+            'bg-[#FCE7F3]',
+            'Apakah ilustrasi Calla memakai AI atau 100% digambar tangan (Hand-Drawn)?',
+            '100% digambar tangan secara manual (hand-drawn) oleh Cindi (Creative Director & Lead Artist) dari sketsa kosong menggunakan tekstur kuas cat air dan krayon khas Calla. Kami tidak menggunakan generator AI, sehingga karakter dan identitas brandmu dijamin orisinal dan aman secara komersial.'
           ],
           [
-            'Bagaimana jika saya belum punya konsep visual atau bayangan sketsa sama sekali?',
-            'Tidak masalah! Kamu cukup menceritakan produk, target pembeli, dan nuansa yang kamu sukai di formulir brief. Kami akan memandu kamu langkah demi langkah lewat Sistem 4-Fase & 2-Gate Lock—dimulai dari penyelarasan arah visual dan draf sketsa kasar (Gate 1) sebelum masuk ke tahap pewarnaan.'
+            '🧭',
+            'bg-[#DCFCE7]',
+            'Bagaimana kalau saya belum punya konsep kasar atau bingung mau mulai dari mana?',
+            'Tenang, itu tugas kami! Kamu cukup ceritakan produkmu dan nuansa yang kamu suka. Lewat Sistem 4-Fase & 2-Gate Lock, kami akan membuatkan sketsa kasar/struktur dulu di Gate 1 untuk kamu koreksi bersama kami sebelum masuk ke tahap pewarnaan di Gate 2.'
           ],
           [
-            'Bagaimana sistem pembayaran, durasi pengerjaan, dan file apa saja yang diterima?',
-            'Jadwal produksi dikunci setelah DP 50% dan brief lengkap diterima. Estimasi pengerjaan rata-rata 7 hari kerja (Senin–Sabtu, Minggu libur). Setelah desain selesai dan pelunasan 50% dilakukan, kamu akan menerima seluruh File Master siap cetak & digital (.AI, .SVG, .PDF 300 DPI, .PNG transparan, & Mockup) beserta Commercial-Use License melalui link Google Drive yang aktif selama 12 bulan.'
+            '📦',
+            'bg-[#F3E8FF]',
+            'Bagaimana sistem DP, lama pengerjaan, dan file akhir yang saya bawa pulang?',
+            'Slot dikunci dengan DP 50% + pengisian brief singkat. Rata-rata pengerjaan 7 hari kerja (Senin–Sabtu, Minggu libur). Setelah pelunasan 50%, kamu menerima paket lengkap File Master (.AI, .SVG, .PDF 300 DPI siap cetak, .PNG transparan, & Mockup 3D) beserta Commercial-Use License di folder Google Drive yang aktif selama 12 bulan.'
           ]
         ]
       },
       EN: {
-        customBadge: '🖍️ ADDITIONAL SERVICES & CUSTOM PACKAGE',
+        teamCompactSummary: '<strong>Cindi</strong> (Creative Director) illustrates every piece by hand, while <strong>Aliy</strong> (Studio Manager) handles briefs, 3D mockups & print files.',
+        openTeamModalBtn: '📖 Read Full Team Story & Process →',
+        sliderBadgeLabel: '✨ 100% ORIGINAL WORK BY CINDI & ALIY',
+        sliderHintLabel: '↔ Drag slider to compare Stage 1 vs Stage 2:',
+        explorerRewardBadge: '🏆 CURIOUS EXPLORER PERK: You scrolled to the bottom of our storybook!',
+        claimStampLabel: '💮 Claim VIP Explorer Stamp!',
+        claimedStampLabel: '✨ VIP Stamp Unlocked! (See Perk)',
+        vipRewardTitle: 'Yay! You unlocked the Secret Garden Pass from Aliy & Cindi! 🌷',
+        vipRewardDesc: 'Mention code CALLAVIP on WhatsApp to receive 1 Bonus Mini Sticker/Avatar Variation Free with your package booking!',
+        crayonHouseHint: '👆 Tap the crayon house!',
+        customBadge: '🖍️ ADDITIONAL SERVICES & CUSTOM REQUEST',
         customTitle: 'Have a custom design request outside our packages?',
-        customDesc: 'Let’s talk! Drop us a message to consult your ideas with us today—we can tailor the exact deliverables and adjust the package pricing to match your brand’s current stage and budget.',
+        customDesc: 'Let’s talk! Drop us a message to consult your ideas with us today—we’re happy to tailor the exact deliverables and adjust the pricing to fit your brand’s stage and budget.',
         customBtn: '💬 Consult Custom Scope & Price →',
-        customWaText: 'Hi Calla Studio! I have a custom design request outside the standard packages on your website. Could we discuss a tailored scope and pricing?',
-        faqBadge: '💡 FREQUENTLY ASKED QUESTIONS',
-        faqHeading: 'Got Questions? We’ve Got Answers',
-        faqSubheading: 'Click any question below to learn how our studio pricing, custom requests, and workflow operate:',
+        customWaBase: 'Hi Calla Studio! I explored your website (Code: CALLAVIP 🌷) and would love to consult on a custom design scope / tailored package pricing.',
+        faqDrawerClosed: '💡 Have Questions? Open Studio FAQ (5 Answers) ↓',
+        faqDrawerOpen: '✕ Hide Studio FAQ ↑',
+        helpfulBtnText: '🌸 This was helpful!',
+        helpfulDoneText: '💖 Yay, glad it helped! Chat with us anytime~',
+        conciergeBtnLabel: '🌷 Ask Calla',
+        conciergeOpt1Title: 'Quick Studio FAQ (5 Answers)',
+        conciergeOpt1Sub: 'IDR/USD rates, timeline & custom scope',
+        conciergeOpt2Title: 'Check Batch Slot First!',
+        conciergeOpt2Sub: 'Chat directly on Official WhatsApp',
+        conciergeSlotWa: 'Hi Calla Studio! Could I check your nearest batch slot availability? I’d love to consult about my brand project 🌷',
         faqs: [
           [
+            '🌏',
+            'bg-[#FFF9DB]',
             'Why does the Indonesian Local (IDR) Rate Card differ from the International & ASEAN (USD) Rate Card?',
-            'Our IDR Rate Card is a subsidized domestic program exclusively for local Indonesian micro-businesses utilizing local bank transfers (BCA/QRIS) and domestic print standards. The International & ASEAN (USD) Rate Card applies to all clients outside Indonesia and includes an international Commercial-Use License, expanded deliverable quotas (such as 3 custom collaterals in the Signature tier), international print vendor dieline liaison, and cross-border payment processing via Wise, DuitNow, or PayPal.'
+            'Our IDR Rate Card is a subsidized domestic program exclusively supporting local Indonesian micro-businesses (using domestic transfers and local print vendor standards). The International & ASEAN (USD) Rate Card applies to all brands outside Indonesia and includes an international Commercial-Use License, expanded deliverable quotas (such as 3 custom collaterals in the Signature tier), international print vendor dieline liaison, and cross-border payments via Wise, DuitNow, or PayPal.'
           ],
           [
-            'Can I request a custom package or adjust deliverables to fit my budget?',
-            'Yes, absolutely! Whether you need a single a-la-carte item (like a menu sheet, extra mascot poses, or sticker set) or want to tailor an existing package to fit your launch budget, simply click the "Consult Custom Scope & Price" button above and we’ll craft a custom quote for you.'
+            '🧩',
+            'bg-[#E3F2FD]',
+            'Can I request a-la-carte items or adjust a package to fit my launch budget?',
+            'Yes, 100%! Whether you only need a single item (like an illustrated menu sheet, extra mascot poses, or a box sleeve) or want to swap/trim deliverables to match your budget, simply click the "Consult Custom Scope & Price" button above and message us!'
           ],
           [
+            '🖍️',
+            'bg-[#FCE7F3]',
             'Are Calla’s illustrations AI-generated or 100% hand-drawn?',
-            'Every illustration and character mascot at Calla Creative Studio is 100% hand-drawn from scratch by Cindi (our Creative Director & Lead Artist) using our signature watercolor and crayon brushes. We never use generative AI, ensuring your brand owns an authentic, soulful, and commercially safe identity.'
+            'Every single illustration and mascot at Calla Creative Studio is 100% hand-drawn from a blank canvas by Cindi (our Creative Director & Lead Artist) using our signature watercolor and crayon textures. We never use generative AI—giving your brand an authentic, soulful, and commercially safe identity.'
           ],
           [
-            'What if I don’t have a clear concept or sketch idea yet?',
-            'You’re in safe hands! Simply share your product details and target audience in our brief. We guide you step by step through our 4-Phase & 2-Gate Lock workflow—aligning on visual direction first, then reviewing hand-drawn structural sketches (Gate 1) before any final coloring begins.'
+            '🧭',
+            'bg-[#DCFCE7]',
+            'What if I don’t have a clear visual concept or sketch idea yet?',
+            'You’re in safe hands! Just share your product and favorite vibe in our brief. Through our 4-Phase & 2-Gate Lock system, we always present hand-drawn structural sketches first (Gate 1) so we can refine the direction together before any final coloring begins.'
           ],
           [
-            'How do payments, turnaround times, and final master files work?',
-            'Your batch slot is secured upon a 50% deposit and completed brief. Standard turnaround is approximately 7 business days (Monday–Saturday, Sundays off). Upon the remaining 50% settlement, all production master files (.AI, .SVG, 300 DPI .PDF, transparent .PNG, & Mockups) and your Commercial-Use License are delivered via a 12-month Google Drive folder.'
+            '📦',
+            'bg-[#F3E8FF]',
+            'How do deposits, turnaround times, and final master files work?',
+            'Slots are secured with a 50% deposit and completed brief. Standard turnaround is around 7 business days (Monday–Saturday, Sundays off). Upon the remaining 50% balance, you receive all production master files (.AI, .SVG, 300 DPI print-ready .PDF, transparent .PNG, & 3D Mockups) plus your Commercial-Use License via a 12-month Google Drive folder.'
           ]
         ]
       }
     };
 
-    let openFaqIndex = 0; // Buka pertanyaan #1 secara default
+    let openFaqIndex = 0;
+    let isFaqDrawerOpen = false;
+    let helpfulFaqMap = {};
+    let isVipStampClaimed = false;
+    let isConciergeOpen = false;
+
+    function toggleConciergeMenu(forceState) {
+      isConciergeOpen = typeof forceState === 'boolean' ? forceState : !isConciergeOpen;
+      const menu = document.getElementById('conciergeMenu');
+      if (menu) menu.classList.toggle('hidden', !isConciergeOpen);
+    }
+
+    function openFaqFromConcierge() {
+      toggleConciergeMenu(false);
+      isFaqDrawerOpen = true;
+      openFaqIndex = 0;
+      renderExtraPricingAndFaq();
+      const faqEl = document.getElementById('faqSection');
+      if (faqEl) faqEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function toggleFaqDrawer() {
+      isFaqDrawerOpen = !isFaqDrawerOpen;
+      renderExtraPricingAndFaq();
+    }
+
+    function claimExplorerStamp(btnEl) {
+      isVipStampClaimed = !isVipStampClaimed;
+      const box = document.getElementById('vipRewardBox');
+      const extra = CALLA_EXTRA_CONTENT[currentLang] || CALLA_EXTRA_CONTENT.EN;
+      if (isVipStampClaimed) {
+        box.classList.remove('hidden');
+        btnEl.textContent = extra.claimedStampLabel;
+        btnEl.className = 'px-3.5 py-1 rounded-full bg-[#FF85A2] text-white text-[11px] font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition';
+        spawnBoundedFlower();
+      } else {
+        box.classList.add('hidden');
+        btnEl.textContent = extra.claimStampLabel;
+        btnEl.className = 'px-3.5 py-1 rounded-full bg-white hover:bg-[#FFE066] text-[#2A1E1B] text-[11px] font-extrabold border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition';
+      }
+    }
 
     function toggleFaqItem(idx) {
       openFaqIndex = openFaqIndex === idx ? -1 : idx;
       renderExtraPricingAndFaq();
     }
 
+    function markFaqHelpful(idx, e) {
+      if (e) e.stopPropagation();
+      helpfulFaqMap[idx] = true;
+      renderExtraPricingAndFaq();
+    }
+
     function renderExtraPricingAndFaq() {
-      const extra = CALLA_EXTRA_CONTENT[currentLang] || CALLA_EXTRA_CONTENT.ID;
+      const extra = CALLA_EXTRA_CONTENT[currentLang] || CALLA_EXTRA_CONTENT.EN;
       const badgeEl = document.getElementById('customSrvBadge');
       if (!badgeEl) return;
+
+      document.getElementById('teamCompactSummary').innerHTML = extra.teamCompactSummary;
+      document.getElementById('openTeamModalBtn').textContent = extra.openTeamModalBtn;
+      document.getElementById('sliderBadgeLabel').textContent = extra.sliderBadgeLabel;
+      document.getElementById('sliderHintLabel').textContent = extra.sliderHintLabel;
+
+      document.getElementById('explorerRewardBadge').textContent = extra.explorerRewardBadge;
+      const stampBtn = document.getElementById('claimStampBtn');
+      if (stampBtn) {
+        stampBtn.textContent = isVipStampClaimed ? extra.claimedStampLabel : extra.claimStampLabel;
+      }
+      document.getElementById('vipRewardTitle').textContent = extra.vipRewardTitle;
+      document.getElementById('vipRewardDesc').textContent = extra.vipRewardDesc;
+      document.getElementById('crayonHouseHint').textContent = extra.crayonHouseHint;
 
       badgeEl.textContent = extra.customBadge;
       document.getElementById('customSrvTitle').textContent = extra.customTitle;
       document.getElementById('customSrvDesc').textContent = extra.customDesc;
+
       const btnEl = document.getElementById('customSrvBtn');
       btnEl.textContent = extra.customBtn;
-      btnEl.href = `https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${encodeURIComponent(extra.customWaText)}`;
+      btnEl.href = `https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${encodeURIComponent(extra.customWaBase)}`;
 
-      document.getElementById('faqBadge').textContent = extra.faqBadge;
-      document.getElementById('faqHeading').textContent = extra.faqHeading;
-      document.getElementById('faqSubheading').textContent = extra.faqSubheading;
+      const drawerBody = document.getElementById('faqDrawerBody');
+      const drawerBtn = document.getElementById('toggleFaqSectionBtn');
+      const drawerLabel = document.getElementById('faqDrawerBtnLabel');
+      if (drawerBody && drawerBtn && drawerLabel) {
+        drawerBody.classList.toggle('hidden', !isFaqDrawerOpen);
+        drawerBtn.setAttribute('aria-expanded', String(isFaqDrawerOpen));
+        drawerLabel.textContent = isFaqDrawerOpen ? extra.faqDrawerOpen : extra.faqDrawerClosed;
+      }
 
       const listEl = document.getElementById('faqAccordionList');
-      listEl.innerHTML = extra.faqs.map(([q, a], idx) => {
+      listEl.innerHTML = extra.faqs.map(([icon, bgClass, q, a], idx) => {
         const isOpen = openFaqIndex === idx;
+        const isHelpful = !!helpfulFaqMap[idx];
         return `
-          <div class="calla-frame bg-white overflow-hidden transition">
+          <div class="calla-frame ${isOpen ? bgClass : 'bg-white'} overflow-hidden transition">
             <button
               type="button"
               onclick="toggleFaqItem(${idx})"
               aria-expanded="${isOpen}"
-              class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-[#FFF9DB] transition"
+              class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-[#FFF9DB]/60 transition"
             >
-              <span class="text-xs sm:text-sm font-extrabold text-[#2A1E1B]">${idx + 1}. ${q}</span>
-              <span class="w-7 h-7 rounded-full border-2 border-[#2A1E1B] ${isOpen ? 'bg-[#E85D88] text-white' : 'bg-[#FFE066] text-[#2A1E1B]'} flex items-center justify-center font-extrabold text-xs shrink-0">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl border-2 border-[#2A1E1B] bg-white flex items-center justify-center text-base shrink-0 shadow-[2px_2px_0px_#2A1E1B]">
+                  ${icon}
+                </span>
+                <span class="text-xs sm:text-sm font-extrabold text-[#2A1E1B]">${q}</span>
+              </div>
+              <span class="w-8 h-8 rounded-full border-2 border-[#2A1E1B] ${isOpen ? 'bg-[#2A1E1B] text-[#FFE066] rotate-180' : 'bg-[#FFE066] text-[#2A1E1B]'} flex items-center justify-center font-extrabold text-sm shrink-0 transition-transform">
                 ${isOpen ? '−' : '+'}
               </span>
             </button>
-            <div class="${isOpen ? 'block' : 'hidden'} px-5 pb-4 pt-2 border-t border-dashed border-[#2A1E1B]/20 text-xs sm:text-sm text-[#4A3833] leading-relaxed bg-[#FFFDF8]">
-              ${a}
+            <div class="${isOpen ? 'block' : 'hidden'} px-5 pb-4 pt-3 border-t-2 border-dashed border-[#2A1E1B]/20 bg-white/90">
+              <p class="text-xs sm:text-sm text-[#4A3833] leading-relaxed mb-3">${a}</p>
+              <div class="flex items-center justify-between gap-2 pt-2 border-t border-[#2A1E1B]/10">
+                <button
+                  type="button"
+                  onclick="markFaqHelpful(${idx}, event)"
+                  class="px-3 py-1 rounded-full text-[11px] font-extrabold border border-[#2A1E1B] transition ${
+                    isHelpful ? 'bg-[#DCFCE7] text-[#2A1E1B]' : 'bg-[#FFF9DB] hover:bg-[#FFE066] text-[#2A1E1B]'
+                  }"
+                >
+                  ${isHelpful ? extra.helpfulDoneText : extra.helpfulBtnText}
+                </button>
+                <span class="text-[10px] font-bold text-[#5C4742]">Calla Storybook Guide #0${idx + 1}</span>
+              </div>
             </div>
           </div>
         `;
       }).join('');
+
+      document.getElementById('conciergeBtnLabel').textContent = extra.conciergeBtnLabel;
+      document.getElementById('conciergeOpt1Title').textContent = extra.conciergeOpt1Title;
+      document.getElementById('conciergeOpt1Sub').textContent = extra.conciergeOpt1Sub;
+      document.getElementById('conciergeOpt2Title').textContent = extra.conciergeOpt2Title;
+      document.getElementById('conciergeOpt2Sub').textContent = extra.conciergeOpt2Sub;
+      document.getElementById('conciergeOpt2Link').href = `https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${encodeURIComponent(extra.conciergeSlotWa)}`;
     }
 
-    // Hubungkan otomatis setiap kali bahasa/market berubah
-    const _origApplyTranslations = applyAllTranslations;
-    applyAllTranslations = function() {
-      _origApplyTranslations();
-      renderExtraPricingAndFaq();
-    };
-
-    // INITIALIZE ON PAGE LOAD (WITH SILENT MARKET LOCK: ?m=id or ?m=en)
+    // INITIALIZE ON PAGE LOAD (DEFAULT = ENGLISH & USD, OR OVERRIDE VIA ?m=id / ?m=en)
     (function initMarketFromURL() {
       const params = new URLSearchParams(window.location.search);
       const marketParam = (params.get('m') || params.get('market') || '').toUpperCase();
 
-      if (marketParam === 'EN' || marketParam === 'USD' || marketParam === 'GLOBAL') {
-        currentMarket = 'EN';
-        currentLang = 'EN';
-        document.documentElement.lang = 'en';
-      } else if (marketParam === 'ID' || marketParam === 'IDR') {
+      if (marketParam === 'ID' || marketParam === 'IDR') {
         currentMarket = 'ID';
         currentLang = 'ID';
-        document.documentElement.lang = 'id';
+      } else {
+        currentMarket = 'EN';
+        currentLang = 'EN';
       }
+      document.documentElement.lang = currentLang === 'ID' ? 'id' : 'en';
 
       if (['EN', 'USD', 'GLOBAL', 'ID', 'IDR'].includes(marketParam)) {
         const headerSwitchGroup = document.getElementById('headerMarketID')?.parentElement;
