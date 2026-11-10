@@ -230,7 +230,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — CHUNKY LOGO & BITTEN COOKIE MARK (GATE 1)', 'In Gate 1, we crafted a chunky retro-serif logotype highlighting the modified double "oo" as a bitten chocolate-chip cookie graphic signature.'],
           ['04 — COLOR PALETTE & TYPOGRAPHY (GATE 2)', 'Paired clean Poppins typography with four energetic tones: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), and Oven Mustard (#F3C868).'],
           ['05 — THE UNBOXING JOY IN ACTION', 'Because the first bite happens with the eyes, we rolled the identity out across glass cookie jars, boxes, and pouches featuring joyful microcopy: "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", and "BAKED FRESH DAILY".'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'A flagship example of our Full Branding Package Package (USD 75) & The Unboxing Kit (USD 85). Click the PDF button above to view the full brand deck!']
+          ['06 — PACKAGE & MASTER HANDOVER', 'A flagship example of our Full Branding Package Package (USD 85) & The Unboxing Kit (USD 95). Click the PDF button above to view the full brand deck!']
         ]
       }
     },
@@ -279,7 +279,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETCH & DIELINE LOCK (GATE 1)', 'Cindi sketched the piglet scenes and snowy cottage while Aliy mapped the layouts onto the exact vendor dielines for the Hardbox, Gable Box, and 3-tier drawer sleeve.'],
           ['04 — COLOR & WATERCOLOR TEXTURE (GATE 2)', 'Rendered with Calla’s signature porous watercolor and soft pencil textures alongside festive script ("Wish You Holly Jolly Christmas" & "So Very Merry").'],
           ['05 — BRAND IN ACTION', 'Rolled out seamlessly across the Main Hardbox, Tall Gable Box, 3-Tier Drawer Box with belly band sleeve, mini favor cubes, greeting cards, and hangtags.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to The Unboxing Kit (USD 85). Delivered with full print-ready master files (.AI, 300 DPI .PDF, .SVG, .PNG) and 3D studio mockups.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to The Unboxing Kit (USD 95). Delivered with full print-ready master files (.AI, 300 DPI .PDF, .SVG, .PNG) and 3D studio mockups.']
         ]
       }
     },
@@ -393,7 +393,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SILHOUETTE & ANATOMY SKETCH (GATE 1 LOCK)', 'In Gate 1, Cindi locked the plump proportions and a slightly chubby rear profile for extra playfulness, outfitted in an energetic orange barista cap and apron.'],
           ['04 — ORANGE PALETTE & 4 DYNAMIC POSES (GATE 2 LOCK)', 'In Gate 2, we applied an appetite-stimulating orange palette across 4 narrative poses: rushing with an iced latte, dancing to greet guests, embracing a warm coffee cup, and popping out of a takeaway parcel box.'],
           ['05 — BRAND IN ACTION & STORE STAGING', 'Engineered for dual impact: ready as digital social stickers and staged as a life-sized 3D standee activation surrounding an oversized coffee cup at a premier mall outlet storefront.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Showcase of our Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding package (USD 120) , delivered with high-res vector files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Showcase of our Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding package (USD 130) , delivered with high-res vector files.']
         ]
       }
     },
@@ -439,7 +439,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — CHARACTER & MENU GRID SKETCH (GATE 1)', 'In Gate 1, we locked Olen’s welcoming poses ("SAY HI! TO OLEN": sitting on a giant pastry, resting her chin, and serving a pastry plate) alongside a clean 3-column menu grid separating prices, piece counts, toppings, and fillings.'],
           ['04 — WATERCOLOR RENDERING & MENU STAGING (GATE 2)', 'Rendered in soft watercolor washes on textured paper. On the "OUR MENU" sheet, Olen greets customers at the top-left corner, guiding their eyes across close-up cross-section photos of melted chocolate, cheese, and salted egg fillings.'],
           ['05 — BRAND IN ACTION', 'The menu clearly highlights all 8 variants (Bolen Coklat Lumer 43K, Mochi Salted Egg 60K, Keju Lumer 55K, Mix 45K, Mix Duo 55K, Smoked Beef 65K, Bolen Lilit 40K, and Chicken Salted Egg 80K) with pill-shaped price tags.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'A prime example of our Cafe & Bakery Branding package (USD 120), giving the bakery both a signature mascot and a high-converting menu layout.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'A prime example of our Cafe & Bakery Branding package (USD 130), giving the bakery both a signature mascot and a high-converting menu layout.']
         ]
       }
     },
@@ -489,7 +489,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO SUITE & MONOGRAM SKETCH (GATE 1)', 'In Gate 1, we developed three cohesive marks: the Main Logo lockup, a balanced Secondary Logo, and an intertwined "BV" floral monogram for compact applications.'],
           ['04 — COLOR & TYPOGRAPHY BOARD (GATE 2)', 'Compiled into a clean 1-Page Brand Identity Board pairing Snell Roundhand script with timeless EB Garamond and Cinzel serif typography.'],
           ['05 — BRAND IN ACTION', 'Rolled out across a burgundy Thank You Card, vertical garment Hang Tag, and custom Polymailer packaging featuring "Made to Celebrate You" messaging.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase of our Full Branding Package Package (USD 75), delivering a clear 1-page brand sheet and cohesive print touchpoints.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase of our Full Branding Package Package (USD 85), delivering a clear 1-page brand sheet and cohesive print touchpoints.']
         ]
       }
     },
@@ -535,7 +535,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & EMBLEM LOCK (GATE 1)', 'In Gate 1, we finalized the Primary Logo alongside versatile Alternative Logos integrating the petal mark directly into the wordmark.'],
           ['04 — TYPOGRAPHY & COLOR BOARD (GATE 2)', 'Organized into a clean 1-Page Brand Board pairing TAN Pearl and Brown Sugar display fonts with Handsome script for studio wall quotes.'],
           ['05 — BRAND IN ACTION', 'Visualized across interior glass and mirror signage, sage-green pilates mats, and branded studio hydration tumblers.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 75), equipping the studio founder with vector files ready for interior signage and merch production.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 85), equipping the studio founder with vector files ready for interior signage and merch production.']
         ]
       }
     },
@@ -582,7 +582,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETCH & LINEWORK LOCK (GATE 1)', 'In Gate 1, Cindi sketched welcoming, donut-holding, and relaxing poses with bold, print-friendly linework.'],
           ['04 — COLOR & CARD LAYOUT (GATE 2)', 'Warm dough and glaze tones were applied across the mascot and a 2-sided 10-stamp Loyalty Card ("Buy 9 Glazing Donut, The 10th Is On Us!").'],
           ['05 — BRAND IN ACTION', 'Staged on an exterior A-Frame Sidewalk Board, die-cut stickers, and customer loyalty punch cards.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Available via Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding (USD 120) with full vector master files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Available via Storybook Brand Mascot (USD 80) or Cafe & Bakery Branding (USD 130) with full vector master files.']
         ]
       }
     },
@@ -629,7 +629,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & SUBMARK SKETCH (GATE 1)', 'Locking the script flow and 3 poodle-ear icon variations for woven collar labels and die-cut hangtags.'],
           ['04 — 1-PAGE BRAND BOARD (GATE 2)', 'Compiling the 5-shade muted color palette and classic serif pairing (Sorts Mill Goudy) into an easy-to-use brand sheet.'],
           ['05 — BRAND IN ACTION', 'Applied across garment hangtags, collar labels, unboxing boxes with patterned tissue wrap, and greeting cards.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 75), complete with print-ready garment tag and packaging files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 85), complete with print-ready garment tag and packaging files.']
         ]
       }
     },
@@ -672,7 +672,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — CHARACTER & BOX SKETCH (GATE 1)', 'Locking the oval-framed cat portraits, custom Kueboon logotype, and die-cut hangtag/card layouts.'],
           ['04 — COLOR & STRIPE SYSTEM (GATE 2)', 'Storybook brush rendering paired with butter-yellow and blush striped box patterns.'],
           ['05 — BRAND IN ACTION', 'Rolled out across striped pastry boxes, circular seal stickers, die-cut hangtags, and heart-lace postcard inserts.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to Full Branding Package (USD 75) / The Unboxing Kit (USD 85) with production-ready packaging files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to Full Branding Package (USD 85) / The Unboxing Kit (USD 95) with production-ready packaging files.']
         ]
       }
     },
@@ -758,7 +758,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SLEEVE & DIE-CUT LAYOUT (GATE 1)', 'Mapping exact belly-band dimensions to wrap the client’s multi-tier box alongside custom die-cut hangtag outlines.'],
           ['04 — BOTANICAL DETAILING (GATE 2)', 'Harmonized English script and Chinese festival typography across the belly band, hangtag, card, and crimson envelope.'],
           ['05 — BRAND IN ACTION', 'Staged on a multi-tier red lacquer-style gift box with a brass handle for pre-order campaign launches.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Available via Single Hero Packaging (USD 55) or The Unboxing Kit (USD 85).']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Available via Single Hero Packaging (USD 65) or The Unboxing Kit (USD 95).']
         ]
       }
     },
@@ -788,7 +788,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & POLA KEMASAN (GATE 1)', 'Merancang logotype SEERI dengan huruf S ikonis yang bisa berdiri sendiri sebagai monogram, ditemani komposisi depan-belakang kantong polymailer.'],
           ['04 — WARNA & ELEMEN PENDUKUNG (GATE 2)', 'Menerapkan pola lingkaran berulang di sisi belakang polymailer dan sapaan tulisan tangan "You’re something special" di sisi depan.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Divisualisasikan pada mockup polymailer bertekstur doff di atas kain satin, lengkap dengan perluasan ke paper bag, hangtag, dan kertas tisu.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 55) atau Full Branding Package Package (Rp850.000 / USD 75).']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 65) atau Full Branding Package Package (Rp850.000 / USD 85).']
         ]
       },
       EN: {
@@ -801,7 +801,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & MAILER LAYOUT (GATE 1)', 'Developing the primary SEERI logotype, flowing S monogram, and front/back polymailer print layout.'],
           ['04 — PATTERN & COLOR APPLICATION (GATE 2)', 'Applying polka-ring repeat patterns on the reverse side and "You’re something special" typography on the front flap.'],
           ['05 — BRAND IN ACTION', 'Presented on matte-satin polymailer bags staged over draped silk fabric, alongside hangtags and tissue wrap.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase for Single Hero Packaging (USD 55) or Full Branding Package Package (USD 75).']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase for Single Hero Packaging (USD 65) or Full Branding Package Package (USD 85).']
         ]
       }
     },
@@ -844,7 +844,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — ILLUSTRATIVE LOGO SKETCH (GATE 1)', 'Locking the cat character expression and both stacked and horizontal "batter burrow" wordmark lockups.'],
           ['04 — COLOR VARIATIONS (GATE 2)', 'Applying the brand palette across cream, deep maroon, and pastel blue striped backgrounds.'],
           ['05 — BRAND IN ACTION', 'Visualized directly on strawberry shortcake packaging boxes and brand cards.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'A prime example of our Essential Logo Kit (USD 30).']
+          ['06 — PACKAGE & MASTER HANDOVER', 'A prime example of our Essential Logo Kit (USD 50).']
         ]
       }
     }
@@ -1017,7 +1017,7 @@ window.CALLA_SITE_CONTENT = {
           tagID: 'IDENTITAS INTI',
           tagEN: 'CORE IDENTITY',
           name: 'Essential Logo Kit',
-          price: 'Starting at USD 30',
+          price: 'Starting at USD 50',
           descID: 'Untuk solopreneur, butik baru, dan kreator independen yang membutuhkan logo utama berkarakter.',
           descEN: 'Best for solopreneurs, new boutique ventures, and indie creators needing a characterful core logo.',
           itemsID: [
@@ -1042,7 +1042,7 @@ window.CALLA_SITE_CONTENT = {
           tagID: 'KEMASAN SATUAN',
           tagEN: 'SINGLE PACKAGING TIER',
           name: 'Single Hero Packaging',
-          price: 'Starting at USD 55',
+          price: 'Starting at USD 65',
           descID: 'Paket fokus untuk 1 kemasan utama pilihan (Box ATAU Sleeve ATAU Polymailer) dalam 1 format dan 1 ukuran.',
           descEN: 'Focused mini-package for 1 primary packaging item (Box OR Sleeve OR Polymailer) in 1 format and 1 size.',
           itemsID: [
@@ -1092,7 +1092,7 @@ window.CALLA_SITE_CONTENT = {
           tagID: 'PALING POPULER',
           tagEN: 'MOST POPULAR',
           name: 'Full Branding Package Package',
-          price: 'Starting at USD 75',
+          price: 'Starting at USD 85',
           descID: 'Sistem identitas visual lengkap untuk kafe, toko ritel, dan brand fashion/lifestyle.',
           descEN: 'Complete visual identity system for boutiques, retail shops, and fashion/lifestyle labels.',
           itemsID: [
@@ -1117,7 +1117,7 @@ window.CALLA_SITE_CONTENT = {
           tagID: 'RANGKAIAN UNBOXING',
           tagEN: 'MULTI-PIECE UNBOXING',
           name: 'The Unboxing Kit',
-          price: 'Starting at USD 85',
+          price: 'Starting at USD 95',
           descID: 'Paket multi-komponen untuk pengalaman membuka paket (unboxing) yang utuh dan berkesan.',
           descEN: 'Multi-component packaging suite designed for a memorable customer unboxing experience.',
           itemsID: [
@@ -1142,7 +1142,7 @@ window.CALLA_SITE_CONTENT = {
           tagID: 'PAKET KAFE & BAKERY',
           tagEN: 'F&B & BAKERY SUITE',
           name: 'Cafe & Bakery Branding',
-          price: 'Starting at USD 120',
+          price: 'Starting at USD 130',
           descID: 'Identitas visual dan perlengkapan utama untuk artisan bakery, coffee shop, dan bisnis F&B.',
           descEN: 'Complete visual identity and key touchpoints for artisan bakeries, coffee shops, and F&B outlets.',
           itemsID: [
