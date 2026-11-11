@@ -150,6 +150,31 @@
     @media (prefers-reduced-motion: reduce) {
       .critter-bob, .critter-bee, .critter-bunny, .critter-snail { animation: none !important; }
     }
+
+    /* ===== Subsidi Bisnis Lokal pop-up ===== */
+    @keyframes lsmPopIn {
+      0% { opacity: 0; transform: translateY(14px) scale(0.96) rotate(-1deg); }
+      60% { opacity: 1; transform: translateY(-3px) scale(1.01) rotate(0.4deg); }
+      100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+    }
+    @keyframes lsmSway {
+      0%, 100% { transform: rotate(-6deg); }
+      50% { transform: rotate(6deg); }
+    }
+    .lsm-pop { animation: lsmPopIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+    .lsm-sprout { display: inline-block; transform-origin: 50% 90%; animation: lsmSway 3.2s ease-in-out infinite; }
+    .lsm-check { position: relative; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;
+      background: #fff; border: 2px solid #2A1E1B; border-radius: 1rem; padding: 0.7rem 0.9rem;
+      box-shadow: 2px 2px 0 #2A1E1B; transition: transform .15s ease, background .15s ease; }
+    .lsm-check:hover { transform: translateY(-1px); }
+    .lsm-check input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .lsm-box { flex: none; width: 24px; height: 24px; margin-top: 1px; border: 2.5px solid #2A1E1B; border-radius: 8px;
+      background: #FFFDF8; display: grid; place-items: center; font-size: 14px; line-height: 1; color: transparent; transition: all .18s ease; }
+    .lsm-check input:checked + .lsm-box { background: #FFE066; color: #2A1E1B; transform: rotate(-4deg) scale(1.06); }
+    .lsm-check:has(input:checked) { background: #FFF9DB; }
+    .lsm-check input:focus-visible + .lsm-box { outline: 3px solid #E85D88; outline-offset: 2px; }
+    .lsm-cta[disabled] { background: #E9E2D3; color: #8A7B75; box-shadow: none; cursor: not-allowed; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .lsm-pop, .lsm-sprout { animation: none !important; } }
   </style>
 </head>
 <body class="paper-grain selection:bg-[#E85D88] selection:text-white">
@@ -1020,6 +1045,78 @@
     </div>
   </div>
 
+  <!-- SUBSIDI BISNIS LOKAL: WELCOME POP-UP (gates the IDR rate card) -->
+  <div
+    id="localSubsidyModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lsmTitle"
+    aria-describedby="lsmIntro"
+    class="fixed inset-0 z-[70] hidden bg-black/65 backdrop-blur-sm flex items-center justify-center p-4"
+    onclick="if(event.target.id==='localSubsidyModal') dismissLocalSubsidy()"
+  >
+    <div class="calla-frame bg-[#FFF9E6] max-w-md w-full max-h-[92vh] overflow-y-auto p-5 sm:p-7 relative lsm-pop" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between gap-3 pb-3 mb-4 border-b-2 border-dashed border-[#2A1E1B]/20">
+        <span class="inline-block bg-[#F9C6D3] border border-[#2A1E1B] text-[11px] font-extrabold px-3 py-1 rounded-full">
+          <span class="lsm-sprout" aria-hidden="true">🌱</span> SUBSIDI UMKM LOKAL
+        </span>
+        <button type="button" onclick="dismissLocalSubsidy()" aria-label="Tutup"
+          class="px-3 py-1.5 rounded-full bg-[#2A1E1B] text-white text-xs font-bold hover:bg-[#E85D88] transition">✕</button>
+      </div>
+
+      <h3 id="lsmTitle" class="font-display text-2xl sm:text-[1.7rem] leading-tight font-extrabold text-[#2A1E1B] mb-3">
+        Program Subsidi Bisnis Lokal <span class="italic font-normal text-[#E85D88]">Indonesia</span> 🌱
+      </h3>
+
+      <div id="lsmIntro" class="space-y-2.5 bg-white p-4 rounded-2xl border-2 border-[#2A1E1B] text-xs sm:text-sm text-[#4A3833] leading-relaxed mb-4">
+        <p>Halo! Di Calla Creative Studio kami percaya bahwa setiap bisnis lokal berhak untuk mekar dengan identitas visual yang layak serta profesional.</p>
+        <p>Sebagai bentuk dukungan Calla terhadap ekosistem UMKM dan brand lokal di Indonesia, pricelist pada halaman ini menggunakan <strong>Tarif Subsidi (IDR)</strong> yang telah disesuaikan khusus untuk pebisnis lokal.</p>
+      </div>
+
+      <p class="text-xs sm:text-sm font-bold text-[#2A1E1B] mb-2.5">
+        Untuk melanjutkan ke halaman pricelist dan penawaran subsidi ini, mohon dichecklist ya kak 🌷
+      </p>
+
+      <div class="space-y-2 mb-4">
+        <label class="lsm-check">
+          <input type="checkbox" class="lsm-input" onchange="updateLocalSubsidyState()" />
+          <span class="lsm-box" aria-hidden="true">✓</span>
+          <span class="text-xs sm:text-sm font-semibold text-[#2A1E1B]">Saya saat ini berdomisili di Indonesia.</span>
+        </label>
+        <label class="lsm-check">
+          <input type="checkbox" class="lsm-input" onchange="updateLocalSubsidyState()" />
+          <span class="lsm-box" aria-hidden="true">✓</span>
+          <span class="text-xs sm:text-sm font-semibold text-[#2A1E1B]">Bisnis/Brand saya beroperasi secara lokal di wilayah Indonesia.</span>
+        </label>
+        <label class="lsm-check">
+          <input type="checkbox" class="lsm-input" onchange="updateLocalSubsidyState()" />
+          <span class="lsm-box" aria-hidden="true">✓</span>
+          <span class="text-xs sm:text-sm font-semibold text-[#2A1E1B]">Saya akan bertransaksi menggunakan rekening bank lokal Indonesia (IDR).</span>
+        </label>
+      </div>
+
+      <button
+        id="lsmCta"
+        type="button"
+        disabled
+        onclick="confirmLocalSubsidy()"
+        class="lsm-cta w-full px-5 py-3 rounded-full border-2 border-[#2A1E1B] bg-[#FFE066] text-[#2A1E1B] text-sm font-extrabold shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-1px] transition"
+      >Centang semua dulu ya kak 🌷</button>
+
+      <p class="text-center text-xs sm:text-sm text-[#5C4742] font-semibold mt-4 leading-relaxed">
+        Terima kasih atas kejujuran dan apresiasi Kakak terhadap karya kami.<br />
+        <span class="font-display italic text-[#E85D88] text-base">Let’s Bloom With Us!</span> 🌸
+      </p>
+
+      <div class="text-center mt-3 pt-3 border-t-2 border-dashed border-[#2A1E1B]/15">
+        <button type="button" onclick="dismissLocalSubsidy(true)"
+          class="text-[11px] font-bold text-[#5C4742] underline underline-offset-2 hover:text-[#E85D88] transition">
+          Not based in Indonesia? See International rates (USD) →
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- FLOATING "STUDIO CONCIERGE" PILL WITH 2 POP-UP CHOICES -->
   <div class="fixed bottom-4 right-4 z-40 flex flex-col items-end select-none">
     <div
@@ -1577,6 +1674,7 @@
     // UNIFIED MARKET & LANGUAGE SELECTOR
     // =========================================================================
     function selectMarket(marketCode) {
+      if (marketCode === 'ID' && !lsmIsAcknowledged()) { openLocalSubsidy(); return; }
       currentMarket = marketCode === 'ID' ? 'ID' : 'EN';
       currentLang = currentMarket;
       document.documentElement.lang = currentLang === 'ID' ? 'id' : 'en';
@@ -2138,6 +2236,19 @@
     }
 
     window.addEventListener('keydown', (e) => {
+      const lsm = document.getElementById('localSubsidyModal');
+      if (lsm && !lsm.classList.contains('hidden')) {
+        if (e.key === 'Escape') { dismissLocalSubsidy(); return; }
+        if (e.key === 'Tab') {
+          const f = Array.from(lsm.querySelectorAll('button:not([disabled]), input')).filter(el => el.offsetParent !== null);
+          if (f.length) {
+            const first = f[0], last = f[f.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+          }
+        }
+        return;
+      }
       const lb = document.getElementById('imageLightbox');
       if (!lb.classList.contains('hidden')) {
         if (e.key === 'Escape') { closeImageLightbox(); return; }
@@ -2552,12 +2663,84 @@
       document.getElementById('conciergeOpt2Link').href = `https://wa.me/${SITE.studioInfo.whatsappNumber}?text=${encodeURIComponent(extra.conciergeSlotWa)}`;
     }
 
+    // =========================================================================
+    // SUBSIDI BISNIS LOKAL: friendly welcome check before the IDR rate card
+    // (Soft gate only. Real enforcement = Indonesian bank payment at checkout.)
+    // =========================================================================
+    const LSM_KEY = 'callaLocalSubsidyAck';
+    const LSM_DISMISS_KEY = 'callaLocalSubsidyDismissed';
+    const LSM_TTL_MS = 30 * 24 * 60 * 60 * 1000; // remember for 30 days
+    let lsmLastFocus = null;
+
+    function lsmIsAcknowledged() {
+      try {
+        const t = parseInt(localStorage.getItem(LSM_KEY) || '0', 10);
+        return t > 0 && (Date.now() - t) < LSM_TTL_MS;
+      } catch (_) { return false; }
+    }
+    function lsmRemember() { try { localStorage.setItem(LSM_KEY, String(Date.now())); } catch (_) {} }
+    function lsmDismissedThisSession() { try { return sessionStorage.getItem(LSM_DISMISS_KEY) === '1'; } catch (_) { return false; } }
+    function lsmMarkDismissed() { try { sessionStorage.setItem(LSM_DISMISS_KEY, '1'); } catch (_) {} }
+    function lsmLooksIndonesian() {
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        return ['Asia/Jakarta', 'Asia/Pontianak', 'Asia/Makassar', 'Asia/Jayapura'].includes(tz);
+      } catch (_) { return false; }
+    }
+
+    function updateLocalSubsidyState() {
+      const boxes = Array.from(document.querySelectorAll('#localSubsidyModal .lsm-input'));
+      const allOn = boxes.length > 0 && boxes.every(b => b.checked);
+      const cta = document.getElementById('lsmCta');
+      cta.disabled = !allOn;
+      cta.textContent = allOn ? 'Lanjut ke Pricelist Subsidi 🌸' : 'Centang semua dulu ya kak 🌷';
+    }
+
+    function openLocalSubsidy() {
+      const modal = document.getElementById('localSubsidyModal');
+      if (!modal || !modal.classList.contains('hidden')) return;
+      lsmLastFocus = document.activeElement;
+      modal.querySelectorAll('.lsm-input').forEach(b => { b.checked = false; });
+      updateLocalSubsidyState();
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      const first = modal.querySelector('.lsm-input');
+      if (first) first.focus();
+    }
+
+    function closeLocalSubsidyUI() {
+      const modal = document.getElementById('localSubsidyModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (lsmLastFocus && typeof lsmLastFocus.focus === 'function') lsmLastFocus.focus();
+    }
+
+    function confirmLocalSubsidy() {
+      const boxes = Array.from(document.querySelectorAll('#localSubsidyModal .lsm-input'));
+      if (!boxes.every(b => b.checked)) return;
+      lsmRemember();
+      closeLocalSubsidyUI();
+      selectMarket('ID');
+      const target = document.getElementById('pricing');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function dismissLocalSubsidy(goInternational) {
+      lsmMarkDismissed();
+      closeLocalSubsidyUI();
+      if (goInternational) {
+        selectMarket('EN');
+        const target = document.getElementById('pricing');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
     // INITIALIZE ON PAGE LOAD (DEFAULT = ENGLISH & USD, OR OVERRIDE VIA ?m=id / ?m=en)
     (function initMarketFromURL() {
       const params = new URLSearchParams(window.location.search);
       const marketParam = (params.get('m') || params.get('market') || '').toUpperCase();
 
-      if (marketParam === 'ID' || marketParam === 'IDR') {
+      if ((marketParam === 'ID' || marketParam === 'IDR') && lsmIsAcknowledged()) {
         currentMarket = 'ID';
         currentLang = 'ID';
       } else {
@@ -2575,6 +2758,12 @@
 
       syncMarketButtonsUI();
       applyAllTranslations();
+
+      // Warm welcome: explicit ?m=id link, or visitor whose timezone looks Indonesian
+      const wantsID = marketParam === 'ID' || marketParam === 'IDR';
+      if (!lsmIsAcknowledged() && (wantsID || (lsmLooksIndonesian() && !lsmDismissedThisSession()))) {
+        setTimeout(openLocalSubsidy, 900);
+      }
     })();
   </script>
 </body>
