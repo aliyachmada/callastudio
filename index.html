@@ -487,8 +487,9 @@
   </div>
 
   <!-- SECTION 2: BROWSABLE PROJECT GALLERY -->
-  <section id="gallery" class="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-10">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<!-- SECTION 2: FULL-BLEED FLOATING SWIPE GALLERY -->
+  <section id="gallery" class="pt-4 pb-10 scroll-mt-20 overflow-x-clip">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-4 mb-2">
       <div>
         <span id="galBadge" class="inline-block bg-[#A8D8FF] text-[#2A1E1B] border border-[#2A1E1B] text-xs font-bold px-3.5 py-1 rounded-full mb-2">
           🎨 CURATED PORTFOLIO SHOWCASE
@@ -501,37 +502,47 @@
         </p>
       </div>
 
-      <!-- Category Filter Buttons -->
-      <div role="tablist" aria-label="Portfolio Category Filter" class="flex flex-wrap gap-1.5 sm:gap-2">
-        <button type="button" onclick="filterGallery('all')" id="filter-all" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition">
-          Featured Works
-        </button>
-        <button type="button" onclick="filterGallery('identity')" id="filter-identity" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
-          Brand Identity
-        </button>
-        <button type="button" onclick="filterGallery('mascot')" id="filter-mascot" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
-          Mascot & Illustration
-        </button>
-        <button type="button" onclick="filterGallery('packaging')" id="filter-packaging" class="px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition">
-          Packaging & F&B
-        </button>
-      </div>
+      <!-- Service Filter Chips -->
+      <div
+        id="galleryFilters"
+        role="tablist"
+        aria-label="Filter works by service"
+        class="flex gap-2 overflow-x-auto no-scrollbar -mx-4 px-4 pb-1 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible"
+      ></div>
     </div>
 
-    <div id="galleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+   <!-- Jalur Geser Ujung-ke-Ujung Layar (100% Bersih Tanpa Panah Menghalangi Gambar) -->
+    <div id="galleryCarousel" class="relative w-full" role="region" aria-roledescription="carousel" aria-label="Portfolio gallery">
+      <div id="galleryTrack" class="gallery-track"></div>
+    </div>
 
-    <div id="galleryShowAllWrap" class="mt-8 text-center">
-      <button
-        type="button"
-        id="toggleShowAllBtn"
-        onclick="toggleShowAllWorks()"
-        class="px-6 py-3 rounded-full bg-[#FFE066] hover:bg-[#FFD43B] text-[#2A1E1B] font-extrabold text-xs sm:text-sm border-2 border-[#2A1E1B] shadow-[3px_3px_0px_#2A1E1B] hover:translate-y-[-2px] transition"
-      >
-        ✨ Show All Works
-      </button>
+    <!-- Kontrol Navigasi Bawah: Prev + Counter + Next -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center gap-2 -mt-1 text-xs font-bold text-[#5C4742]">
+      <div class="inline-flex items-center gap-2.5">
+        <button
+          type="button"
+          id="galleryPrev"
+          class="gallery-nav-btn"
+          onclick="galleryStep(-1)"
+          aria-label="Previous work"
+        >←</button>
+
+        <span
+          id="galleryCounter"
+          class="tabular-nums bg-white border-2 border-[#2A1E1B] px-3.5 py-1 rounded-full text-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B]"
+        >01 / 14</span>
+
+        <button
+          type="button"
+          id="galleryNext"
+          class="gallery-nav-btn"
+          onclick="galleryStep(1)"
+          aria-label="Next work"
+        >→</button>
+      </div>
+      <span id="gallerySwipeHint" class="gallery-swipe-hint">↔ Swipe to explore</span>
     </div>
   </section>
-
   <!-- ======================================================================= -->
   <!-- CRITTER PLAYGROUND 2: NATURAL MEADOW TRAIL (NO BOX, UNCLIPPED BUBBLES!) -->
   <!-- ======================================================================= -->
@@ -1729,10 +1740,10 @@
       document.getElementById('galBadge').textContent = d.galBadge;
       document.getElementById('galHeading').textContent = d.galHeading;
       document.getElementById('galSubheading').textContent = d.galSubheading;
-      document.getElementById('filter-all').textContent = d.filterAll;
-      document.getElementById('filter-identity').textContent = d.filterIdentity;
-      document.getElementById('filter-mascot').textContent = d.filterMascot;
-      document.getElementById('filter-packaging').textContent = d.filterPackaging;
+     const swipeHintEl = document.getElementById('gallerySwipeHint');
+      if (swipeHintEl) {
+        swipeHintEl.textContent = currentLang === 'ID' ? '↔ Geser ke samping untuk melihat karya lain' : '↔ Swipe sideways to explore';
+      }
 
       document.getElementById('teamBadge').textContent = d.teamBadge;
       document.getElementById('teamHeading').textContent = d.teamHeading;
@@ -1928,115 +1939,312 @@
       document.getElementById('flowerCount').textContent = '0';
     }
 
+   // =========================================================================
+    // FULL-BLEED FLOATING SWIPE GALLERY & CENTER-FOCUS OBSERVER
     // =========================================================================
-    // GALLERY FILTERING & CARDS
-    // =========================================================================
-    function filterGallery(cat) {
-      currentFilter = cat;
-      ['all', 'identity', 'mascot', 'packaging'].forEach(c => {
-        const btn = document.getElementById('filter-' + c);
-        if (c === cat) {
-          btn.className = 'px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-[#2A1E1B] text-white transition';
-        } else {
-          btn.className = 'px-3.5 py-2 rounded-full text-xs font-bold border-2 border-[#2A1E1B] bg-white text-[#2A1E1B] hover:bg-[#FFF3BF] transition';
-        }
-      });
+    let galleryActiveId = null;
+    let galleryRenderedService = null;
+    let galleryObserver = null;
+    let galleryScrollTimer = null;
+    let galleryWasDragged = false;
+
+    const DEFAULT_SERVICE_TAXONOMY = [
+      { id: 'branding',  order: 1, minWorks: 2, labelID: 'Logo & Branding',       labelEN: 'Logo & Branding',       aliases: ['identity', 'brand', 'logo'] },
+      { id: 'mascot',    order: 2, minWorks: 2, labelID: 'Mascot & Illustration', labelEN: 'Mascot & Illustration', aliases: ['illustration', 'character'] },
+      { id: 'packaging', order: 3, minWorks: 2, labelID: 'Packaging & F&B',       labelEN: 'Packaging & F&B',       aliases: ['pack', 'package', 'fnb'] }
+    ];
+
+    function getPublishedProjects() {
+      return SITE.portfolioProjects
+        .filter(isProjectPublished)
+        .map((p, i) => ({ p, i }))
+        .sort((a, b) => (Number(b.p.featured !== false) - Number(a.p.featured !== false)) || (a.i - b.i))
+        .map((x) => x.p);
+    }
+
+    function getProjectServices(p) {
+      if (Array.isArray(p.services)) return p.services;
+      if (p.category === 'identity') return ['branding'];
+      if (p.category) return [p.category];
+      return [];
+    }
+
+    function projectHasService(p, serviceId) {
+      return getProjectServices(p).includes(serviceId);
+    }
+
+    function getVisibleServices(published) {
+      const source = Array.isArray(SITE.serviceTaxonomy) && SITE.serviceTaxonomy.length
+        ? SITE.serviceTaxonomy
+        : DEFAULT_SERVICE_TAXONOMY;
+      return source
+        .slice()
+        .sort((a, b) => (a.order || 0) - (b.order || 0))
+        .map((s) => ({ ...s, count: published.filter((p) => projectHasService(p, s.id)).length }))
+        .filter((s) => s.count >= (s.minWorks || 2));
+    }
+
+    function resolveServiceId(raw) {
+      const key = String(raw || '').trim().toLowerCase();
+      if (!key || key === 'all' || key === 'semua') return 'all';
+      const source = Array.isArray(SITE.serviceTaxonomy) && SITE.serviceTaxonomy.length
+        ? SITE.serviceTaxonomy
+        : DEFAULT_SERVICE_TAXONOMY;
+      const hit = source.find((s) => s.id === key || (s.aliases || []).includes(key));
+      return hit ? hit.id : 'all';
+    }
+
+    function syncServiceToURL() {
+      try {
+        const url = new URL(window.location.href);
+        if (currentFilter === 'all') url.searchParams.delete('service');
+        else url.searchParams.set('service', currentFilter);
+        history.replaceState(null, '', url);
+      } catch (_) {}
+    }
+
+    function filterGallery(serviceId) {
+      currentFilter = resolveServiceId(serviceId);
+      syncServiceToURL();
       renderGalleryGrid();
     }
 
-    function toggleShowAllWorks() {
-      showAllWorks = !showAllWorks;
-      renderGalleryGrid();
+    function galleryGetSlides() {
+      const track = document.getElementById('galleryTrack');
+      return track ? Array.from(track.querySelectorAll('.gallery-card')) : [];
+    }
+
+    function scrollToSlide(slide) {
+      const track = document.getElementById('galleryTrack');
+      if (!track || !slide) return;
+      track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2 });
+    }
+
+    function jumpTrackTo(slide) {
+      const track = document.getElementById('galleryTrack');
+      if (!track || !slide) return;
+      const prev = track.style.scrollBehavior;
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft = slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2;
+      track.style.scrollBehavior = prev;
+    }
+
+    function updateGalleryCounter() {
+      const slides = galleryGetSlides();
+      const idx = slides.findIndex((s) => s.classList.contains('is-active'));
+      const pad = (n) => String(n).padStart(2, '0');
+      const counterEl = document.getElementById('galleryCounter');
+      if (counterEl) {
+        counterEl.textContent = `${pad(Math.max(idx, 0) + 1)} / ${pad(slides.length)}`;
+      }
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      if (prevBtn) prevBtn.disabled = idx <= 0;
+      if (nextBtn) nextBtn.disabled = idx < 0 || idx >= slides.length - 1;
+    }
+
+    function setActiveSlide(el) {
+      if (!el || el.dataset.projectId === galleryActiveId) return;
+      galleryGetSlides().forEach((s) => {
+        s.classList.remove('is-active');
+        s.removeAttribute('aria-current');
+      });
+      el.classList.add('is-active');
+      el.setAttribute('aria-current', 'true');
+      galleryActiveId = el.dataset.projectId;
+      updateGalleryCounter();
+    }
+
+    function updateActiveFromScroll() {
+      const track = document.getElementById('galleryTrack');
+      const slides = galleryGetSlides();
+      if (!track || !slides.length) return;
+      const center = track.scrollLeft + track.clientWidth / 2;
+      let best = slides[0];
+      let bestDist = Infinity;
+      slides.forEach((s) => {
+        const dist = Math.abs(s.offsetLeft + s.offsetWidth / 2 - center);
+        if (dist < bestDist) { bestDist = dist; best = s; }
+      });
+      setActiveSlide(best);
+    }
+
+    function galleryStep(dir) {
+      const slides = galleryGetSlides();
+      if (!slides.length) return;
+      const cur = slides.findIndex((s) => s.classList.contains('is-active'));
+      const next = Math.max(0, Math.min(slides.length - 1, (cur < 0 ? 0 : cur) + dir));
+      scrollToSlide(slides[next]);
+    }
+
+    function initGalleryCarousel() {
+      const track = document.getElementById('galleryTrack');
+      if (!track || track.dataset.bound === '1') return;
+      track.dataset.bound = '1';
+
+      track.addEventListener('scroll', () => {
+        clearTimeout(galleryScrollTimer);
+        galleryScrollTimer = setTimeout(updateActiveFromScroll, 100);
+      }, { passive: true });
+
+      // Smooth Desktop Mouse Click-and-Drag Swipe
+      let isDown = false;
+      let startX = 0;
+      let startScroll = 0;
+
+      track.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse') return;
+        isDown = true;
+        galleryWasDragged = false;
+        startX = e.clientX;
+        startScroll = track.scrollLeft;
+        track.classList.add('is-grabbing');
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 6) galleryWasDragged = true;
+        if (galleryWasDragged) {
+          track.scrollLeft = startScroll - dx * 1.15;
+        }
+      }, { passive: true });
+
+      window.addEventListener('pointerup', () => {
+        if (!isDown) return;
+        isDown = false;
+        track.classList.remove('is-grabbing');
+        updateActiveFromScroll();
+        setTimeout(() => { galleryWasDragged = false; }, 60);
+      });
+
+      // Arrow keys while focused inside gallery
+      track.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const slides = galleryGetSlides();
+        const cur = slides.indexOf(e.target.closest('.gallery-card'));
+        if (cur < 0) return;
+        e.preventDefault();
+        const target = slides[Math.max(0, Math.min(slides.length - 1, cur + (e.key === 'ArrowRight' ? 1 : -1)))];
+        target.focus({ preventScroll: true });
+        scrollToSlide(target);
+      });
     }
 
     function renderGalleryGrid() {
-      const grid = document.getElementById('galleryGrid');
-      const showAllWrap = document.getElementById('galleryShowAllWrap');
-      const toggleBtn = document.getElementById('toggleShowAllBtn');
-      const d = SITE.i18n[currentLang];
+      const track = document.getElementById('galleryTrack');
+      if (!track) return;
+      initGalleryCarousel();
 
-      const publishedProjects = SITE.portfolioProjects.filter(isProjectPublished);
-      const categoryMatched = currentFilter === 'all'
-        ? publishedProjects
-        : publishedProjects.filter(p => p.category === currentFilter);
+      const published = getPublishedProjects();
+      const services = getVisibleServices(published);
+      if (currentFilter !== 'all' && !services.some((s) => s.id === currentFilter)) currentFilter = 'all';
 
-      const displayedProjects = (currentFilter === 'all' && !showAllWorks)
-        ? categoryMatched.filter(p => p.featured !== false)
-        : categoryMatched;
-
-      if (currentFilter === 'all' && categoryMatched.length > displayedProjects.length) {
-        showAllWrap.classList.remove('hidden');
-        toggleBtn.textContent = `${d.showAllWorksBtn} (${categoryMatched.length})`;
-      } else if (currentFilter === 'all' && showAllWorks && categoryMatched.length > 4) {
-        showAllWrap.classList.remove('hidden');
-        toggleBtn.textContent = d.showFeaturedOnlyBtn;
-      } else {
-        showAllWrap.classList.add('hidden');
+      // Render Service Chips
+      const filters = document.getElementById('galleryFilters');
+      if (filters) {
+        const allLabel = currentLang === 'ID' ? 'Semua Karya' : 'All Works';
+        const chips = [{ id: 'all', label: allLabel, count: published.length }].concat(
+          services.map((s) => ({ id: s.id, label: currentLang === 'ID' ? s.labelID : s.labelEN, count: s.count }))
+        );
+        filters.innerHTML = chips.map((c) => {
+          const on = c.id === currentFilter;
+          return `<button type="button" role="tab" aria-selected="${on}" class="gallery-chip${on ? ' is-on' : ''}" onclick="filterGallery('${c.id}')">
+            <span>${c.label}</span><span class="gallery-chip-count">${c.count}</span>
+          </button>`;
+        }).join('');
       }
 
-      grid.innerHTML = displayedProjects.map(p => {
+      const list = currentFilter === 'all' ? published : published.filter((p) => projectHasService(p, currentFilter));
+      const keepId = galleryRenderedService === currentFilter ? galleryActiveId : null;
+      galleryRenderedService = currentFilter;
+      const pillText = currentLang === 'ID' ? 'Studi Kasus' : 'Case Study';
+
+      track.innerHTML = list.map((p) => {
         const copy = p[currentLang];
         const cardImgId = `card-img-${p.id}`;
         const altText = p.altText ? p.altText[currentLang] : `${p.name} — ${copy.categoryLabel}`;
-        const photoCount = Array.isArray(p.galleryImages) ? p.galleryImages.length : 2;
         const swatches = PROJECT_COLOR_PALETTES[p.id] || [];
+
         return `
-          <article class="calla-frame gallery-card ${p.frameBg} p-5 sm:p-6 flex flex-col justify-between relative">
-            <div>
-              <div class="flex items-center justify-between gap-2 text-xs font-bold mb-2.5">
-                <span class="bg-white border border-[#2A1E1B] px-2.5 py-0.5 rounded-full text-[11px]">${p.statusBadge}</span>
-                <div class="flex items-center -space-x-1">
-                  ${swatches.map(([cName, hex]) => `
-                    <span class="w-3.5 h-3.5 rounded-full border border-[#2A1E1B]" style="background:${hex};" title="${cName}"></span>
-                  `).join('')}
-                </div>
+          <article
+            role="button"
+            tabindex="0"
+            data-project-id="${p.id}"
+            onclick="if(!galleryWasDragged) openCaseModal('${p.id}', this)"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseModal('${p.id}', this);}"
+            class="calla-frame gallery-card ${p.frameBg} group text-left"
+          >
+            <!-- Header Kartu: Status Badge & 4 Bulatan Palet Warna -->
+            <div class="flex items-center justify-between gap-2 text-xs font-bold mb-2.5 w-0 min-w-full">
+              <span class="bg-white border border-[#2A1E1B] px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] truncate">
+                ${p.statusBadge}
+              </span>
+              <div class="flex items-center -space-x-1 shrink-0">
+                ${swatches.map(([cName, hex]) => `
+                  <span class="w-3.5 h-3.5 rounded-full border border-[#2A1E1B]" style="background:${hex};" title="${cName}"></span>
+                `).join('')}
               </div>
-
-              <button
-                type="button"
-                onclick="openProjectLightbox('${p.id}', 0, this)"
-                class="artwork-zoom-trigger artwork-thumb-stage relative w-full h-52 sm:h-56 rounded-2xl border-2 border-[#2A1E1B] overflow-hidden mb-3.5 flex items-center justify-center p-2 text-left"
-                title="${d.zoomImageHint}"
-              >
-                <img
-                  id="${cardImgId}"
-                  src="${getFastThumb(p.coverImg, 800)}"
-                  data-base-src="${p.coverImg}"
-                  data-attempt="0"
-                  alt="${altText}"
-                  loading="lazy"
-                  decoding="async"
-                  class="artwork-uncropped"
-                  onerror="handleSmartImgError(this)"
-                />
-                <div class="hidden absolute inset-0 p-4 bg-gradient-to-br from-white/95 to-[#FFF9DB]/90 flex flex-col items-center justify-center text-center">
-                  <span class="text-2xl mb-1">🖼️</span>
-                  <p class="text-xs font-extrabold text-[#2A1E1B]">${p.name}</p>
-                  <code class="text-[11px] font-bold text-[#E85D88] bg-white px-2.5 py-0.5 rounded border border-[#2A1E1B] mt-1">${p.coverImg}</code>
-                </div>
-                <span class="absolute bottom-2 right-2 bg-white/95 border border-[#2A1E1B] text-[10px] font-bold px-2.5 py-0.5 rounded-full text-[#2A1E1B] shadow-sm">
-                  🔍 Full-Size (${photoCount})
-                </span>
-              </button>
-
-              <p class="text-[11px] font-bold text-[#5C4742] uppercase tracking-wider mb-0.5">${copy.categoryLabel}</p>
-              <h3 class="text-2xl font-extrabold text-[#2A1E1B] mb-1.5">${p.name}</h3>
-              <p class="text-xs sm:text-sm text-[#4A3833] mb-4 leading-relaxed line-clamp-3">${copy.summary}</p>
             </div>
 
-            <div class="pt-3 border-t border-[#2A1E1B]/20">
-              <button
-                type="button"
-                id="open-btn-${p.id}"
-                onclick="openCaseModal('${p.id}', this)"
-                class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-[#FFE066] text-[#2A1E1B] font-bold text-xs border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] transition text-center"
-              >
-                ${d.cardOpenBtn}
-              </button>
+            <!-- Bingkai Gambar Horizontal Adaptif (Tanpa Crop & Tanpa Ruang Kosong) -->
+            <div class="gallery-cover-stage mb-3">
+              <img
+                id="${cardImgId}"
+                src="${getFastThumb(p.coverImg, 750)}"
+                data-base-src="${p.coverImg}"
+                data-attempt="0"
+                alt="${altText}"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
+                class="gallery-cover-img"
+                onload="if(this.closest('.gallery-card')?.classList.contains('is-active')) jumpTrackTo(this.closest('.gallery-card'))"
+                onerror="handleSmartImgError(this)"
+              />
+              <div class="hidden p-6 bg-gradient-to-br from-white/95 to-[#FFF9DB]/90 flex flex-col items-center justify-center text-center h-full">
+                <span class="text-2xl mb-1">🖼️</span>
+                <p class="text-xs font-extrabold text-[#2A1E1B]">${p.name}</p>
+                <code class="text-[11px] font-bold text-[#E85D88] bg-white px-2.5 py-0.5 rounded border border-[#2A1E1B] mt-1">${p.coverImg}</code>
+              </div>
+            </div>
+
+            <!-- Footer Kartu: Label Jasa, Nama Brand & Interactive Pill -->
+            <div class="w-0 min-w-full">
+              <p class="text-[10px] sm:text-[11px] font-bold text-[#5C4742] uppercase tracking-wider mb-1 truncate">
+                ${copy.categoryLabel}
+              </p>
+              <div class="flex items-end justify-between gap-2.5">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-[#2A1E1B] leading-tight truncate">
+                  ${p.name}
+                </h3>
+                <span class="gallery-cta-pill">
+                  <span>${pillText}</span>
+                  <span aria-hidden="true" class="gallery-cta-arrow">→</span>
+                </span>
+              </div>
             </div>
           </article>
         `;
       }).join('');
+
+      if (galleryObserver) { galleryObserver.disconnect(); galleryObserver = null; }
+      galleryActiveId = null;
+      const slides = galleryGetSlides();
+      if (!slides.length) { updateGalleryCounter(); return; }
+
+      const start = slides.find((s) => s.dataset.projectId === keepId) || slides[0];
+      jumpTrackTo(start);
+      setActiveSlide(start);
+
+      if ('IntersectionObserver' in window) {
+        galleryObserver = new IntersectionObserver(updateActiveFromScroll, {
+          root: track,
+          rootMargin: '0px -42% 0px -42%',
+          threshold: 0
+        });
+        slides.forEach((s) => galleryObserver.observe(s));
+      }
     }
 
     // =========================================================================
@@ -2764,6 +2972,59 @@
       if (!lsmIsAcknowledged() && (wantsID || (lsmLooksIndonesian() && !lsmDismissedThisSession()))) {
         setTimeout(openLocalSubsidy, 900);
       }
+// =========================================================================
+    // ARTWORK & BRAND GUIDELINE COPY PROTECTION
+    // =========================================================================
+    (function initArtworkProtection() {
+      let lastNoticeTime = 0;
+
+      function showCopyrightNotice() {
+        const now = Date.now();
+        if (now - lastNoticeTime < 1800) return;
+        lastNoticeTime = now;
+
+        const existing = document.getElementById('callaProtectToast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.id = 'callaProtectToast';
+        toast.setAttribute('role', 'status');
+        toast.className = 'fixed bottom-16 left-1/2 -translate-x-1/2 z-[80] bg-[#2A1E1B] text-[#FFFDF8] border-2 border-[#FFE066] px-4 py-2 rounded-full text-xs font-bold shadow-[3px_3px_0px_#E85D88] pointer-events-none transition-opacity duration-300 text-center max-w-[90vw]';
+        toast.textContent = currentLang === 'ID'
+          ? '🌷 Karya & Brand Guideline dilindungi hak cipta Calla Creative Studio'
+          : '🌷 Artwork & Brand Guidelines are protected by Calla Creative Studio';
+
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 300);
+        }, 2000);
+      }
+
+      // 1. Blokir drag semua gambar ke desktop / tab baru
+      document.addEventListener('dragstart', (e) => {
+        if (e.target && e.target.tagName === 'IMG') {
+          e.preventDefault();
+        }
+      });
+
+      // 2. Blokir klik kanan khusus di area Galeri, Case Study Modal & Lightbox
+      document.addEventListener('contextmenu', (e) => {
+        const isProtectedZone = e.target.closest('#gallery, #caseStudyModal, #imageLightbox, #team');
+        if (isProtectedZone) {
+          e.preventDefault();
+          showCopyrightNotice();
+        }
+      });
+
+      // 3. Blokir shortcut Ctrl+S / Cmd+S (Save Page)
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+          e.preventDefault();
+          showCopyrightNotice();
+        }
+      });
+    })();
     })();
   </script>
 </body>

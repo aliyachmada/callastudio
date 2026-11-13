@@ -13,6 +13,7 @@
   --card-border-width: 2px;
   --flower-speed: 6s;
   --critter-speed: 9s;
+  --slide-active-shadow: 8px 10px 0px #2A1E1B;
 }
 
 body.play-mode {
@@ -66,25 +67,239 @@ h1, h2, h3, .font-display {
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
 }
 
-/* Spencer Gabor-inspired Curated Scrapbook Collage Tilt on Desktop */
+/* ==========================================================================
+   Portfolio Gallery: Full-Bleed Floating Swipe Track + Compact Adaptive Card
+   ========================================================================== */
+.gallery-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex: none;
+  white-space: nowrap;
+  padding: 0.5rem 0.95rem;
+  border: 2px solid var(--border-ink);
+  border-radius: 9999px;
+  background: #FFFFFF;
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.gallery-chip:hover {
+  background: #FFF3BF;
+  transform: translateY(-1px);
+}
+.gallery-chip.is-on,
+.gallery-chip.is-on:hover {
+  background: var(--text-main);
+  color: #FFFFFF;
+}
+.gallery-chip-count {
+  padding: 0.06rem 0.45rem;
+  border: 1.5px solid var(--border-ink);
+  border-radius: 9999px;
+  background: var(--accent-yellow);
+  color: var(--text-main);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+/* Jalur Swipe Ujung-ke-Ujung Layar (Tanpa Kotak Pemotong) */
+.gallery-track {
+  --stage-h: 170px;
+  --slide-gap: 1.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--slide-gap);
+  width: 100%;
+  padding: 1.65rem 0 2.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.gallery-track.is-grabbing {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.gallery-track::-webkit-scrollbar { display: none; }
+
+/* Spacer kiri & kanan agar kartu pertama dan terakhir bisa berhenti tepat di tengah layar */
+.gallery-track::before,
+.gallery-track::after {
+  content: '';
+  flex: 0 0 max(1rem, calc(50% - 190px));
+}
+@media (min-width: 640px) {
+  .gallery-track { --stage-h: 205px; }
+}
 @media (min-width: 768px) {
-  .gallery-card:nth-child(odd) {
-    transform: rotate(-0.55deg);
+  .gallery-track {
+    --stage-h: 235px;
+    --slide-gap: 1.5rem;
   }
-  .gallery-card:nth-child(even) {
-    transform: rotate(0.55deg);
+}
+@media (hover: hover) and (pointer: fine) {
+  .gallery-track:not(.is-grabbing) { scroll-snap-type: x proximity; }
+}
+
+/* Kartu Melayang dengan Lebar Mengikuti Rasio Gambar Horizontal */
+.gallery-card {
+  --tilt: 0deg;
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  width: max-content;
+  max-width: 88vw;
+  padding: 0.9rem 1rem 1rem;
+  border-radius: 24px;
+  text-align: left;
+  font: inherit;
+  color: var(--text-main);
+  cursor: pointer;
+  user-select: none;
+  scroll-snap-align: center;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0.9;
+  transform: scale(0.94) rotate(var(--tilt));
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-card:nth-child(odd)  { --tilt: -0.8deg; }
+.gallery-card:nth-child(even) { --tilt: 0.8deg; }
+body.play-mode .gallery-card:nth-child(odd)  { --tilt: -1.45deg; }
+body.play-mode .gallery-card:nth-child(even) { --tilt: 1.45deg; }
+
+.gallery-card.is-active {
+  z-index: 2;
+  opacity: 1;
+  transform: scale(1.04) rotate(0deg);
+  box-shadow: var(--slide-active-shadow);
+}
+
+@media (hover: hover) {
+  .gallery-card:hover,
+  .gallery-card:focus-visible {
+    opacity: 1;
+    transform: translateY(-4px) scale(0.98) rotate(0deg);
+    box-shadow: var(--slide-active-shadow);
   }
-  body.play-mode .gallery-card:nth-child(odd) {
-    transform: rotate(-1.35deg);
-  }
-  body.play-mode .gallery-card:nth-child(even) {
-    transform: rotate(1.35deg);
+  .gallery-card.is-active:hover,
+  .gallery-card.is-active:focus-visible {
+    transform: translateY(-4px) scale(1.055) rotate(0deg);
   }
 }
 
-.gallery-card:hover, .gallery-card:focus-within {
-  transform: translateY(-5px) rotate(0deg) !important;
-  box-shadow: 8px 10px 0px #2A1E1B;
+/* Adaptive Horizontal Cover Frame (Fits 16:9, 16:10, 4:3 with Zero Crop) */
+.gallery-cover-stage {
+  position: relative;
+  display: block;
+  height: var(--stage-h);
+  width: auto;
+  min-width: 235px;
+  border-radius: 16px;
+  border: 2px solid var(--border-ink);
+  overflow: hidden;
+  background-color: #FFFDF8;
+}
+
+.gallery-cover-img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: min(84vw, 480px);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-cover-img {
+  transform: scale(1.03);
+}
+
+/* Interactive Case Study Pill in Card Footer */
+.gallery-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+  padding: 0.32rem 0.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--border-ink);
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+  box-shadow: 1.5px 1.5px 0px var(--border-ink);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.gallery-cta-arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gallery-card.is-active .gallery-cta-pill,
+.gallery-card:hover .gallery-cta-pill,
+.gallery-card:focus-visible .gallery-cta-pill {
+  background-color: var(--accent-yellow);
+  color: var(--text-main);
+  transform: translateY(-2px) rotate(-2deg);
+  box-shadow: 3px 3px 0px var(--border-ink);
+}
+
+body.play-mode .gallery-card.is-active .gallery-cta-pill,
+body.play-mode .gallery-card:hover .gallery-cta-pill,
+body.play-mode .gallery-card:focus-visible .gallery-cta-pill {
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+}
+
+.gallery-card:hover .gallery-cta-arrow,
+.gallery-card:focus-visible .gallery-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Tombol Prev / Next di Bar Bawah (Tidak Menutupi Gambar Kartu) */
+.gallery-nav-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--border-ink);
+  border-radius: 9999px;
+  background: var(--accent-yellow);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 2px 2px 0 var(--border-ink);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
+}
+.gallery-nav-btn[disabled] {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+}
+.gallery-nav-btn:not([disabled]):hover {
+  transform: translateY(-1.5px) scale(1.06);
+  background: #FFFFFF;
+}
+.gallery-nav-btn:not([disabled]):active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 var(--border-ink);
+}
+.gallery-swipe-hint { display: none; }
+@media (hover: none) {
+  .gallery-swipe-hint { display: inline; }
 }
 
 /* 3-Layer Draggable Crayon Flowers & Critters */
@@ -160,7 +375,7 @@ h1, h2, h3, .font-display {
   }
 }
 
-/* Uncropped Aspect-Ratio Safe Image Containers */
+/* Uncropped Aspect-Ratio Safe Image Containers (Used Inside Case Study Modal) */
 .artwork-thumb-stage {
   background-color: #FFFDF8;
   background-image: radial-gradient(#E5DEC9 0.75px, transparent 0.75px);
@@ -197,6 +412,40 @@ button:focus-visible, a:focus-visible {
   outline: 3px solid #2563EB;
   outline-offset: 3px;
 }
+/* ==========================================================================
+   Anti-Copy & Artwork Protection Shield (Gallery, Modal & Lightbox)
+   ========================================================================== */
+.gallery-cover-img,
+.artwork-uncropped,
+.lightbox-img {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none; /* Mematikan pop-up "Simpan Gambar" saat ditekan lama di iPhone/Android */
+  -webkit-user-drag: none;
+}
+
+/* Mematikan menu klik kanan gambar di kartu & modal tanpa memblokir klik buka detail */
+.gallery-cover-img,
+.artwork-uncropped {
+  pointer-events: none;
+}
+
+/* Lapisan kaca transparan di atas gambar Lightbox Full-Size */
+#lightboxStage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+/* Mengaburkan karya jika pengunjung mencoba mencetak halaman (Ctrl+P / Save as PDF) */
+@media print {
+  #gallery,
+  #caseStudyModal,
+  #imageLightbox {
+    display: none !important;
+  }
+}
 
 /* Reduced Motion Accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -213,8 +462,7 @@ button:focus-visible, a:focus-visible {
   .critter-caterpillar {
     animation: none !important;
   }
-  .gallery-card,
-  body.play-mode .gallery-card {
-    transform: none !important;
+  .gallery-track .gallery-card:nth-child(n) {
+    --tilt: 0deg !important;
   }
 }
