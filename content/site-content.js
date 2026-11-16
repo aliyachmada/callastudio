@@ -167,7 +167,7 @@ window.CALLA_SITE_CONTENT = {
       id: 'croomble',
       publish: true,
       featured: true,
-      name: 'Croomble Artisan Cookies',
+      name: 'Croomble Cookies',
       category: 'packaging',
       statusBadge: '🎬 MOTION GIF + PDF · COOKIE BRANDING',
       frameBg: 'bg-[#FCE7F3]',
@@ -240,7 +240,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Holly Jolly',
       category: 'packaging',
-      statusBadge: 'CASE STUDY 01 · SEASONAL PACKAGING',
+      statusBadge: 'CASE STUDY · SEASONAL PACKAGING',
       frameBg: 'bg-[#E3F2FD]',
       coverImg: 'assets/holly-jolly-cover.webp',
       detailImg: 'assets/holly-jolly-detail.webp',
@@ -284,51 +284,151 @@ window.CALLA_SITE_CONTENT = {
       }
     },
 
-    {
+   {
       id: 'dumdum',
       publish: true,
       featured: true,
       name: 'Dumdum Foodie',
       category: 'mascot',
-      statusBadge: 'NEW CASE STUDY · CHARACTER MASCOT',
+      services: ['mascot'],
+      statusBadge: 'NEW CASE STUDY · CHARACTER MASCOT & MERCH',
       frameBg: 'bg-[#FFF3BF]',
       coverImg: 'assets/13.jpg',
-      detailImg: 'assets/14.jpg',
       detailImg: 'assets/15.jpg',
       galleryImages: [
-        { src: 'assets/13.jpg', labelID: '01 · Maskot Utama Dumdum & Sahabat Bakpao GIF', labelEN: '01 · Main Dumdum Puppy & Dumpling Buddy Mascot GIF' },
-	{ src: 'assets/15.jpg', labelID: '03 · Maskot Utama Dumdum & Sahabat Bakpao', labelEN: '01 · Main Dumdum Puppy & Dumpling Buddy Mascot' },        
-	{ src: 'assets/14.jpg', labelID: '02 · 4 Variasi Pose & Cerita Musiman Dumdum', labelEN: '02 · 4 Expressive Seasonal & Story Poses' }
+        {
+          src: 'assets/13.jpg',
+          labelID: '01 · Maskot Utama & 4 Variasi Pose Bercerita',
+          labelEN: '01 · Main Mascot & 4 Storytelling Poses'
+        },
+        {
+          src: 'assets/15.jpg',
+          labelID: '02 · Mockup Bucket Hat, Pin Enamel & Woven Label',
+          labelEN: '02 · Cream Bucket Hat, Enamel Pins & Woven Tag Mockup'
+        },
+        {
+          src: 'assets/14.jpg',
+          labelID: '03 · Mockup Mug Keramik Gagang Pink Pastel',
+          labelEN: '03 · Pastel Pink-Handle Ceramic Mug Mockup'
+        },
       ],
       altText: {
-        ID: 'Ilustrasi maskot anjing putih keriting Dumdum Foodie bersyal pink bersama karakter dimsum bakpao lucu',
-        EN: 'Dumdum Foodie fluffy white puppy mascot with pink scarf and cute dumpling buddy illustration'
+        ID: 'Ilustrasi maskot anjing putih keriting Dumdum Foodie bersama sahabat dimsum dan aplikasi mockup bucket hat pin enamel serta mug keramik',
+        EN: 'Dumdum Foodie fluffy puppy and dumpling mascot suite staged on a cream bucket hat with enamel pins and a pastel pink-handle ceramic mug'
       },
-      pdfExportHint: 'Simpan file 13.jpg dan 14.jpg di dalam folder assets/ atau di folder utama.',
+      pdfExportHint: 'Pastikan file 13.jpg, 15.jpg, dan 14.jpg tersimpan di dalam folder assets/.',
       ID: {
-        categoryLabel: 'Storybook Character Mascot & Pose Suite',
-        summary: 'Pengembangan karakter maskot anjing putih keriting bersyal pink bersama sahabat bakpao/dimsum mungil dalam 4 variasi pose ekspresif yang penuh cerita.',
-        deliverables: ['1 Karakter Utama (Anjing Fluffy & Sahabat Dimsum) + Logotype Tulisan Tangan', '4 Variasi Pose Ekspresif Berwarna (Daun Hujan, Kacamata Pink, Baret Merah, & Apel)', 'Palet Warna Kontras Ceria untuk Kemasan & Media Sosial', 'File Master Vektor & Resolusi Tinggi (.AI, .SVG, .PDF, .PNG)'],
+        categoryLabel: 'Character Mascot IP & Brand Merchandise',
+        summary: 'Pengembangan duet maskot karakter anjing putih keriting bersyal pink dan sahabat dimsum mungil dalam 4 pose cerita ekspresif—lengkap dengan simulasi aplikasi merchandise fisik pada bucket hat berpin enamel dan mug keramik.',
+        deliverables: [
+          '1 Duet Karakter Maskot Utama (Anjing Fluffy & Sahabat Dimsum) + Logotype Tulisan Tangan',
+          '4 Variasi Pose Bercerita (Daun Hujan, Kacamata Pink, Baret Merah, & Apel)',
+          'Simulasi Aplikasi Merchandise Komersial (Bucket Hat Pin Enamel & Mug Keramik)',
+          'Palet Warna Kontras Ceria + File Master Vektor & Resolusi Tinggi (.AI, .SVG, .PDF, .PNG)'
+        ],
         steps: [
-          ['01 — TANTANGAN & TUJUAN KLIEN', 'Brand kuliner Dumdum Foodie ingin memiliki figur maskot orisinal yang langsung memancing senyum pelanggan, mudah dikenali di profil media sosial, dan fleksibel dipasang pada kemasan makanan.'],
-          ['02 — ARAH KONSEP & VISUAL', 'Kami merancang duet karakter "Sahabat Kuliner": seekor anak anjing putih berbulu keriting lembut seperti awan yang selalu ditemani sahabat dimsum/bakpao kecil yang ekspresif.'],
-          ['03 — SKETSA & SILUET KARAKTER (GATE 1)', 'Pada tahap Gate 1, kami mengunci proporsi tubuh yang bulat, garis kontur hitam tegas bergaya spidol/krayon anak, serta tipografi tulisan tangan "DUMDUM FOODIE" yang kasual.'],
-          ['04 — VARIASI POSE BERCERITA (GATE 2)', 'Selain pose utama berlari memakai syal pink di latar kuning cerah, kami mengembangkan 4 pose cerita: berteduh di bawah daun hijau, bergaya dengan kacamata pink, memakai topi baret merah menatap kupu-kupu, dan bersantai dengan apel merah di kepala.'],
-          ['05 — APLIKASI NYATA PADA BRAND', 'Setiap kotak pose dirancang dengan latar warna pastel berbeda (biru langit, pink permen, kuning mentega, dan ungu lilac) sehingga siap dijadikan seri stiker kemasan, kartu ucapan, maupun konten IG/TikTok.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Rp800.000).']
+          [
+            '01 — TANTANGAN & TUJUAN KLIEN',
+            'Dumdum Foodie membutuhkan figur maskot karakter orisinal yang langsung memancing senyum pelanggan, kuat secara visual di media sosial, sekaligus mudah diterjemahkan ke berbagai merchandise fisik dan kemasan brand.'
+          ],
+          [
+            '02 — ARAH KONSEP & VISUAL',
+            'Kami merancang duet "Foodie Buddies": seekor anak anjing putih berbulu keriting lembut seperti awan yang selalu ditemani sahabat dimsum/bakpao mungil dengan ekspresi jenaka yang saling melengkapi.'
+          ],
+          [
+            '03 — SKETSA & SILUET KARAKTER (GATE 1)',
+            'Pada Gate 1, Cindi mengunci proporsi tubuh yang bulat menggemaskan, garis kontur hitam tegas bergaya marker ilustrasi buku cerita, serta logotype tulisan tangan "DUMDUM FOODIE" yang kasual.'
+          ],
+          [
+            '04 — 4 VARIASI POSE BERCERITA (GATE 2)',
+            'Selain pose utama berlari memakai syal pink di latar kuning cerah, kami mewarnai 4 adegan cerita: berteduh di bawah daun hijau, bergaya dengan kacamata pink, memakai topi baret merah menatap kupu-kupu, dan bersantai dengan apel merah.'
+          ],
+          [
+            '05 — APLIKASI NYATA PADA MERCHANDISE (BRAND IN ACTION)',
+            'Untuk membuktikan fleksibilitas IP karakter di dunia nyata, maskot dipisahkan menjadi elemen die-cut dan diterapkan pada mockup Bucket Hat krem dengan pin enamel karakter & label tenun (woven patch), serta Mug Keramik bergagang pink pastel.'
+          ],
+          [
+            '06 — PAKET RELEVAN & FILE HANDOVER',
+            'Contoh penerapan paket Storybook Brand Mascot (Mulai Rp800.000). Klien menerima file vektor terpisah per pose, panduan warna & proporsi karakter, serta Commercial-Use License untuk produksi kemasan maupun merchandise.'
+          ]
         ]
       },
       EN: {
-        categoryLabel: 'Storybook Character Mascot & Pose Suite',
-        summary: 'Original character mascot duo featuring a fluffy white puppy in a pink scarf and a tiny dumpling buddy across 4 expressive, story-driven pose variations.',
-        deliverables: ['1 Core Mascot Duo (Fluffy Puppy & Dumpling Buddy) + Hand-Lettered Logotype', '4 Illustrated Story Poses (Leaf Umbrella, Pink Glasses, Red Beret, & Apple)', 'Vibrant Multi-Mood Background Palette for Packaging & Socials', 'High-Res Master Files (.AI, .SVG, .PDF, .PNG)'],
+        categoryLabel: 'Character Mascot IP & Brand Merchandise',
+        summary: 'Original character mascot duo featuring a fluffy white puppy in a pink scarf and a tiny dumpling buddy across 4 story-driven poses—brought to life on enamel-pin bucket hats and pastel ceramic mugs.',
+        deliverables: [
+          '1 Core Mascot Duo (Fluffy Puppy & Dumpling Buddy) + Hand-Lettered Logotype',
+          '4 Illustrated Story Poses (Leaf Umbrella, Pink Glasses, Red Beret, & Apple)',
+          'Commercial Merchandise Mockups (Enamel-Pin Bucket Hat & Pastel Ceramic Mug)',
+          'Vibrant Brand Color System + Master Vector & Raster Files (.AI, .SVG, .PDF, .PNG)'
+        ],
         steps: [
-          ['01 — CLIENT GOAL & CHALLENGE', 'Dumdum Foodie wanted an endearing, instantly recognizable mascot IP that sparks joy on social media feeds and adapts effortlessly across food packaging and stickers.'],
-          ['02 — CREATIVE DIRECTION', 'We created a lovable "Foodie Duo": a cloud-like curly white puppy paired with a tiny, expressive steamed dumpling sidekick that mirrors the puppy’s mood.'],
-          ['03 — SKETCH & SILHOUETTE LOCK (GATE 1)', 'In Gate 1, we locked the huggable rounded proportions, bold marker-style outlines, and playful hand-lettered "DUMDUM FOODIE" title lockup.'],
-          ['04 — STORYTELLING POSE VARIATIONS (GATE 2)', 'Beyond the signature yellow-background running pose in a pink scarf, we illustrated 4 narrative scenes: sheltering under a giant leaf, rocking pink glasses, wearing a red beret watching a butterfly, and lounging with a red apple.'],
-          ['05 — BRAND IN ACTION', 'Each pose is framed in a distinct pastel mood (sky blue, candy pink, butter yellow, and soft lilac), ready to be deployed as packaging seals, postcard inserts, and social avatars.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Available via our Storybook Brand Mascot package (USD 80) complete with Commercial-Use License and full vector/raster master files.']
+          [
+            '01 — CLIENT GOAL & CHALLENGE',
+            'Dumdum Foodie wanted an endearing, instantly recognizable mascot IP that sparks joy on social feeds while translating cleanly into physical brand merchandise, apparel pins, and drinkware.'
+          ],
+          [
+            '02 — CREATIVE DIRECTION',
+            'We created a lovable "Foodie Duo": a cloud-like curly white puppy paired with a tiny, expressive steamed dumpling sidekick whose reactions mirror every adventure.'
+          ],
+          [
+            '03 — SKETCH & SILHOUETTE LOCK (GATE 1)',
+            'In Gate 1, Cindi locked the huggable rounded proportions, bold marker-style storybook outlines, and playful hand-lettered "DUMDUM FOODIE" title lockup.'
+          ],
+          [
+            '04 — 4 STORYTELLING POSE VARIATIONS (GATE 2)',
+            'Beyond the signature yellow-background running pose in a pink scarf, we rendered 4 pastel-framed narrative scenes: sheltering under a giant leaf, rocking pink glasses, wearing a red beret watching a butterfly, and lounging with a red apple.'
+          ],
+          [
+            '05 — BRAND IN ACTION & MERCHANDISE STAGING',
+            'To showcase real-world IP versatility, individual character elements were adapted onto a cream canvas bucket hat featuring die-cut character enamel pins and a woven brand label, alongside a pastel pink-handle ceramic mug.'
+          ],
+          [
+            '06 — PACKAGE & MASTER HANDOVER',
+            'Available via our Storybook Brand Mascot package (USD 80), complete with isolated vector pose files, character proportion & color guidelines, and a full Commercial-Use License for packaging and merch.'
+          ]
+        ]
+      }
+    },
+{
+      id: 'babytara',
+      publish: true,
+      featured: true,
+      name: 'Baby Tara (Taravisse)',
+      category: 'mascot',
+      statusBadge: 'CASE STUDY · CHARACTER IP',
+      frameBg: 'bg-[#E0E7FF]',
+      coverImg: 'assets/babytara-cover.webp',
+      detailImg: 'assets/babytara-detail.webp',
+      altText: {
+        ID: 'Ilustrasi maskot gadis kecil bertopi croissant Baby Tara untuk Taravisse',
+        EN: 'Baby Tara croissant-hat girl watercolor character mascot for Taravisse'
+      },
+      pdfExportHint: 'Opsional: tambahkan babytara-cover (.webp/.jpg) ke folder assets/ jika ingin menampilkan foto.',
+      ID: {
+        categoryLabel: 'Storybook Mascot & Brand Guideline',
+        summary: 'Pengembangan karakter maskot gadis kecil bersama croissant hangat dalam 3 pose bercerita (Warm Hug, Trendsetter Play, Connection) beserta lembar panduan warna.',
+        deliverables: ['1 Karakter Maskot Orisinal Cat Air', 'Variasi Pose & Cerita Karakter', 'Mascot Brand Guideline Sheet', 'Palet Warna Resmi Karakter'],
+        steps: [
+          ['01 — TANTANGAN & TUJUAN KLIEN', 'Merancang maskot berkarakter buku cerita yang memiliki pedoman visual jelas untuk digunakan secara konsisten di berbagai materi brand Taravisse.'],
+          ['02 — ARAH KONSEP & VISUAL', 'Gaya ilustrasi cat air dan pensil warna lembut yang menampilkan karakter gadis kecil berkerudung merah & gaun biru tua bersama croissant hangat.'],
+          ['03 — SKETSA POSE BERCERITA (GATE 1)', 'Mengunci proporsi karakter dan pose narasi (Warm Hug, Trendsetter Play, dan Connection).'],
+          ['04 — WARNA & LEMBAR PANDUAN (GATE 2)', 'Aplikasi palet warna merah bata (#A62616), kuning mentega (#FCECB2), biru tua (#233368), dan krem (#F0C96B) dalam lembar Mascot Guideline.'],
+          ['05 — APLIKASI NYATA PADA BRAND', 'Siap digunakan sebagai ikon kemasan bakery, stiker, kartu cerita produk, dan media sosial.'],
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Mulai Rp850.000) lengkap dengan Mini Character Sheet dan file master.']
+        ]
+      },
+      EN: {
+        categoryLabel: 'Storybook Mascot & Brand Guideline',
+        summary: 'Hand-painted storybook mascot featuring a whimsical girl and warm croissants across narrative poses (Warm Hug, Trendsetter Play, Connection) with a guideline sheet.',
+        deliverables: ['1 Original Watercolor Character Mascot', 'Narrative Poses & Expressions', 'Official Mascot Brand Guideline Sheet', 'Calibrated Character Color Palette'],
+        steps: [
+          ['01 — CLIENT GOAL & CHALLENGE', 'Developing an expressive character mascot backed by a clear visual guideline sheet for consistent brand storytelling.'],
+          ['02 — CREATIVE DIRECTION', 'Soft watercolor and colored-pencil rendering depicting a whimsical girl paired with warm artisanal croissants.'],
+          ['03 — NARRATIVE POSE SKETCHES (GATE 1)', 'Locking character proportions across signature poses (Warm Hug, Trendsetter Play, Connection).'],
+          ['04 — COLOR & GUIDELINE SHEET (GATE 2)', 'Anchored by crimson, butter yellow, navy, and cream tones compiled into a Mascot Brand Guideline sheet.'],
+          ['05 — BRAND IN ACTION', 'Ready for deployment across bakery boxes, stickers, story inserts, and social media.'],
+          ['06 — PACKAGE & MASTER HANDOVER', 'Available via Storybook Brand Mascot (USD 80) with Commercial-Use License and master files.']
         ]
       }
     },
@@ -339,7 +439,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Orbre Coffee',
       category: 'mascot',
-      statusBadge: 'NEW CASE STUDY · CHARACTER MASCOT',
+      statusBadge: 'CASE STUDY · CHARACTER MASCOT',
       frameBg: 'bg-[#FFEDD5]',
       coverImg: 'assets/ORBRE-Mockup.jpg',
       detailImg: 'assets/Orbre Coffee Macscot - all.jpg',
@@ -401,9 +501,9 @@ window.CALLA_SITE_CONTENT = {
       id: 'ngebolen',
       publish: true,
       featured: true,
-      name: 'Ngebolen (Olen Mascot & Menu)',
+      name: 'Olen Mascot & Menu',
       category: 'packaging',
-      statusBadge: 'NEW CASE STUDY · BAKERY MASCOT & MENU',
+      statusBadge: 'CASE STUDY · BAKERY MASCOT & MENU',
       frameBg: 'bg-[#DCFCE7]',
       coverImg: 'assets/Olen-mascot.jpg',
       detailImg: 'assets/Ngebolen Menu.jpg',
@@ -450,7 +550,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Blossom & Veil',
       category: 'identity',
-      statusBadge: 'NEW CASE STUDY · FASHION & PACKAGING',
+      statusBadge: 'CASE STUDY · FASHION & PACKAGING',
       frameBg: 'bg-[#FFE4E6]',
       coverImg: 'assets/blossom-cover.webp',
       detailImg: 'assets/blossom-detail.webp',
@@ -500,7 +600,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Solène Pilates Studio',
       category: 'identity',
-      statusBadge: 'NEW CASE STUDY · WELLNESS IDENTITY',
+      statusBadge: 'CASE STUDY · WELLNESS IDENTITY',
       frameBg: 'bg-[#F3E8FF]',
       coverImg: 'assets/solene-cover.webp',
       detailImg: 'assets/solene-detail.webp',
@@ -546,7 +646,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Maroo Donut',
       category: 'mascot',
-      statusBadge: 'CASE STUDY 02 · CHARACTER MASCOT',
+      statusBadge: 'CASE STUDY · CHARACTER MASCOT',
       frameBg: 'bg-[#FFF3BF]',
       coverImg: 'assets/maroo-cover.webp',
       detailImg: 'assets/maroo-loyalty.webp',
@@ -676,57 +776,13 @@ window.CALLA_SITE_CONTENT = {
         ]
       }
     },
-
-    {
-      id: 'babytara',
-      publish: true,
-      featured: false,
-      name: 'Baby Tara (Taravisse)',
-      category: 'mascot',
-      statusBadge: 'GALLERY · CHARACTER IP',
-      frameBg: 'bg-[#E0E7FF]',
-      coverImg: 'assets/babytara-cover.webp',
-      detailImg: 'assets/babytara-detail.webp',
-      altText: {
-        ID: 'Ilustrasi maskot gadis kecil bertopi croissant Baby Tara untuk Taravisse',
-        EN: 'Baby Tara croissant-hat girl watercolor character mascot for Taravisse'
-      },
-      pdfExportHint: 'Opsional: tambahkan babytara-cover (.webp/.jpg) ke folder assets/ jika ingin menampilkan foto.',
-      ID: {
-        categoryLabel: 'Storybook Mascot & Brand Guideline',
-        summary: 'Pengembangan karakter maskot gadis kecil bersama croissant hangat dalam 3 pose bercerita (Warm Hug, Trendsetter Play, Connection) beserta lembar panduan warna.',
-        deliverables: ['1 Karakter Maskot Orisinal Cat Air', 'Variasi Pose & Cerita Karakter', 'Mascot Brand Guideline Sheet', 'Palet Warna Resmi Karakter'],
-        steps: [
-          ['01 — TANTANGAN & TUJUAN KLIEN', 'Merancang maskot berkarakter buku cerita yang memiliki pedoman visual jelas untuk digunakan secara konsisten di berbagai materi brand Taravisse.'],
-          ['02 — ARAH KONSEP & VISUAL', 'Gaya ilustrasi cat air dan pensil warna lembut yang menampilkan karakter gadis kecil berkerudung merah & gaun biru tua bersama croissant hangat.'],
-          ['03 — SKETSA POSE BERCERITA (GATE 1)', 'Mengunci proporsi karakter dan pose narasi (Warm Hug, Trendsetter Play, dan Connection).'],
-          ['04 — WARNA & LEMBAR PANDUAN (GATE 2)', 'Aplikasi palet warna merah bata (#A62616), kuning mentega (#FCECB2), biru tua (#233368), dan krem (#F0C96B) dalam lembar Mascot Guideline.'],
-          ['05 — APLIKASI NYATA PADA BRAND', 'Siap digunakan sebagai ikon kemasan bakery, stiker, kartu cerita produk, dan media sosial.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Dapat dipesan melalui paket Storybook Brand Mascot (Mulai Rp850.000) lengkap dengan Mini Character Sheet dan file master.']
-        ]
-      },
-      EN: {
-        categoryLabel: 'Storybook Mascot & Brand Guideline',
-        summary: 'Hand-painted storybook mascot featuring a whimsical girl and warm croissants across narrative poses (Warm Hug, Trendsetter Play, Connection) with a guideline sheet.',
-        deliverables: ['1 Original Watercolor Character Mascot', 'Narrative Poses & Expressions', 'Official Mascot Brand Guideline Sheet', 'Calibrated Character Color Palette'],
-        steps: [
-          ['01 — CLIENT GOAL & CHALLENGE', 'Developing an expressive character mascot backed by a clear visual guideline sheet for consistent brand storytelling.'],
-          ['02 — CREATIVE DIRECTION', 'Soft watercolor and colored-pencil rendering depicting a whimsical girl paired with warm artisanal croissants.'],
-          ['03 — NARRATIVE POSE SKETCHES (GATE 1)', 'Locking character proportions across signature poses (Warm Hug, Trendsetter Play, Connection).'],
-          ['04 — COLOR & GUIDELINE SHEET (GATE 2)', 'Anchored by crimson, butter yellow, navy, and cream tones compiled into a Mascot Brand Guideline sheet.'],
-          ['05 — BRAND IN ACTION', 'Ready for deployment across bakery boxes, stickers, story inserts, and social media.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Available via Storybook Brand Mascot (USD 80) with Commercial-Use License and master files.']
-        ]
-      }
-    },
-
     {
       id: 'happynest',
       publish: true,
       featured: false,
       name: 'Happynest.co',
       category: 'packaging',
-      statusBadge: 'GALLERY · FESTIVE PACKAGING',
+      statusBadge: 'CASE STUDY · FESTIVE PACKAGING',
       frameBg: 'bg-[#FFEDD5]',
       coverImg: 'assets/happynest-cover.webp',
       detailImg: 'assets/happynest-detail.webp', 
@@ -769,7 +825,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Seeri',
       category: 'packaging',
-      statusBadge: 'GALLERY · D2C UNBOXING',
+      statusBadge: 'CASE STUDY · D2C UNBOXING',
       frameBg: 'bg-[#F3E8FF]',
       coverImg: 'assets/seeri-cover.webp',
       detailImg: 'assets/seeri-detail.webp',
@@ -812,7 +868,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Batter Burrow',
       category: 'identity',
-      statusBadge: 'GALLERY · BAKERY LOGO SUITE',
+      statusBadge: 'CASE STUDY · BAKERY LOGO SUITE',
       frameBg: 'bg-[#FFE4E6]',
       coverImg: 'assets/batter-cover.webp',
       detailImg: 'assets/batter-detail.webp',

@@ -189,12 +189,13 @@
     </defs>
   </svg>
 
-  <!-- TOP ANNOUNCEMENT BAR (MAX 7 BRANDS PER BATCH) -->
+<!-- TOP ANNOUNCEMENT BAR (LIVE WEEKLY BATCH SLOT) -->
   <div class="bg-[#2A1E1B] text-[#FFFDF8] text-xs sm:text-sm py-2.5 px-4 text-center">
-    <span id="topBarBadge" class="inline-block bg-[#FFE066] text-[#2A1E1B] font-bold px-2.5 py-0.5 rounded-full mr-2 text-[11px]">
-      STUDIO BATCH SYSTEM
+    <span id="topBarBadge" class="inline-flex items-center gap-1.5 bg-[#FFE066] text-[#2A1E1B] font-bold px-2.5 py-0.5 rounded-full mr-2 text-[11px]">
+      <span id="topBarDot" class="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span>
+      <span id="topBarBadgeText">STUDIO BATCH SYSTEM</span>
     </span>
-    <span id="topBarText">Hand-drawn quality commitment: Seasonal capacity is capped at a <strong>Maximum of 7 Brands per Batch</strong>.</span>
+    <span id="topBarText">Upcoming Batch: <strong>Only 6 Slots Left</strong></span>
     <a href="#pricing" id="topBarLink" class="underline font-semibold text-[#FFE066] ml-2 hover:text-white">
       View Packages & Check Slot Availability →
     </a>
@@ -511,7 +512,7 @@
       ></div>
     </div>
 
-   <!-- Jalur Geser Ujung-ke-Ujung Layar (100% Bersih Tanpa Panah Menghalangi Gambar) -->
+<!-- Jalur Geser Ujung-ke-Ujung Layar (Bersih Tanpa Panah Menutupi Gambar) -->
     <div id="galleryCarousel" class="relative w-full" role="region" aria-roledescription="carousel" aria-label="Portfolio gallery">
       <div id="galleryTrack" class="gallery-track"></div>
     </div>
@@ -680,8 +681,7 @@
             <div class="absolute inset-0 bg-[#FFFDF8] flex items-center justify-center p-2">
               <img
                 id="proofAfterImg"
-                src="assets/13.jpg"
-                data-base-src="assets/13.jpg"
+                data-base-src="dumdum-gif"
                 data-attempt="0"
                 alt="Calla Studio Gate 2 Final Artwork"
                 class="w-full h-full object-contain"
@@ -700,8 +700,7 @@
             >
               <img
                 id="proofBeforeImg"
-                src="assets/13.jpg"
-                data-base-src="assets/13.jpg"
+                data-base-src="dumdum-gif"
                 data-attempt="0"
                 alt="Calla Studio Gate 1 Original Sketch"
                 class="w-full h-full object-contain pencil-sketch-filter"
@@ -892,10 +891,19 @@
         </button>
       </div>
 
-      <div class="mt-3">
+<div class="mt-3 flex flex-col items-center gap-2">
         <p id="pricingRegionNote" class="text-xs font-bold text-[#2A1E1B] bg-[#FFF9DB] inline-block px-4 py-1.5 rounded-full border border-[#2A1E1B]"></p>
+        <div
+          id="pricingLiveSlotPill"
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DCFCE7] text-[#2A1E1B] border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] text-xs font-extrabold transition-colors"
+        >
+          <span id="pricingSlotFlowers" aria-hidden="true">🌸🌸🌸🌸🌸🌸</span>
+          <span id="pricingSlotText">Upcoming Batch: Only 6 Slots Left</span>
+        </div>
       </div>
     </div>
+
+    <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
     <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
@@ -1373,6 +1381,9 @@
     }
 
     // =========================================================================
+    // Inline HTML onerror attributes resolve handlers on window.
+    window.handleSmartImgError = handleSmartImgError;
+
     // FEATURE #1: DAFTAR SLIDER HAND-DRAWN PROOF (SEKARANG HANYA DUMDUM!)
     // Kalau mau tambah proyek baru nanti, tinggal tambah blok { ... } di bawah!
     // =========================================================================
@@ -1380,8 +1391,8 @@
       {
         btnID: '🐶 Dumdum Foodie',
         btnEN: '🐶 Dumdum Foodie',
-        gate1Img: 'assets/13.jpg',
-        gate2Img: 'assets/13.jpg',
+        gate1Img: 'dumdum-gif',
+        gate2Img: 'dumdum-gif',
         useSketchFilterOnGate1: true,
         badge1ID: '✏️ Gate 1: Sketsa Draf',
         badge1EN: '✏️ Gate 1: Pencil Sketch Draft',
@@ -1718,7 +1729,8 @@
     function applyAllTranslations() {
       const d = SITE.i18n[currentLang];
 
-      document.getElementById('topBarBadge').textContent = d.topBarBadge;
+      const topBadgeTextEl = document.getElementById('topBarBadgeText');
+    if (topBadgeTextEl) topBadgeTextEl.textContent = d.topBarBadge;
       document.getElementById('topBarText').innerHTML = d.topBarText;
       document.getElementById('topBarLink').textContent = d.topBarLink;
 
@@ -1777,6 +1789,9 @@
 
       if (activeModalProjectId) {
         renderModalContent(activeModalProjectId);
+      }
+      if (typeof renderLiveBatchSlot === 'function') {
+        renderLiveBatchSlot();
       }
     }
 
@@ -2943,37 +2958,99 @@
       }
     }
 
-    // INITIALIZE ON PAGE LOAD (DEFAULT = ENGLISH & USD, OR OVERRIDE VIA ?m=id / ?m=en)
-    (function initMarketFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      const marketParam = (params.get('m') || params.get('market') || '').toUpperCase();
+    // =========================================================================
+    // LIVE BATCH SLOT CONTROLLER (TERHUBUNG KE CALLA LEAN OS — WEB_SLOT)
+    // =========================================================================
+    const CALLA_SLOT_API_URL = 'https://script.google.com/macros/s/AKfycbxOSNIUd6l9MQPUC0B2PPjpK6hfiM3aiYfXjDq4_JZ-Fw1W11-BoH5hNlRDJfbdus6gtQ/exec';
+    const CALLA_SLOT_CACHE_KEY = 'callaLiveSlotCacheV1';
+    let liveBatchState = { remainingSlots: 6, isClosed: false };
 
-      if ((marketParam === 'ID' || marketParam === 'IDR') && lsmIsAcknowledged()) {
-        currentMarket = 'ID';
-        currentLang = 'ID';
+    function renderLiveBatchSlot() {
+      const rem = liveBatchState.isClosed ? 0 : Math.max(0, Number(liveBatchState.remainingSlots) || 0);
+      const isID = currentLang === 'ID';
+
+      const topTextEl = document.getElementById('topBarText');
+      const topDotEl = document.getElementById('topBarDot');
+      const pillEl = document.getElementById('pricingLiveSlotPill');
+      const flowersEl = document.getElementById('pricingSlotFlowers');
+      const pillTextEl = document.getElementById('pricingSlotText');
+
+      let msgHtml = '';
+      let plainMsg = '';
+      let dotColor = 'bg-[#16A34A]';
+      let pillBg = 'bg-[#DCFCE7]';
+      let flowerIcons = '';
+
+      if (rem <= 0) {
+        dotColor = 'bg-[#E85D88]';
+        pillBg = 'bg-[#FCE7F3]';
+        flowerIcons = '🌷';
+        msgHtml = isID
+          ? '<strong>Batch Terdekat Penuh</strong> — Dibuka Antrean Batch Berikutnya'
+          : '<strong>Upcoming Batch Full</strong> — Next Batch Queue Open';
+        plainMsg = isID
+          ? 'Batch Terdekat Penuh — Antrean Batch Berikutnya Dibuka'
+          : 'Upcoming Batch Full — Next Batch Queue Open';
+      } else if (rem === 1) {
+        dotColor = 'bg-[#F97316]';
+        pillBg = 'bg-[#FFEDD5]';
+        flowerIcons = '🌸';
+        msgHtml = isID
+          ? 'Batch Terdekat: <strong>Tersisa 1 Slot Terakhir!</strong>'
+          : 'Upcoming Batch: <strong>Only 1 Slot Left!</strong>';
+        plainMsg = isID
+          ? 'Batch Terdekat: Tersisa 1 Slot Terakhir!'
+          : 'Upcoming Batch: Only 1 Slot Left!';
       } else {
-        currentMarket = 'EN';
-        currentLang = 'EN';
+        dotColor = 'bg-[#16A34A]';
+        pillBg = 'bg-[#DCFCE7]';
+        flowerIcons = '🌸'.repeat(Math.min(rem, 7));
+        msgHtml = isID
+          ? `Batch Terdekat: <strong>Tersisa ${rem} Slot Terakhir</strong>`
+          : `Upcoming Batch: <strong>Only ${rem} Slots Left</strong>`;
+        plainMsg = isID
+          ? `Batch Terdekat: Tersisa ${rem} Slot Terakhir`
+          : `Upcoming Batch: Only ${rem} Slots Left`;
       }
-      document.documentElement.lang = currentLang === 'ID' ? 'id' : 'en';
 
-      if (['EN', 'USD', 'GLOBAL', 'ID', 'IDR'].includes(marketParam)) {
-        const headerSwitchGroup = document.getElementById('headerMarketID')?.parentElement;
-        const priceSwitchGroup = document.getElementById('priceBtnID')?.parentElement;
-        if (headerSwitchGroup) headerSwitchGroup.style.display = 'none';
-        if (priceSwitchGroup) priceSwitchGroup.style.display = 'none';
+      if (topTextEl) topTextEl.innerHTML = msgHtml;
+      if (topDotEl) topDotEl.className = `w-2 h-2 rounded-full ${dotColor} animate-pulse`;
+      if (pillEl) {
+        pillEl.className = `inline-flex items-center gap-2 px-4 py-1.5 rounded-full ${pillBg} text-[#2A1E1B] border-2 border-[#2A1E1B] shadow-[2px_2px_0px_#2A1E1B] text-xs font-extrabold transition-colors`;
       }
+      if (flowersEl) flowersEl.textContent = flowerIcons;
+      if (pillTextEl) pillTextEl.textContent = plainMsg;
+    }
 
-      syncMarketButtonsUI();
-      applyAllTranslations();
+    (function initLiveBatchSlot() {
+      // 1. Baca cache 5 menit agar tampilan langsung stabil tanpa kedip
+      try {
+        const cached = JSON.parse(localStorage.getItem(CALLA_SLOT_CACHE_KEY) || 'null');
+        if (cached && typeof cached.remainingSlots === 'number' && (Date.now() - cached.ts) < 5 * 60 * 1000) {
+          liveBatchState = cached;
+        }
+      } catch (_) {}
+      renderLiveBatchSlot();
 
-      // Warm welcome: explicit ?m=id link, or visitor whose timezone looks Indonesian
-      const wantsID = marketParam === 'ID' || marketParam === 'IDR';
-      if (!lsmIsAcknowledged() && (wantsID || (lsmLooksIndonesian() && !lsmDismissedThisSession()))) {
-        setTimeout(openLocalSubsidy, 900);
-      }
-// =========================================================================
-    // ARTWORK & BRAND GUIDELINE COPY PROTECTION
+      // 2. Sinkronkan data terbaru dari Google Sheets (WEB_SLOT) di latar belakang
+      fetch(CALLA_SLOT_API_URL, { cache: 'no-store' })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && typeof data.remainingSlots === 'number') {
+            liveBatchState = {
+              remainingSlots: data.remainingSlots,
+              isClosed: !!data.isClosed,
+              ts: Date.now()
+            };
+            try { localStorage.setItem(CALLA_SLOT_CACHE_KEY, JSON.stringify(liveBatchState)); } catch (_) {}
+            renderLiveBatchSlot();
+          }
+        })
+        .catch(() => {});
+    })();
+
+    // =========================================================================
+    // ARTWORK & BRAND GUIDELINE ANTI-COPY SHIELD
     // =========================================================================
     (function initArtworkProtection() {
       let lastNoticeTime = 0;
@@ -3001,23 +3078,19 @@
         }, 2000);
       }
 
-      // 1. Blokir drag semua gambar ke desktop / tab baru
       document.addEventListener('dragstart', (e) => {
         if (e.target && e.target.tagName === 'IMG') {
           e.preventDefault();
         }
       });
 
-      // 2. Blokir klik kanan khusus di area Galeri, Case Study Modal & Lightbox
       document.addEventListener('contextmenu', (e) => {
-        const isProtectedZone = e.target.closest('#gallery, #caseStudyModal, #imageLightbox, #team');
-        if (isProtectedZone) {
+        if (e.target.closest('#gallery, #caseStudyModal, #imageLightbox, #team')) {
           e.preventDefault();
           showCopyrightNotice();
         }
       });
 
-      // 3. Blokir shortcut Ctrl+S / Cmd+S (Save Page)
       document.addEventListener('keydown', (e) => {
         if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
           e.preventDefault();
@@ -3025,7 +3098,16 @@
         }
       });
     })();
-    })();
+
+    // INITIAL PAGE RENDER
+    // Render data-driven sections and load the configured proof artwork.
+    if (SITE && SITE.i18n && SITE.pricingCatalog) {
+      selectMarket('EN');
+    } else {
+      console.error(
+        'Calla content data was not loaded. Check that content/site-content.js exists and defines window.CALLA_SITE_CONTENT.'
+      );
+    }
   </script>
 </body>
 </html>
