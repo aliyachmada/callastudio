@@ -903,7 +903,7 @@
       </div>
     </div>
 
-    <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+<div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
     <div id="pricingCardsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
@@ -3022,18 +3022,19 @@
       if (pillTextEl) pillTextEl.textContent = plainMsg;
     }
 
-    (function initLiveBatchSlot() {
-      // 1. Baca cache 5 menit agar tampilan langsung stabil tanpa kedip
+(function initLiveBatchSlot() {
+      // 1. Baca cache singkat 60 detik agar tampilan awal tidak berkedip
       try {
         const cached = JSON.parse(localStorage.getItem(CALLA_SLOT_CACHE_KEY) || 'null');
-        if (cached && typeof cached.remainingSlots === 'number' && (Date.now() - cached.ts) < 5 * 60 * 1000) {
+        if (cached && typeof cached.remainingSlots === 'number' && (Date.now() - cached.ts) < 60 * 1000) {
           liveBatchState = cached;
         }
       } catch (_) {}
       renderLiveBatchSlot();
 
-      // 2. Sinkronkan data terbaru dari Google Sheets (WEB_SLOT) di latar belakang
-      fetch(CALLA_SLOT_API_URL, { cache: 'no-store' })
+      // 2. Sinkronkan data terbaru dari Google Sheets (WEB_SLOT) dengan cache-buster
+      const sep = CALLA_SLOT_API_URL.includes('?') ? '&' : '?';
+      fetch(`${CALLA_SLOT_API_URL}${sep}t=${Date.now()}`, { cache: 'no-store' })
         .then((res) => res.json())
         .then((data) => {
           if (data && typeof data.remainingSlots === 'number') {
@@ -3044,11 +3045,11 @@
             };
             try { localStorage.setItem(CALLA_SLOT_CACHE_KEY, JSON.stringify(liveBatchState)); } catch (_) {}
             renderLiveBatchSlot();
+            if (typeof renderPricingCards === 'function') renderPricingCards();
           }
         })
         .catch(() => {});
     })();
-
     // =========================================================================
     // ARTWORK & BRAND GUIDELINE ANTI-COPY SHIELD
     // =========================================================================
@@ -3099,15 +3100,49 @@
       });
     })();
 
-    // INITIAL PAGE RENDER
-    // Render data-driven sections and load the configured proof artwork.
-    if (SITE && SITE.i18n && SITE.pricingCatalog) {
-      selectMarket('EN');
-    } else {
-      console.error(
-        'Calla content data was not loaded. Check that content/site-content.js exists and defines window.CALLA_SITE_CONTENT.'
-      );
-    }
+   // INITIALIZE ON PAGE LOAD (DEFAULT = ENGLISH & USD, OR OVERRIDE VIA ?m=id / ?service=...)
+    (function initMarketFromURL() {
+      if (!SITE || !SITE.i18n || !SITE.pricingCatalog) {
+        console.error('Calla content data was not loaded. Check content/site-content.js.');
+        return;
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const marketParam = (params.get('m') || params.get('market') || '').toUpperCase();
+      const serviceParam = params.get('service') || params.get('s') || '';
+      currentFilter = resolveServiceId(serviceParam);
+
+      if ((marketParam === 'ID' || marketParam === 'IDR') && lsmIsAcknowledged()) {
+        currentMarket = 'ID';
+        currentLang = 'ID';
+      } else {
+        currentMarket = 'EN';
+        currentLang = 'EN';
+      }
+      document.documentElement.lang = currentLang === 'ID' ? 'id' : 'en';
+
+      if (['EN', 'USD', 'GLOBAL', 'ID', 'IDR'].includes(marketParam)) {
+        const headerSwitchGroup = document.getElementById('headerMarketID')?.parentElement;
+        const priceSwitchGroup = document.getElementById('priceBtnID')?.parentElement;
+        if (headerSwitchGroup) headerSwitchGroup.style.display = 'none';
+        if (priceSwitchGroup) priceSwitchGroup.style.display = 'none';
+      }
+
+      syncMarketButtonsUI();
+      applyAllTranslations();
+
+      if (currentFilter !== 'all') {
+        setTimeout(() => {
+          const g = document.getElementById('gallery');
+          if (g) g.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+
+      const wantsID = marketParam === 'ID' || marketParam === 'IDR';
+      if (!lsmIsAcknowledged() && (wantsID || (lsmLooksIndonesian() && !lsmDismissedThisSession()))) {
+        setTimeout(openLocalSubsidy, 900);
+      }
+    })();
   </script>
 </body>
 </html>
