@@ -13,15 +13,22 @@ window.CALLA_SITE_CONTENT = {
 
   i18n: {
     ID: {
-      topBarBadge: 'SISTEM BATCH STUDIO',
-      topBarText: 'Komitmen kualitas hand-drawn: Kapasitas seasonal dibatasi <strong>Maksimal 7 Brand per Batch</strong>.',
-      topBarLink: 'Lihat Paket & Tanyakan Slot →',
+      topBarBadge: 'BATCH STUDIO',
+      topBarText: 'Komitmen hand-drawn: <strong>Maksimal 7 Brand per Batch</strong>.',
+      topBarLink: 'Cek Slot →',
       navGallery: 'Portofolio & Galeri',
       navTeam: 'Tentang Tim',
       navWorkflow: 'Alur 4-Fase',
       navPricing: 'Pricelist',
-      moodEveryday: 'Everyday Mode 🌷',
-      moodPlay: 'Play Mode Aktif! ✨',
+      navGalleryShort: 'Galeri',
+      navTeamShort: 'Tim',
+      navWorkflowShort: 'Alur',
+      moodToEveryday: 'Coba Mode Santai',
+      moodToEverydayShort: 'Santai',
+      moodToEverydayTip: 'Ingin tampilan yang lebih tenang? Beralih ke Mode Santai.',
+      moodToPlay: 'Balik ke Playful',
+      moodToPlayShort: 'Playful',
+      moodToPlayTip: 'Hidupkan kembali warna ceria khas Calla!',
       heroBadge: '🖍️ Handcrafted Brand Identity · Character Mascot · Packaging Design',
       heroHeadline: 'Ide kecil, dunia brand yang penuh cerita. 🌷',
       heroSubcopy: 'Kami mengubah ide menjadi identitas visual yang berwarna, karakter ilustratif, dan kemasan yang punya cerita—dirancang dengan penuh perhatian untuk brand dan orang-orang yang menyukainya.',
@@ -31,14 +38,14 @@ window.CALLA_SITE_CONTENT = {
       spawnBtnText: '🌸 + Tambah Bunga',
       galBadge: '🎨 CURATED PORTFOLIO SHOWCASE',
       galHeading: 'Dunia Brand yang Telah Kami Bangun',
-      galSubheading: 'Klik gambar untuk memperbesar ukuran penuh (Full-Size Lightbox), atau buka panduan Studi Kasus Step-by-Step untuk melihat bagaimana kami membangun setiap brand dari nol.',
-      filterAll: 'Karya Unggulan',
+      galSubheading: 'Ketuk karya mana saja untuk membuka Studi Kasus Step-by-Step, Palet Warna Interaktif, dan tampilan gambar penuh (Full-Size Lightbox).',
+      filterAll: 'Semua Karya',
       filterIdentity: 'Brand Identity',
       filterMascot: 'Mascot & Illustration',
       filterPackaging: 'Packaging & F&B',
       showAllWorksBtn: '✨ Tampilkan Semua Karya',
-      showFeaturedOnlyBtn: '🌷 Tampilkan Karya Unggulan Saja (6 Proyek)',
-      cardOpenBtn: 'Lihat Proses Step-by-Step →',
+      showFeaturedOnlyBtn: '🌷 Tampilkan Karya Unggulan Saja',
+      cardOpenBtn: 'Lihat Studi Kasus →',
       zoomImageHint: '🔍 Klik untuk ukuran penuh',
       teamBadge: '🌷 THE DYNAMIC DUO',
       teamHeading: 'Kenalan dengan tim kecil di balik Calla 🌷',
@@ -77,41 +84,48 @@ window.CALLA_SITE_CONTENT = {
       priceSubheading: 'Pilih lokasi pasar bisnismu untuk melihat rincian paket dan output yang paling pas dengan kebutuhanmu:',
       priceBtnID: '🇮🇩 Indonesia (IDR)',
       priceBtnEN: '🌏 International & ASEAN (USD)',
-      modalClose: '✕ Tutup Studi Kasus (Esc)',
+      modalClose: '✕ Tutup',
       modalDeliverablesTitle: 'Rincian Output & File yang Diterima Klien:',
-      modalVisualPreviewTitle: 'Galeri Visual Proyek (Klik gambar untuk ukuran penuh & geser ← →)',
+      modalVisualPreviewTitle: 'Galeri Visual Proyek (Ketuk gambar untuk ukuran penuh & geser ← →)',
       modalInquireBtn: '💬 Pesan / Konsultasi Paket Serupa via WhatsApp →',
-      lightboxClose: '✕ Tutup (Esc)',
+      lightboxClose: '✕ Tutup',
       footerTagline: 'Storybook-Inspired Brand Identity, Character Mascot & Packaging Studio · Malang, Indonesia.',
       footerWaLabel: 'Official WhatsApp:'
     },
 
     EN: {
-      topBarBadge: 'STUDIO BATCH SYSTEM',
-      topBarText: 'Hand-drawn quality commitment: Seasonal capacity is capped at a <strong>Maximum of 7 Brands per Batch</strong>.',
-      topBarLink: 'View Packages & Check Slot Availability →',
+      topBarBadge: 'STUDIO BATCH',
+      topBarText: 'Hand-drawn capacity: <strong>Maximum of 7 Brands per Batch</strong>.',
+      topBarLink: 'Check Slots →',
       navGallery: 'Portfolio & Gallery',
       navTeam: 'Meet the Team',
       navWorkflow: '4-Phase Workflow',
       navPricing: 'Pricelist',
-      moodEveryday: 'Everyday Mode 🌷',
-      moodPlay: 'Play Mode On! ✨',
+      navGalleryShort: 'Works',
+      navTeamShort: 'Team',
+      navWorkflowShort: 'Process',
+      moodToEveryday: 'Try Everyday Mode',
+      moodToEverydayShort: 'Everyday',
+      moodToEverydayTip: 'Prefer a calmer look? Switch to Everyday Mode.',
+      moodToPlay: 'Back to Playful',
+      moodToPlayShort: 'Playful',
+      moodToPlayTip: 'Bring back Calla’s vibrant storybook palette!',
       heroBadge: '🖍️ Handcrafted Brand Identity · Character Mascot · Packaging Design',
-      heroHeadline: 'Little ideas, lovely brand worlds. 🌷',
+      heroHeadline: 'Little ideas, lovely brand worlds.',
       heroSubcopy: 'We turn ideas into colorful brand identities, hand-drawn characters, and packaging with a story to tell—made thoughtfully for the people who’ll love them.',
       heroCtaPrimary: '🌈 Explore Selected Works ↓',
       heroCtaSecondary: '💌 View Packages & Pricelist',
-      heroMicrocopy: 'Psst… feel free to drag or click the crayon flowers and critters! Then come see the brand worlds we’ve built. ✨',
+      heroMicrocopy: 'Psst… feel free to drag or tap the crayon flowers and critters! Then come see the brand worlds we’ve built. ✨',
       spawnBtnText: '🌸 + Add Flower',
       galBadge: '🎨 CURATED PORTFOLIO SHOWCASE',
       galHeading: 'Brand Worlds We Have Built',
-      galSubheading: 'Click any artwork to open the full-size viewer in its original ratio, or open the Step-by-Step Case Study to see how we guide each brand from idea to launch.',
-      filterAll: 'Featured Works',
+      galSubheading: 'Tap any project to open the Step-by-Step Case Study, Interactive Color Palette, and full-size artwork viewer.',
+      filterAll: 'All Works',
       filterIdentity: 'Brand Identity',
       filterMascot: 'Mascot & Illustration',
       filterPackaging: 'Packaging & F&B',
       showAllWorksBtn: '✨ Show All Works',
-      showFeaturedOnlyBtn: '🌷 Show Featured Works Only (6 Projects)',
+      showFeaturedOnlyBtn: '🌷 Show Featured Works Only',
       cardOpenBtn: 'See Step-by-Step Process →',
       zoomImageHint: '🔍 Click for full-size view',
       teamBadge: '🌷 THE DYNAMIC DUO',
@@ -151,11 +165,11 @@ window.CALLA_SITE_CONTENT = {
       priceSubheading: 'Select your billing market below to view packages in your language and currency:',
       priceBtnID: '🇮🇩 Indonesia (IDR)',
       priceBtnEN: '🌏 International & ASEAN (USD)',
-      modalClose: '✕ Close Case Study (Esc)',
+      modalClose: '✕ Close',
       modalDeliverablesTitle: 'Project Scope & Client Deliverables:',
-      modalVisualPreviewTitle: 'Project Visual Gallery (Click any image for full-size view & ← → navigation)',
+      modalVisualPreviewTitle: 'Project Visual Gallery (Tap any image for full-size view & ← → navigation)',
       modalInquireBtn: '💬 Book / Inquire About Similar Package via WhatsApp →',
-      lightboxClose: '✕ Close (Esc)',
+      lightboxClose: '✕ Close',
       footerTagline: 'Storybook-Inspired Brand Identity, Character Mascot & Packaging Studio · Malang, Indonesia.',
       footerWaLabel: 'Official WhatsApp:'
     }
@@ -169,6 +183,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Croomble Cookies',
       category: 'packaging',
+      services: ['branding', 'packaging'],
       statusBadge: '🎬 MOTION GIF + PDF · COOKIE BRANDING',
       frameBg: 'bg-[#FCE7F3]',
       coverImg: 'assets/last gif - croomble.gif',
@@ -212,7 +227,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & IKON GIGITAN KUE (GATE 1)', 'Di Gate 1, kami merancang karakter tipografi retro-serif yang tebal (chunky) untuk kata "croomble." dan memodifikasi dua huruf "oo" di tengah menjadi ilustrasi kue choco-chip dengan bekas gigitan sebagai ciri khas utama (visual signature).'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Memadukan tipografi pendamping Poppins dengan 4 warna dikalibrasi khusus: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), dan Oven Mustard (#F3C868) untuk menciptakan suasana hangat sekaligus ceria.'],
           ['05 — THE UNBOXING JOY & APLIKASI KEMASAN', 'Karena gigitan pertama selalu dimulai dari mata, kami menerjemahkan identitas ini ke label toples kaca (cookie jar), kotak hampers, dan pouch dengan pesan microcopy "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", dan "PREMIUM COOKIES INSIDE".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Full Branding Package Package (Rp850.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata penerapan paket Full Branding Package (Rp850.000) / The Unboxing Kit (Rp950.000). Klik tombol PDF di atas untuk membaca lembar presentasi lengkap Croomble!']
         ]
       },
       EN: {
@@ -230,7 +245,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — CHUNKY LOGO & BITTEN COOKIE MARK (GATE 1)', 'In Gate 1, we crafted a chunky retro-serif logotype highlighting the modified double "oo" as a bitten chocolate-chip cookie graphic signature.'],
           ['04 — COLOR PALETTE & TYPOGRAPHY (GATE 2)', 'Paired clean Poppins typography with four energetic tones: Vanilla White (#FFFFFF), Berry Dough Pink (#F2B7D4), Morning Sky Blue (#B6D2F9), and Oven Mustard (#F3C868).'],
           ['05 — THE UNBOXING JOY IN ACTION', 'Because the first bite happens with the eyes, we rolled the identity out across glass cookie jars, boxes, and pouches featuring joyful microcopy: "BAD MOOD GO AWAY", "100% HAPPINESS INSIDE", and "BAKED FRESH DAILY".'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'A flagship example of our Full Branding Package Package (USD 85) & The Unboxing Kit (USD 95). Click the PDF button above to view the full brand deck!']
+          ['06 — PACKAGE & MASTER HANDOVER', 'A flagship example of our Full Branding Package (USD 85) & The Unboxing Kit (USD 95). Click the PDF button above to view the full brand deck!']
         ]
       }
     },
@@ -240,6 +255,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Holly Jolly',
       category: 'packaging',
+      services: ['packaging'],
       statusBadge: 'CASE STUDY · SEASONAL PACKAGING',
       frameBg: 'bg-[#E3F2FD]',
       coverImg: 'assets/holly-jolly-cover.webp',
@@ -396,6 +412,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Baby Tara (Taravisse)',
       category: 'mascot',
+      services: ['mascot'],
       statusBadge: 'CASE STUDY · CHARACTER IP',
       frameBg: 'bg-[#E0E7FF]',
       coverImg: 'assets/babytara-cover.webp',
@@ -439,6 +456,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Orbre Coffee',
       category: 'mascot',
+      services: ['mascot'],
       statusBadge: 'CASE STUDY · CHARACTER MASCOT',
       frameBg: 'bg-[#FFEDD5]',
       coverImg: 'assets/ORBRE-Mockup.jpg',
@@ -503,6 +521,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Olen Mascot & Menu',
       category: 'packaging',
+      services: ['mascot', 'packaging'],
       statusBadge: 'CASE STUDY · BAKERY MASCOT & MENU',
       frameBg: 'bg-[#DCFCE7]',
       coverImg: 'assets/Olen-mascot.jpg',
@@ -550,6 +569,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Blossom & Veil',
       category: 'identity',
+      services: ['branding', 'packaging'],
       statusBadge: 'CASE STUDY · FASHION & PACKAGING',
       frameBg: 'bg-[#FFE4E6]',
       coverImg: 'assets/blossom-cover.webp',
@@ -576,7 +596,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & MONOGRAM (GATE 1)', 'Di Gate 1, kami merancang 3 hierarki identitas: Main Logo untuk tajuk utama, Secondary Logo yang lebih ringkas, serta inisial Brandmark "BV" yang dihiasi kelopak bunga kecil untuk stempel atau label sempit.'],
           ['04 — SISTEM WARNA & TIPOGRAFI (GATE 2)', 'Seluruh aturan visual dirangkum dalam 1-Page Brand Identity Board yang rapi, memadukan tipografi Snell Roundhand (script anggun), EB Garamond (serif klasik), dan Cinzel untuk sub-judul.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Identitas diterapkan secara konsisten pada 3 titik sentuh pelanggan: Thank You Card berlatar marun dengan aksen pita, Hang Tag pakaian vertikal, serta kemasan pengiriman Polymailer bertuliskan "Made to Celebrate You".'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Full Branding Package Package (Rp850.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh sempurna untuk paket Full Branding Package (Rp850.000) atau The Unboxing Kit (Rp950.000). Klien langsung mendapatkan panduan brand 1 halaman yang praktis beserta desain kemasan siap cetak.']
         ]
       },
       EN: {
@@ -589,7 +609,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO SUITE & MONOGRAM SKETCH (GATE 1)', 'In Gate 1, we developed three cohesive marks: the Main Logo lockup, a balanced Secondary Logo, and an intertwined "BV" floral monogram for compact applications.'],
           ['04 — COLOR & TYPOGRAPHY BOARD (GATE 2)', 'Compiled into a clean 1-Page Brand Identity Board pairing Snell Roundhand script with timeless EB Garamond and Cinzel serif typography.'],
           ['05 — BRAND IN ACTION', 'Rolled out across a burgundy Thank You Card, vertical garment Hang Tag, and custom Polymailer packaging featuring "Made to Celebrate You" messaging.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase of our Full Branding Package Package (USD 85), delivering a clear 1-page brand sheet and cohesive print touchpoints.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase of our Full Branding Package (USD 85), delivering a clear 1-page brand sheet and cohesive print touchpoints.']
         ]
       }
     },
@@ -600,6 +620,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Solène Pilates Studio',
       category: 'identity',
+      services: ['branding'],
       statusBadge: 'CASE STUDY · WELLNESS IDENTITY',
       frameBg: 'bg-[#F3E8FF]',
       coverImg: 'assets/solene-cover.webp',
@@ -622,7 +643,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — EKSPLORASI LOGO & IKON (GATE 1)', 'Di Gate 1, kami menguji keterbacaan Primary Logo serta menyiapkan Alternative Logo (dimana huruf "o" digantikan oleh ikon bunga Solène) agar tetap cantik saat dipasang di bidang sempit maupun lebar.'],
           ['04 — SISTEM PALET & TIPOGRAFI (GATE 2)', 'Disusun dalam 1-Page Brand Identity Board yang memadukan karakter font TAN Pearl dan Brown Sugar untuk judul yang anggun dengan font script Handsome untuk aksen kutipan motivasi di dinding studio.'],
           ['05 — APLIKASI NYATA DI STUDIO', 'Desain divisualisasikan langsung pada titik-titik favorit member: stiker kaca & cermin selfie studio, permukaan matras pilates warna sage, serta botol minum (tumbler) merchandise resmi studio.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Full Branding Package Package (Rp850.000). Pemilik studio langsung memiliki pedoman visual lengkap yang siap dikirim ke vendor interior, percetakan stiker kaca, dan pembuatan merchandise.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Full Branding Package (Rp850.000). Pemilik studio langsung memiliki pedoman visual lengkap yang siap dikirim ke vendor interior, percetakan stiker kaca, dan pembuatan merchandise.']
         ]
       },
       EN: {
@@ -635,7 +656,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & EMBLEM LOCK (GATE 1)', 'In Gate 1, we finalized the Primary Logo alongside versatile Alternative Logos integrating the petal mark directly into the wordmark.'],
           ['04 — TYPOGRAPHY & COLOR BOARD (GATE 2)', 'Organized into a clean 1-Page Brand Board pairing TAN Pearl and Brown Sugar display fonts with Handsome script for studio wall quotes.'],
           ['05 — BRAND IN ACTION', 'Visualized across interior glass and mirror signage, sage-green pilates mats, and branded studio hydration tumblers.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 85), equipping the studio founder with vector files ready for interior signage and merch production.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package (USD 85), equipping the studio founder with vector files ready for interior signage and merch production.']
         ]
       }
     },
@@ -646,6 +667,7 @@ window.CALLA_SITE_CONTENT = {
       featured: true,
       name: 'Maroo Donut',
       category: 'mascot',
+      services: ['mascot', 'branding'],
       statusBadge: 'CASE STUDY · CHARACTER MASCOT',
       frameBg: 'bg-[#FFF3BF]',
       coverImg: 'assets/maroo-cover.webp',
@@ -693,6 +715,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Minoe Le Soir',
       category: 'identity',
+      services: ['branding', 'packaging'],
       statusBadge: 'CASE STUDY · FASHION IDENTITY',
       frameBg: 'bg-[#FCE7F3]',
       coverImg: 'assets/minoe-cover.webp',
@@ -716,7 +739,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & SUBMARK (GATE 1)', 'Mengunci keluwesan garis kaligrafi Minoe Le Soir serta siluet 3 variasi ikon telinga poodle berpita untuk label kerah dan hangtag.'],
           ['04 — 1-PAGE BRAND BOARD (GATE 2)', 'Menyusun panduan 5 nada warna pastel dan pasangan font serif klasik (Sorts Mill Goudy) dalam satu lembar pedoman visual yang ringkas.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Diterapkan pada label dan hangtag pakaian berbentuk kelopak, kotak kemasan dengan kertas tisu bermotif, serta kartu ucapan.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Full Branding Package Package (Rp850.000). Klien menerima file siap cetak untuk produksi label garmen dan kemasan.']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Setara dengan paket Full Branding Package (Rp850.000). Klien menerima file siap cetak untuk produksi label garmen dan kemasan.']
         ]
       },
       EN: {
@@ -729,7 +752,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & SUBMARK SKETCH (GATE 1)', 'Locking the script flow and 3 poodle-ear icon variations for woven collar labels and die-cut hangtags.'],
           ['04 — 1-PAGE BRAND BOARD (GATE 2)', 'Compiling the 5-shade muted color palette and classic serif pairing (Sorts Mill Goudy) into an easy-to-use brand sheet.'],
           ['05 — BRAND IN ACTION', 'Applied across garment hangtags, collar labels, unboxing boxes with patterned tissue wrap, and greeting cards.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package Package (USD 85), complete with print-ready garment tag and packaging files.']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Equivalent to our Full Branding Package (USD 85), complete with print-ready garment tag and packaging files.']
         ]
       }
     },
@@ -740,6 +763,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Kueboon Patisserie',
       category: 'packaging',
+      services: ['branding', 'packaging'],
       statusBadge: 'CASE STUDY · BAKERY & PACKAGING',
       frameBg: 'bg-[#DCFCE7]',
       coverImg: 'assets/kueboon-cover.webp',
@@ -782,6 +806,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Happynest.co',
       category: 'packaging',
+      services: ['packaging'],
       statusBadge: 'CASE STUDY · FESTIVE PACKAGING',
       frameBg: 'bg-[#FFEDD5]',
       coverImg: 'assets/happynest-cover.webp',
@@ -825,6 +850,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Seeri',
       category: 'packaging',
+      services: ['branding', 'packaging'],
       statusBadge: 'CASE STUDY · D2C UNBOXING',
       frameBg: 'bg-[#F3E8FF]',
       coverImg: 'assets/seeri-cover.webp',
@@ -844,7 +870,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — SKETSA LOGO & POLA KEMASAN (GATE 1)', 'Merancang logotype SEERI dengan huruf S ikonis yang bisa berdiri sendiri sebagai monogram, ditemani komposisi depan-belakang kantong polymailer.'],
           ['04 — WARNA & ELEMEN PENDUKUNG (GATE 2)', 'Menerapkan pola lingkaran berulang di sisi belakang polymailer dan sapaan tulisan tangan "You’re something special" di sisi depan.'],
           ['05 — APLIKASI NYATA PADA PRODUK', 'Divisualisasikan pada mockup polymailer bertekstur doff di atas kain satin, lengkap dengan perluasan ke paper bag, hangtag, dan kertas tisu.'],
-          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 65) atau Full Branding Package Package (Rp850.000 / USD 85).']
+          ['06 — PAKET RELEVAN & FILE HANDOVER', 'Contoh nyata paket Single Hero Packaging (Rp550.000 / USD 65) atau Full Branding Package (Rp850.000 / USD 85).']
         ]
       },
       EN: {
@@ -857,7 +883,7 @@ window.CALLA_SITE_CONTENT = {
           ['03 — LOGO & MAILER LAYOUT (GATE 1)', 'Developing the primary SEERI logotype, flowing S monogram, and front/back polymailer print layout.'],
           ['04 — PATTERN & COLOR APPLICATION (GATE 2)', 'Applying polka-ring repeat patterns on the reverse side and "You’re something special" typography on the front flap.'],
           ['05 — BRAND IN ACTION', 'Presented on matte-satin polymailer bags staged over draped silk fabric, alongside hangtags and tissue wrap.'],
-          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase for Single Hero Packaging (USD 65) or Full Branding Package Package (USD 85).']
+          ['06 — PACKAGE & MASTER HANDOVER', 'Ideal showcase for Single Hero Packaging (USD 65) or Full Branding Package (USD 85).']
         ]
       }
     },
@@ -868,6 +894,7 @@ window.CALLA_SITE_CONTENT = {
       featured: false,
       name: 'Batter Burrow',
       category: 'identity',
+      services: ['branding', 'mascot'],
       statusBadge: 'CASE STUDY · BAKERY LOGO SUITE',
       frameBg: 'bg-[#FFE4E6]',
       coverImg: 'assets/batter-cover.webp',
@@ -876,7 +903,7 @@ window.CALLA_SITE_CONTENT = {
         ID: 'Logo karakter kucing pembawa kue dan kemasan kotak merah marun Batter Burrow',
         EN: 'Batter Burrow cat waiter logo and burgundy cake box identity'
       },
-      pdfExportHint: 'Opsional: tambahkan butter-burrow-cover (.webp/.jpg) ke folder assets/ jika ingin menampilkan foto.',
+      pdfExportHint: 'Opsional: tambahkan batter-burrow-cover (.webp/.jpg) ke folder assets/ jika ingin menampilkan foto.',
       ID: {
         categoryLabel: 'Gluten-Free Bakery Illustrative Logo',
         summary: 'Desain logo karakter ilustratif kucing pembawa tudung saji kue untuk brand gluten-free bakery, lengkap dengan motif garis biru langit dan simulasi kotak kue merah marun.',
@@ -992,7 +1019,7 @@ window.CALLA_SITE_CONTENT = {
           bg: 'bg-[#FCE7F3]',
           tagID: 'PALING POPULER',
           tagEN: 'MOST POPULAR',
-          name: 'Full Branding Package Package',
+          name: 'Full Branding Package',
           price: 'Starting at Rp850.000',
           descID: 'Identitas visual menyeluruh untuk butik fashion, bisnis kuliner/F&B, skincare organik, dan brand lifestyle.',
           descEN: 'Comprehensive visual identity system for fashion boutiques, F&B businesses, organic skincare, and lifestyle brands.',
@@ -1147,7 +1174,7 @@ window.CALLA_SITE_CONTENT = {
           bg: 'bg-[#FCE7F3]',
           tagID: 'PALING POPULER',
           tagEN: 'MOST POPULAR',
-          name: 'Full Branding Package Package',
+          name: 'Full Branding Package',
           price: 'Starting at USD 85',
           descID: 'Sistem identitas visual lengkap untuk kafe, toko ritel, dan brand fashion/lifestyle.',
           descEN: 'Complete visual identity system for boutiques, retail shops, and fashion/lifestyle labels.',

@@ -267,22 +267,28 @@ body.play-mode .gallery-card:focus-visible .gallery-cta-pill {
   transform: translateX(3px);
 }
 
-/* Tombol Prev / Next di Bar Bawah (Tidak Menutupi Gambar Kartu) */
+/* Tombol Prev / Next di Bar Bawah (Ramah Jempol di Mobile) */
 .gallery-nav-btn {
   display: inline-grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   border: 2px solid var(--border-ink);
   border-radius: 9999px;
   background: var(--accent-yellow);
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 800;
   line-height: 1;
   box-shadow: 2px 2px 0 var(--border-ink);
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
+}
+@media (min-width: 640px) {
+  .gallery-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
 }
 .gallery-nav-btn[disabled] {
   opacity: 0.35;
@@ -305,7 +311,7 @@ body.play-mode .gallery-card:focus-visible .gallery-cta-pill {
 /* 3-Layer Draggable Crayon Flowers & Critters */
 .crayon-sticker {
   position: absolute;
-  z-index: 20;
+  z-index: 25;
   touch-action: none;
   user-select: none;
   cursor: grab;
@@ -313,7 +319,7 @@ body.play-mode .gallery-card:focus-visible .gallery-cta-pill {
 }
 .crayon-sticker:active, .crayon-sticker.is-dragging {
   cursor: grabbing;
-  z-index: 30;
+  z-index: 35;
 }
 
 .crayon-critter {
@@ -446,7 +452,93 @@ button:focus-visible, a:focus-visible {
     display: none !important;
   }
 }
+/* ==========================================================================
+   MOBILE UI/UX POLISH (Header, Hero, Critters, Gallery, Pricing & Modals)
+   ========================================================================== */
+.pricing-quick-chip {
+  flex: none;
+  white-space: nowrap;
+  padding: 0.42rem 0.85rem;
+  border: 2px solid var(--border-ink);
+  border-radius: 9999px;
+  background: #FFFFFF;
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.pricing-quick-chip.is-on {
+  background: var(--text-main);
+  color: #FFFFFF;
+}
 
+@media (max-width: 640px) {
+  /* Hero Stickers: Tetap melayang di atas kartu biar seru digeser klien */
+  #heroCanvas .crayon-sticker {
+    width: 4rem !important;
+    height: 4rem !important;
+    z-index: 25;
+  }
+  #heroCanvas .crayon-sticker.is-dragging {
+    z-index: 35;
+  }
+
+  /* Critter Lanes: Anti Scroll-Hijack saat pengunjung scroll ke bawah */
+  .critter-lane-natural {
+    height: 52px;
+  }
+  .critter-lane-natural .crayon-sticker {
+    touch-action: pan-y;
+    transform: scale(0.84);
+    transform-origin: center;
+  }
+  .critter-fish-lr { animation-duration: 13s; }
+  .critter-fish-rl { animation-duration: 13s; }
+  .critter-caterpillar { animation-duration: 14s; }
+
+  /* Galeri Mobile: Lebih lega & benar-benar berhenti di tengah layar */
+  .gallery-track {
+    --stage-h: 192px;
+    --slide-gap: 1rem;
+    padding: 1.25rem 0 1.75rem;
+  }
+  .gallery-track::before,
+  .gallery-track::after {
+    flex: 0 0 max(1rem, calc(50% - 145px));
+  }
+  .gallery-card {
+    padding: 0.8rem 0.85rem 0.9rem;
+    max-width: 86vw;
+  }
+  .gallery-cover-stage {
+    min-width: 220px;
+  }
+  .gallery-cover-img {
+    max-width: 78vw;
+  }
+
+  /* Gate Slider: Tetap bisa scroll halaman vertikal saat jempol menyentuh slider */
+  .gate-slider-input {
+    touch-action: pan-y;
+  }
+  .gate-slider-input::-webkit-slider-thumb {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  /* Pastikan speech bubble boop tidak terpotong layar HP */
+  .boop-pop-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  /* Lightbox Mobile: Gambar menyesuaikan ruang bar navigasi bawah */
+  .lightbox-img {
+    max-width: 94vw;
+    max-height: 70vh;
+  }
+}
 /* Reduced Motion Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
